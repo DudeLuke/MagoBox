@@ -1,0 +1,779 @@
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\notes.txt
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\about.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\draw.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\move.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\pick.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\select.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\0.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hBack.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hE.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hD.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hC.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hB.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hA.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h9.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h8.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h7.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\h0.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\Hex\hF.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\select.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Tree Top.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Tree.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Unknown.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Bomb Chain.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Bomb Generated.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Bomb.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Breakable.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Crumble.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Fire.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Bottom.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left Corner.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right Corner.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Giant Tree.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Gold 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Gold 3x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Ice.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Iced Snow.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Invisible Bomb Chain.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Metal Crumble.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Metal.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Snow.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone 1x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone 2x4x4x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone 3x1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone 3x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone Reverse T.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Left.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Right.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone T.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Stone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super 1x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super 3x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super 4x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super 4x4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super Top.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\blocks\Super.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\modifiers\water.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\modifiers\boundary.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\modifiers\ice.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\modifiers\ladder.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\modifiers\lava.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\modifiers\spike.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\boss.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\enemy.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\item.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\object.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\select.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\selectFull.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\1-UP.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Blue Point Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Challenge Coin.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Challenge Coin_b.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Copy Essence.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere (Empty).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere (Red Point Star).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Food.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Maxim Tomato (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Maxim Tomato.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Point Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\items\Red Point Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Pop Flower.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Pushing Bubbles.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Pushing Wind.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Stage Select Door.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Start Point.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Timer Switch.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Toggle Switch.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Trigger Area.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\trigger_zone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Warp Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\wind_zone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Bomb Block Chain Starter.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\bubble_zone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Camera.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Dimension Hole.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Falling Background Object.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.10.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Guide Sign.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Magolor.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\One-Time Switch.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\enemies\Waddle Dee.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\bosses\Gigant Edge.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\carriables\Key.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\obj\carriable.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Metal.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Sand.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Snow.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Stone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Wood.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_-1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_-2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_-3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\auto_-4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Clouds.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\properties\mat_Grass.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\10.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\11.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\12.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\13.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\14.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\15.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\16.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\17.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\18.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\19.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\20.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\21.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\22.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\23.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\24.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\25.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\26.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\27.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\28.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\29.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\30.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\31.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\32.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\33.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\34.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\35.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\36.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\37.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\38.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\39.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\40.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\41.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\42.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\43.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\44.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\45.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\46.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\47.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\48.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\49.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\50.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\51.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\7.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\8.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\Resources\tiles\9.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\MagoCrate.exe.config
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\MagoCrate.exe
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\MagoCrate.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\OpenTK.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\OpenTK.GLControl.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.csproj.AssemblyReference.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.ColShapeSelector.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.Editors.BossEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.Editors.EnemyEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.Editors.ItemEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.Editors.ObjectEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.Editors.SpecialItemEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.Editors.StageSettings.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.MainForm.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoBox.NewLevel.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.Options.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.Properties.Resources.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.csproj.GenerateResource.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.csproj.CopyComplete
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.exe
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\about.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\draw.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\move.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\pick.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\select.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\0.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hBack.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hE.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hD.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hC.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hB.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hA.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h9.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h8.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h7.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\h0.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\Hex\hF.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\select.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\CustomData\EntityNotes.txt
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Tree Top.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Tree.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Unknown.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Bomb Chain.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Bomb Generated.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Bomb.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Breakable.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Crumble.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Fire.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Bottom.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left Corner.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right Corner.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Giant Tree.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Gold 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Gold 3x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Ice.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Iced Snow.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Invisible Bomb Chain.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Metal Crumble.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Metal.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Snow.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone 1x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone 2x4x4x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone 3x1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone 3x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone Reverse T.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Left.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Right.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone T.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super 1x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super 3x3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super 4x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super 4x4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super Top.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\CustomData\SpriteOffsets.txt
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\CustomData\FDGPatching.txt
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super (Alt 2).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2 (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Fire (Fragile).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Fire 2x2 (Fragile).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Tree (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Snow (Wide).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Iced Snow (Wide).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super 2x2 (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Super (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\blocks\Stone 4x4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\modifiers\water.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\modifiers\boundary.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\modifiers\ice.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\modifiers\ladder.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\modifiers\lava.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\modifiers\spike.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\boss.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemy.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\item.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\object.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\select.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\selectFull.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\1-UP.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Blue Point Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Challenge Coin.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Challenge Coin_b.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Copy Essence.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere (Empty).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere (Red Point Star).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Food.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Maxim Tomato (Alt).png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Maxim Tomato.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Point Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\items\Red Point Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Pop Flower.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer_l.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer_l.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer_l.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Poppy Bros.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Twister.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Waddle Doo.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Whispy Apple.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Blade Knight.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Chilly.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Coconut Bomb.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Flamer.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Gordo.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Hothead.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Poison Whispy Apple.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Pushing Bubbles.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Pushing Wind.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Stage Select Door.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Start Point.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Timer Switch.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Toggle Switch.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Trigger Area.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\trigger_zone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Warp Star.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\wind_zone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Bomb Block Chain Starter.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\bubble_zone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Camera.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Dimension Hole.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Falling Background Object.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.10.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Guide Sign.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Magolor.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\One-Time Switch.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\enemies\Waddle Dee.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\carriables\Key.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\obj\carriable.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Metal.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Sand.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Snow.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Stone.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Wood.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_-1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_-2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_-3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\auto_-4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Clouds.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\properties\mat_Grass.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\1.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\10.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\11.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\12.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\13.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\14.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\15.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\16.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\17.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\18.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\19.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\2.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\20.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\21.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\22.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\23.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\24.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\25.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\26.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\27.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\28.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\29.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\3.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\30.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\31.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\32.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\33.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\34.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\35.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\36.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\37.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\38.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\39.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\4.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\40.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\41.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\42.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\43.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\44.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\45.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\46.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\47.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\48.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\49.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\5.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\50.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\51.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\6.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\7.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\8.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\Resources\tiles\9.png
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\MagoCrate.exe.config
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\MagoCrate.exe
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\MagoCrate.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\OpenTK.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\OpenTK.GLControl.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.csproj.AssemblyReference.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.ColShapeSelector.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.Editors.BossEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.Editors.EnemyEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.Editors.ItemEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.Editors.ObjectEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.Editors.SpecialItemEditor.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.Editors.StageSettings.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.FDGScene.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.MainForm.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoBox.NewLevel.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.Options.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.Properties.Resources.resources
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.csproj.GenerateResource.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.csproj.CopyComplete
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.exe
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\MagoCrate\obj\Debug\MagoCrate.pdb
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\about.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\draw.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\move.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\pick.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\select.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\0.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hBack.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hE.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hD.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hC.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hB.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hA.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h9.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h8.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h7.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h6.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\h0.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\Hex\hF.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\select.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\CustomData\EntityNotes.txt
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Tree Top.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Tree.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Unknown.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Bomb Chain.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Bomb Generated.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Bomb.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Breakable.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Crumble.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Fire.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Bottom.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left Corner.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right Corner.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Giant Tree.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Gold 2x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Gold 3x3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Ice.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Iced Snow.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Invisible Bomb Chain.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Metal Crumble.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Metal.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Snow.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Star.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone 1x3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone 2x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone 2x4x4x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone 3x1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone 3x3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone Reverse T.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Left.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Right.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone T.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super 1x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super 2x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super 3x3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super 4x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super 4x4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super Top.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\CustomData\SpriteOffsets.txt
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\CustomData\FDGPatching.txt
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super (Alt 2).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2 (Alt).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Fire (Fragile).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Fire 2x2 (Fragile).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Tree (Alt).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Snow (Wide).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom (Alt).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Iced Snow (Wide).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super 2x2 (Alt).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Super (Alt).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\blocks\Stone 4x4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\modifiers\water.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\modifiers\boundary.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\modifiers\ice.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\modifiers\ladder.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\modifiers\lava.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\modifiers\spike.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\boss.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemy.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\item.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\object.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\select.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\selectFull.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\1-UP.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Blue Point Star.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Challenge Coin.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Challenge Coin_b.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Copy Essence.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere (Empty).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere (Red Point Star).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Energy Sphere.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Food.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Maxim Tomato (Alt).png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Maxim Tomato.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Point Star.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\items\Red Point Star.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Pop Flower.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer_l.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer_l.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\bosses\Sphere Doomer_l.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Poppy Bros.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Twister.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Waddle Doo.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Whispy Apple.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Blade Knight.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Chilly.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Coconut Bomb.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Flamer.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Glunk_l.5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Gordo.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Hothead.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Poison Whispy Apple.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.6.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.7.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse Cannon.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Super Enemy Spawner.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\super_zone.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.6.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.7.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon Manual.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Floating Cannon.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Shutter Door Left.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Shutter Door Super Left.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Shutter Door Super Right.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Shutter Door Super.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Shutter Door Right.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Shutter Door.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Pushing Bubbles.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Pushing Wind.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Stage Select Door.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Start Point.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Timer Switch.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Toggle Switch.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Trigger Area.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\trigger_zone.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Warp Star.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\wind_zone.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Arrow Sign_p6.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Bomb Block Chain Starter.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\bubble_zone.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Camera.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Dimension Hole.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Door_p6.6.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Falling Background Object.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.6.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Fuse_p6.10.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Guide Sign.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Magolor.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point_p6.4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\One-Time Switch.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\objects\Multiplayer Start Point.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\enemies\Waddle Dee.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\carriables\Key.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\obj\carriable.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Metal.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Sand.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Snow.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Stone.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Wood.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_-1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_-2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_-3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\auto_-4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Clouds.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\properties\mat_Grass.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\1.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\10.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\11.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\12.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\13.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\14.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\15.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\16.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\17.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\18.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\19.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\2.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\20.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\21.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\22.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\23.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\24.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\25.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\26.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\27.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\28.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\29.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\3.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\30.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\31.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\32.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\33.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\34.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\35.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\36.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\37.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\38.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\39.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\4.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\40.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\41.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\42.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\43.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\44.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\45.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\46.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\47.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\48.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\49.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\5.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\50.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\51.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\6.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\7.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\8.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\Resources\tiles\9.png
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\MagoCrate.exe.config
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\MagoCrate.exe
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\MagoCrate.pdb
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\OpenTK.dll
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\OpenTK.GLControl.dll
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.csproj.AssemblyReference.cache
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.ColShapeSelector.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.Editors.BossEditor.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.Editors.EnemyEditor.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.Editors.ItemEditor.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.Editors.ObjectEditor.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.Editors.SpecialItemEditor.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.Editors.StageSettings.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.FDGScene.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.MainForm.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoBox.NewLevel.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.Options.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.Properties.Resources.resources
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.csproj.GenerateResource.cache
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.csproj.CopyComplete
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.exe
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.FDGScene.resources

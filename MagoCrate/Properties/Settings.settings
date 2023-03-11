@@ -1,0 +1,45 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MagoCrate.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="rtmColorsON" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="rtmLabelsON" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PixelsPerTile" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="entityCullRange" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="ObjColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">219, 255, 215</Value>
+    </Setting>
+    <Setting Name="ItemColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 248, 208</Value>
+    </Setting>
+    <Setting Name="CarryColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">210, 214, 255</Value>
+    </Setting>
+    <Setting Name="EnemyColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 210, 210</Value>
+    </Setting>
+    <Setting Name="BossColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">250, 208, 255</Value>
+    </Setting>
+    <Setting Name="MainColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">64, 64, 64</Value>
+    </Setting>
+    <Setting Name="DecoViewIndex" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FDGAutoFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="autoBehavior" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
