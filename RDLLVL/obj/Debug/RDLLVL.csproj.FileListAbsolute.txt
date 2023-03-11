@@ -1,0 +1,24 @@
+C:\Users\LukeN\Downloads\MagoBox-master\RDLLVL\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\MagoBox-master\RDLLVL\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\MagoBox-master\RDLLVL\obj\Debug\RDLLVL.csproj.AssemblyReference.cache
+C:\Users\LukeN\Downloads\MagoBox-master\RDLLVL\obj\Debug\RDLLVL.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\Downloads\MagoBox-master\RDLLVL\obj\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\MagoBox-master\RDLLVL\obj\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\RDLLVL\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\RDLLVL\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\RDLLVL\obj\Debug\RDLLVL.csproj.AssemblyReference.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\RDLLVL\obj\Debug\RDLLVL.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\RDLLVL\obj\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate\RDLLVL\obj\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\RDLLVL\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\RDLLVL\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\RDLLVL\obj\Debug\RDLLVL.csproj.AssemblyReference.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\RDLLVL\obj\Debug\RDLLVL.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\RDLLVL\obj\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\EditedTools\MagoCrate - FDG\RDLLVL\obj\Debug\RDLLVL.pdb
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\RDLLVL\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\RDLLVL\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\RDLLVL\obj\Debug\RDLLVL.csproj.AssemblyReference.cache
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\RDLLVL\obj\Debug\RDLLVL.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\RDLLVL\obj\Debug\RDLLVL.dll
+C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\RDLLVL\obj\Debug\RDLLVL.pdb
