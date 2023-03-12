@@ -174,59 +174,76 @@ g3d/step/gimmick/Statue.brres.cmp
 g3d/step/gimmick/SCutRope.brres.cmp
 
 --- objects/Shutter Door
+g3d/step/gimmick/Shutter.brres.cmp
+g3d/step/gimmick/ShutterFactory.brres.cmp
+g3d/step/gimmick/ShutterLaser.brres.cmp
+g3d/step/gimmick/ShutterSuper.brres.cmp
 
 --- objects/Light Block
+g3d/step/gimmick/BlockLight.brres.cmp
 
 --- objects/Hang Switch
+g3d/step/gimmick/HangSwitch.brres.cmp
 
 --- objects/Hang Rope
+g3d/step/gimmick/RopeFlat.brres.cmp
 
 --- objects/Flare Beam Switch
+g3d/step/gimmick/BeamSwitchSuper.brres.cmp
+effect/step/obj/PtGmkBeamSwitch.breff.cmp
+effect/step/obj/PtGmkBeamSwitch.breft.cmp
 
 --- objects/Lor Starcutter
+g3d/step/gimmick/Ship.brres.cmp
 
 --- objects/Magolor
 g3d/step/chara/enemy/Mahoroa.brres.cmp
 
 --- objects/Lor Starcutter Arrow Sign
+g3d/step/gimmick/Guideplate.brres.cmp
 
 --- objects/Large Wooden Stake
+g3d/step/gimmick/StakeSuper.brres.cmp
+effect/step/obj/PtGmkStake.breff.cmp
+effect/step/obj/PtGmkStake.breft.cmp
 
 --- objects/Grand Hammer Spring
+g3d/step/gimmick/ScrewSuper.brres.cmp
 
 --- objects/Lor Starcutter Monitor
 
---- objects/Pushing Wind
-
 --- objects/Challenge Stage Door
-
---- objects/Pushing Bubbles
 
 --- objects/Dropping Hazard
 
 --- objects/Spinning Bar Hazard
 
 --- objects/Breakable Roof
+effect/step/obj/PtGmkCrushwall.breff.cmp
+effect/step/obj/PtGmkCrushwall.breft.cmp
+g3d/step/gimmick/CrushWallSuper.brres.cmp
 
 --- objects/Giant Bomb Machine
 
 --- objects/Giant Bell
-
---- objects/Flare Beam Switch Output Point
+effect/step/obj/PtGmkCrushwallBellSuper.breff.cmp
+effect/step/obj/PtGmkCrushwallBellSuper.breft.cmp
+g3d/step/gimmick/CrushWallBellSuper.brres.cmp
 
 --- objects/Rolling Rock Obstacle
 
 --- objects/Rolling Spike Ball Obstacle
 
---- objects/Sandcastle Block
+--- objects/Totem Pole Block
 
 --- objects/Rolling Spike Wheel Obstacle
 
---- objects/Giant Sandcastle Block
+--- objects/Sandcastle Block
+effect/step/obj/PtGmkSandCastleSuper.breff.cmp
+effect/step/obj/PtGmkSandCastleSuper.breft.cmp
+g3d/step/gimmick/SandCastleSuper.brres.cmp
 
 --- objects/Lor Starcutter Door
-
---- objects/Scaffold Support
 
 --- objects/Bite Statue
 

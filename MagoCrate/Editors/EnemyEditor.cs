@@ -81,6 +81,9 @@ namespace MagoBox.Editors
                     if (objs.MostLikelyBehaviorList.ContainsKey(uint.Parse(type.Text)))
                     {
                         behavior.Text = objs.MostLikelyBehaviorList[uint.Parse(type.Text)];
+                    } else
+                    {
+                        behavior.Text = "0";
                     }
                 }
             }
