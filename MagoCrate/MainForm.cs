@@ -1890,7 +1890,7 @@ namespace MagoBox
                         bl.MovingTerrainID = (sbyte)d1_4.Value;
                         level.BLandDecoration[ix] = bl;
                     }
-                    if (editMLand.Checked)
+                    if (editFLand.Checked)
                     {
                         Decoration ml = level.MLandDecoration[ix];
                         ml.Unk_1 = (byte)d2_1.Value;
@@ -1899,7 +1899,7 @@ namespace MagoBox
                         ml.MovingTerrainID = (sbyte)d2_4.Value;
                         level.MLandDecoration[ix] = ml;
                     }
-                    if (editFLand.Checked)
+                    if (editMLand.Checked)
                     {
                         Decoration fl = level.FLandDecoration[ix];
                         fl.Unk_1 = (byte)d3_1.Value;
@@ -2088,7 +2088,7 @@ namespace MagoBox
                         bl.MovingTerrainID = (sbyte)d1_4.Value;
                         level.BLandDecoration[ix] = bl;
                     }
-                    if (editMLand.Checked)
+                    if (editFLand.Checked)
                     {
                         Decoration ml = level.MLandDecoration[ix];
                         ml.Unk_1 = (byte)d2_1.Value;
@@ -2097,7 +2097,7 @@ namespace MagoBox
                         ml.MovingTerrainID = (sbyte)d2_4.Value;
                         level.MLandDecoration[ix] = ml;
                     }
-                    if (editFLand.Checked)
+                    if (editMLand.Checked)
                     {
                         Decoration fl = level.FLandDecoration[ix];
                         fl.Unk_1 = (byte)d3_1.Value;
@@ -2449,7 +2449,6 @@ namespace MagoBox
                     yOffset.Value += 16;
                     yCoord.Value--;
                 }
-
                 UpdateCoords();
             }
         }
@@ -2896,7 +2895,42 @@ namespace MagoBox
                 }
             } catch { }
         }
-
+        private void d1_hex_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                uint b = uint.Parse(d1_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                d1_1.Value = uint.Parse(d1_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                d1_2.Value = uint.Parse(d1_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                d1_3.Value = uint.Parse(d1_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (b < 16) d1_4.Value = b;
+                else d1_4.Value = -1;
+            } catch { }
+        }
+        private void d2_hex_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                uint f = uint.Parse(d2_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                d2_1.Value = uint.Parse(d2_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                d2_2.Value = uint.Parse(d2_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                d2_3.Value = uint.Parse(d2_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (f < 16) d2_4.Value = f;
+                else d2_4.Value = -1;
+            } catch { }
+        }
+        private void d3_hex_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                uint m = uint.Parse(d3_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                d3_1.Value = uint.Parse(d3_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                d3_2.Value = uint.Parse(d3_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                d3_3.Value = uint.Parse(d3_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (m < 16) d3_4.Value = m;
+                else d3_4.Value = -1;
+            } catch { }
+        }
         private void viewType_SelectedIndexChanged(object sender, EventArgs e)
         {
             collViewType = viewType.SelectedIndex;
@@ -2956,5 +2990,7 @@ namespace MagoBox
             enemyList.ClearSelected();
             RefreshObjectLists();
         }
+
+        
     }
 }

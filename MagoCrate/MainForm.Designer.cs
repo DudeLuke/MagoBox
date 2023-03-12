@@ -1025,6 +1025,7 @@
             this.d2_hex.TabIndex = 2;
             this.d2_hex.Text = "FFFF00FF";
             this.d2_hex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.d2_hex.TextChanged += new System.EventHandler(this.d2_hex_TextChanged);
             // 
             // d3_hex
             // 
@@ -1036,6 +1037,7 @@
             this.d3_hex.TabIndex = 1;
             this.d3_hex.Text = "FFFF00FF";
             this.d3_hex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.d3_hex.TextChanged += new System.EventHandler(this.d3_hex_TextChanged);
             // 
             // d1_hex
             // 
@@ -1047,6 +1049,7 @@
             this.d1_hex.TabIndex = 0;
             this.d1_hex.Text = "FFFF00FF";
             this.d1_hex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.d1_hex.TextChanged += new System.EventHandler(this.d1_hex_TextChanged);
             // 
             // label11
             // 
