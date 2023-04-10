@@ -2063,7 +2063,7 @@ namespace MagoBox
                             {
                                 clickedEntity = true;
                                 tabControl1.SelectedIndex = 3;
-                                enemyList.SelectedIndex = i;
+                                bossList.SelectedIndex = i;
                             }
                         }
                     }
@@ -2128,6 +2128,8 @@ namespace MagoBox
             {
                 if (tool == 0)
                 {
+                    // Draw
+
                     int ix = (int)((tileY * level.Width) + tileX);
 
                     if (editCol.Checked)
@@ -2193,6 +2195,36 @@ namespace MagoBox
                         fl.MovingTerrainID = (sbyte)d3_4.Value;
                         level.FLandDecoration[ix] = fl;
                     }
+                } else if (tool == 2)
+                {
+                    // Move
+
+                    try
+                    {
+                        Vector2 p = ConvertMouseCoords(new Vector2(e.X, e.Y));
+                        if (p.X > level.Width - 1)
+                        {
+                            tileX = level.Width - 1;
+                        }
+                        else if (p.X > 0)
+                        {
+                            tileX = (uint)p.X;
+                        }
+                        else { tileX = 0; }
+                        if (p.Y < -(level.Height - 1))
+                        {
+                            tileY = level.Height - 1;
+                        }
+                        else if (p.Y < 0)
+                        {
+                            tileY = (uint)-p.Y + 1;
+                        }
+                        else { tileY = 0; }
+
+                        xCoord.Value = tileX;
+                        yCoord.Value = tileY;
+                        UpdateCoords();
+                    } catch { }
                 }
             }
         }

@@ -1751,7 +1751,8 @@
             this.move.Name = "move";
             this.move.Size = new System.Drawing.Size(41, 41);
             this.move.TabIndex = 105;
-            this.toolTip1.SetToolTip(this.move, "Move\r\n");
+            this.toolTip1.SetToolTip(this.move, "Select entities by clicking on \r\nthem, clicking or dragging to\r\nempty space will " +
+        "move that\r\nentity there.");
             this.move.UseVisualStyleBackColor = true;
             this.move.Click += new System.EventHandler(this.move_Click);
             // 
