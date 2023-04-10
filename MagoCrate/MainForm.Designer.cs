@@ -135,6 +135,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pick = new System.Windows.Forms.Button();
             this.draw = new System.Windows.Forms.Button();
+            this.move = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -550,6 +551,7 @@
             this.glControl.VSync = false;
             this.glControl.Load += new System.EventHandler(this.glControl_Load);
             this.glControl.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_Paint);
+            this.glControl.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainForm_KeyDown);
             this.glControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseDown);
             this.glControl.MouseLeave += new System.EventHandler(this.glControl_MouseLeave);
             this.glControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseMove);
@@ -1740,12 +1742,26 @@
             this.draw.UseVisualStyleBackColor = true;
             this.draw.Click += new System.EventHandler(this.draw_Click);
             // 
+            // move
+            // 
+            this.move.BackgroundImage = global::MagoCrate.Properties.Resources.move;
+            this.move.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.move.Location = new System.Drawing.Point(495, 40);
+            this.move.Margin = new System.Windows.Forms.Padding(4);
+            this.move.Name = "move";
+            this.move.Size = new System.Drawing.Size(41, 41);
+            this.move.TabIndex = 105;
+            this.toolTip1.SetToolTip(this.move, "Move\r\n");
+            this.move.UseVisualStyleBackColor = true;
+            this.move.Click += new System.EventHandler(this.move_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1517, 658);
+            this.Controls.Add(this.move);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.viewType);
             this.Controls.Add(this.halfTileLock);
@@ -1932,6 +1948,7 @@
         private System.Windows.Forms.NumericUpDown vShape;
         private System.Windows.Forms.ComboBox materialList;
         private System.Windows.Forms.ToolStripMenuItem patchFDGToolStripMenuItem;
+        private System.Windows.Forms.Button move;
     }
 }
 

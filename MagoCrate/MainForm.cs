@@ -1813,14 +1813,6 @@ namespace MagoBox
             {
                 if (tool == 0)
                 {
-                    // Select
-                }
-                else if (tool == 1)
-                {
-                    // Move 
-                }
-                else if (tool == 2)
-                {
                     // Draw
 
                     Vector2 p = ConvertMouseCoords(new Vector2(e.X, e.Y));
@@ -1909,7 +1901,7 @@ namespace MagoBox
                         level.FLandDecoration[ix] = fl;
                     }
                 }
-                else if (tool == 3)
+                else if (tool == 1)
                 {
                     // Pick
 
@@ -2001,6 +1993,99 @@ namespace MagoBox
                     d2_hex.Text = ((byte)d2_1.Value).ToString("X2") + ((byte)d2_2.Value).ToString("X2") + ((byte)d2_3.Value).ToString("X2") + ((sbyte)d2_4.Value).ToString("X2");
                     d3_hex.Text = ((byte)d3_1.Value).ToString("X2") + ((byte)d3_2.Value).ToString("X2") + ((byte)d3_3.Value).ToString("X2") + ((sbyte)d3_4.Value).ToString("X2");
                 }
+                else if (tool == 2)
+                {
+                    // Move
+
+                    bool clickedEntity = false;
+                    Vector2 p = ConvertMouseCoords(new Vector2(e.X, e.Y));
+                    if (p.X > level.Width - 1)
+                    {
+                        tileX = level.Width - 1;
+                    }
+                    else if (p.X > 0)
+                    {
+                        tileX = (uint)p.X;
+                    }
+                    else { tileX = 0; }
+                    if (p.Y < -(level.Height - 1))
+                    {
+                        tileY = level.Height - 1;
+                    }
+                    else if (p.Y < 0)
+                    {
+                        tileY = (uint)-p.Y + 1;
+                    }
+                    else { tileY = 0; }
+
+
+                    if (!clickedEntity)
+                    {
+                        for (int i = 0; i < level.Objects.Count; i++)
+                        {
+                            if (level.Objects[i].X == tileX && level.Objects[i].Y == tileY && objList.SelectedIndex != i)
+                            {
+                                clickedEntity = true;
+                                tabControl1.SelectedIndex = 0;
+                                objList.SelectedIndex = i;
+                            }
+                        }
+                    }
+                    if (!clickedEntity)
+                    {
+                        for (int i = 0; i < level.Carriables.Count; i++)
+                        {
+                            if (level.Carriables[i].X == tileX && level.Carriables[i].Y == tileY && carriablesList.SelectedIndex != i)
+                            {
+                                clickedEntity = true;
+                                tabControl1.SelectedIndex = 1;
+                                carriablesList.SelectedIndex = i;
+                            }
+                        }
+                    }
+                    if (!clickedEntity)
+                    {
+                        for (int i = 0; i < level.Items.Count; i++)
+                        {
+                            if (level.Items[i].X == tileX && level.Items[i].Y == tileY && itemList.SelectedIndex != i)
+                            {
+                                clickedEntity = true;
+                                tabControl1.SelectedIndex = 2;
+                                itemList.SelectedIndex = i;
+                            }
+                        }
+                    }
+                    if (!clickedEntity)
+                    {
+                        for (int i = 0; i < level.Bosses.Count; i++)
+                        {
+                            if (level.Bosses[i].X == tileX && level.Bosses[i].Y == tileY && bossList.SelectedIndex != i)
+                            {
+                                clickedEntity = true;
+                                tabControl1.SelectedIndex = 3;
+                                enemyList.SelectedIndex = i;
+                            }
+                        }
+                    }
+                    if (!clickedEntity)
+                    {
+                        for (int i = 0; i < level.Enemies.Count; i++)
+                        {
+                            if (level.Enemies[i].X == tileX && level.Enemies[i].Y == tileY && enemyList.SelectedIndex != i)
+                            {
+                                clickedEntity = true;
+                                tabControl1.SelectedIndex = 4;
+                                enemyList.SelectedIndex = i;
+                            }
+                        }
+                    }
+                    if (!clickedEntity)
+                    {
+                        xCoord.Value = tileX;
+                        yCoord.Value = tileY;
+                        UpdateCoords();
+                    }
+                }
             }
         }
 
@@ -2008,7 +2093,9 @@ namespace MagoBox
         {
             if (level != null)
             {
+
                 Vector2 p = ConvertMouseCoords(new Vector2(e.X, e.Y));
+                
                 if (p.X > level.Width - 1)
                 {
                     tileX = level.Width - 1;
@@ -2039,7 +2126,7 @@ namespace MagoBox
             }
             else if (e.Button == MouseButtons.Left)
             {
-                if (tool == 2)
+                if (tool == 0)
                 {
                     int ix = (int)((tileY * level.Width) + tileX);
 
@@ -2148,16 +2235,26 @@ namespace MagoBox
         }
         private void draw_Click(object sender, EventArgs e)
         {
-            tool = 2;
+            tool = 0;
             draw.Enabled = false;
             pick.Enabled = true;
+            move.Enabled = true;
         }
         private void pick_Click(object sender, EventArgs e)
         {
-            tool = 3;
+            tool = 1;
             draw.Enabled = true;
             pick.Enabled = false;
+            move.Enabled = true;
         }
+        private void move_Click(object sender, EventArgs e)
+        {
+            tool = 2;
+            draw.Enabled = true;
+            pick.Enabled = true;
+            move.Enabled = false;
+        }
+
         private void resetCamera_Click(object sender, EventArgs e)
         {
             camera.zoom = 1.1;
@@ -2991,6 +3088,6 @@ namespace MagoBox
             RefreshObjectLists();
         }
 
-        
+
     }
 }

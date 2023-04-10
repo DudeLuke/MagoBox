@@ -1,4 +1,4 @@
-Magobox reads this txt file until it reaches a line containing "/[Object Category] [Object Type]"
+MagoCrate reads this txt file until it reaches a line containing "/[Object Category] [Object Type]"
 
 Once there, it will print those notes into the window until it reaches
 the dedicated ending substring "/;"
@@ -13,7 +13,7 @@ These notes wouldn't nearly be as full without these extra sources of informatio
 w.atwiki.jp/kirby_return/ -- A LOT of object parameter information
 Microtransagolor -- Various IDs, behaviors, best hacks, and GameBanana guides
 Allister_99 -- Camera Object findings
-MGR -- Some block IDs I missed
+Fyik -- Some block IDs I missed
 
 =-=-=-=-=-= Objects =-=-=-=-=-=
 /Object Default
@@ -327,6 +327,29 @@ Parameter 7 is other bubble settings
 Isn't actually necessary to make Flare Beam switches work, simply focuses the little sparkles of light the switches make when all alight. Parameter values seemingly aren't used, and instead seems to work based on proximity.
 /;
 
+/Object [84]
+This object spawns a Key Dee carrying a Key that uses a special AI depending on this object's variables. It seemingly always faces left at the start and will run in the direction away from the player. "Turn" type Key Dees will turn when hitting a wall, "Jump" type Key Dees will instead jump when hitting a wall. If using a Key Dee that runs when a player gets in range, the range is when a player is horizontally withing 7 tiles of the Key Dee.
+
+Parameter 6 is AI settings
+-- 0X00000Y
+---- X: Key Dee AI Type
+0 - "Turn" type, Runs immediately.
+1 - "Jump" type, Runs immediately.
+2 - "Turn" type, Runs when approached.
+3 - "Jump" type, Runs when approached.
+4 - Stands Still, faces the closest player.
+---- Y: Unknown
+
+
+Parameter 7 sets the Key Dee's EX Size multiplier.
+0: 1x
+1: 1.5x
+2: 2.5x
+3: 0.8x
+4: 0.66x
+5: 1.25x
+/;
+
 /Object [90]
 This is a unique "zone" object like wind and triggers, though it functions differently. Parameter 6 through Parameter 9 are all used instead of just 6 and 7. While the level designers tend to place the objects at the top-left corner of where they affect, the position and range of the zone relies solely on these parameters. Distances are measured in "units" or 1/16th of a tile, so in hex values, 10 (hexadecimal equivalent to 16) is the distance of a single tile.
 
@@ -340,7 +363,7 @@ Parameter 9 - How far to the left it expands.
 
 =-=-=-=-=-= Carriables =-=-=-=-=-=
 /Carriable Default
-Carriables, called "Special Items" in Magobox, are the objects that you can pick up and hold over your head, preventing you from flying, but also allowing you to solve some sort of puzzle involving them.
+Carriables, called "Special Items" in Magobox, are the objects that you can pick up and hold over your head, preventing you from flying, but also usually allowing you to solve some sort of puzzle involving them.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 /;
 
@@ -540,6 +563,14 @@ Direction Type usually changes the starting direction of the enemy, though it ca
 0: Attempts to face the closest player.
 1: Always faces Right.
 2: Always faces Left.
+
+The Size variables will resize enemies when their conditions are met. AD Size will resize enemies when the room has a Grayscale filter used for Another Dimension segments in stages. EX Size will resize enemies when in EX mode.
+0: 1x
+1: 1.5x
+2: 2.5x
+3: 0.8x
+4: 0.66x
+5: 1.25x
 
 Behavior affects an enemy's AI. Enemies usually require a specific behavior to work right (which for most usual enemies is automatically assigned here) but there are some universally compatible behaviors which are as follows:
 0: Does nothing.

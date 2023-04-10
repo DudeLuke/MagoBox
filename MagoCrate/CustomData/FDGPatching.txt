@@ -89,6 +89,7 @@ g3d/step/chara/enemy/StarEffect.brres.cmp
 effect/step/obj/PtEnemyCommon.breff.cmp
 effect/step/obj/PtEnemyCommon.breft.cmp
 g3d/step/sfx/WipeStar.brres.cmp
+g3d/step/sfx/CSArrow.brres.cmp
 
 --- enemies/Common
 effect/step/obj/PtEnemyCommon.breff.cmp
@@ -198,6 +199,8 @@ g3d/step/gimmick/Ship.brres.cmp
 
 --- objects/Magolor
 g3d/step/chara/enemy/Mahoroa.brres.cmp
+g3d/step/sfx/CSTalk.brres.cmp
+:MSG:Ship.msbt
 
 --- objects/Lor Starcutter Arrow Sign
 g3d/step/gimmick/Guideplate.brres.cmp
@@ -211,12 +214,41 @@ effect/step/obj/PtGmkStake.breft.cmp
 g3d/step/gimmick/ScrewSuper.brres.cmp
 
 --- objects/Lor Starcutter Monitor
+effect/step/obj/PtShip.breff.cmp
+effect/step/obj/PtShip.breft.cmp
+g3d/step/gimmick/Monitor00.brres.cmp
+g3d/step/gimmick/Monitor01.brres.cmp
+g3d/step/gimmick/Monitor02.brres.cmp
+g3d/step/gimmick/Monitor03.brres.cmp
+g3d/step/gimmick/Monitor04.brres.cmp
+g3d/step/gimmick/Monitor05.brres.cmp
 
 --- objects/Challenge Stage Door
+effect/step/obj/PtShip.breff.cmp
+effect/step/obj/PtShip.breft.cmp
+lyt/common/abilitystaricon/Bomb.arc.cmp
+lyt/common/abilitystaricon/Highjump.arc.cmp
+lyt/common/abilitystaricon/Normal.arc.cmp
+lyt/common/abilitystaricon/Sword.arc.cmp
+lyt/common/abilitystaricon/Water.arc.cmp
+lyt/common/abilitystaricon/Whip.arc.cmp
+lyt/common/abilitystaricon/Wing.arc.cmp
+lyt/step/challengeship/Main.arc.cmp
+g3d/step/gimmick/DoorChallenge.brres.cmp
+g3d/step/gimmick/ChallengeBoard.brres.cmp
+g3d/step/gimmick/ChallengeIcon.brres.cmp
+g3d/step/gimmick/SphereCount.brres.cmp
 
 --- objects/Dropping Hazard
+g3d/step/gimmick/Icicle.brres.cmp
+g3d/step/gimmick/Icicledrill.brres.cmp
+g3d/step/gimmick/Stalactite.brres.cmp
+g3d/step/gimmick/StalactiteSea.brres.cmp
 
 --- objects/Spinning Bar Hazard
+g3d/step/gimmick/GuruguruRock.brres.cmp
+g3d/step/gimmick/Guruguru.brres.cmp
+g3d/step/gimmick/FireBar.brres.cmp
 
 --- objects/Breakable Roof
 effect/step/obj/PtGmkCrushwall.breff.cmp
@@ -224,6 +256,12 @@ effect/step/obj/PtGmkCrushwall.breft.cmp
 g3d/step/gimmick/CrushWallSuper.brres.cmp
 
 --- objects/Giant Bomb Machine
+effect/step/obj/PtGmkBombMachine.breff.cmp
+effect/step/obj/PtGmkBombMachine.breft.cmp
+effect/step/obj/PtMissile.breff.cmp
+effect/step/obj/PtMissile.breft.cmp
+g3d/step/chara/enemy/Missile.brres.cmp
+g3d/step/gimmick/BombMachine.brres.cmp
 
 --- objects/Giant Bell
 effect/step/obj/PtGmkCrushwallBellSuper.breff.cmp
@@ -231,12 +269,24 @@ effect/step/obj/PtGmkCrushwallBellSuper.breft.cmp
 g3d/step/gimmick/CrushWallBellSuper.brres.cmp
 
 --- objects/Rolling Rock Obstacle
+effect/step/obj/PtGmkBall.breff.cmp
+effect/step/obj/PtGmkBall.breft.cmp
+g3d/step/chara/enemy/BallRock.brres.cmp
 
 --- objects/Rolling Spike Ball Obstacle
+effect/step/obj/PtGmkBall.breff.cmp
+effect/step/obj/PtGmkBall.breft.cmp
+g3d/step/chara/enemy/BallIron.brres.cmp
 
 --- objects/Totem Pole Block
+effect/step/obj/PtGmkTotempole.breff.cmp
+effect/step/obj/PtGmkTotempole.breft.cmp
+g3d/step/gimmick/TotemPoleSuper.brres.cmp
 
 --- objects/Rolling Spike Wheel Obstacle
+effect/step/obj/PtGmkAquaRock.breff.cmp
+effect/step/obj/PtGmkAquaRock.breft.cmp
+g3d/step/chara/enemy/AquaRock.brres.cmp
 
 --- objects/Sandcastle Block
 effect/step/obj/PtGmkSandCastleSuper.breff.cmp
@@ -244,36 +294,79 @@ effect/step/obj/PtGmkSandCastleSuper.breft.cmp
 g3d/step/gimmick/SandCastleSuper.brres.cmp
 
 --- objects/Lor Starcutter Door
+effect/step/obj/PtShip.breff.cmp
+effect/step/obj/PtShip.breft.cmp
+g3d/step/gimmick/SphereCount.brres.cmp
+g3d/step/gimmick/Doorsubgame01.brres.cmp
+g3d/step/gimmick/Doorsubgame01bamboo.brres.cmp
+g3d/step/gimmick/Doorsubgame02.brres.cmp
 
 --- objects/Bite Statue
+effect/step/obj/PtGmkBiteStatue.breff.cmp
+effect/step/obj/PtGmkBiteStatue.breft.cmp
+g3d/step/gimmick/BiteStatue.brres.cmp
 
 --- objects/Pirate Ship Octopus
+effect/step/obj/PtGmkOctpusShip.breff.cmp
+effect/step/obj/PtGmkOctpusShip.breft.cmp
+g3d/step/gimmick/OctpusShip.brres.cmp
 
 --- objects/Rolling Shell Obstacle
+effect/step/obj/PtGmkAquaRock.breff.cmp
+effect/step/obj/PtGmkAquaRock.breft.cmp
+g3d/step/chara/enemy/AquaRockSea.brres.cmp
 
 --- objects/Press Machine
+effect/step/obj/PtGmkPressMachine.breff.cmp
+effect/step/obj/PtGmkPressMachine.breft.cmp
+g3d/step/gimmick/PressMachine.brres.cmp
 
 --- objects/BG Popstar Portal
+g3d/step/gimmick/FinalPopstar.brres.cmp
 
 --- objects/Strike Box
+effect/step/obj/PtStrikeBox.breff.cmp
+effect/step/obj/PtStrikeBox.breft.cmp
+g3d/step/gimmick/StrikeBox.brres.cmp
+g3d/step/gimmick/StrikeBoxL.brres.cmp
 
 --- objects/Lava Geyser
+effect/step/obj/PtGmkLavageyser.breff.cmp
+effect/step/obj/PtGmkLavageyser.breft.cmp
+g3d/step/gimmick/LavaGeyser.brres.cmp
 
 --- objects/Rolling Ice Ball Obstacle
+effect/step/obj/PtGmkBall.breff.cmp
+effect/step/obj/PtGmkBall.breft.cmp
+g3d/step/chara/enemy/BallIce.brres.cmp
 
 --- objects/Giant Bowling Pin
+effect/step/obj/PtIcePinPinata.breff.cmp
+effect/step/obj/PtIcePinPinata.breft.cmp
+g3d/step/gimmick/IcePin.brres.cmp
 
 --- objects/Confetti Ball
+effect/step/obj/PtIcePinPinata.breff.cmp
+effect/step/obj/PtIcePinPinata.breft.cmp
+g3d/step/gimmick/Pinata.brres.cmp
 
 --- objects/Medium Wooden Stake
 
 --- objects/Snowman Body
+effect/step/obj/PtGmkSnowmanBody.breff.cmp
+effect/step/obj/PtGmkSnowmanBody.breft.cmp
+g3d/step/gimmick/SnowmanBody.brres.cmp
 
 --- objects/Circuit End
 
 --- objects/Circuit Block
 
 --- objects/Dangerous Dinner Sun/AD Meteo
+effect/step/obj/PtSun.breff.cmp
+effect/step/obj/PtSun.breft.cmp
+g3d/step/chara/enemy/Sun.brres.cmp
+g3d/step/chara/enemy/Sun.brres.cmp
+--- FINISH
 
 --- objects/Injection Box
 
@@ -283,6 +376,8 @@ g3d/step/gimmick/SandCastleSuper.brres.cmp
 
 --- objects/Key Dee
 StepItLockKey.dn
+effect/step/obj/PtEnemyCommon.breff.cmp
+effect/step/obj/PtEnemyCommon.breft.cmp
 g3d/step/chara/enemy/CarryDee.brres.cmp
 
 --- objects/Sliceable Volcano
@@ -364,6 +459,30 @@ StepHrAbKirbyCrash.dn
 --- carriables/Bouncing Ability Star_a.[23]
 StepHrAbKirbyMike.dn
 
+--- carriables/Bouncing Ability Star_a.[24]
+StepHrAbKirbyLandia.dn
+
+--- carriables/Bouncing Ability Star_a.[25]
+StepHrAbKirbySuperSword.dn
+
+--- carriables/Bouncing Ability Star_a.[26]
+StepHrAbKirbySuperFire.dn
+
+--- carriables/Bouncing Ability Star_a.[27]
+StepHrAbKirbySuperBeam.dn
+
+--- carriables/Bouncing Ability Star_a.[28]
+StepHrAbKirbySuperHammer.dn
+
+--- carriables/Bouncing Ability Star_a.[29]
+StepHrAbKirbySuperIce.dn
+
+--- carriables/Bouncing Ability Star_a.[30]
+StepHrAbKirbyMike.dn
+
+--- carriables/Bouncing Ability Star_a.[31]
+StepHrAbKirbyMike.dn
+
 --- carriables/Key
 StepItLockKey.dn
 
@@ -404,75 +523,110 @@ g3d/step/effect/common/OneUpGet.brres.cmp
 --- items/Maxim Tomato
 g3d/step/item/MaxTomato.brres.cmp
 
---- items/Food
+--- items/Food_b.[0]
+g3d/step/item/food/Cherry.brres.cmp
 
 --- items/Food_b.[1]
+g3d/step/item/food/Humburger.brres.cmp
 
 --- items/Food_b.[2]
+g3d/step/item/food/Juice.brres.cmp
 
 --- items/Food_b.[3]
+g3d/step/item/food/Meat.brres.cmp
 
 --- items/Food_b.[4]
+g3d/step/item/food/Potato.brres.cmp
 
 --- items/Food_b.[5]
+g3d/step/item/food/Banana.brres.cmp
 
 --- items/Food_b.[6]
+g3d/step/item/food/Grape.brres.cmp
 
 --- items/Food_b.[7]
+g3d/step/item/food/Pineapple.brres.cmp
 
 --- items/Food_b.[8]
+g3d/step/item/food/Doughnut.brres.cmp
 
 --- items/Food_b.[9]
+g3d/step/item/food/Hotdog.brres.cmp
 
 --- items/Food_b.[10]
+g3d/step/item/food/Pudding.brres.cmp
 
 --- items/Food_b.[11]
+g3d/step/item/food/Tomato.brres.cmp
 
 --- items/Food_b.[12]
+g3d/step/item/food/Candy.brres.cmp
 
 --- items/Food_b.[13]
+g3d/step/item/food/ChineseNoodles.brres.cmp
 
 --- items/Food_b.[14]
+g3d/step/item/food/ChocoCake.brres.cmp
 
 --- items/Food_b.[15]
+g3d/step/item/food/Curry.brres.cmp
 
 --- items/Food_b.[16]
+g3d/step/item/food/LemonJuice.brres.cmp
 
 --- items/Food_b.[17]
+g3d/step/item/food/Omelet.brres.cmp
 
 --- items/Food_b.[18]
+g3d/step/item/food/Pizza.brres.cmp
 
 --- items/Food_b.[19]
+g3d/step/item/food/Sandwich.brres.cmp
 
 --- items/Food_b.[20]
+g3d/step/item/food/ShortCake.brres.cmp
 
 --- items/Food_b.[21]
+g3d/step/item/food/SoftCream.brres.cmp
 
 --- items/Food_b.[22]
+g3d/step/item/food/FriedRice.brres.cmp
 
 --- items/Food_b.[23]
+g3d/step/item/food/Gyoza.brres.cmp
 
 --- items/Food_b.[24]
+g3d/step/item/food/Spaghetti.brres.cmp
 
 --- items/Food_b.[25]
+g3d/step/item/food/CupCake.brres.cmp
 
 --- items/Food_b.[26]
+g3d/step/item/food/DoughnutPink.brres.cmp
 
 --- items/Food_b.[27]
+g3d/step/item/food/HotCake.brres.cmp
 
 --- items/Food_b.[28]
+g3d/step/item/food/Icecream.brres.cmp
 
 --- items/Food_b.[29]
+g3d/step/item/food/Parfait.brres.cmp
 
 --- items/Food_b.[30]
+g3d/step/item/food/Sousage.brres.cmp
 
 --- items/Food_b.[31]
+g3d/step/item/food/Tea.brres.cmp
 
 --- items/Food_b.[32]
+g3d/step/item/food/Nikuman.brres.cmp
 
 --- items/Food_b.[33]
+g3d/step/item/food/Milk.brres.cmp
 
 --- items/Food_b.[34]
+g3d/step/item/food/SoftCreamPink.brres.cmp
 
 --- items/Energy Sphere
 g3d/step/item/EnergySphere.brres.cmp
@@ -565,6 +719,30 @@ StepHrAbKirbyCrash.dn
 --- items/Copy Essence_b.[23]
 StepHrAbKirbyMike.dn
 
+--- items/Copy Essence_b.[24]
+StepHrAbKirbyLandia.dn
+
+--- items/Copy Essence_b.[25]
+StepHrAbKirbySuperSword.dn
+
+--- items/Copy Essence_b.[26]
+StepHrAbKirbySuperFire.dn
+
+--- items/Copy Essence_b.[27]
+StepHrAbKirbySuperBeam.dn
+
+--- items/Copy Essence_b.[28]
+StepHrAbKirbySuperHammer.dn
+
+--- items/Copy Essence_b.[29]
+StepHrAbKirbySuperIce.dn
+
+--- items/Copy Essence_b.[30]
+StepHrAbKirbyMike.dn
+
+--- items/Copy Essence_b.[31]
+StepHrAbKirbyMike.dn
+
 --- items/Challenge Coin_b.[0]
 StepItScoreCoin.dn
 g3d/step/info/score/Score100.brres.cmp
@@ -580,11 +758,92 @@ g3d/step/item/MaxTomato.brres.cmp
 g3d/step/item/FlyShipOar.brres.cmp
 
 --- items/Lor Part_b.[1]
-g3d/step/item/FlyShipOar.brres.cmp
+g3d/step/item/FlyShipWingR.brres.cmp
+
+--- items/Lor Part_b.[2]
+g3d/step/item/FlyShipWingL.brres.cmp
+
+--- items/Lor Part_b.[3]
+g3d/step/item/FlyShipFigureHead.brres.cmp
+
+--- items/Lor Part_b.[4]
+g3d/step/item/FlyShipMast.brres.cmp
 
 --- items/Super Ability Star
 g3d/step/item/spabilitystar/Base.brres.cmp
 g3d/step/item/spabilitystar/Sword.brres.cmp
+
+--- items/Super Ability Star_b.[1]
+StepHrAbKirbySword.dn
+
+--- items/Super Ability Star_b.[2]
+StepHrAbKirbyCutter.dn
+
+--- items/Super Ability Star_b.[3]
+StepHrAbKirbyLeaf.dn
+
+--- items/Super Ability Star_b.[4]
+StepHrAbKirbyWhip.dn
+
+--- items/Super Ability Star_b.[5]
+StepHrAbKirbyFire.dn
+
+--- items/Super Ability Star_b.[6]
+StepHrAbKirbyNeedle.dn
+
+--- items/Super Ability Star_b.[7]
+StepHrAbKirbyBeam.dn
+
+--- items/Super Ability Star_b.[8]
+StepHrAbKirbySpark.dn
+
+--- items/Super Ability Star_b.[9]
+StepHrAbKirbyStone.dn
+
+--- items/Super Ability Star_b.[10]
+StepHrAbKirbySleep.dn
+
+--- items/Super Ability Star_b.[11]
+StepHrAbKirbyParasol.dn
+
+--- items/Super Ability Star_b.[12]
+StepHrAbKirbyWater.dn
+
+--- items/Super Ability Star_b.[13]
+StepHrAbKirbyHighjump.dn
+
+--- items/Super Ability Star_b.[14]
+StepHrAbKirbyTornado.dn
+
+--- items/Super Ability Star_b.[15]
+StepHrAbKirbyBomb.dn
+
+--- items/Super Ability Star_b.[16]
+StepHrAbKirbySpear.dn
+
+--- items/Super Ability Star_b.[17]
+StepHrAbKirbyHammer.dn
+
+--- items/Super Ability Star_b.[18]
+StepHrAbKirbyIce.dn
+
+--- items/Super Ability Star_b.[19]
+StepHrAbKirbyWing.dn
+
+--- items/Super Ability Star_b.[20]
+StepHrAbKirbyNinja.dn
+
+--- items/Super Ability Star_b.[21]
+StepHrAbKirbyFighter.dn
+
+--- items/Super Ability Star_b.[22]
+StepHrAbKirbyCrash.dn
+
+--- items/Super Ability Star_b.[23]
+StepHrAbKirbyMike.dn
+
+--- items/Super Ability Star_b.[24]
+StepHrAbKirbyLandia.dn
 
 --- items/Super Ability Star_b.[25]
 StepHrAbKirbySuperSword.dn
@@ -641,60 +900,180 @@ effect/step/obj/PtTornado.breff.cmp
 effect/step/obj/PtTornado.breft.cmp
 effect/step/obj/PtWhispy.breff.cmp
 effect/step/obj/PtWhispy.breft.cmp
+g3d/step/chara/enemy/whispy/Motion.brres.cmp
+g3d/step/chara/enemy/whispyapple/Model.brres.cmp
+g3d/step/chara/enemy/whispyapple/ModelPoison.brres.cmp
+g3d/step/chara/enemy/whispyapple/Motion.brres.cmp
+g3d/step/chara/enemy/Bront.brres.cmp
+g3d/step/chara/enemy/Como.brres.cmp
+g3d/step/chara/enemy/Dee.brres.cmp
+g3d/step/chara/enemy/Gordo.brres.cmp
+g3d/step/chara/enemy/Scarfy.brres.cmp
+g3d/step/item/FlyShipOar.brres.cmp
+g3d/step/effect/tornado/Attack.brres.cmp
+g3d/step/effect/whispy/BigVacuum.brres.cmp
+g3d/step/effect/whispy/Tear.brres.cmp
+g3d/step/weapon/como/Thread.brres.cmp
+g3d/step/weapon/whispy/breath/Model.brres.cmp
+g3d/step/weapon/whispy/breath/ModelEx.brres.cmp
+g3d/step/weapon/whispy/breath/Motion.brres.cmp
+g3d/step/weapon/whispy/Root.brres.cmp
 
 --- bosses/Gigant Edge
 StepHrAbKirbySword.dn
+:EXFlag:g3d/step/chara/enemy/gigantedge/ModelEx.brres.cmp:g3d/step/chara/enemy/gigantedge/Model.brres.cmp
+g3d/step/chara/enemy/gigantedge/Motion.brres.cmp
+g3d/step/effect/sword/GigantEdgeAttack.brres.cmp
 
 --- bosses/Mr. Dooter
 StepBsBoss_Doubter.dn
 
 --- bosses/Water Galboros
 StepHrAbKirbyWater.dn
+:EXFlag:g3d/step/chara/enemy/watergalboros/ModelEx.brres.cmp:g3d/step/chara/enemy/watergalboros/Model.brres.cmp
+g3d/step/chara/enemy/watergalboros/Motion.brres.cmp
+g3d/step/weapon/wgalbo/Water.brres.cmp
+g3d/step/weapon/wgalbo/WaterWarp.brres.cmp
 
 --- bosses/King Doo
 StepHrAbKirbyBeam.dn
+:EXFlag:g3d/step/chara/enemy/beholdoo/ModelEx.brres.cmp:g3d/step/chara/enemy/beholdoo/Model.brres.cmp
+g3d/step/chara/enemy/beholdoo/Motion.brres.cmp
 
 --- bosses/Kibble Blade
 StepHrAbKirbyCutter.dn
+:EXFlag:g3d/step/chara/enemy/zankibble/ModelEx.brres.cmp:g3d/step/chara/enemy/zankibble/Model.brres.cmp
+g3d/step/chara/enemy/zankibble/Motion.brres.cmp
+g3d/step/weapon/zankibble/Cutter.brres.cmp
 
 --- bosses/Bonkers
 StepHrAbKirbyHammer.dn
+:EXFlag:g3d/step/chara/enemy/bonkers/ModelEx.brres.cmp:g3d/step/chara/enemy/bonkers/Model.brres.cmp
+g3d/step/chara/enemy/bonkers/Motion.brres.cmp
+g3d/step/weapon/bonkers/Coconutbomb.brres.cmp
 
 --- bosses/Bonkers_super
 StepHrAbKirbySuperHammer.dn
+:EXFlag:g3d/step/chara/enemy/bonkers/ModelSpEx.brres.cmp:g3d/step/chara/enemy/bonkers/ModelSp.brres.cmp
+g3d/step/chara/enemy/bonkers/Motion.brres.cmp
+g3d/step/weapon/bonkers/Coconutbomb.brres.cmp
+g3d/step/item/spabilitystar/Base.brres.cmp
+g3d/step/item/spabilitystar/Sword.brres.cmp
 
 --- bosses/Dubior
 StepHrAbKirbySpark.dn
+:EXFlag:g3d/step/chara/enemy/dubior/ModelEx.brres.cmp:g3d/step/chara/enemy/dubior/Model.brres.cmp
+g3d/step/chara/enemy/dubior/Motion.brres.cmp
+g3d/step/chara/enemy/dubiorjr/Model.brres.cmp
+g3d/step/chara/enemy/dubiorjr/ModelEx.brres.cmp
+g3d/step/chara/enemy/dubiorjr/Motion.brres.cmp
+g3d/step/weapon/dubior/Spark.brres.cmp
 
 --- bosses/Grand Doomer
+StepBsBoss_GrandLowper.dn
 
 --- bosses/Moundo
 StepHrAbKirbyStone.dn
+:EXFlag:g3d/step/chara/enemy/moundeath/ModelEx.brres.cmp:g3d/step/chara/enemy/moundeath/Model.brres.cmp
+effect/step/obj/PtMoundeath.breff.cmp
+effect/step/obj/PtMoundeath.breft.cmp
+g3d/step/chara/enemy/moundeath/Motion.brres.cmp
 
 --- bosses/Metal General
+StepBsBoss_MetalGeneral.dn
 
 --- bosses/Fatty Puffer
+StepHrAbKirbyWater.dn
+:EXFlag:g3d/step/chara/enemy/fattybuffer/ModelEx.brres.cmp:g3d/step/chara/enemy/fattybuffer/Model.brres.cmp
+effect/step/obj/PtFattyBuffer.breff.cmp
+effect/step/obj/PtFattyBuffer.breft.cmp
+g3d/step/chara/enemy/Blipper.brres.cmp
+g3d/step/chara/enemy/fattybuffer/Motion.brres.cmp
+g3d/step/chara/enemy/fattybufferjr/Model.brres.cmp
+g3d/step/chara/enemy/fattybufferjr/ModelEx.brres.cmp
+g3d/step/chara/enemy/fattybufferjr/Motion.brres.cmp
+g3d/step/chara/enemy/FattyBufferStalactite.brres.cmp
+g3d/step/effect/fattybuffer/WaterCannon.brres.cmp
+g3d/step/weapon/fattybuffer/Watermain.brres.cmp
+g3d/step/weapon/fattybuffer/Waterwarp.brres.cmp
+g3d/step/item/FlyShipWingL.brres.cmp
 
 --- bosses/Goriath
+StepHrAbKirbyIce.dn
+:EXFlag:g3d/step/chara/enemy/goliath/ModelEx.brres.cmp:g3d/step/chara/enemy/goliath/Model.brres.cmp
+effect/step/obj/PtGoliath.breff.cmp
+effect/step/obj/PtGoliath.breft.cmp
+g3d/step/chara/enemy/goliath/Motion.brres.cmp
+g3d/step/chara/enemy/GoliathIceball.brres.cmp
+g3d/step/chara/enemy/GoliathIcicle.brres.cmp
+g3d/step/chara/enemy/GoliathSnowball.brres.cmp
+g3d/step/effect/goliath/Howl.brres.cmp
+g3d/step/item/FlyShipFigureHead.brres.cmp
 
 --- bosses/Lor Starcutter
+:EXFlag:g3d/step/chara/enemy/goliath/ModelEx.brres.cmp:g3d/step/chara/enemy/goliath/Model.brres.cmp
+effect/step/obj/PtMahoroaBattle1.breff.cmp
+effect/step/obj/PtMahoroaBattle1.breft.cmp
+effect/step/obj/PtRoah.breff.cmp
+effect/step/obj/PtRoah.breft.cmp
+g3d/step/chara/enemy/mahoroabattle1/Model.brres.cmp
+g3d/step/chara/enemy/mahoroabattle1/Motion.brres.cmp
+g3d/step/chara/enemy/roah/Motion.brres.cmp
+g3d/step/effect/roah/AppearWarpHole.brres.cmp
+g3d/step/effect/roah/EnergyBarrier.brres.cmp
+g3d/step/effect/roah/Jet.brres.cmp
+g3d/step/effect/roah/Tornado.brres.cmp
+g3d/step/effect/roah/TornadoEnd.brres.cmp
+g3d/step/weapon/roah/Energysphere.brres.cmp
+g3d/step/weapon/roah/Oar.brres.cmp
+g3d/step/weapon/roah/Star.brres.cmp
+g3d/step/weapon/roah/Wing.brres.cmp
+g3d/step/weapon/roahex/Energysphere.brres.cmp
+g3d/step/weapon/roahex/Oar.brres.cmp
+g3d/step/weapon/roahex/Star.brres.cmp
+g3d/step/weapon/roahex/Wing.brres.cmp
 
 --- bosses/Magolor
+StepBsBoss_MahoroahBattle1.dn
 
 --- bosses/Landia
+effect/step/obj/PtLandia.breff.cmp
+effect/step/obj/PtLandia.breft.cmp
+g3d/step/chara/enemy/landia/Model.brres.cmp
+g3d/step/chara/enemy/landia/ModelEx.brres.cmp
+g3d/step/chara/enemy/landia/Motion.brres.cmp
+g3d/step/chara/enemy/landiasingle/Model.brres.cmp
+g3d/step/chara/enemy/landiasingle/ModelEx.brres.cmp
+g3d/step/chara/enemy/landiasingle/Motion.brres.cmp
+g3d/step/weapon/landia/Grandcross.brres.cmp
+g3d/step/sfx/CSTalk.brres.cmp
 
 --- bosses/Magolor Soul
+StepBsBoss_MahoroahBattle2.dn
 
 --- bosses/HR-D3/Metal General (Story)
+StepBsBoss_MetalGeneral.dn
 
 --- bosses/Galacta Knight
+effect/step/obj/PtGalactic.breff.cmp
+effect/step/obj/PtGalactic.breft.cmp
+g3d/step/chara/enemy/Galactic.brres.cmp
+g3d/step/effect/galactic/Attack.brres.cmp
+g3d/step/effect/galactic/SuperAura.brres.cmp
+g3d/step/effect/galactic/Tornado.brres.cmp
+g3d/step/weapon/galactic/Crystal.brres.cmp
+g3d/step/weapon/galactic/RevolutionSword.brres.cmp
 
 --- enemies/Sir Kibble
 StepHrAbKirbyCutter.dn
+g3d/step/chara/enemy/Sirkibble.brres.cmp
+g3d/step/weapon/sirkibble/Cutter.brres.cmp
 
 --- enemies/Bronto Burt
+g3d/step/chara/enemy/Bront.brres.cmp
 
 --- enemies/Waddle Dee
+g3d/step/chara/enemy/Dee.brres.cmp
 
 --- enemies/Blade Knight
 StepHrAbKirbySword.dn
@@ -709,6 +1088,10 @@ g3d/step/item/spabilitystar/Base.brres.cmp
 g3d/step/item/spabilitystar/Sword.brres.cmp
 
 --- enemies/Cappy
+effect/step/obj/PtCappy.breff.cmp
+effect/step/obj/PtCappy.breft.cmp
+g3d/step/chara/enemy/Cappy.brres.cmp
+g3d/step/chara/enemy/CappyHat.brres.cmp
 
 --- enemies/Hothead
 StepHrAbKirbyFire.dn
@@ -716,228 +1099,429 @@ g3d/step/chara/enemy/Hothead.brres.cmp
 g3d/step/weapon/hothead/HotHeadFire.brres.cmp
 
 --- enemies/Hothead_super
-StepHrAbKirbySuperFire.dn
+StepEnHotheadSuper.dn
 g3d/step/item/spabilitystar/Base.brres.cmp
-g3d/step/item/spabilitystar/Fire.brres.cmp
-g3d/step/chara/enemy/SpHothead.brres.cmp
 
 --- enemies/Knuckle Joe
 StepHrAbKirbyFighter.dn
+g3d/step/chara/enemy/Joe.brres.cmp
 
 --- enemies/Puppet Dee
+effect/step/obj/PtPuppetDee.breff.cmp
+effect/step/obj/PtPuppetDee.breft.cmp
+g3d/step/chara/enemy/PuppetDee.brres.cmp
 
 --- enemies/Armor Dee
+effect/step/obj/PtArmorDee.breff.cmp
+effect/step/obj/PtArmorDee.breft.cmp
+g3d/step/chara/enemy/ArmorDee.brres.cmp
 
 --- enemies/Como
+g3d/step/chara/enemy/Como.brres.cmp
+g3d/step/weapon/como/Thread.brres.cmp
 
 --- enemies/Gordo
+g3d/step/chara/enemy/Gordo.brres.cmp
 
 --- enemies/Togekuki
 StepHrAbKirbyNeedle.dn
+g3d/step/chara/enemy/Togekuki.brres.cmp
 
 --- enemies/Whippy
 StepHrAbKirbyWhip.dn
+g3d/step/chara/enemy/Whippy.brres.cmp
 
 --- enemies/Pacto
+g3d/step/chara/enemy/Pacto.brres.cmp
 
 --- enemies/Shotzo
+effect/step/obj/PtShotzo.breff.cmp
+effect/step/obj/PtShotzo.breft.cmp
+g3d/step/chara/enemy/Shotzo.brres.cmp
+g3d/step/weapon/Shotzo/Shot.brres.cmp
 
 --- enemies/Leafan
 StepHrAbKirbyLeaf.dn
+g3d/step/chara/enemy/Leafan.brres.cmp
+g3d/step/weapon/leafan/Leafanseed.brres.cmp
 
 --- enemies/Waddle Doo
 StepHrAbKirbyBeam.dn
+g3d/step/chara/enemy/Doo.brres.cmp
+
+--- enemies/Waddle Doo_super
+StepHrAbKirbySuperBeam.dn
+g3d/step/chara/enemy/SpDoo.brres.cmp
+g3d/step/item/spabilitystar/Base.brres.cmp
 
 --- enemies/Bouncy
+g3d/step/chara/enemy/Bouncy.brres.cmp
 
 --- enemies/Sparky
 StepHrAbKirbySpark.dn
+g3d/step/chara/enemy/Sparky.brres.cmp
 
 --- enemies/Needlous
 StepHrAbKirbyNeedle.dn
 
 --- enemies/Broom Hatter
+effect/step/obj/PtBroom.breff.cmp
+effect/step/obj/PtBroom.breft.cmp
+g3d/step/chara/enemy/Broom.brres.cmp
 
 --- enemies/Scarfy
+g3d/step/chara/enemy/Scarfy.brres.cmp
 
 --- enemies/Nruff
+g3d/step/chara/enemy/Nruff.brres.cmp
 
 --- enemies/Flamer
 StepHrAbKirbyFire.dn
+g3d/step/chara/enemy/Flamer.brres.cmp
 
 --- enemies/Tick
 StepHrAbKirbyNeedle.dn
+g3d/step/chara/enemy/Tick.brres.cmp
 
 --- enemies/Water Galbo
 StepHrAbKirbyWater.dn
+g3d/step/chara/enemy/Wgalbo.brres.cmp
+g3d/step/weapon/wgalbo/Water.brres.cmp
+g3d/step/weapon/wgalbo/WaterWarp.brres.cmp
 
 --- enemies/Rocky
 StepHrAbKirbyStone.dn
+g3d/step/chara/enemy/Rocky.brres.cmp
 
 --- enemies/Bulby
 StepHrAbKirbyLeaf.dn
+g3d/step/chara/enemy/Bulby.brres.cmp
 
 --- enemies/Starman
 StepHrAbKirbyHighjump.dn
+g3d/step/chara/enemy/Starman.brres.cmp
 
 --- enemies/Twister
 StepHrAbKirbyTornado.dn
+g3d/step/chara/enemy/Twister.brres.cmp
 
 --- enemies/Poppy Bros Jr
 StepHrAbKirbyBomb.dn
+effect/step/obj/PtBomb.breff.cmp
+effect/step/obj/PtBomb.breft.cmp
+g3d/step/chara/enemy/PoppyJr.brres.cmp
+g3d/step/weapon/poppyjr/Bomb.brres.cmp
 
 --- enemies/Noddy
 StepHrAbKirbySleep.dn
+g3d/step/chara/enemy/Noddy.brres.cmp
 
 --- enemies/Cerulean
+g3d/step/chara/enemy/Cerulean.brres.cmp
 
 --- enemies/Blipper
+g3d/step/chara/enemy/Blipper.brres.cmp
 
 --- enemies/Gigatzo
+effect/step/obj/PtGigatzo.breff.cmp
+effect/step/obj/PtGigatzo.breft.cmp
+effect/step/obj/PtGigatzoBomb.breff.cmp
+effect/step/obj/PtGigatzoBomb.breft.cmp
+g3d/step/chara/enemy/Gigatzo.brres.cmp
+g3d/step/weapon/gigatzo/Bomb.brres.cmp
 
 --- enemies/Babut
+g3d/step/chara/enemy/Babut.brres.cmp
 
 --- enemies/Glunk
+effect/step/obj/PtGlunk.breff.cmp
+effect/step/obj/PtGlunk.breft.cmp
+g3d/step/chara/enemy/Glunk.brres.cmp
+g3d/step/weapon/glunk/Shot.brres.cmp
 
 --- enemies/Bouncy Sis
+g3d/step/chara/enemy/SisterBound.brres.cmp
 
 --- enemies/Mumbies
+g3d/step/chara/enemy/Mumbies.brres.cmp
 
 --- enemies/Parasol Waddle Dee
 StepHrAbKirbyParasol.dn
+g3d/step/chara/enemy/Dee.brres.cmp
+g3d/step/chara/enemy/Parasol.brres.cmp
 
 --- enemies/Kabu
+g3d/step/chara/enemy/Kabu.brres.cmp
 
 --- enemies/Parasol Waddle Doo
-StepHrAbKirbyParasol.dn
-StepHrAbKirbyBeam.dn
+StepEnParasoldoo.dn
 
 --- enemies/Mopoo
+effect/step/obj/PtMopoo.breff.cmp
+effect/step/obj/PtMopoo.breft.cmp
+g3d/step/chara/enemy/Mopoo.brres.cmp
 
 --- enemies/Foley
 StepHrAbKirbyLeaf.dn
+g3d/step/chara/enemy/Foley.brres.cmp
+g3d/step/weapon/foley/Leaf.brres.cmp
 
 --- enemies/Juckle
 StepHrAbKirbyCutter.dn
+g3d/step/chara/enemy/Juckle.brres.cmp
+g3d/step/weapon/juckle/Cutter.brres.cmp
 
 --- enemies/Bowby
+effect/step/obj/PtBowby.breff.cmp
+effect/step/obj/PtBowby.breft.cmp
+g3d/step/chara/enemy/Bowby.brres.cmp
+g3d/step/weapon/bowby/Arrow.brres.cmp
 
 --- enemies/Owgulf
 StepHrAbKirbyWing.dn
+g3d/step/chara/enemy/Owgulf.brres.cmp
+g3d/step/weapon/owgulf/Feather.brres.cmp
 
 --- enemies/Degout
+g3d/step/chara/enemy/Degout.brres.cmp
 
 --- enemies/Sheld
+g3d/step/chara/enemy/Sheld.brres.cmp
 
 --- enemies/Lanzer
 StepHrAbKirbySpear.dn
+g3d/step/chara/enemy/Lanzer.brres.cmp
 
 --- enemies/Chilly
 StepHrAbKirbyIce.dn
+g3d/step/chara/enemy/Chilly.brres.cmp
 
---- enemies/Chilly.Super
-StepHrAbKirbySuperIce.dn
+--- enemies/Chilly_super
+StepEnChillySuper.dn
+g3d/step/item/spabilitystar/Base.brres.cmp
 
 --- enemies/Moonja
 StepHrAbKirbyNinja.dn
+g3d/step/chara/enemy/Tsukikage.brres.cmp
+g3d/step/weapon/tsukikage/Shuriken.brres.cmp
 
 --- enemies/Pluid
 StepHrAbKirbyWater.dn
+g3d/step/chara/enemy/Pluid.brres.cmp
 
 --- enemies/Gemra
 StepHrAbKirbyBeam.dn
+g3d/step/chara/enemy/Gemra.brres.cmp
 
 --- enemies/Wapod Pot
+effect/step/obj/PtWapod.breff.cmp
+effect/step/obj/PtWapod.breft.cmp
+g3d/step/chara/enemy/Wapod.brres.cmp
+g3d/step/chara/enemy/WapodPod.brres.cmp
 
 --- enemies/Volttzo
+effect/step/obj/PtVolttzo.breff.cmp
+effect/step/obj/PtVolttzo.breft.cmp
+g3d/step/chara/enemy/Volttzo.brres.cmp
+g3d/step/weapon/volttzo/Bomb.brres.cmp
 
 --- enemies/Barbar
+effect/step/obj/PtBarbar.breff.cmp
+effect/step/obj/PtBarbar.breft.cmp
+g3d/step/chara/enemy/Barbar.brres.cmp
 
 --- enemies/Barracu
+g3d/step/chara/enemy/Barracu.brres.cmp
 
 --- enemies/Squishy
+g3d/step/chara/enemy/Squishy.brres.cmp
 
 --- enemies/Clayn
+g3d/step/chara/enemy/Clayn.brres.cmp
 
 --- enemies/Pierce
 StepHrAbKirbySpear.dn
+g3d/step/chara/enemy/Pierce.brres.cmp
 
 --- enemies/Searches
 StepHrAbKirbyCrash.dn
+g3d/step/chara/enemy/Searches.brres.cmp
 
 --- enemies/Walky
 StepHrAbKirbyMike.dn
+g3d/step/chara/enemy/Walky.brres.cmp
 
 --- enemies/Elec
 StepHrAbKirbySpark.dn
+g3d/step/chara/enemy/Elec.brres.cmp
 
 --- enemies/Rope Waddle Dee
+g3d/step/chara/enemy/Dee.brres.cmp
+g3d/step/weapon/rope/Swingrope.brres.cmp
 
 --- enemies/Rope Waddle Doo
 StepHrAbKirbyBeam.dn
+g3d/step/chara/enemy/Doo.brres.cmp
+g3d/step/weapon/rope/Swingrope.brres.cmp
 
 --- enemies/Sodory
 StepHrAbKirbySword.dn
+g3d/step/chara/enemy/Sodory.brres.cmp
+g3d/step/effect/sword/SodoryAttack.brres.cmp
+g3d/step/effect/sword/SodoryAttackAir.brres.cmp
 
 --- enemies/Galbo
-StepHrAbKirbyWater.dn
+StepHrAbKirbyFire.dn
+g3d/step/chara/enemy/Galbo.brres.cmp
 
 --- enemies/Snowl
 StepHrAbKirbyIce.dn
+g3d/step/chara/enemy/Snowl.brres.cmp
 
 --- enemies/Halcandle Dee
+g3d/step/chara/enemy/Halcandledee.brres.cmp
 
 --- enemies/Coldtzo
+effect/step/obj/PtColdtzo.breff.cmp
+effect/step/obj/PtColdtzo.breft.cmp
+effect/step/obj/PtColdtzoBomb.breff.cmp
+effect/step/obj/PtColdtzoBomb.breft.cmp
+g3d/step/chara/enemy/Coldtzo.brres.cmp
+g3d/step/weapon/coldtzo/Bomb.brres.cmp
 
 --- enemies/Coconut Bomb
+g3d/step/weapon/bonkers/Coconutbomb.brres.cmp
 
 --- enemies/Craby
+g3d/step/chara/enemy/Craby.brres.cmp
 
 --- enemies/Pacloud
+g3d/step/chara/enemy/Pacloud.brres.cmp
 
 --- enemies/Iron Barbar
+effect/step/obj/PtIronBarbar.breff.cmp
+effect/step/obj/PtIronBarbar.breft.cmp
+g3d/step/chara/enemy/IronBarbar.brres.cmp
 
 --- enemies/Walf
+g3d/step/chara/enemy/Walf.brres.cmp
 
 --- enemies/Larpa
+effect/step/obj/PtLarpa.breff.cmp
+effect/step/obj/PtLarpa.breft.cmp
+g3d/step/chara/enemy/Larpa.brres.cmp
 
 --- enemies/Liepa
+effect/step/obj/PtLiepa.breff.cmp
+effect/step/obj/PtLiepa.breft.cmp
+g3d/step/chara/enemy/Liepa.brres.cmp
+g3d/step/weapon/Liepa/Shot.brres.cmp
 
 --- enemies/Lupa
+effect/step/obj/PtLupa.breff.cmp
+effect/step/obj/PtLupa.breft.cmp
+g3d/step/chara/enemy/Lupa.brres.cmp
+g3d/step/weapon/Lupa/Shot.brres.cmp
 
 --- enemies/Leaper
+effect/step/obj/PtLeaper.breff.cmp
+effect/step/obj/PtLeaper.breft.cmp
+g3d/step/chara/enemy/Leaper.brres.cmp
+g3d/step/weapon/Leaper/ThornShot.brres.cmp
+g3d/step/weapon/Leaper/Shot.brres.cmp
 
 --- enemies/Halcandran Bronto Burt
+g3d/step/chara/enemy/HalcantBurt.brres.cmp
 
 --- enemies/Halcandran Armor Dee
+effect/step/obj/PtHalcandlearmordee.breff.cmp
+effect/step/obj/PtHalcandlearmordee.breft.cmp
+g3d/step/chara/enemy/HalcandleArmorDee.brres.cmp
 
 --- enemies/Waddle Dee on Nruff
+g3d/step/chara/enemy/Nruff.brres.cmp
+g3d/step/chara/enemy/Dee.brres.cmp
 
 --- enemies/Hunter Degout
+g3d/step/chara/enemy/ChaseKeyDegout.brres.cmp
 
 --- enemies/Hunter Scarfy
+g3d/step/chara/enemy/ChaseKeyScarfy.brres.cmp
+
+--- enemies/Key Dee (Without Key)
+g3d/step/chara/enemy/CarryDee.brres.cmp
 
 --- enemies/Sandbag
+g3d/step/chara/enemy/Sandbag.brres.cmp
 
 --- enemies/Parasol Halcandle Dee
 StepHrAbKirbyParasol.dn
+g3d/step/chara/enemy/Halcandledee.brres.cmp
+g3d/step/chara/enemy/Parasol.brres.cmp
 
 --- enemies/Halcandran Bouncy
+g3d/step/chara/enemy/HalcanBouncy.brres.cmp
 
 --- enemies/Halcandran Bowby
-
---- enemies/Sun
+effect/step/obj/PtHalcanBowby.breff.cmp
+effect/step/obj/PtHalcanBowby.breft.cmp
+g3d/step/chara/enemy/HalcanBowby.brres.cmp
+g3d/step/weapon/halcanbowby/Arrow.brres.cmp
 
 --- enemies/Whispy Apple
 
 --- enemies/Poison Whispy Apple
 
+--- enemies/Mr. Dooter Skull
+
+--- enemies/Mr. Dooter Flaming Skull
+
 --- enemies/Mr. Dooter Snake
+
+--- enemies/Mr. Dooter Bomb
+
+--- enemies/Enemy Parasol
+
+--- enemies/Dubior Jr.
 
 --- enemies/Poppy Jr. Bomb
 StepHrAbKirbyBomb.dn
 
+--- enemies/Grand Doomer Shot
+
+--- enemies/Kibble Blade Cutter
+
+--- enemies/Bonkers Coconut Bomb
+
+--- enemies/Dubior Spark
+
+--- enemies/Metal General Drone
+
+--- enemies/Metal General Drone (Alt)
+
+--- enemies/Metal General Bomb
+
+--- enemies/Metal General Missile
+
+--- enemies/Metal General Patriot Missile
+
+--- enemies/Metal General Spark Bomb
+
 --- enemies/Fatty Puffer Jr
+
+--- enemies/Fatty Puffer Stalactite
+
+--- enemies/Goriath Snowball
+
+--- enemies/Goriath Ice Ball
+
+--- enemies/Goriath Icicle
+
+--- enemies/Missile
+
+--- enemies/Magolor Phase 1 Revolution Sphere
+
+--- enemies/Magolor Phase 1 Projectile Doomer
 
 --- enemies/Wapod
 
