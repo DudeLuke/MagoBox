@@ -250,7 +250,7 @@ namespace RDLLVL
             {113, "Enemy Parasol" },
             {114, "Dubior Jr." },
             {115, "Poppy Jr. Bomb" },
-            {115, "Grand Doomer Shot" },
+            {116, "Grand Doomer Shot" },
             {117, "Kibble Blade Cutter" },
             {118, "Bonkers Coconut Bomb" },
             {119, "Dubior Spark" },
@@ -265,10 +265,10 @@ namespace RDLLVL
             {129, "Wapod" },
             {130, "Goriath Snowball" },
             {131, "Goriath Ice Ball" },
-            {131, "Goriath Icicle" },
+            {132, "Goriath Icicle" },
             {133, "Missile" },
             {134, "Magolor Phase 1 Revolution Sphere" },
-            {134, "Magolor Phase 1 Projectile Doomer" },
+            {135, "Magolor Phase 1 Projectile Doomer" },
             {145, "Magolor" },
         };
 
