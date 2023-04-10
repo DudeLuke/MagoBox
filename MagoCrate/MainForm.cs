@@ -2063,7 +2063,7 @@ namespace MagoBox
                             {
                                 clickedEntity = true;
                                 tabControl1.SelectedIndex = 3;
-                                bossList.SelectedIndex = i;
+                                enemyList.SelectedIndex = i;
                             }
                         }
                     }
@@ -2128,8 +2128,6 @@ namespace MagoBox
             {
                 if (tool == 0)
                 {
-                    // Draw
-
                     int ix = (int)((tileY * level.Width) + tileX);
 
                     if (editCol.Checked)
@@ -2195,36 +2193,6 @@ namespace MagoBox
                         fl.MovingTerrainID = (sbyte)d3_4.Value;
                         level.FLandDecoration[ix] = fl;
                     }
-                } else if (tool == 2)
-                {
-                    // Move
-
-                    try
-                    {
-                        Vector2 p = ConvertMouseCoords(new Vector2(e.X, e.Y));
-                        if (p.X > level.Width - 1)
-                        {
-                            tileX = level.Width - 1;
-                        }
-                        else if (p.X > 0)
-                        {
-                            tileX = (uint)p.X;
-                        }
-                        else { tileX = 0; }
-                        if (p.Y < -(level.Height - 1))
-                        {
-                            tileY = level.Height - 1;
-                        }
-                        else if (p.Y < 0)
-                        {
-                            tileY = (uint)-p.Y + 1;
-                        }
-                        else { tileY = 0; }
-
-                        xCoord.Value = tileX;
-                        yCoord.Value = tileY;
-                        UpdateCoords();
-                    } catch { }
                 }
             }
         }
@@ -2472,59 +2440,62 @@ namespace MagoBox
 
         void UpdateCoords()
         {
-            switch (moveObj)
+            try
             {
-                case 0:
-                    {
-                        RDLLVL.Object obj = level.Objects[objList.SelectedIndex];
-                        obj.X = (uint)xCoord.Value;
-                        obj.XOffset = (uint)xOffset.Value;
-                        obj.Y = (uint)yCoord.Value;
-                        obj.YOffset = (uint)yOffset.Value;
-                        level.Objects[objList.SelectedIndex] = obj;
-                        break;
-                    }
-                case 1:
-                    {
-                        RDLLVL.SpecialItem obj = level.Carriables[carriablesList.SelectedIndex];
-                        obj.X = (uint)xCoord.Value;
-                        obj.XOffset = (uint)xOffset.Value;
-                        obj.Y = (uint)yCoord.Value;
-                        obj.YOffset = (uint)yOffset.Value;
-                        level.Carriables[carriablesList.SelectedIndex] = obj;
-                        break;
-                    }
-                case 2:
-                    {
-                        RDLLVL.Item obj = level.Items[itemList.SelectedIndex];
-                        obj.X = (uint)xCoord.Value;
-                        obj.XOffset = (uint)xOffset.Value;
-                        obj.Y = (uint)yCoord.Value;
-                        obj.YOffset = (uint)yOffset.Value;
-                        level.Items[itemList.SelectedIndex] = obj;
-                        break;
-                    }
-                case 3:
-                    {
-                        RDLLVL.Boss obj = level.Bosses[bossList.SelectedIndex];
-                        obj.X = (uint)xCoord.Value;
-                        obj.XOffset = (uint)xOffset.Value;
-                        obj.Y = (uint)yCoord.Value;
-                        obj.YOffset = (uint)yOffset.Value;
-                        level.Bosses[bossList.SelectedIndex] = obj;
-                        break;
-                    }
-                case 4:
-                    {
-                        RDLLVL.Enemy obj = level.Enemies[enemyList.SelectedIndex];
-                        obj.X = (uint)xCoord.Value;
-                        obj.XOffset = (uint)xOffset.Value;
-                        obj.Y = (uint)yCoord.Value;
-                        obj.YOffset = (uint)yOffset.Value;
-                        level.Enemies[enemyList.SelectedIndex] = obj;
-                        break;
-                    }
-            }
+                switch (moveObj)
+                {
+                    case 0:
+                        {
+                            RDLLVL.Object obj = level.Objects[objList.SelectedIndex];
+                            obj.X = (uint)xCoord.Value;
+                            obj.XOffset = (uint)xOffset.Value;
+                            obj.Y = (uint)yCoord.Value;
+                            obj.YOffset = (uint)yOffset.Value;
+                            level.Objects[objList.SelectedIndex] = obj;
+                            break;
+                        }
+                    case 1:
+                        {
+                            RDLLVL.SpecialItem obj = level.Carriables[carriablesList.SelectedIndex];
+                            obj.X = (uint)xCoord.Value;
+                            obj.XOffset = (uint)xOffset.Value;
+                            obj.Y = (uint)yCoord.Value;
+                            obj.YOffset = (uint)yOffset.Value;
+                            level.Carriables[carriablesList.SelectedIndex] = obj;
+                            break;
+                        }
+                    case 2:
+                        {
+                            RDLLVL.Item obj = level.Items[itemList.SelectedIndex];
+                            obj.X = (uint)xCoord.Value;
+                            obj.XOffset = (uint)xOffset.Value;
+                            obj.Y = (uint)yCoord.Value;
+                            obj.YOffset = (uint)yOffset.Value;
+                            level.Items[itemList.SelectedIndex] = obj;
+                            break;
+                        }
+                    case 3:
+                        {
+                            RDLLVL.Boss obj = level.Bosses[bossList.SelectedIndex];
+                            obj.X = (uint)xCoord.Value;
+                            obj.XOffset = (uint)xOffset.Value;
+                            obj.Y = (uint)yCoord.Value;
+                            obj.YOffset = (uint)yOffset.Value;
+                            level.Bosses[bossList.SelectedIndex] = obj;
+                            break;
+                        }
+                    case 4:
+                        {
+                            RDLLVL.Enemy obj = level.Enemies[enemyList.SelectedIndex];
+                            obj.X = (uint)xCoord.Value;
+                            obj.XOffset = (uint)xOffset.Value;
+                            obj.Y = (uint)yCoord.Value;
+                            obj.YOffset = (uint)yOffset.Value;
+                            level.Enemies[enemyList.SelectedIndex] = obj;
+                            break;
+                        }
+                }
+            } catch { }
         }
 
         private void xCoord_ValueChanged(object sender, EventArgs e)
