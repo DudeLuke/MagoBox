@@ -374,11 +374,11 @@ namespace MagoBox
                                 line = fdgStream.ReadLine();
                                 while (line != null)
                                 {
-                                    if (line.Contains("---"))
+                                    if (!line.StartsWith("---") && line != "")
                                     {
                                         additions.Add(line);
                                         line = fdgStream.ReadLine();
-                                    } 
+                                    }
                                     else break;
                                 }
                                 AddFDGData(key, additions);
