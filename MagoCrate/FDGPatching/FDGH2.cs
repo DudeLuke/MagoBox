@@ -100,17 +100,18 @@ namespace KirbyFDGH
                 scene.AssetGroup1 = data;
                 reader.BaseStream.Seek(pos, SeekOrigin.Begin);
 
+
                 pos = (uint)reader.BaseStream.Position + 4;
                 reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
                 datacount = reader.ReadUInt32();
-                data = new List<string>();
+                scene.AssetGroup2 = new List<string>();
                 for (int d = 0; d < datacount; d++)
                 {
-                    data.Add(StringList[reader.ReadInt32()]);
+                    int s = reader.ReadInt32();
+                    scene.AssetGroup2.Add(StringList[s]);
                 }
-                scene.AssetGroup2 = data;
+                
                 reader.BaseStream.Seek(pos, SeekOrigin.Begin);
-
                 SceneList.Add(scene);
             }
 
