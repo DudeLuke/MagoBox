@@ -372,10 +372,14 @@ namespace MagoBox
                                 string key = line.Substring(4, line.Length - 4);
                                 List<string> additions = new List<string>();
                                 line = fdgStream.ReadLine();
-                                while (!line.Contains("---") && line != null)
+                                while (line != null)
                                 {
-                                    if (line != "") additions.Add(line);
-                                    line = fdgStream.ReadLine();
+                                    if (line.Contains("---"))
+                                    {
+                                        additions.Add(line);
+                                        line = fdgStream.ReadLine();
+                                    } 
+                                    else break;
                                 }
                                 AddFDGData(key, additions);
                             }
@@ -2929,10 +2933,13 @@ namespace MagoBox
                         line = noteStream.ReadLine();
                     }
                     notes += Environment.NewLine;
-                    while (!line.Contains("/" + category + " [" + type + "]") && line != null)
+                    try
                     {
-                        line = noteStream.ReadLine();
-                    }
+                        while (!line.Contains("/" + category + " [" + type + "]") && line != null)
+                        {
+                            line = noteStream.ReadLine();
+                        }
+                    } catch { }
                     line = noteStream.ReadLine();
                     while (!line.Contains("/;"))
                     {
