@@ -383,7 +383,7 @@ namespace MagoBox
                                 }
                                 AddFDGData(key, additions);
                             }
-                            if (!line.Contains("---")) line = fdgStream.ReadLine();
+                            else line = fdgStream.ReadLine();
                         }
                         fdgStream.Close();
                         fdgStream.Dispose();
