@@ -95,23 +95,28 @@ namespace KirbyFDGH
                 List<string> data = new List<string>();
                 for (int d = 0; d < datacount; d++)
                 {
-                    data.Add(StringList[reader.ReadInt32()]);
+                    try
+                    {
+                        data.Add(StringList[reader.ReadInt32()]);
+                    } catch { }
                 }
                 scene.AssetGroup1 = data;
                 reader.BaseStream.Seek(pos, SeekOrigin.Begin);
 
-
                 pos = (uint)reader.BaseStream.Position + 4;
                 reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
                 datacount = reader.ReadUInt32();
-                scene.AssetGroup2 = new List<string>();
+                data = new List<string>();
                 for (int d = 0; d < datacount; d++)
                 {
-                    int s = reader.ReadInt32();
-                    scene.AssetGroup2.Add(StringList[s]);
+                    try
+                    {
+                        data.Add(StringList[reader.ReadInt32()]);
+                    } catch { }
                 }
-                
+                scene.AssetGroup2 = data;
                 reader.BaseStream.Seek(pos, SeekOrigin.Begin);
+
                 SceneList.Add(scene);
             }
 
