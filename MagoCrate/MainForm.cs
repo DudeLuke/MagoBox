@@ -541,8 +541,13 @@ namespace MagoBox
                 if (file.EndsWith(".ini"))
                 {
                     string name = Path.GetFileName(file);
-                    tilePalettes.Add(new FileIniDataParser().ReadFile(file));
-                    paletteList.Items.Add(name.Substring(0, name.Length - 4));
+                    name = name.Substring(0, name.Length - 4);
+
+                    if (!paletteList.Items.Contains(name))
+                    {
+                        tilePalettes.Add(new FileIniDataParser().ReadFile(file));
+                        paletteList.Items.Add(name);
+                    }
                 }
             }
 

@@ -106,7 +106,7 @@ namespace RDLLVL
         public Dictionary<uint, string> ItemList = new Dictionary<uint, string>()
         {
             {0, "Point Star" },
-            {1, "1-UP" },
+            {1, "Extra Life" },
             {2, "Maxim Tomato" },
             {3, "Food" },
             {4, "Energy Sphere" },
