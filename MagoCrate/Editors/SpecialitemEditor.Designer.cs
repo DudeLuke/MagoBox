@@ -47,6 +47,8 @@
             this.type = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.objDropDown = new System.Windows.Forms.ComboBox();
+            this.categNotes = new System.Windows.Forms.TextBox();
+            this.saveNotes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.movingId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yOffs)).BeginInit();
@@ -57,6 +59,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.saveNotes);
+            this.groupBox1.Controls.Add(this.categNotes);
             this.groupBox1.Controls.Add(this.specItemNotes);
             this.groupBox1.Controls.Add(this.respawn);
             this.groupBox1.Controls.Add(this.movingId);
@@ -87,15 +94,17 @@
             // 
             // specItemNotes
             // 
+            this.specItemNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.specItemNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.specItemNotes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.specItemNotes.Location = new System.Drawing.Point(227, 55);
+            this.specItemNotes.Location = new System.Drawing.Point(227, 177);
             this.specItemNotes.Margin = new System.Windows.Forms.Padding(4);
             this.specItemNotes.Multiline = true;
             this.specItemNotes.Name = "specItemNotes";
-            this.specItemNotes.ReadOnly = true;
             this.specItemNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.specItemNotes.Size = new System.Drawing.Size(292, 303);
+            this.specItemNotes.Size = new System.Drawing.Size(292, 155);
             this.specItemNotes.TabIndex = 39;
             // 
             // respawn
@@ -105,7 +114,7 @@
             this.respawn.Location = new System.Drawing.Point(53, 237);
             this.respawn.Margin = new System.Windows.Forms.Padding(4);
             this.respawn.Name = "respawn";
-            this.respawn.Size = new System.Drawing.Size(117, 21);
+            this.respawn.Size = new System.Drawing.Size(113, 20);
             this.respawn.TabIndex = 38;
             this.respawn.Text = "Can Respawn";
             this.respawn.UseVisualStyleBackColor = true;
@@ -131,6 +140,7 @@
             // 
             // save
             // 
+            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.save.ForeColor = System.Drawing.SystemColors.ControlText;
             this.save.Location = new System.Drawing.Point(53, 330);
@@ -177,7 +187,7 @@
             this.label17.Location = new System.Drawing.Point(84, 209);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 17);
+            this.label17.Size = new System.Drawing.Size(53, 16);
             this.label17.TabIndex = 33;
             this.label17.Text = "Y Offset";
             // 
@@ -188,7 +198,7 @@
             this.label16.Location = new System.Drawing.Point(84, 149);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 17);
+            this.label16.Size = new System.Drawing.Size(52, 16);
             this.label16.TabIndex = 32;
             this.label16.Text = "X Offset";
             // 
@@ -227,7 +237,7 @@
             this.label15.Location = new System.Drawing.Point(8, 179);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(71, 17);
+            this.label15.Size = new System.Drawing.Size(67, 16);
             this.label15.TabIndex = 29;
             this.label15.Text = "Y Position";
             // 
@@ -238,7 +248,7 @@
             this.label14.Location = new System.Drawing.Point(8, 122);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 17);
+            this.label14.Size = new System.Drawing.Size(66, 16);
             this.label14.TabIndex = 27;
             this.label14.Text = "X Position";
             // 
@@ -249,7 +259,7 @@
             this.label3.Location = new System.Drawing.Point(8, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 17);
+            this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Moving Terrain ID";
             // 
@@ -269,7 +279,7 @@
             this.label2.Location = new System.Drawing.Point(8, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 17);
+            this.label2.Size = new System.Drawing.Size(68, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Appear ID";
             // 
@@ -290,12 +300,14 @@
             this.label1.Location = new System.Drawing.Point(8, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Type";
             // 
             // objDropDown
             // 
+            this.objDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.objDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
             this.objDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objDropDown.FormattingEnabled = true;
@@ -306,6 +318,35 @@
             this.objDropDown.TabIndex = 0;
             this.objDropDown.SelectedIndexChanged += new System.EventHandler(this.objDropDown_SelectedIndexChanged);
             // 
+            // categNotes
+            // 
+            this.categNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.categNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.categNotes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.categNotes.Location = new System.Drawing.Point(227, 55);
+            this.categNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.categNotes.Multiline = true;
+            this.categNotes.Name = "categNotes";
+            this.categNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.categNotes.Size = new System.Drawing.Size(292, 114);
+            this.categNotes.TabIndex = 40;
+            // 
+            // saveNotes
+            // 
+            this.saveNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(214)))), ((int)(((byte)(255)))));
+            this.saveNotes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.saveNotes.Location = new System.Drawing.Point(227, 330);
+            this.saveNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.saveNotes.Name = "saveNotes";
+            this.saveNotes.Size = new System.Drawing.Size(292, 28);
+            this.saveNotes.TabIndex = 41;
+            this.saveNotes.Text = "Save Notes";
+            this.saveNotes.UseVisualStyleBackColor = false;
+            this.saveNotes.Click += new System.EventHandler(this.saveNotes_Click);
+            // 
             // SpecialItemEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -313,8 +354,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(567, 395);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(585, 442);
             this.Name = "SpecialItemEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carriable Editor";
@@ -351,5 +393,7 @@
         private System.Windows.Forms.NumericUpDown movingId;
         private System.Windows.Forms.CheckBox respawn;
         private System.Windows.Forms.TextBox specItemNotes;
+        private System.Windows.Forms.TextBox categNotes;
+        private System.Windows.Forms.Button saveNotes;
     }
 }

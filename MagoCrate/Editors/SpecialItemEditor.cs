@@ -16,11 +16,12 @@ namespace MagoBox.Editors
     {
         public RDLLVL.SpecialItem obj;
         Objects objs = new Objects();
-        MainForm main = new MainForm("");
+        MainForm main;
 
-        public SpecialItemEditor()
+        public SpecialItemEditor(MainForm parent)
         {
             InitializeComponent();
+            main = parent;
         }
 
         private void ObjectEditor_Load(object sender, EventArgs e)
@@ -35,7 +36,8 @@ namespace MagoBox.Editors
             xOffs.Value = obj.XOffset;
             yCoord.Value = obj.Y;
             yOffs.Value = obj.YOffset;
-            specItemNotes.Text = main.UpdateNotes("Carriable", type.Text);
+            categNotes.Text = main.ReadNotes("Carriable", "Default");
+            specItemNotes.Text = main.ReadNotes("Carriable", type.Text);
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -50,22 +52,24 @@ namespace MagoBox.Editors
             obj.YOffset = (uint)yOffs.Value;
             DialogResult = DialogResult.OK;
         }
+        private void saveNotes_Click(object sender, EventArgs e)
+        {
+            main.WriteNotes("Carriable", type.Text, specItemNotes.Text);
+            main.WriteNotes("Carriable", "Default", categNotes.Text);
+        }
 
         private void type_TextChanged(object sender, EventArgs e)
         {
+            objDropDown.Text = "";
             try
             {
                 if (objs.CarriablesList.ContainsKey(uint.Parse(type.Text)))
                 {
                     objDropDown.Text = objs.CarriablesList[uint.Parse(type.Text)];
                 }
-                else
-                {
-                    objDropDown.Text = "";
-                }
 
                 // Refresh enemy notes on type change via typing
-                specItemNotes.Text = main.UpdateNotes("Carriable", type.Text);
+                specItemNotes.Text = main.ReadNotes("Carriable", type.Text);
 
             } catch { }
         }
@@ -75,13 +79,12 @@ namespace MagoBox.Editors
             type.Text = objs.CarriablesList.FirstOrDefault(x => x.Value == objDropDown.Text).Key.ToString();
 
             // Refresh enemy notes on type change via drop down
-            specItemNotes.Text = main.UpdateNotes("Carriable", type.Text);
+            specItemNotes.Text = main.ReadNotes("Carriable", type.Text);
         }
         void RefreshColors()
         {
             BackColor = MagoCrate.Properties.Settings.Default.MainColor;
             Color setColor = MagoCrate.Properties.Settings.Default.CarryColor;
-            if (MagoCrate.Properties.Settings.Default.rtmColorsON) setColor = MagoCrate.Properties.Settings.Default.ObjColor;
 
             type.BackColor = setColor;
             appearId.BackColor = setColor;
@@ -91,7 +94,9 @@ namespace MagoBox.Editors
             yCoord.BackColor = setColor;
             yOffs.BackColor = setColor;
             specItemNotes.BackColor = setColor;
+            categNotes.BackColor = setColor;
             save.BackColor = setColor;
+            saveNotes.BackColor = setColor;
             objDropDown.BackColor = setColor;
         }
     }

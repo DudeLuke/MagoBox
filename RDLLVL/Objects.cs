@@ -28,7 +28,7 @@ namespace RDLLVL
             {16, "Toggle Switch" },
             {17, "Timer Switch" },
             {18, "Bomb Block Chain Starter" },
-            {19, "Floating Cannon" },
+            {19, "Blast Cannon" },
             {20, "Invisibility Stone Gate" },
             {26, "Fuse" },
             {27, "Fuse Cannon" },
@@ -61,7 +61,7 @@ namespace RDLLVL
             {56, "Rolling Spike Wheel Obstacle" },
             {57, "Sandcastle Block" },
             {58, "Lor Starcutter Door" },
-            {59, "Scaffold Support" },
+            {59, "Moving Tile Support" },
             {60, "Bite Statue" },
             {61, "Pirate Ship Octopus" },
             {62, "Rolling Shell Obstacle" },
@@ -85,6 +85,7 @@ namespace RDLLVL
             {83, "Salamander Part" },
             {84, "Key Dee" },
             {85, "Sliceable Volcano" },
+            {86, "Landia Room Transition Marker" },
             {87, "Sliceable Magma Pillar" },
             {88, "Freezable Volcano" },
             {90, "Super Enemy Spawner" }
@@ -353,8 +354,8 @@ namespace RDLLVL
         public Dictionary<uint, string> RunEffectList = new Dictionary<uint, string>()
         {
             {0, "Normal" },
-            {1, "Unknown" },
-            {2, "VS. Lor Starcutter" },
+            {1, "7-3 Midboss Rush" },
+            {2, "VS. lor Starcutter" },
             {3, "VS. Magolor" },
             {4, "Level Map" },
         };
@@ -914,6 +915,36 @@ namespace RDLLVL
             {"StepMapDataChallengeStage10Step02.dn", "map/step/other/challenge/stage10/Step02.dat"},
             {"StepMapDataChallengeStage10Step03.dn", "map/step/other/challenge/stage10/Step03.dat"},
             {"StepMapDataChallengeStage10Step04.dn", "map/step/other/challenge/stage10/Step04.dat"}
+        };
+        public Dictionary<uint, string> EnemyBehaviorList = new Dictionary<uint, string>()
+        {
+            {0, "Do Nothing" },
+            {1, "Walk, Fall Off Ledges" },
+            {2, "Walk, Turn At Ledges" },
+            {3, "Walk, Patrol 5 Tiles" },
+            {4, "Hover In Place" },
+            {5, "Hover, Patrol Vertically 5 Tiles" },
+            {6, "Flies Forward In A Sine Wave" },
+            {7, "Flying Chase" },
+            {8, "Do Nothing, No Turning" },
+            {9, "Cappy Behavior" },
+            {11, "Hover, Patrol Horizontally 5 Tiles" },
+            {12, "Hover Forward, Rebound On Collision" },
+            {13, "Hover In A Circle"},
+            {15, "Totenga Behavior" },
+            {16, "Whippy Behavior" },
+            {17, "Pacto Behavior" },
+            {18, "Blade Knight Behavior, Standing" },
+            {19, "Sir Kibble Behavior, Can Jump" },
+            {20, "Hot Head Behavior, Breathes Fire" },
+            {21, "Bouncy Behavior, Jump In Place" },
+            {22, "Bouncy Behavior, Jump And Move" },
+            {23, "Shotzo Behavior, Floor, No Aiming"},
+            {25, "Broom Hatter Behavior" },
+            {26, "Needlous Behavior" },
+            {28, "Waddle Doo Behavior, Walking" },
+            {29, "Waddle Doo Behavior, Patrol" },
+            {30, "Waddle Doo Behavior, Walk And Jump" }
         };
         public Dictionary<uint, string> MostLikelyBehaviorList = new Dictionary<uint, string>()
         {

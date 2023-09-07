@@ -74,6 +74,8 @@
             this.type = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.objDropDown = new System.Windows.Forms.ComboBox();
+            this.categNotes = new System.Windows.Forms.TextBox();
+            this.saveNotes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yOffs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xOffs)).BeginInit();
@@ -83,6 +85,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.saveNotes);
+            this.groupBox1.Controls.Add(this.categNotes);
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.hexBox);
@@ -140,28 +147,31 @@
             // 
             // label21
             // 
+            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.SystemColors.Control;
             this.label21.Location = new System.Drawing.Point(390, 506);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(32, 17);
+            this.label21.Size = new System.Drawing.Size(31, 16);
             this.label21.TabIndex = 108;
             this.label21.Text = "Hex";
             // 
             // label20
             // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.SystemColors.Control;
             this.label20.Location = new System.Drawing.Point(389, 474);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(33, 17);
+            this.label20.Size = new System.Drawing.Size(32, 16);
             this.label20.TabIndex = 107;
             this.label20.Text = "Dec";
             // 
             // hexBox
             // 
+            this.hexBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.hexBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.hexBox.Location = new System.Drawing.Point(430, 503);
             this.hexBox.Margin = new System.Windows.Forms.Padding(4);
@@ -172,6 +182,7 @@
             // 
             // decBox
             // 
+            this.decBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.decBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.decBox.Location = new System.Drawing.Point(430, 471);
             this.decBox.Margin = new System.Windows.Forms.Padding(4);
@@ -182,23 +193,25 @@
             // 
             // label19
             // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.SystemColors.Control;
             this.label19.Location = new System.Drawing.Point(392, 545);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(127, 17);
+            this.label19.Size = new System.Drawing.Size(121, 16);
             this.label19.TabIndex = 104;
             this.label19.Text = "Dec/Hex Converter";
             // 
             // inHex
             // 
+            this.inHex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.inHex.AutoSize = true;
             this.inHex.ForeColor = System.Drawing.SystemColors.Control;
             this.inHex.Location = new System.Drawing.Point(11, 544);
             this.inHex.Margin = new System.Windows.Forms.Padding(4);
             this.inHex.Name = "inHex";
-            this.inHex.Size = new System.Drawing.Size(130, 21);
+            this.inHex.Size = new System.Drawing.Size(126, 20);
             this.inHex.TabIndex = 103;
             this.inHex.Text = "Use Hex Values";
             this.inHex.UseVisualStyleBackColor = true;
@@ -207,16 +220,18 @@
             // objNotes
             // 
             this.objNotes.AcceptsReturn = true;
+            this.objNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.objNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.objNotes.Cursor = System.Windows.Forms.Cursors.Default;
             this.objNotes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.objNotes.Location = new System.Drawing.Point(207, 55);
+            this.objNotes.Location = new System.Drawing.Point(207, 247);
             this.objNotes.Margin = new System.Windows.Forms.Padding(4);
             this.objNotes.Multiline = true;
             this.objNotes.Name = "objNotes";
-            this.objNotes.ReadOnly = true;
             this.objNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.objNotes.Size = new System.Drawing.Size(312, 405);
+            this.objNotes.Size = new System.Drawing.Size(312, 188);
             this.objNotes.TabIndex = 39;
             // 
             // unk
@@ -235,12 +250,14 @@
             this.label18.Location = new System.Drawing.Point(8, 443);
             this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(66, 17);
+            this.label18.Size = new System.Drawing.Size(62, 16);
             this.label18.TabIndex = 37;
             this.label18.Text = "Unknown";
             // 
             // save
             // 
+            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.save.ForeColor = System.Drawing.SystemColors.ControlText;
             this.save.Location = new System.Drawing.Point(219, 539);
@@ -254,6 +271,7 @@
             // 
             // yOffs
             // 
+            this.yOffs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.yOffs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.yOffs.Location = new System.Drawing.Point(274, 504);
             this.yOffs.Margin = new System.Windows.Forms.Padding(4);
@@ -268,6 +286,7 @@
             // 
             // xOffs
             // 
+            this.xOffs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.xOffs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.xOffs.Location = new System.Drawing.Point(274, 472);
             this.xOffs.Margin = new System.Windows.Forms.Padding(4);
@@ -282,28 +301,31 @@
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.SystemColors.Control;
             this.label17.Location = new System.Drawing.Point(207, 506);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 17);
+            this.label17.Size = new System.Drawing.Size(53, 16);
             this.label17.TabIndex = 33;
             this.label17.Text = "Y Offset";
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
             this.label16.Location = new System.Drawing.Point(207, 474);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 17);
+            this.label16.Size = new System.Drawing.Size(52, 16);
             this.label16.TabIndex = 32;
             this.label16.Text = "X Offset";
             // 
             // yCoord
             // 
+            this.yCoord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.yCoord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.yCoord.Location = new System.Drawing.Point(87, 504);
             this.yCoord.Margin = new System.Windows.Forms.Padding(4);
@@ -318,6 +340,7 @@
             // 
             // xCoord
             // 
+            this.xCoord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.xCoord.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.xCoord.Location = new System.Drawing.Point(87, 472);
             this.xCoord.Margin = new System.Windows.Forms.Padding(4);
@@ -332,23 +355,25 @@
             // 
             // label15
             // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.SystemColors.Control;
             this.label15.Location = new System.Drawing.Point(8, 506);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(71, 17);
+            this.label15.Size = new System.Drawing.Size(67, 16);
             this.label15.TabIndex = 29;
             this.label15.Text = "Y Position";
             // 
             // label14
             // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.Control;
             this.label14.Location = new System.Drawing.Point(8, 474);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 17);
+            this.label14.Size = new System.Drawing.Size(66, 16);
             this.label14.TabIndex = 27;
             this.label14.Text = "X Position";
             // 
@@ -368,7 +393,7 @@
             this.label13.Location = new System.Drawing.Point(8, 411);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 17);
+            this.label13.Size = new System.Drawing.Size(87, 16);
             this.label13.TabIndex = 25;
             this.label13.Text = "Parameter 12";
             // 
@@ -388,7 +413,7 @@
             this.label12.Location = new System.Drawing.Point(8, 379);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(94, 17);
+            this.label12.Size = new System.Drawing.Size(87, 16);
             this.label12.TabIndex = 23;
             this.label12.Text = "Parameter 11";
             // 
@@ -408,7 +433,7 @@
             this.label11.Location = new System.Drawing.Point(8, 347);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(94, 17);
+            this.label11.Size = new System.Drawing.Size(87, 16);
             this.label11.TabIndex = 21;
             this.label11.Text = "Parameter 10";
             // 
@@ -428,7 +453,7 @@
             this.label10.Location = new System.Drawing.Point(8, 315);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 17);
+            this.label10.Size = new System.Drawing.Size(80, 16);
             this.label10.TabIndex = 19;
             this.label10.Text = "Parameter 9";
             // 
@@ -448,7 +473,7 @@
             this.label9.Location = new System.Drawing.Point(8, 283);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 17);
+            this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 17;
             this.label9.Text = "Parameter 8";
             // 
@@ -468,7 +493,7 @@
             this.label8.Location = new System.Drawing.Point(8, 251);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 17);
+            this.label8.Size = new System.Drawing.Size(80, 16);
             this.label8.TabIndex = 15;
             this.label8.Text = "Parameter 7";
             // 
@@ -488,7 +513,7 @@
             this.label7.Location = new System.Drawing.Point(8, 219);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 17);
+            this.label7.Size = new System.Drawing.Size(80, 16);
             this.label7.TabIndex = 13;
             this.label7.Text = "Parameter 6";
             // 
@@ -508,7 +533,7 @@
             this.label6.Location = new System.Drawing.Point(8, 187);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
+            this.label6.Size = new System.Drawing.Size(80, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Parameter 5";
             // 
@@ -528,7 +553,7 @@
             this.label5.Location = new System.Drawing.Point(8, 155);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 17);
+            this.label5.Size = new System.Drawing.Size(80, 16);
             this.label5.TabIndex = 9;
             this.label5.Text = "Parameter 4";
             // 
@@ -548,7 +573,7 @@
             this.label4.Location = new System.Drawing.Point(8, 123);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 17);
+            this.label4.Size = new System.Drawing.Size(80, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Parameter 3";
             // 
@@ -569,7 +594,7 @@
             this.label3.Location = new System.Drawing.Point(8, 91);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 17);
+            this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Parameter 2";
             // 
@@ -589,7 +614,7 @@
             this.label2.Location = new System.Drawing.Point(8, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 17);
+            this.label2.Size = new System.Drawing.Size(80, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Parameter 1";
             // 
@@ -610,12 +635,14 @@
             this.label1.Location = new System.Drawing.Point(8, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Type";
             // 
             // objDropDown
             // 
+            this.objDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.objDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
             this.objDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objDropDown.FormattingEnabled = true;
@@ -626,6 +653,37 @@
             this.objDropDown.TabIndex = 0;
             this.objDropDown.SelectedIndexChanged += new System.EventHandler(this.objDropDown_SelectedIndexChanged);
             // 
+            // categNotes
+            // 
+            this.categNotes.AcceptsReturn = true;
+            this.categNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.categNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
+            this.categNotes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.categNotes.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.categNotes.Location = new System.Drawing.Point(207, 56);
+            this.categNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.categNotes.Multiline = true;
+            this.categNotes.Name = "categNotes";
+            this.categNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.categNotes.Size = new System.Drawing.Size(312, 181);
+            this.categNotes.TabIndex = 109;
+            // 
+            // saveNotes
+            // 
+            this.saveNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(255)))), ((int)(((byte)(215)))));
+            this.saveNotes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.saveNotes.Location = new System.Drawing.Point(207, 433);
+            this.saveNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.saveNotes.Name = "saveNotes";
+            this.saveNotes.Size = new System.Drawing.Size(312, 28);
+            this.saveNotes.TabIndex = 110;
+            this.saveNotes.Text = "Save";
+            this.saveNotes.UseVisualStyleBackColor = false;
+            this.saveNotes.Click += new System.EventHandler(this.saveNotes_Click);
+            // 
             // ObjectEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -633,8 +691,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(567, 608);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(585, 655);
             this.Name = "ObjectEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Object Editor";
@@ -697,5 +756,7 @@
         private System.Windows.Forms.TextBox hexBox;
         private System.Windows.Forms.TextBox decBox;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button saveNotes;
+        private System.Windows.Forms.TextBox categNotes;
     }
 }

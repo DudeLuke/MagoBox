@@ -777,3 +777,368 @@ C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCra
 C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.exe
 C:\Users\LukeN\OneDrive\Desktop\MagoCrate - FDG Dual\MagoCrate\obj\Debug\MagoCrate.pdb
 C:\Users\LukeN\Downloads\EditedTools\MagoCrate\MagoCrate\obj\Debug\MagoCrate.FDGScene.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\0.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\select.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\CustomData\EntityNotes.txt
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Tree Top.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Tree.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Unknown.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Bomb Chain.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Bomb Generated.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Bomb.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Breakable.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Crumble.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Fire.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Bottom.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left Corner.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Left.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right Corner.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Giant Tree Right.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Giant Tree.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Gold 2x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Gold 3x3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Ice.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Iced Snow.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Invisible Bomb Chain.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Metal Crumble.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Metal.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Snow.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone 1x3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone 2x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone 2x4x4x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone 3x1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone 3x3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone Reverse T.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Left.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone Stair Right.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone T.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super 1x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super 2x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super 3x3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super 4x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super 4x4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super Top.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\CustomData\FDGPatching.txt
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super (Alt 2).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super Top 2x2 (Alt).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Fire (Fragile).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Fire 2x2 (Fragile).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Tree (Alt).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Snow (Wide).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Tree Bottom (Alt).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Iced Snow (Wide).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super 2x2 (Alt).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Super (Alt).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\blocks\Stone 4x4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\modifiers\water.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\modifiers\boundary.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\modifiers\ice.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\modifiers\ladder.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\modifiers\lava.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\modifiers\spike.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Metal.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Sand.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Snow.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Stone.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Wood.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_-1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_-2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_-3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\auto_-4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Clouds.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\properties\mat_Grass.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\10.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\11.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\12.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\13.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\14.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\15.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\16.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\17.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\18.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\19.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\20.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\21.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\22.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\23.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\24.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\25.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\26.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\27.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\28.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\29.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\30.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\31.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\32.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\33.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\34.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\35.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\36.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\37.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\38.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\39.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\40.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\41.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\42.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\43.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\44.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\45.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\46.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\47.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\48.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\49.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\50.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\51.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\7.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\8.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\9.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\MagoCrate.exe.config
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\MagoCrate.exe
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\MagoCrate.pdb
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\OpenTK.dll
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\OpenTK.GLControl.dll
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\RDLLVL.dll
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\RDLLVL.pdb
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.csproj.AssemblyReference.cache
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.ColShapeSelector.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.BossEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.EnemyEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.ItemEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.ObjectEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.SpecialItemEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.StageSettings.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.FDGScene.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.MainForm.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.NewLevel.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.Options.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.Properties.Resources.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.csproj.GenerateResource.cache
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.csproj.CoreCompileInputs.cache
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.csproj.CopyComplete
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.exe
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.pdb
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoBox.Editors.Section4DEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\bmfonts\a.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\bmfonts\a.fnt
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\CustomData\TilePalettes\Default.ini
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\INIFileParser.dll
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\INIFileParser.xml
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h0.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h7.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h8.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\h9.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hA.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hB.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hBack.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hC.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hD.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hE.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\tiles\Hex\hF.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\boss.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\bosses\Sphere Doomer.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriable.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Key.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Blade Knight.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Chilly.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Clayn.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Coconut Bomb.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Craby.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Elec.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Flamer.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Glunk.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Gordo.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Hothead.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Juckle.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Leafan.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Pluid.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Poison Whispy Apple.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Poppy Bros.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Searches.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Shotzo.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Sir Kibble.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Twister.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Waddle Dee.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Waddle Doo.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Walf.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemies\Whispy Apple.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\enemy.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\item.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\1-UP.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Blue Point Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Challenge Coin.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Energy Sphere (Empty).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Energy Sphere (Red Point Star).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Energy Sphere.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Food.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Maxim Tomato (Alt).png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Maxim Tomato.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Point Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Red Point Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\object.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Arrow Sign.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Bomb Block Chain Starter.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Camera.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Dimension Hole.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Falling Background Object.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse Cannon.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Guide Sign.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Magolor.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Multiplayer Start Point.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\One-Time Switch.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Pop Flower.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Pushing Bubbles.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Pushing Wind.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Stage Select Door.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Start Point.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Super Enemy Spawner.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Timer Switch.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Toggle Switch.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Trigger Area.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Warp Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\select.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\selectFull.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\bubble_zone.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\super_zone.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\trigger_zone.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\wind_zone.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\bosses\Bonkers.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\bosses\Sphere Doomer.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\bosses\Sphere Doomer.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\bosses\Sphere Doomer.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.10.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.11.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.12.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.13.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.14.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.15.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.16.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.17.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.18.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.19.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.20.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.21.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.22.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.23.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.30.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.31.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.7.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.8.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.9.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\carriables\Bouncing Ability Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Challenge Coin.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Challenge Coin.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Challenge Coin.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Challenge Coin.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Challenge Coin.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.10.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.11.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.12.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.13.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.14.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.15.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.16.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.17.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.18.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.19.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.20.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.21.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.22.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.23.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.30.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.31.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.7.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.8.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.9.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Copy Essence.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Super Ability Star.25.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Super Ability Star.26.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Super Ability Star.27.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Super Ability Star.28.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Super Ability Star.29.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\items\Super Ability Star.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Arrow Sign.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Arrow Sign.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Arrow Sign.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Door.6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.10.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.11.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Fuse.8.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.7.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon Manual.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.1.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.5.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.6.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.7.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Floating Cannon.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Rope Platform Long.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Rope Platform Semisolid Long.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Rope Platform Semisolid.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Rope Platform.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Shutter Door Left.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Shutter Door Right.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Shutter Door Super Left.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Shutter Door Super Right.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Shutter Door Super.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\hardcoded\Shutter Door.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Multiplayer Start Point.2.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Multiplayer Start Point.3.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\objects\Multiplayer Start Point.4.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\Resources\entities\Super.png
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\obj\Debug\MagoCrate.SpriteEditor.resources
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\CustomData\TilePalettes\Empty.ini
+C:\Users\LukeN\Downloads\MagoCrate-master\MagoCrate\bin\Debug\CustomData\SpriteParameters.ini

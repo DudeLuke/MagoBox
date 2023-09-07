@@ -16,11 +16,12 @@ namespace MagoBox.Editors
     {
         public RDLLVL.Boss obj;
         Objects objs = new Objects();
-        MainForm main = new MainForm("");
+        MainForm main;
 
-        public BossEditor()
+        public BossEditor(MainForm parent)
         {
             InitializeComponent();
+            main = parent;
         }
 
         private void ObjectEditor_Load(object sender, EventArgs e)
@@ -28,23 +29,26 @@ namespace MagoBox.Editors
             objDropDown.Items.AddRange(objs.BossList.Values.ToArray());
             RefreshColors();
             type.Text = obj.Type.ToString();
-            p1.Text = obj.Param1.ToString("X");
-            p2.Text = obj.Param2.ToString("X");
-            p3.Text = obj.Param3.ToString("X");
+            subType.Text = obj.Subtype.ToString("X");
+            level.Text = obj.Level.ToString("X");
+            unk.Text = obj.Unknown.ToString("X");
+            movingId.Value = obj.MovingTerrainID;
             super.Checked = obj.HasSuperAbility;
             xCoord.Value = obj.X;
             xOffs.Value = obj.XOffset;
             yCoord.Value = obj.Y;
             yOffs.Value = obj.YOffset;
-            bossNotes.Text = main.UpdateNotes("Boss", type.Text);
+            bossNotes.Text = main.ReadNotes("Boss", type.Text);
+            categNotes.Text = main.ReadNotes("Boss", "Default");
         }
 
         private void save_Click(object sender, EventArgs e)
         {
             obj.Type = uint.Parse(type.Text);
-            obj.Param1 = uint.Parse(p1.Text, System.Globalization.NumberStyles.HexNumber);
-            obj.Param2 = uint.Parse(p2.Text, System.Globalization.NumberStyles.HexNumber);
-            obj.Param3 = uint.Parse(p3.Text, System.Globalization.NumberStyles.HexNumber);
+            obj.Subtype = uint.Parse(subType.Text, System.Globalization.NumberStyles.HexNumber);
+            obj.Level = uint.Parse(level.Text, System.Globalization.NumberStyles.HexNumber);
+            obj.Unknown = uint.Parse(unk.Text, System.Globalization.NumberStyles.HexNumber);
+            obj.MovingTerrainID = (int)movingId.Value;
             obj.HasSuperAbility = super.Checked;
             obj.X = (uint)xCoord.Value;
             obj.XOffset = (uint)xOffs.Value;
@@ -52,22 +56,24 @@ namespace MagoBox.Editors
             obj.YOffset = (uint)yOffs.Value;
             DialogResult = DialogResult.OK;
         }
+        private void saveNotes_Click(object sender, EventArgs e)
+        {
+            main.WriteNotes("Boss", type.Text, bossNotes.Text);
+            main.WriteNotes("Boss", "Default", categNotes.Text);
+        }
 
         private void type_TextChanged(object sender, EventArgs e)
         {
+            objDropDown.Text = "";
             try
             {
                 if (objs.BossList.ContainsKey(uint.Parse(type.Text)))
                 {
                     objDropDown.Text = objs.BossList[uint.Parse(type.Text)];
                 }
-                else
-                {
-                    objDropDown.Text = "";
-                }
 
                 // Refresh boss notes on type change via typing
-                bossNotes.Text = main.UpdateNotes("Boss", type.Text);
+                bossNotes.Text = main.ReadNotes("Boss", type.Text);
             }
             catch { }
         }
@@ -77,7 +83,7 @@ namespace MagoBox.Editors
             type.Text = objs.BossList.FirstOrDefault(x => x.Value == objDropDown.Text).Key.ToString();
 
             // Refresh boss notes on type change via drop down
-            bossNotes.Text = main.UpdateNotes("Boss", type.Text);
+            bossNotes.Text = main.ReadNotes("Boss", type.Text);
         }
 
         public void RefreshColors()
@@ -85,15 +91,18 @@ namespace MagoBox.Editors
             BackColor = MagoCrate.Properties.Settings.Default.MainColor;
             Color setColor = MagoCrate.Properties.Settings.Default.BossColor;
             type.BackColor = setColor;
-            p1.BackColor = setColor;
-            p2.BackColor = setColor;
-            p3.BackColor = setColor;
+            subType.BackColor = setColor;
+            level.BackColor = setColor;
+            unk.BackColor = setColor;
+            movingId.BackColor = setColor;
             bossNotes.BackColor = setColor;
+            categNotes.BackColor = setColor;
             xCoord.BackColor = setColor;
             xOffs.BackColor = setColor;
             yCoord.BackColor = setColor;
             yOffs.BackColor = setColor;
             save.BackColor = setColor;
+            saveNotes.BackColor = setColor;
             objDropDown.BackColor = setColor;
         }
     }

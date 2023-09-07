@@ -43,8 +43,8 @@ namespace RDLLVL
     public struct Item
     {
         public uint Type;
-        public uint SubType;
         public uint Behavior;
+        public uint Level;
         public int MovingTerrainID;
         public uint X;
         public uint XOffset;
@@ -55,9 +55,10 @@ namespace RDLLVL
     public struct Boss
     {
         public uint Type;
-        public uint Param1;
-        public uint Param2;
-        public uint Param3;
+        public uint Subtype;
+        public uint Level;
+        public uint Unknown;
+        public int MovingTerrainID;
         public bool HasSuperAbility;
         public uint X;
         public uint XOffset;
@@ -69,8 +70,8 @@ namespace RDLLVL
     {
         public uint Type;
         public uint Behavior;
-        public uint Param1;
-        public uint Param2;
+        public uint Level;
+        public uint DirectionType;
         public uint SizeAD;
         public uint SizeEX;
         public int MovingTerrainID;
@@ -100,6 +101,27 @@ namespace RDLLVL
         public byte Unk_2;
         public byte Unk_3;
         public sbyte MovingTerrainID;
+    }
+
+    public struct Section4D
+    {
+        public uint Type;
+        public uint Param1;
+        public uint Param2;
+        public uint Param3;
+        public uint Param4;
+        public uint Param5;
+        public uint Param6;
+        public uint Param7;
+        public uint Param8;
+        public uint Param9;
+        public uint Param10;
+        public uint Param11;
+        public uint Param12;
+        public uint Param13;
+        public uint Param14;
+        public uint Param15;
+        public uint Param16;
     }
 
     public struct Stage

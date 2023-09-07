@@ -16,21 +16,23 @@ namespace MagoBox.Editors
     {
         public RDLLVL.Enemy obj;
         Objects objs = new Objects();
-        MainForm main = new MainForm("");
+        MainForm main;
 
-        public EnemyEditor()
+        public EnemyEditor(MainForm parent)
         {
             InitializeComponent();
+            main = parent;
         }
 
         private void ObjectEditor_Load(object sender, EventArgs e)
         {
             objDropDown.Items.AddRange(objs.EnemyList.Values.ToArray());
+            behaviorDropDown.Items.AddRange(objs.EnemyBehaviorList.Values.ToArray());
             RefreshColors();
             type.Text = obj.Type.ToString();
             behavior.Text = obj.Behavior.ToString();
-            p1.Text = obj.Param1.ToString();
-            p2.Text = obj.Param2.ToString();
+            level.Text = obj.Level.ToString();
+            dirType.Text = obj.DirectionType.ToString();
             sizeAd.Value = obj.SizeAD;
             sizeEx.Value = obj.SizeEX;
             movingId.Value = obj.MovingTerrainID;
@@ -39,15 +41,16 @@ namespace MagoBox.Editors
             xOffs.Value = obj.XOffset;
             yCoord.Value = obj.Y;
             yOffs.Value = obj.YOffset;
-            enemyNotes.Text = main.UpdateNotes("Enemy", type.Text);
+            categNotes.Text = main.ReadNotes("Enemy", "Default");
+            enemyNotes.Text = main.ReadNotes("Enemy", type.Text);
         }
 
         private void save_Click(object sender, EventArgs e)
         {
             obj.Type = uint.Parse(type.Text);
             obj.Behavior = uint.Parse(behavior.Text);
-            obj.Param1 = uint.Parse(p1.Text);
-            obj.Param2 = uint.Parse(p2.Text);
+            obj.Level = uint.Parse(level.Text);
+            obj.DirectionType = uint.Parse(dirType.Text);
             obj.SizeAD = (uint)sizeAd.Value;
             obj.SizeEX = (uint)sizeEx.Value;
             obj.MovingTerrainID = (int)movingId.Value;
@@ -58,32 +61,31 @@ namespace MagoBox.Editors
             obj.YOffset = (uint)yOffs.Value;
             DialogResult = DialogResult.OK;
         }
-
+        private void saveNotes_Click(object sender, EventArgs e)
+        {
+            main.WriteNotes("Enemy", type.Text, enemyNotes.Text);
+            main.WriteNotes("Enemy", "Default", categNotes.Text);
+        }
         private void type_TextChanged(object sender, EventArgs e)
         {
+            objDropDown.Text = "";
             try
             {
                 if (objs.EnemyList.ContainsKey(uint.Parse(type.Text)))
                 {
                     objDropDown.Text = objs.EnemyList[uint.Parse(type.Text)];
                 }
-                else
-                {
-                    objDropDown.Text = "";
-                }
 
                 // Refresh enemy notes on type change via typing
-                enemyNotes.Text = main.UpdateNotes("Enemy", type.Text);
+                enemyNotes.Text = main.ReadNotes("Enemy", type.Text);
 
                 if (MagoCrate.Properties.Settings.Default.autoBehavior)
                 {
                     // Behavior value changes to the most commonly used behavior of that enemy type.
+                    behavior.Text = "0";
                     if (objs.MostLikelyBehaviorList.ContainsKey(uint.Parse(type.Text)))
                     {
                         behavior.Text = objs.MostLikelyBehaviorList[uint.Parse(type.Text)];
-                    } else
-                    {
-                        behavior.Text = "0";
                     }
                 }
             }
@@ -95,7 +97,7 @@ namespace MagoBox.Editors
             type.Text = objs.EnemyList.FirstOrDefault(x => x.Value == objDropDown.Text).Key.ToString();
 
             // Refresh enemy notes on type change via drop down
-            enemyNotes.Text = main.UpdateNotes("Enemy", type.Text);
+            enemyNotes.Text = main.ReadNotes("Enemy", type.Text);
 
             if (MagoCrate.Properties.Settings.Default.autoBehavior)
             {
@@ -103,8 +105,31 @@ namespace MagoBox.Editors
                 if (objs.MostLikelyBehaviorList.ContainsKey(uint.Parse(type.Text)))
                 {
                     behavior.Text = objs.MostLikelyBehaviorList[uint.Parse(type.Text)];
+                    behaviorDropDown.Text = "";
+                    try
+                    {
+                        if (objs.EnemyBehaviorList.ContainsKey(uint.Parse(behavior.Text)))
+                        {
+                            behaviorDropDown.Text = objs.EnemyBehaviorList[uint.Parse(behavior.Text)];
+                        }
+                    } catch { }
                 }
             }
+        }
+        private void behavior_TextChanged(object sender, EventArgs e)
+        {
+            behaviorDropDown.Text = "";
+            try
+            {
+                if (objs.EnemyBehaviorList.ContainsKey(uint.Parse(behavior.Text)))
+                {
+                    behaviorDropDown.Text = objs.EnemyBehaviorList[uint.Parse(behavior.Text)];
+                }
+            } catch { }
+        }
+        private void behaviorDropDown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            behavior.Text = objs.EnemyBehaviorList.FirstOrDefault(x => x.Value == behaviorDropDown.Text).Key.ToString();
         }
         public void RefreshColors()
         {
@@ -112,18 +137,22 @@ namespace MagoBox.Editors
             Color setColor = MagoCrate.Properties.Settings.Default.EnemyColor;
             type.BackColor = setColor;
             behavior.BackColor = setColor;
-            p1.BackColor = setColor;
-            p2.BackColor = setColor;
+            level.BackColor = setColor;
+            dirType.BackColor = setColor;
             movingId.BackColor = setColor;
             sizeAd.BackColor = setColor;
             sizeEx.BackColor = setColor;
             enemyNotes.BackColor = setColor;
+            categNotes.BackColor = setColor;
             xCoord.BackColor = setColor;
             xOffs.BackColor = setColor;
             yCoord.BackColor = setColor;
             yOffs.BackColor = setColor;
             save.BackColor = setColor;
+            saveNotes.BackColor = setColor;
             objDropDown.BackColor = setColor;
         }
+
+
     }
 }

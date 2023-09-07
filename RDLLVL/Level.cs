@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using RDLLVL;
+using System.Security.Principal;
 
 namespace RDLLVL
 {
@@ -21,7 +22,7 @@ namespace RDLLVL
         public List<Decoration> BLandDecoration = new List<Decoration>();
         public List<Decoration> MLandDecoration = new List<Decoration>();
         public List<Decoration> FLandDecoration = new List<Decoration>();
-        public byte[] DecorationChunk4;
+        public List<Section4D> All4DSections = new List<Section4D>();
         public List<Object> Objects = new List<Object>();
         public List<SpecialItem> Carriables = new List<SpecialItem>();
         public List<Item> Items = new List<Item>();
@@ -40,7 +41,7 @@ namespace RDLLVL
             BLandDecoration = new List<Decoration>();
             MLandDecoration = new List<Decoration>();
             FLandDecoration = new List<Decoration>();
-            DecorationChunk4 = new byte[] { 0x00, 0x00, 0x00, 0x00 };
+            All4DSections = new List<Section4D>();
             Objects = new List<Object>();
             Carriables = new List<SpecialItem>();
             Items = new List<Item>();
@@ -64,9 +65,9 @@ namespace RDLLVL
             {
                 Boss boss = new Boss();
                 boss.Type = reader.ReadUInt32();
-                boss.Param1 = reader.ReadUInt32();
-                boss.Param2 = reader.ReadUInt32();
-                boss.Param3 = reader.ReadUInt32();
+                boss.Subtype = reader.ReadUInt32();
+                boss.Level = reader.ReadUInt32();
+                boss.MovingTerrainID = reader.ReadInt32();
                 boss.HasSuperAbility = Convert.ToBoolean(reader.ReadUInt32());
                 uint[] x = ConvertCoords(reader.ReadUInt32());
                 uint[] y = ConvertCoords(reader.ReadUInt32());
@@ -74,6 +75,7 @@ namespace RDLLVL
                 boss.XOffset = x[1];
                 boss.Y = y[0];
                 boss.YOffset = y[1];
+                boss.Unknown = reader.ReadUInt32();
                 Bosses.Add(boss);
             }
 
@@ -155,8 +157,30 @@ namespace RDLLVL
             reader.BaseStream.Seek(pos + 0xC, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             count = reader.ReadUInt32();
-            reader.BaseStream.Seek(-4, SeekOrigin.Current);
-            DecorationChunk4 = reader.ReadBytes((int)(0x40 * count) + 0xC);
+            for (int i = 0; i < count; i++)
+            {
+                Section4D section4D = new Section4D();
+                section4D.Type = reader.ReadUInt32();
+                section4D.Param1 = reader.ReadUInt32();
+                section4D.Param2 = reader.ReadUInt32();
+                section4D.Param3 = reader.ReadUInt32();
+                section4D.Param4 = reader.ReadUInt32();
+                section4D.Param5 = reader.ReadUInt32();
+                section4D.Param6 = reader.ReadUInt32();
+                section4D.Param7 = reader.ReadUInt32();
+                section4D.Param8 = reader.ReadUInt32();
+                section4D.Param9 = reader.ReadUInt32();
+                section4D.Param10 = reader.ReadUInt32();
+                section4D.Param11 = reader.ReadUInt32();
+                section4D.Param12 = reader.ReadUInt32();
+                section4D.Param13 = reader.ReadUInt32();
+                section4D.Param14 = reader.ReadUInt32();
+                section4D.Param15 = reader.ReadUInt32();
+                section4D.Param16 = reader.ReadUInt32();
+                All4DSections.Add(section4D);
+            }
+            //reader.BaseStream.Seek(-4, SeekOrigin.Current);
+            //DecorationChunk4 = reader.ReadBytes((int)(0x40 * count) + 0xC);
 
             reader.BaseStream.Seek(0x28, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
@@ -166,8 +190,8 @@ namespace RDLLVL
                 Enemy enemy = new Enemy();
                 enemy.Type = reader.ReadUInt32();
                 enemy.Behavior = reader.ReadUInt32();
-                enemy.Param1 = reader.ReadUInt32();
-                enemy.Param2 = reader.ReadUInt32();
+                enemy.Level = reader.ReadUInt32();
+                enemy.DirectionType = reader.ReadUInt32();
                 enemy.SizeAD = reader.ReadUInt32();
                 enemy.SizeEX = reader.ReadUInt32();
                 enemy.MovingTerrainID = reader.ReadInt32();
@@ -254,8 +278,8 @@ namespace RDLLVL
             {
                 Item item = new Item();
                 item.Type = reader.ReadUInt32();
-                item.SubType = reader.ReadUInt32();
                 item.Behavior = reader.ReadUInt32();
+                item.Level = reader.ReadUInt32();
                 item.MovingTerrainID = reader.ReadInt32();
                 uint[] x = ConvertCoords(reader.ReadUInt32());
                 uint[] y = ConvertCoords(reader.ReadUInt32());
@@ -281,12 +305,13 @@ namespace RDLLVL
             for (int i = 0; i < Bosses.Count; i++)
             {
                 writer.Write(Bosses[i].Type);
-                writer.Write(Bosses[i].Param1);
-                writer.Write(Bosses[i].Param2);
-                writer.Write(Bosses[i].Param3);
+                writer.Write(Bosses[i].Subtype);
+                writer.Write(Bosses[i].Level);
+                writer.Write(Bosses[i].MovingTerrainID);
                 writer.Write(Convert.ToUInt32(Bosses[i].HasSuperAbility));
                 writer.Write(ConvertCoords(new uint[] { Bosses[i].X, Bosses[i].XOffset }));
                 writer.Write(ConvertCoords(new uint[] { Bosses[i].Y, Bosses[i].YOffset }));
+                writer.Write(Bosses[i].Unknown);
             }
             uint pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x18, SeekOrigin.Begin);
@@ -382,7 +407,28 @@ namespace RDLLVL
             writer.Write((uint)writer.BaseStream.Length);
             writer.BaseStream.Seek(0, SeekOrigin.End);
 
-            writer.Write(DecorationChunk4);
+            writer.Write(All4DSections.Count);
+            for (int i = 0; i < All4DSections.Count; i++)
+            {
+                writer.Write(All4DSections[i].Type);
+                writer.Write(All4DSections[i].Param1);
+                writer.Write(All4DSections[i].Param2);
+                writer.Write(All4DSections[i].Param3);
+                writer.Write(All4DSections[i].Param4);
+                writer.Write(All4DSections[i].Param5);
+                writer.Write(All4DSections[i].Param6);
+                writer.Write(All4DSections[i].Param7);
+                writer.Write(All4DSections[i].Param8);
+                writer.Write(All4DSections[i].Param9);
+                writer.Write(All4DSections[i].Param10);
+                writer.Write(All4DSections[i].Param11);
+                writer.Write(All4DSections[i].Param12);
+                writer.Write(All4DSections[i].Param13);
+                writer.Write(All4DSections[i].Param14);
+                writer.Write(All4DSections[i].Param15);
+                writer.Write(All4DSections[i].Param16);
+            }
+
             pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x28, SeekOrigin.Begin);
             writer.Write(pos);
@@ -393,8 +439,8 @@ namespace RDLLVL
             {
                 writer.Write(Enemies[i].Type);
                 writer.Write(Enemies[i].Behavior);
-                writer.Write(Enemies[i].Param1);
-                writer.Write(Enemies[i].Param2);
+                writer.Write(Enemies[i].Level);
+                writer.Write(Enemies[i].DirectionType);
                 writer.Write(Enemies[i].SizeAD);
                 writer.Write(Enemies[i].SizeEX);
                 writer.Write(Enemies[i].MovingTerrainID);
@@ -494,8 +540,8 @@ namespace RDLLVL
             for (int i = 0; i < Items.Count; i++)
             {
                 writer.Write(Items[i].Type);
-                writer.Write(Items[i].SubType);
                 writer.Write(Items[i].Behavior);
+                writer.Write(Items[i].Level);
                 writer.Write(Items[i].MovingTerrainID);
                 writer.Write(ConvertCoords(new uint[] { Items[i].X, Items[i].XOffset }));
                 writer.Write(ConvertCoords(new uint[] { Items[i].Y, Items[i].YOffset }));

@@ -120,12 +120,6 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>15, 19</value>
   </metadata>
-  <data name="label8.Text" xml:space="preserve">
-    <value>MagoCrate is a fork of MagoBox, a tool made by Firubii. I'd highly recommend checking it out as well since, honestly, I don't actually know what I'm doing! I've left links to it below, alongside some of my socials where you can reach me.</value>
-  </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>15, 19</value>
-  </metadata>
   <metadata name="mainColorDLG.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>128, 19</value>
   </metadata>

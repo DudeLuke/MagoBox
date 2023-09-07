@@ -16,11 +16,12 @@ namespace MagoBox.Editors
     {
         public RDLLVL.Object obj;
         Objects objs = new Objects();
-        MainForm main = new MainForm("");
+        MainForm main;
 
-        public ObjectEditor()
+        public ObjectEditor(MainForm parent)
         {
             InitializeComponent();
+            main = parent;
         }
 
         private void ObjectEditor_Load(object sender, EventArgs e)
@@ -78,7 +79,8 @@ namespace MagoBox.Editors
             xOffs.Value = obj.XOffset;
             yCoord.Value = obj.Y;
             yOffs.Value = obj.YOffset;
-            objNotes.Text = main.UpdateNotes("Object", type.Text);
+            categNotes.Text = main.ReadNotes("Object", "Default");
+            objNotes.Text = main.ReadNotes("Object", type.Text);
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -125,32 +127,34 @@ namespace MagoBox.Editors
             DialogResult = DialogResult.OK;
         }
 
+        private void saveNotes_Click(object sender, EventArgs e)
+        {
+            main.WriteNotes("Object", type.Text, objNotes.Text);
+            main.WriteNotes("Object", "Default", categNotes.Text);
+        }
+
         private void type_TextChanged(object sender, EventArgs e)
         {
+            objDropDown.Text = "";
             try
             {
                 if (objs.ObjectList.ContainsKey(uint.Parse(type.Text)))
                 {
                     objDropDown.Text = objs.ObjectList[uint.Parse(type.Text)];
                 }
-                else
-                {
-                    objDropDown.Text = "";
-                }
 
                 // Refresh object notes on type change via typing
-                objNotes.Text = main.UpdateNotes("Object", type.Text);
+                objNotes.Text = main.ReadNotes("Object", type.Text);
             }
             catch { }
         }
 
         private void objDropDown_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             type.Text = objs.ObjectList.FirstOrDefault(x => x.Value == objDropDown.Text).Key.ToString();
 
             // Refresh object notes on type change via drop down
-            objNotes.Text = main.UpdateNotes("Object", type.Text);
+            objNotes.Text = main.ReadNotes("Object", type.Text);
         }
         private void inHex_CheckedChanged(object sender, EventArgs e)
         {
@@ -212,7 +216,6 @@ namespace MagoBox.Editors
         {
             BackColor = MagoCrate.Properties.Settings.Default.MainColor;
             Color setColor = MagoCrate.Properties.Settings.Default.ObjColor;
-            if (MagoCrate.Properties.Settings.Default.rtmColorsON) setColor = MagoCrate.Properties.Settings.Default.ItemColor;
 
             type.BackColor = setColor;
             p1.BackColor = setColor;
@@ -233,10 +236,14 @@ namespace MagoBox.Editors
             yCoord.BackColor = setColor;
             yOffs.BackColor = setColor;
             objNotes.BackColor = setColor;
+            categNotes.BackColor = setColor;
             decBox.BackColor = setColor;
             hexBox.BackColor = setColor;
             save.BackColor = setColor;
+            saveNotes.BackColor = setColor;
             objDropDown.BackColor = setColor;
         }
+
+
     }
 }

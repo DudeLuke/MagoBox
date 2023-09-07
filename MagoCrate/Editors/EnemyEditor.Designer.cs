@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.behaviorDropDown = new System.Windows.Forms.ComboBox();
             this.enemyNotes = new System.Windows.Forms.TextBox();
             this.sizeEx = new System.Windows.Forms.NumericUpDown();
             this.label7 = new System.Windows.Forms.Label();
             this.sizeAd = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.p2 = new System.Windows.Forms.TextBox();
+            this.dirType = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.p1 = new System.Windows.Forms.TextBox();
+            this.level = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.super = new System.Windows.Forms.CheckBox();
             this.movingId = new System.Windows.Forms.NumericUpDown();
@@ -55,6 +56,8 @@
             this.type = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.objDropDown = new System.Windows.Forms.ComboBox();
+            this.categNotes = new System.Windows.Forms.TextBox();
+            this.saveNotes = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sizeEx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sizeAd)).BeginInit();
@@ -67,14 +70,20 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.saveNotes);
+            this.groupBox1.Controls.Add(this.categNotes);
+            this.groupBox1.Controls.Add(this.behaviorDropDown);
             this.groupBox1.Controls.Add(this.enemyNotes);
             this.groupBox1.Controls.Add(this.sizeEx);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.sizeAd);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.p2);
+            this.groupBox1.Controls.Add(this.dirType);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.p1);
+            this.groupBox1.Controls.Add(this.level);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.super);
             this.groupBox1.Controls.Add(this.movingId);
@@ -103,17 +112,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Object Properties";
             // 
+            // behaviorDropDown
+            // 
+            this.behaviorDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.behaviorDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.behaviorDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.behaviorDropDown.FormattingEnabled = true;
+            this.behaviorDropDown.Location = new System.Drawing.Point(230, 56);
+            this.behaviorDropDown.Margin = new System.Windows.Forms.Padding(4);
+            this.behaviorDropDown.Name = "behaviorDropDown";
+            this.behaviorDropDown.Size = new System.Drawing.Size(289, 24);
+            this.behaviorDropDown.TabIndex = 48;
+            this.behaviorDropDown.SelectedIndexChanged += new System.EventHandler(this.behaviorDropDown_SelectedIndexChanged);
+            // 
             // enemyNotes
             // 
+            this.enemyNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.enemyNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.enemyNotes.Cursor = System.Windows.Forms.Cursors.Default;
-            this.enemyNotes.Location = new System.Drawing.Point(230, 54);
+            this.enemyNotes.Location = new System.Drawing.Point(230, 312);
             this.enemyNotes.Margin = new System.Windows.Forms.Padding(4);
             this.enemyNotes.Multiline = true;
             this.enemyNotes.Name = "enemyNotes";
-            this.enemyNotes.ReadOnly = true;
             this.enemyNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.enemyNotes.Size = new System.Drawing.Size(289, 396);
+            this.enemyNotes.Size = new System.Drawing.Size(289, 112);
             this.enemyNotes.TabIndex = 47;
             // 
             // sizeEx
@@ -137,7 +162,7 @@
             this.label7.Location = new System.Drawing.Point(8, 186);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.Size = new System.Drawing.Size(61, 16);
             this.label7.TabIndex = 45;
             this.label7.Text = "Size (EX)";
             // 
@@ -162,18 +187,18 @@
             this.label6.Location = new System.Drawing.Point(8, 154);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 17);
+            this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 43;
             this.label6.Text = "Size (AD)";
             // 
             // p2
             // 
-            this.p2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.p2.Location = new System.Drawing.Point(147, 120);
-            this.p2.Margin = new System.Windows.Forms.Padding(4);
-            this.p2.Name = "p2";
-            this.p2.Size = new System.Drawing.Size(75, 22);
-            this.p2.TabIndex = 42;
+            this.dirType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.dirType.Location = new System.Drawing.Point(147, 120);
+            this.dirType.Margin = new System.Windows.Forms.Padding(4);
+            this.dirType.Name = "p2";
+            this.dirType.Size = new System.Drawing.Size(75, 22);
+            this.dirType.TabIndex = 42;
             // 
             // label5
             // 
@@ -182,18 +207,18 @@
             this.label5.Location = new System.Drawing.Point(8, 123);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 17);
+            this.label5.Size = new System.Drawing.Size(95, 16);
             this.label5.TabIndex = 41;
             this.label5.Text = "Direction Type";
             // 
             // p1
             // 
-            this.p1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.p1.Location = new System.Drawing.Point(147, 88);
-            this.p1.Margin = new System.Windows.Forms.Padding(4);
-            this.p1.Name = "p1";
-            this.p1.Size = new System.Drawing.Size(75, 22);
-            this.p1.TabIndex = 40;
+            this.level.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.level.Location = new System.Drawing.Point(147, 88);
+            this.level.Margin = new System.Windows.Forms.Padding(4);
+            this.level.Name = "p1";
+            this.level.Size = new System.Drawing.Size(75, 22);
+            this.level.TabIndex = 40;
             // 
             // label4
             // 
@@ -202,7 +227,7 @@
             this.label4.Location = new System.Drawing.Point(8, 91);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 17);
+            this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 39;
             this.label4.Text = "Level";
             // 
@@ -210,10 +235,10 @@
             // 
             this.super.AutoSize = true;
             this.super.ForeColor = System.Drawing.SystemColors.Control;
-            this.super.Location = new System.Drawing.Point(45, 393);
+            this.super.Location = new System.Drawing.Point(47, 372);
             this.super.Margin = new System.Windows.Forms.Padding(4);
             this.super.Name = "super";
-            this.super.Size = new System.Drawing.Size(138, 21);
+            this.super.Size = new System.Drawing.Size(132, 20);
             this.super.TabIndex = 38;
             this.super.Text = "Has Super Ability";
             this.super.UseVisualStyleBackColor = true;
@@ -239,6 +264,7 @@
             // 
             // save
             // 
+            this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.save.ForeColor = System.Drawing.SystemColors.ControlText;
             this.save.Location = new System.Drawing.Point(65, 422);
@@ -285,7 +311,7 @@
             this.label17.Location = new System.Drawing.Point(69, 344);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(59, 17);
+            this.label17.Size = new System.Drawing.Size(53, 16);
             this.label17.TabIndex = 33;
             this.label17.Text = "Y Offset";
             // 
@@ -296,7 +322,7 @@
             this.label16.Location = new System.Drawing.Point(62, 281);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 17);
+            this.label16.Size = new System.Drawing.Size(52, 16);
             this.label16.TabIndex = 32;
             this.label16.Text = "X Offset";
             // 
@@ -335,7 +361,7 @@
             this.label15.Location = new System.Drawing.Point(8, 314);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(71, 17);
+            this.label15.Size = new System.Drawing.Size(67, 16);
             this.label15.TabIndex = 29;
             this.label15.Text = "Y Position";
             // 
@@ -346,7 +372,7 @@
             this.label14.Location = new System.Drawing.Point(8, 249);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 17);
+            this.label14.Size = new System.Drawing.Size(66, 16);
             this.label14.TabIndex = 27;
             this.label14.Text = "X Position";
             // 
@@ -357,7 +383,7 @@
             this.label3.Location = new System.Drawing.Point(8, 218);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 17);
+            this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Moving Terrain ID";
             // 
@@ -369,6 +395,7 @@
             this.behavior.Name = "behavior";
             this.behavior.Size = new System.Drawing.Size(75, 22);
             this.behavior.TabIndex = 4;
+            this.behavior.TextChanged += new System.EventHandler(this.behavior_TextChanged);
             // 
             // label2
             // 
@@ -377,7 +404,7 @@
             this.label2.Location = new System.Drawing.Point(8, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Behavior";
             // 
@@ -398,12 +425,14 @@
             this.label1.Location = new System.Drawing.Point(8, 27);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 17);
+            this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Type";
             // 
             // objDropDown
             // 
+            this.objDropDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.objDropDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.objDropDown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.objDropDown.FormattingEnabled = true;
@@ -414,6 +443,35 @@
             this.objDropDown.TabIndex = 0;
             this.objDropDown.SelectedIndexChanged += new System.EventHandler(this.objDropDown_SelectedIndexChanged);
             // 
+            // categNotes
+            // 
+            this.categNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.categNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.categNotes.Cursor = System.Windows.Forms.Cursors.Default;
+            this.categNotes.Location = new System.Drawing.Point(230, 88);
+            this.categNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.categNotes.Multiline = true;
+            this.categNotes.Name = "categNotes";
+            this.categNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.categNotes.Size = new System.Drawing.Size(289, 213);
+            this.categNotes.TabIndex = 49;
+            // 
+            // saveNotes
+            // 
+            this.saveNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.saveNotes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.saveNotes.Location = new System.Drawing.Point(230, 422);
+            this.saveNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.saveNotes.Name = "saveNotes";
+            this.saveNotes.Size = new System.Drawing.Size(289, 28);
+            this.saveNotes.TabIndex = 50;
+            this.saveNotes.Text = "Save Notes";
+            this.saveNotes.UseVisualStyleBackColor = false;
+            this.saveNotes.Click += new System.EventHandler(this.saveNotes_Click);
+            // 
             // EnemyEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -421,8 +479,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(567, 487);
             this.Controls.Add(this.groupBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(585, 534);
             this.Name = "EnemyEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enemy Editor";
@@ -460,14 +519,17 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.NumericUpDown movingId;
         private System.Windows.Forms.CheckBox super;
-        private System.Windows.Forms.TextBox p2;
+        private System.Windows.Forms.TextBox dirType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox p1;
+        private System.Windows.Forms.TextBox level;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown sizeEx;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown sizeAd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox enemyNotes;
+        private System.Windows.Forms.ComboBox behaviorDropDown;
+        private System.Windows.Forms.Button saveNotes;
+        private System.Windows.Forms.TextBox categNotes;
     }
 }

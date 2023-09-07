@@ -36,16 +36,21 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stageSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.patchFDGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spriteEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveTilePaletteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderTileModifiersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderBlocksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderObjectPointsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renderEntityNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderMaterialsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renderAutoMovementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.useAvailableSpritesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.patchFDGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsAndHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.editObj = new System.Windows.Forms.Button();
@@ -63,6 +68,8 @@
             this.bossList = new System.Windows.Forms.ListBox();
             this.enemyTab = new System.Windows.Forms.TabPage();
             this.enemyList = new System.Windows.Forms.ListBox();
+            this.section4DList = new System.Windows.Forms.TabPage();
+            this.sections4DList = new System.Windows.Forms.ListBox();
             this.glControl = new OpenTK.GLControl();
             this.resetCamera = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -133,9 +140,36 @@
             this.viewType = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.pick = new System.Windows.Forms.Button();
-            this.draw = new System.Windows.Forms.Button();
+            this.paletteList = new System.Windows.Forms.ComboBox();
+            this.dropper = new System.Windows.Forms.Button();
             this.move = new System.Windows.Forms.Button();
+            this.draw = new System.Windows.Forms.Button();
+            this.tileName = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pTile22 = new System.Windows.Forms.Button();
+            this.pTile21 = new System.Windows.Forms.Button();
+            this.pTile23 = new System.Windows.Forms.Button();
+            this.pTile20 = new System.Windows.Forms.Button();
+            this.pTile15 = new System.Windows.Forms.Button();
+            this.pTile14 = new System.Windows.Forms.Button();
+            this.pTile13 = new System.Windows.Forms.Button();
+            this.pTile12 = new System.Windows.Forms.Button();
+            this.pTile19 = new System.Windows.Forms.Button();
+            this.pTile11 = new System.Windows.Forms.Button();
+            this.pTile18 = new System.Windows.Forms.Button();
+            this.pTile10 = new System.Windows.Forms.Button();
+            this.pTile2 = new System.Windows.Forms.Button();
+            this.pTile6 = new System.Windows.Forms.Button();
+            this.pTile8 = new System.Windows.Forms.Button();
+            this.pTile7 = new System.Windows.Forms.Button();
+            this.pTile5 = new System.Windows.Forms.Button();
+            this.pTile4 = new System.Windows.Forms.Button();
+            this.pTile24 = new System.Windows.Forms.Button();
+            this.pTile16 = new System.Windows.Forms.Button();
+            this.pTile3 = new System.Windows.Forms.Button();
+            this.pTile17 = new System.Windows.Forms.Button();
+            this.pTile9 = new System.Windows.Forms.Button();
+            this.pTile1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -144,6 +178,7 @@
             this.itemTab.SuspendLayout();
             this.bossTab.SuspendLayout();
             this.enemyTab.SuspendLayout();
+            this.section4DList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xCoord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xOffset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.yOffset)).BeginInit();
@@ -182,14 +217,12 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.stageSettingsToolStripMenuItem,
+            this.editToolStripMenuItem,
             this.renderSettingsToolStripMenuItem,
-            this.refreshToolStripMenuItem,
-            this.patchFDGToolStripMenuItem,
             this.optionsAndHelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1517, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1502, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -199,7 +232,8 @@
             this.newToolStripMenuItem,
             this.openToolStripMenuItem,
             this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem});
+            this.saveAsToolStripMenuItem,
+            this.clearToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
@@ -239,12 +273,62 @@
             this.saveAsToolStripMenuItem.Text = "Save As...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
+            // clearToolStripMenuItem
+            // 
+            this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.clearToolStripMenuItem.Text = "Clear";
+            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.stageSettingsToolStripMenuItem,
+            this.patchFDGToolStripMenuItem,
+            this.spriteEditorToolStripMenuItem,
+            this.saveTilePaletteToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
             // stageSettingsToolStripMenuItem
             // 
             this.stageSettingsToolStripMenuItem.Name = "stageSettingsToolStripMenuItem";
-            this.stageSettingsToolStripMenuItem.Size = new System.Drawing.Size(118, 24);
+            this.stageSettingsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
+            this.stageSettingsToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
             this.stageSettingsToolStripMenuItem.Text = "Stage Settings";
             this.stageSettingsToolStripMenuItem.Click += new System.EventHandler(this.stageSettingsToolStripMenuItem_Click);
+            // 
+            // patchFDGToolStripMenuItem
+            // 
+            this.patchFDGToolStripMenuItem.Name = "patchFDGToolStripMenuItem";
+            this.patchFDGToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
+            this.patchFDGToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.patchFDGToolStripMenuItem.Text = "Patch FDG";
+            this.patchFDGToolStripMenuItem.Click += new System.EventHandler(this.patchFDGToolStripMenuItem_Click);
+            // 
+            // spriteEditorToolStripMenuItem
+            // 
+            this.spriteEditorToolStripMenuItem.Name = "spriteEditorToolStripMenuItem";
+            this.spriteEditorToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.spriteEditorToolStripMenuItem.Text = "Import Sprite";
+            this.spriteEditorToolStripMenuItem.Click += new System.EventHandler(this.spriteEditorToolStripMenuItem_Click);
+            // 
+            // saveTilePaletteToolStripMenuItem
+            // 
+            this.saveTilePaletteToolStripMenuItem.Name = "saveTilePaletteToolStripMenuItem";
+            this.saveTilePaletteToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.saveTilePaletteToolStripMenuItem.Text = "Export Tile Palette";
+            this.saveTilePaletteToolStripMenuItem.Click += new System.EventHandler(this.saveTilePaletteToolStripMenuItem_Click);
             // 
             // renderSettingsToolStripMenuItem
             // 
@@ -252,6 +336,7 @@
             this.renderTileModifiersToolStripMenuItem,
             this.renderBlocksToolStripMenuItem,
             this.renderObjectPointsToolStripMenuItem,
+            this.renderEntityNamesToolStripMenuItem,
             this.renderMaterialsToolStripMenuItem,
             this.renderAutoMovementToolStripMenuItem,
             this.useAvailableSpritesToolStripMenuItem});
@@ -286,6 +371,15 @@
             this.renderObjectPointsToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.renderObjectPointsToolStripMenuItem.Text = "Render Entities";
             // 
+            // renderEntityNamesToolStripMenuItem
+            // 
+            this.renderEntityNamesToolStripMenuItem.Checked = true;
+            this.renderEntityNamesToolStripMenuItem.CheckOnClick = true;
+            this.renderEntityNamesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.renderEntityNamesToolStripMenuItem.Name = "renderEntityNamesToolStripMenuItem";
+            this.renderEntityNamesToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.renderEntityNamesToolStripMenuItem.Text = "Render Entity Names";
+            // 
             // renderMaterialsToolStripMenuItem
             // 
             this.renderMaterialsToolStripMenuItem.Checked = true;
@@ -313,20 +407,6 @@
             this.useAvailableSpritesToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.useAvailableSpritesToolStripMenuItem.Text = "Use Sprite Icons";
             // 
-            // refreshToolStripMenuItem
-            // 
-            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.refreshToolStripMenuItem.Text = "Refresh";
-            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
-            // 
-            // patchFDGToolStripMenuItem
-            // 
-            this.patchFDGToolStripMenuItem.Name = "patchFDGToolStripMenuItem";
-            this.patchFDGToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
-            this.patchFDGToolStripMenuItem.Text = "Patch FDG";
-            this.patchFDGToolStripMenuItem.Click += new System.EventHandler(this.patchFDGToolStripMenuItem_Click);
-            // 
             // optionsAndHelpToolStripMenuItem
             // 
             this.optionsAndHelpToolStripMenuItem.Name = "optionsAndHelpToolStripMenuItem";
@@ -336,6 +416,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox1.Controls.Add(this.editObj);
             this.groupBox1.Controls.Add(this.delObj);
             this.groupBox1.Controls.Add(this.cloneObj);
@@ -346,13 +428,14 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(369, 612);
+            this.groupBox1.Size = new System.Drawing.Size(446, 612);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entity Lists";
             // 
             // editObj
             // 
+            this.editObj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.editObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editObj.ForeColor = System.Drawing.SystemColors.ControlText;
             this.editObj.Location = new System.Drawing.Point(178, 573);
@@ -366,6 +449,7 @@
             // 
             // delObj
             // 
+            this.delObj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.delObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delObj.ForeColor = System.Drawing.SystemColors.ControlText;
             this.delObj.Location = new System.Drawing.Point(95, 573);
@@ -379,6 +463,7 @@
             // 
             // cloneObj
             // 
+            this.cloneObj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cloneObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cloneObj.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cloneObj.Location = new System.Drawing.Point(261, 573);
@@ -392,6 +477,7 @@
             // 
             // addObj
             // 
+            this.addObj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.addObj.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addObj.ForeColor = System.Drawing.SystemColors.ControlText;
             this.addObj.Location = new System.Drawing.Point(12, 573);
@@ -405,16 +491,20 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.objTab);
             this.tabControl1.Controls.Add(this.carriablesTab);
             this.tabControl1.Controls.Add(this.itemTab);
             this.tabControl1.Controls.Add(this.bossTab);
             this.tabControl1.Controls.Add(this.enemyTab);
+            this.tabControl1.Controls.Add(this.section4DList);
             this.tabControl1.Location = new System.Drawing.Point(8, 23);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(355, 542);
+            this.tabControl1.Size = new System.Drawing.Size(430, 542);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -425,20 +515,23 @@
             this.objTab.Margin = new System.Windows.Forms.Padding(4);
             this.objTab.Name = "objTab";
             this.objTab.Padding = new System.Windows.Forms.Padding(4);
-            this.objTab.Size = new System.Drawing.Size(347, 513);
+            this.objTab.Size = new System.Drawing.Size(422, 513);
             this.objTab.TabIndex = 0;
             this.objTab.Text = "Objects";
             this.objTab.UseVisualStyleBackColor = true;
             // 
             // objList
             // 
+            this.objList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.objList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
             this.objList.FormattingEnabled = true;
             this.objList.ItemHeight = 16;
             this.objList.Location = new System.Drawing.Point(7, 6);
             this.objList.Margin = new System.Windows.Forms.Padding(4);
             this.objList.Name = "objList";
-            this.objList.Size = new System.Drawing.Size(329, 500);
+            this.objList.Size = new System.Drawing.Size(411, 500);
             this.objList.TabIndex = 0;
             this.objList.SelectedIndexChanged += new System.EventHandler(this.objList_SelectedIndexChanged);
             this.objList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.objList_MouseDoubleClick);
@@ -450,20 +543,23 @@
             this.carriablesTab.Margin = new System.Windows.Forms.Padding(4);
             this.carriablesTab.Name = "carriablesTab";
             this.carriablesTab.Padding = new System.Windows.Forms.Padding(4);
-            this.carriablesTab.Size = new System.Drawing.Size(347, 513);
+            this.carriablesTab.Size = new System.Drawing.Size(422, 513);
             this.carriablesTab.TabIndex = 1;
             this.carriablesTab.Text = "Carriables";
             this.carriablesTab.UseVisualStyleBackColor = true;
             // 
             // carriablesList
             // 
+            this.carriablesList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.carriablesList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(219)))), ((int)(((byte)(255)))));
             this.carriablesList.FormattingEnabled = true;
             this.carriablesList.ItemHeight = 16;
             this.carriablesList.Location = new System.Drawing.Point(7, 6);
             this.carriablesList.Margin = new System.Windows.Forms.Padding(4);
             this.carriablesList.Name = "carriablesList";
-            this.carriablesList.Size = new System.Drawing.Size(329, 500);
+            this.carriablesList.Size = new System.Drawing.Size(411, 500);
             this.carriablesList.TabIndex = 4;
             this.carriablesList.SelectedIndexChanged += new System.EventHandler(this.specItemList_SelectedIndexChanged);
             this.carriablesList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.specItemList_MouseDoubleClick);
@@ -474,20 +570,23 @@
             this.itemTab.Location = new System.Drawing.Point(4, 25);
             this.itemTab.Margin = new System.Windows.Forms.Padding(4);
             this.itemTab.Name = "itemTab";
-            this.itemTab.Size = new System.Drawing.Size(347, 513);
+            this.itemTab.Size = new System.Drawing.Size(422, 513);
             this.itemTab.TabIndex = 2;
             this.itemTab.Text = "Items";
             this.itemTab.UseVisualStyleBackColor = true;
             // 
             // itemList
             // 
+            this.itemList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.itemList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(255)))), ((int)(((byte)(223)))));
             this.itemList.FormattingEnabled = true;
             this.itemList.ItemHeight = 16;
             this.itemList.Location = new System.Drawing.Point(7, 6);
             this.itemList.Margin = new System.Windows.Forms.Padding(4);
             this.itemList.Name = "itemList";
-            this.itemList.Size = new System.Drawing.Size(329, 500);
+            this.itemList.Size = new System.Drawing.Size(411, 500);
             this.itemList.TabIndex = 4;
             this.itemList.SelectedIndexChanged += new System.EventHandler(this.itemList_SelectedIndexChanged);
             this.itemList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.itemList_MouseDoubleClick);
@@ -498,20 +597,23 @@
             this.bossTab.Location = new System.Drawing.Point(4, 25);
             this.bossTab.Margin = new System.Windows.Forms.Padding(4);
             this.bossTab.Name = "bossTab";
-            this.bossTab.Size = new System.Drawing.Size(347, 513);
+            this.bossTab.Size = new System.Drawing.Size(422, 513);
             this.bossTab.TabIndex = 3;
             this.bossTab.Text = "Bosses";
             this.bossTab.UseVisualStyleBackColor = true;
             // 
             // bossList
             // 
+            this.bossList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.bossList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(213)))), ((int)(((byte)(255)))));
             this.bossList.FormattingEnabled = true;
             this.bossList.ItemHeight = 16;
             this.bossList.Location = new System.Drawing.Point(7, 6);
             this.bossList.Margin = new System.Windows.Forms.Padding(4);
             this.bossList.Name = "bossList";
-            this.bossList.Size = new System.Drawing.Size(329, 500);
+            this.bossList.Size = new System.Drawing.Size(411, 500);
             this.bossList.TabIndex = 4;
             this.bossList.SelectedIndexChanged += new System.EventHandler(this.bossList_SelectedIndexChanged);
             this.bossList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.bossList_MouseDoubleClick);
@@ -522,31 +624,63 @@
             this.enemyTab.Location = new System.Drawing.Point(4, 25);
             this.enemyTab.Margin = new System.Windows.Forms.Padding(4);
             this.enemyTab.Name = "enemyTab";
-            this.enemyTab.Size = new System.Drawing.Size(347, 513);
+            this.enemyTab.Size = new System.Drawing.Size(422, 513);
             this.enemyTab.TabIndex = 4;
             this.enemyTab.Text = "Enemies";
             this.enemyTab.UseVisualStyleBackColor = true;
             // 
             // enemyList
             // 
+            this.enemyList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.enemyList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.enemyList.FormattingEnabled = true;
             this.enemyList.ItemHeight = 16;
             this.enemyList.Location = new System.Drawing.Point(7, 6);
             this.enemyList.Margin = new System.Windows.Forms.Padding(4);
             this.enemyList.Name = "enemyList";
-            this.enemyList.Size = new System.Drawing.Size(329, 500);
+            this.enemyList.Size = new System.Drawing.Size(411, 500);
             this.enemyList.TabIndex = 4;
             this.enemyList.SelectedIndexChanged += new System.EventHandler(this.enemyList_SelectedIndexChanged);
             this.enemyList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.enemyList_MouseDoubleClick);
             // 
+            // section4DList
+            // 
+            this.section4DList.Controls.Add(this.sections4DList);
+            this.section4DList.Location = new System.Drawing.Point(4, 25);
+            this.section4DList.Name = "section4DList";
+            this.section4DList.Padding = new System.Windows.Forms.Padding(3);
+            this.section4DList.Size = new System.Drawing.Size(422, 513);
+            this.section4DList.TabIndex = 5;
+            this.section4DList.Text = "Section4D";
+            this.section4DList.UseVisualStyleBackColor = true;
+            // 
+            // sections4DList
+            // 
+            this.sections4DList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sections4DList.BackColor = System.Drawing.Color.White;
+            this.sections4DList.FormattingEnabled = true;
+            this.sections4DList.ItemHeight = 16;
+            this.sections4DList.Location = new System.Drawing.Point(9, 6);
+            this.sections4DList.Margin = new System.Windows.Forms.Padding(4);
+            this.sections4DList.Name = "sections4DList";
+            this.sections4DList.Size = new System.Drawing.Size(409, 500);
+            this.sections4DList.TabIndex = 5;
+            // 
             // glControl
             // 
+            this.glControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.glControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.glControl.BackColor = System.Drawing.Color.Black;
-            this.glControl.Location = new System.Drawing.Point(397, 84);
+            this.glControl.Location = new System.Drawing.Point(470, 87);
             this.glControl.Margin = new System.Windows.Forms.Padding(5);
             this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(736, 449);
+            this.glControl.Size = new System.Drawing.Size(700, 449);
             this.glControl.TabIndex = 2;
             this.glControl.VSync = false;
             this.glControl.Load += new System.EventHandler(this.glControl_Load);
@@ -557,11 +691,13 @@
             this.glControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseMove);
             this.glControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseUp);
             this.glControl.MouseWheel += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseWheel);
+            this.glControl.Resize += new System.EventHandler(this.glControl_Resize);
             // 
             // resetCamera
             // 
+            this.resetCamera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.resetCamera.Enabled = false;
-            this.resetCamera.Location = new System.Drawing.Point(1024, 41);
+            this.resetCamera.Location = new System.Drawing.Point(1061, 42);
             this.resetCamera.Margin = new System.Windows.Forms.Padding(4);
             this.resetCamera.Name = "resetCamera";
             this.resetCamera.Size = new System.Drawing.Size(109, 38);
@@ -573,40 +709,44 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(415, 538);
+            this.label1.Location = new System.Drawing.Point(497, 541);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 17);
+            this.label1.Size = new System.Drawing.Size(73, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Coordinate";
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(394, 562);
+            this.label3.Location = new System.Drawing.Point(476, 565);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(17, 17);
+            this.label3.Size = new System.Drawing.Size(15, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "X";
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(394, 592);
+            this.label4.Location = new System.Drawing.Point(476, 595);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 17);
+            this.label4.Size = new System.Drawing.Size(16, 16);
             this.label4.TabIndex = 22;
             this.label4.Text = "Y";
             // 
             // xCoord
             // 
-            this.xCoord.Location = new System.Drawing.Point(418, 560);
+            this.xCoord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.xCoord.Location = new System.Drawing.Point(500, 563);
             this.xCoord.Margin = new System.Windows.Forms.Padding(4);
             this.xCoord.Maximum = new decimal(new int[] {
             2147483647,
@@ -622,12 +762,13 @@
             // 
             // xOffset
             // 
+            this.xOffset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.xOffset.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.xOffset.Location = new System.Drawing.Point(586, 560);
+            this.xOffset.Location = new System.Drawing.Point(668, 563);
             this.xOffset.Margin = new System.Windows.Forms.Padding(4);
             this.xOffset.Maximum = new decimal(new int[] {
             32,
@@ -648,12 +789,13 @@
             // 
             // yOffset
             // 
+            this.yOffset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.yOffset.Increment = new decimal(new int[] {
             8,
             0,
             0,
             0});
-            this.yOffset.Location = new System.Drawing.Point(586, 590);
+            this.yOffset.Location = new System.Drawing.Point(668, 593);
             this.yOffset.Margin = new System.Windows.Forms.Padding(4);
             this.yOffset.Maximum = new decimal(new int[] {
             32,
@@ -674,7 +816,8 @@
             // 
             // yCoord
             // 
-            this.yCoord.Location = new System.Drawing.Point(418, 590);
+            this.yCoord.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.yCoord.Location = new System.Drawing.Point(500, 593);
             this.yCoord.Margin = new System.Windows.Forms.Padding(4);
             this.yCoord.Maximum = new decimal(new int[] {
             2147483647,
@@ -690,6 +833,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.tabControl2);
@@ -706,11 +851,11 @@
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(1141, 33);
+            this.groupBox2.Location = new System.Drawing.Point(1179, 34);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(360, 542);
+            this.groupBox2.Size = new System.Drawing.Size(310, 537);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tile Data Editor";
@@ -722,18 +867,18 @@
             this.label15.Location = new System.Drawing.Point(14, 313);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(111, 17);
+            this.label15.Size = new System.Drawing.Size(73, 16);
             this.label15.TabIndex = 104;
-            this.label15.Text = "Decoration Data";
+            this.label15.Text = "Decoration";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.SystemColors.Control;
-            this.label13.Location = new System.Drawing.Point(14, 400);
+            this.label13.Location = new System.Drawing.Point(8, 400);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(48, 17);
+            this.label13.Size = new System.Drawing.Size(45, 16);
             this.label13.TabIndex = 72;
             this.label13.Text = "FLand";
             // 
@@ -741,12 +886,12 @@
             // 
             this.tabControl2.Controls.Add(this.tabPage1);
             this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Location = new System.Drawing.Point(74, 310);
+            this.tabControl2.Location = new System.Drawing.Point(63, 308);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tabControl2.RightToLeftLayout = true;
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(255, 123);
+            this.tabControl2.Size = new System.Drawing.Size(240, 123);
             this.tabControl2.TabIndex = 103;
             this.toolTip1.SetToolTip(this.tabControl2, "Decoration data that\'s used to make\r\nthe actual tiling of the level. Has three\r\nd" +
         "ifferent categories.\r\nBLand - Background Decor.\r\nMLand - Middle, Walkable Decor." +
@@ -771,7 +916,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(247, 94);
+            this.tabPage1.Size = new System.Drawing.Size(232, 94);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Byte Values";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -797,7 +942,7 @@
             // 
             // d1_2
             // 
-            this.d1_2.Location = new System.Drawing.Point(67, 9);
+            this.d1_2.Location = new System.Drawing.Point(65, 9);
             this.d1_2.Margin = new System.Windows.Forms.Padding(4);
             this.d1_2.Maximum = new decimal(new int[] {
             255,
@@ -816,7 +961,7 @@
             // 
             // d1_3
             // 
-            this.d1_3.Location = new System.Drawing.Point(127, 9);
+            this.d1_3.Location = new System.Drawing.Point(123, 9);
             this.d1_3.Margin = new System.Windows.Forms.Padding(4);
             this.d1_3.Maximum = new decimal(new int[] {
             255,
@@ -830,7 +975,7 @@
             // 
             // d2_4
             // 
-            this.d2_4.Location = new System.Drawing.Point(187, 63);
+            this.d2_4.Location = new System.Drawing.Point(179, 61);
             this.d2_4.Margin = new System.Windows.Forms.Padding(4);
             this.d2_4.Maximum = new decimal(new int[] {
             15,
@@ -844,7 +989,7 @@
             -2147483648});
             this.d2_4.Name = "d2_4";
             this.d2_4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.d2_4.Size = new System.Drawing.Size(52, 22);
+            this.d2_4.Size = new System.Drawing.Size(50, 22);
             this.d2_4.TabIndex = 80;
             this.d2_4.Value = new decimal(new int[] {
             1,
@@ -854,7 +999,7 @@
             // 
             // d3_4
             // 
-            this.d3_4.Location = new System.Drawing.Point(187, 36);
+            this.d3_4.Location = new System.Drawing.Point(179, 36);
             this.d3_4.Margin = new System.Windows.Forms.Padding(4);
             this.d3_4.Maximum = new decimal(new int[] {
             15,
@@ -868,7 +1013,7 @@
             -2147483648});
             this.d3_4.Name = "d3_4";
             this.d3_4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.d3_4.Size = new System.Drawing.Size(52, 22);
+            this.d3_4.Size = new System.Drawing.Size(50, 22);
             this.d3_4.TabIndex = 84;
             this.d3_4.Value = new decimal(new int[] {
             1,
@@ -878,7 +1023,7 @@
             // 
             // d2_3
             // 
-            this.d2_3.Location = new System.Drawing.Point(127, 63);
+            this.d2_3.Location = new System.Drawing.Point(123, 61);
             this.d2_3.Margin = new System.Windows.Forms.Padding(4);
             this.d2_3.Maximum = new decimal(new int[] {
             255,
@@ -892,7 +1037,7 @@
             // 
             // d1_4
             // 
-            this.d1_4.Location = new System.Drawing.Point(187, 9);
+            this.d1_4.Location = new System.Drawing.Point(181, 9);
             this.d1_4.Margin = new System.Windows.Forms.Padding(4);
             this.d1_4.Maximum = new decimal(new int[] {
             15,
@@ -906,7 +1051,7 @@
             -2147483648});
             this.d1_4.Name = "d1_4";
             this.d1_4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.d1_4.Size = new System.Drawing.Size(52, 22);
+            this.d1_4.Size = new System.Drawing.Size(50, 22);
             this.d1_4.TabIndex = 76;
             this.d1_4.Value = new decimal(new int[] {
             1,
@@ -916,7 +1061,7 @@
             // 
             // d2_2
             // 
-            this.d2_2.Location = new System.Drawing.Point(67, 63);
+            this.d2_2.Location = new System.Drawing.Point(65, 63);
             this.d2_2.Margin = new System.Windows.Forms.Padding(4);
             this.d2_2.Maximum = new decimal(new int[] {
             255,
@@ -935,7 +1080,7 @@
             // 
             // d3_3
             // 
-            this.d3_3.Location = new System.Drawing.Point(127, 36);
+            this.d3_3.Location = new System.Drawing.Point(123, 36);
             this.d3_3.Margin = new System.Windows.Forms.Padding(4);
             this.d3_3.Maximum = new decimal(new int[] {
             255,
@@ -968,7 +1113,7 @@
             // 
             // d3_2
             // 
-            this.d3_2.Location = new System.Drawing.Point(67, 36);
+            this.d3_2.Location = new System.Drawing.Point(65, 36);
             this.d3_2.Margin = new System.Windows.Forms.Padding(4);
             this.d3_2.Maximum = new decimal(new int[] {
             255,
@@ -1012,18 +1157,18 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(247, 94);
+            this.tabPage2.Size = new System.Drawing.Size(232, 94);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hex Values";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // d2_hex
             // 
-            this.d2_hex.Location = new System.Drawing.Point(29, 62);
+            this.d2_hex.Location = new System.Drawing.Point(6, 63);
             this.d2_hex.MaxLength = 8;
             this.d2_hex.Name = "d2_hex";
             this.d2_hex.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.d2_hex.Size = new System.Drawing.Size(188, 22);
+            this.d2_hex.Size = new System.Drawing.Size(220, 22);
             this.d2_hex.TabIndex = 2;
             this.d2_hex.Text = "FFFF00FF";
             this.d2_hex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1031,11 +1176,11 @@
             // 
             // d3_hex
             // 
-            this.d3_hex.Location = new System.Drawing.Point(29, 35);
+            this.d3_hex.Location = new System.Drawing.Point(6, 35);
             this.d3_hex.MaxLength = 8;
             this.d3_hex.Name = "d3_hex";
             this.d3_hex.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.d3_hex.Size = new System.Drawing.Size(188, 22);
+            this.d3_hex.Size = new System.Drawing.Size(220, 22);
             this.d3_hex.TabIndex = 1;
             this.d3_hex.Text = "FFFF00FF";
             this.d3_hex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1043,11 +1188,11 @@
             // 
             // d1_hex
             // 
-            this.d1_hex.Location = new System.Drawing.Point(29, 8);
+            this.d1_hex.Location = new System.Drawing.Point(6, 7);
             this.d1_hex.MaxLength = 8;
             this.d1_hex.Name = "d1_hex";
             this.d1_hex.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.d1_hex.Size = new System.Drawing.Size(188, 22);
+            this.d1_hex.Size = new System.Drawing.Size(220, 22);
             this.d1_hex.TabIndex = 0;
             this.d1_hex.Text = "FFFF00FF";
             this.d1_hex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1057,10 +1202,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(14, 346);
+            this.label11.Location = new System.Drawing.Point(8, 346);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 17);
+            this.label11.Size = new System.Drawing.Size(46, 16);
             this.label11.TabIndex = 70;
             this.label11.Text = "BLand";
             // 
@@ -1070,10 +1215,10 @@
             this.editAutoMove.Checked = true;
             this.editAutoMove.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editAutoMove.ForeColor = System.Drawing.SystemColors.Control;
-            this.editAutoMove.Location = new System.Drawing.Point(17, 513);
+            this.editAutoMove.Location = new System.Drawing.Point(11, 513);
             this.editAutoMove.Margin = new System.Windows.Forms.Padding(4);
             this.editAutoMove.Name = "editAutoMove";
-            this.editAutoMove.Size = new System.Drawing.Size(170, 21);
+            this.editAutoMove.Size = new System.Drawing.Size(163, 20);
             this.editAutoMove.TabIndex = 101;
             this.editAutoMove.Text = "Edit Auto Move Speed";
             this.editAutoMove.UseVisualStyleBackColor = true;
@@ -1085,10 +1230,10 @@
             this.editMat.Checked = true;
             this.editMat.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editMat.ForeColor = System.Drawing.SystemColors.Control;
-            this.editMat.Location = new System.Drawing.Point(17, 488);
+            this.editMat.Location = new System.Drawing.Point(11, 488);
             this.editMat.Margin = new System.Windows.Forms.Padding(4);
             this.editMat.Name = "editMat";
-            this.editMat.Size = new System.Drawing.Size(115, 21);
+            this.editMat.Size = new System.Drawing.Size(110, 20);
             this.editMat.TabIndex = 100;
             this.editMat.Text = "Edit Materials";
             this.editMat.UseVisualStyleBackColor = true;
@@ -1098,10 +1243,10 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.SystemColors.Control;
-            this.label12.Location = new System.Drawing.Point(14, 373);
+            this.label12.Location = new System.Drawing.Point(8, 373);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 17);
+            this.label12.Size = new System.Drawing.Size(48, 16);
             this.label12.TabIndex = 71;
             this.label12.Text = "MLand";
             // 
@@ -1111,10 +1256,10 @@
             this.editModf.Checked = true;
             this.editModf.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editModf.ForeColor = System.Drawing.SystemColors.Control;
-            this.editModf.Location = new System.Drawing.Point(17, 463);
+            this.editModf.Location = new System.Drawing.Point(11, 463);
             this.editModf.Margin = new System.Windows.Forms.Padding(4);
             this.editModf.Name = "editModf";
-            this.editModf.Size = new System.Drawing.Size(115, 21);
+            this.editModf.Size = new System.Drawing.Size(110, 20);
             this.editModf.TabIndex = 99;
             this.editModf.Text = "Edit Modifiers";
             this.editModf.UseVisualStyleBackColor = true;
@@ -1125,10 +1270,10 @@
             this.editFLand.AutoSize = true;
             this.editFLand.Checked = true;
             this.editFLand.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.editFLand.Location = new System.Drawing.Point(212, 513);
+            this.editFLand.Location = new System.Drawing.Point(190, 513);
             this.editFLand.Margin = new System.Windows.Forms.Padding(4);
             this.editFLand.Name = "editFLand";
-            this.editFLand.Size = new System.Drawing.Size(98, 21);
+            this.editFLand.Size = new System.Drawing.Size(93, 20);
             this.editFLand.TabIndex = 98;
             this.editFLand.Text = "Edit FLand";
             this.editFLand.UseVisualStyleBackColor = true;
@@ -1140,10 +1285,10 @@
             this.editMLand.Checked = true;
             this.editMLand.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editMLand.ForeColor = System.Drawing.SystemColors.Control;
-            this.editMLand.Location = new System.Drawing.Point(212, 488);
+            this.editMLand.Location = new System.Drawing.Point(190, 488);
             this.editMLand.Margin = new System.Windows.Forms.Padding(4);
             this.editMLand.Name = "editMLand";
-            this.editMLand.Size = new System.Drawing.Size(101, 21);
+            this.editMLand.Size = new System.Drawing.Size(96, 20);
             this.editMLand.TabIndex = 97;
             this.editMLand.Text = "Edit MLand";
             this.editMLand.UseVisualStyleBackColor = true;
@@ -1155,10 +1300,10 @@
             this.editBLand.Checked = true;
             this.editBLand.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editBLand.ForeColor = System.Drawing.SystemColors.Control;
-            this.editBLand.Location = new System.Drawing.Point(212, 463);
+            this.editBLand.Location = new System.Drawing.Point(190, 463);
             this.editBLand.Margin = new System.Windows.Forms.Padding(4);
             this.editBLand.Name = "editBLand";
-            this.editBLand.Size = new System.Drawing.Size(99, 21);
+            this.editBLand.Size = new System.Drawing.Size(94, 20);
             this.editBLand.TabIndex = 96;
             this.editBLand.Text = "Edit BLand";
             this.editBLand.UseVisualStyleBackColor = true;
@@ -1170,10 +1315,10 @@
             this.editBlock.Checked = true;
             this.editBlock.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editBlock.ForeColor = System.Drawing.SystemColors.Control;
-            this.editBlock.Location = new System.Drawing.Point(212, 438);
+            this.editBlock.Location = new System.Drawing.Point(190, 438);
             this.editBlock.Margin = new System.Windows.Forms.Padding(4);
             this.editBlock.Name = "editBlock";
-            this.editBlock.Size = new System.Drawing.Size(99, 21);
+            this.editBlock.Size = new System.Drawing.Size(96, 20);
             this.editBlock.TabIndex = 95;
             this.editBlock.Text = "Edit Blocks";
             this.editBlock.UseVisualStyleBackColor = true;
@@ -1185,10 +1330,10 @@
             this.editCol.Checked = true;
             this.editCol.CheckState = System.Windows.Forms.CheckState.Checked;
             this.editCol.ForeColor = System.Drawing.SystemColors.Control;
-            this.editCol.Location = new System.Drawing.Point(17, 438);
+            this.editCol.Location = new System.Drawing.Point(11, 438);
             this.editCol.Margin = new System.Windows.Forms.Padding(4);
             this.editCol.Name = "editCol";
-            this.editCol.Size = new System.Drawing.Size(155, 21);
+            this.editCol.Size = new System.Drawing.Size(149, 20);
             this.editCol.TabIndex = 94;
             this.editCol.Text = "Edit Collision Shape";
             this.editCol.UseVisualStyleBackColor = true;
@@ -1204,7 +1349,7 @@
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(340, 65);
+            this.groupBox4.Size = new System.Drawing.Size(293, 65);
             this.groupBox4.TabIndex = 92;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Block Data";
@@ -1212,7 +1357,7 @@
             // vBlock
             // 
             this.vBlock.Enabled = false;
-            this.vBlock.Location = new System.Drawing.Point(265, 26);
+            this.vBlock.Location = new System.Drawing.Point(230, 27);
             this.vBlock.Margin = new System.Windows.Forms.Padding(4);
             this.vBlock.Maximum = new decimal(new int[] {
             99,
@@ -1297,7 +1442,7 @@
             "Fire 2x2 (Fragile)"});
             this.blockList.Location = new System.Drawing.Point(11, 25);
             this.blockList.Name = "blockList";
-            this.blockList.Size = new System.Drawing.Size(195, 24);
+            this.blockList.Size = new System.Drawing.Size(172, 24);
             this.blockList.TabIndex = 106;
             this.toolTip1.SetToolTip(this.blockList, "The block that\'s placed on a tile,\r\nthe \"origin point\" of most blocks\r\nbigger tha" +
         "n a single tile is their\r\nbottom-left corner.");
@@ -1307,7 +1452,7 @@
             // 
             this.blockImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.blockImg.Image = global::MagoCrate.Properties.Resources._0;
-            this.blockImg.Location = new System.Drawing.Point(215, 17);
+            this.blockImg.Location = new System.Drawing.Point(186, 17);
             this.blockImg.Margin = new System.Windows.Forms.Padding(4);
             this.blockImg.Name = "blockImg";
             this.blockImg.Size = new System.Drawing.Size(40, 37);
@@ -1339,7 +1484,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(340, 210);
+            this.groupBox3.Size = new System.Drawing.Size(293, 210);
             this.groupBox3.TabIndex = 91;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Collision Data";
@@ -1356,9 +1501,9 @@
             "Snow",
             "Clouds",
             "Metal"});
-            this.materialList.Location = new System.Drawing.Point(185, 141);
+            this.materialList.Location = new System.Drawing.Point(131, 143);
             this.materialList.Name = "materialList";
-            this.materialList.Size = new System.Drawing.Size(94, 24);
+            this.materialList.Size = new System.Drawing.Size(99, 24);
             this.materialList.TabIndex = 108;
             this.toolTip1.SetToolTip(this.materialList, "The \"Material\" of the collision\r\non that tile, used to create unique\r\nfootstep so" +
         "unds and effects.");
@@ -1366,7 +1511,7 @@
             // 
             // vShape
             // 
-            this.vShape.Location = new System.Drawing.Point(265, 23);
+            this.vShape.Location = new System.Drawing.Point(230, 23);
             this.vShape.Margin = new System.Windows.Forms.Padding(4);
             this.vShape.Maximum = new decimal(new int[] {
             52,
@@ -1382,10 +1527,10 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.SystemColors.Control;
-            this.label14.Location = new System.Drawing.Point(18, 84);
+            this.label14.Location = new System.Drawing.Point(8, 83);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(65, 17);
+            this.label14.Size = new System.Drawing.Size(62, 16);
             this.label14.TabIndex = 92;
             this.label14.Text = "Modifiers";
             // 
@@ -1393,7 +1538,7 @@
             // 
             this.colImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.colImg.Image = global::MagoCrate.Properties.Resources._0;
-            this.colImg.Location = new System.Drawing.Point(215, 15);
+            this.colImg.Location = new System.Drawing.Point(185, 15);
             this.colImg.Margin = new System.Windows.Forms.Padding(4);
             this.colImg.Name = "colImg";
             this.colImg.Size = new System.Drawing.Size(40, 37);
@@ -1405,12 +1550,11 @@
             // ice
             // 
             this.ice.AutoSize = true;
-            this.ice.ForeColor = System.Drawing.SystemColors.Control;
-            this.ice.Image = global::MagoCrate.Properties.Resources.ice;
-            this.ice.Location = new System.Drawing.Point(198, 111);
+            this.ice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ice.Location = new System.Drawing.Point(170, 110);
             this.ice.Margin = new System.Windows.Forms.Padding(4);
             this.ice.Name = "ice";
-            this.ice.Size = new System.Drawing.Size(65, 21);
+            this.ice.Size = new System.Drawing.Size(47, 20);
             this.ice.TabIndex = 90;
             this.ice.Text = "Ice";
             this.ice.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1424,19 +1568,18 @@
             this.label5.Location = new System.Drawing.Point(8, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 17);
+            this.label5.Size = new System.Drawing.Size(101, 16);
             this.label5.TabIndex = 58;
-            this.label5.Text = "Shape (Click Box to Select)";
+            this.label5.Text = "Collision Shape\r\n";
             // 
             // spike
             // 
             this.spike.AutoSize = true;
-            this.spike.ForeColor = System.Drawing.SystemColors.Control;
-            this.spike.Image = global::MagoCrate.Properties.Resources.spike;
-            this.spike.Location = new System.Drawing.Point(198, 83);
+            this.spike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.spike.Location = new System.Drawing.Point(170, 85);
             this.spike.Margin = new System.Windows.Forms.Padding(4);
             this.spike.Name = "spike";
-            this.spike.Size = new System.Drawing.Size(82, 21);
+            this.spike.Size = new System.Drawing.Size(64, 20);
             this.spike.TabIndex = 89;
             this.spike.Text = "Spike";
             this.spike.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1447,10 +1590,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 144);
+            this.label7.Location = new System.Drawing.Point(8, 146);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 17);
+            this.label7.Size = new System.Drawing.Size(109, 16);
             this.label7.TabIndex = 59;
             this.label7.Text = "Collision Material";
             this.toolTip1.SetToolTip(this.label7, "The \"Material\" of the collision\r\non that tile, used to create unique\r\nfootstep so" +
@@ -1459,12 +1602,11 @@
             // boundary
             // 
             this.boundary.AutoSize = true;
-            this.boundary.ForeColor = System.Drawing.SystemColors.Control;
-            this.boundary.Image = global::MagoCrate.Properties.Resources.boundary;
-            this.boundary.Location = new System.Drawing.Point(198, 55);
+            this.boundary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.boundary.Location = new System.Drawing.Point(170, 60);
             this.boundary.Margin = new System.Windows.Forms.Padding(4);
             this.boundary.Name = "boundary";
-            this.boundary.Size = new System.Drawing.Size(108, 21);
+            this.boundary.Size = new System.Drawing.Size(87, 20);
             this.boundary.TabIndex = 88;
             this.boundary.Text = "Boundary";
             this.boundary.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1476,10 +1618,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(18, 176);
+            this.label8.Location = new System.Drawing.Point(8, 176);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 17);
+            this.label8.Size = new System.Drawing.Size(115, 16);
             this.label8.TabIndex = 60;
             this.label8.Text = "Auto Move Speed";
             this.toolTip1.SetToolTip(this.label8, "Auto-movement for that tile. It\'s\r\nalmost exclusively used for the\r\nEgg Engines c" +
@@ -1487,7 +1629,7 @@
             // 
             // vmat
             // 
-            this.vmat.Location = new System.Drawing.Point(286, 142);
+            this.vmat.Location = new System.Drawing.Point(237, 143);
             this.vmat.Margin = new System.Windows.Forms.Padding(4);
             this.vmat.Maximum = new decimal(new int[] {
             63,
@@ -1504,13 +1646,12 @@
             // ladder
             // 
             this.ladder.AutoSize = true;
-            this.ladder.ForeColor = System.Drawing.SystemColors.Control;
-            this.ladder.Image = global::MagoCrate.Properties.Resources.ladder;
+            this.ladder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ladder.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ladder.Location = new System.Drawing.Point(98, 55);
+            this.ladder.Location = new System.Drawing.Point(85, 60);
             this.ladder.Margin = new System.Windows.Forms.Padding(4);
             this.ladder.Name = "ladder";
-            this.ladder.Size = new System.Drawing.Size(92, 21);
+            this.ladder.Size = new System.Drawing.Size(72, 20);
             this.ladder.TabIndex = 62;
             this.ladder.Text = "Ladder";
             this.ladder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1520,7 +1661,7 @@
             // 
             // vautomove
             // 
-            this.vautomove.Location = new System.Drawing.Point(185, 174);
+            this.vautomove.Location = new System.Drawing.Point(131, 174);
             this.vautomove.Margin = new System.Windows.Forms.Padding(4);
             this.vautomove.Maximum = new decimal(new int[] {
             3,
@@ -1533,18 +1674,17 @@
             0,
             -2147483648});
             this.vautomove.Name = "vautomove";
-            this.vautomove.Size = new System.Drawing.Size(149, 22);
+            this.vautomove.Size = new System.Drawing.Size(154, 22);
             this.vautomove.TabIndex = 86;
             // 
             // water
             // 
             this.water.AutoSize = true;
-            this.water.ForeColor = System.Drawing.SystemColors.Control;
-            this.water.Image = global::MagoCrate.Properties.Resources.water;
-            this.water.Location = new System.Drawing.Point(98, 83);
+            this.water.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.water.Location = new System.Drawing.Point(85, 85);
             this.water.Margin = new System.Windows.Forms.Padding(4);
             this.water.Name = "water";
-            this.water.Size = new System.Drawing.Size(85, 21);
+            this.water.Size = new System.Drawing.Size(65, 20);
             this.water.TabIndex = 63;
             this.water.Text = "Water";
             this.water.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1555,12 +1695,11 @@
             // lava
             // 
             this.lava.AutoSize = true;
-            this.lava.ForeColor = System.Drawing.SystemColors.Control;
-            this.lava.Image = global::MagoCrate.Properties.Resources.lava;
-            this.lava.Location = new System.Drawing.Point(98, 111);
+            this.lava.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lava.Location = new System.Drawing.Point(85, 110);
             this.lava.Margin = new System.Windows.Forms.Padding(4);
             this.lava.Name = "lava";
-            this.lava.Size = new System.Drawing.Size(78, 21);
+            this.lava.Size = new System.Drawing.Size(59, 20);
             this.lava.TabIndex = 64;
             this.lava.Text = "Lava";
             this.lava.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1569,34 +1708,36 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(583, 538);
+            this.label6.Location = new System.Drawing.Point(665, 541);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 17);
+            this.label6.Size = new System.Drawing.Size(41, 16);
             this.label6.TabIndex = 29;
             this.label6.Text = "Offset";
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.sizeW);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.sizeH);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox6.Location = new System.Drawing.Point(1141, 583);
+            this.groupBox6.Location = new System.Drawing.Point(1179, 579);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox6.Size = new System.Drawing.Size(360, 62);
+            this.groupBox6.Size = new System.Drawing.Size(310, 62);
             this.groupBox6.TabIndex = 31;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Level Size";
             // 
             // sizeW
             // 
-            this.sizeW.Location = new System.Drawing.Point(239, 27);
+            this.sizeW.Location = new System.Drawing.Point(217, 27);
             this.sizeW.Margin = new System.Windows.Forms.Padding(4);
             this.sizeW.Maximum = new decimal(new int[] {
             -1,
@@ -1609,7 +1750,7 @@
             0,
             0});
             this.sizeW.Name = "sizeW";
-            this.sizeW.Size = new System.Drawing.Size(104, 22);
+            this.sizeW.Size = new System.Drawing.Size(77, 22);
             this.sizeW.TabIndex = 3;
             this.toolTip1.SetToolTip(this.sizeW, "Change the level size, expands");
             this.sizeW.Value = new decimal(new int[] {
@@ -1623,10 +1764,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.Control;
-            this.label9.Location = new System.Drawing.Point(187, 29);
+            this.label9.Location = new System.Drawing.Point(168, 29);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 17);
+            this.label9.Size = new System.Drawing.Size(41, 16);
             this.label9.TabIndex = 2;
             this.label9.Text = "Width";
             this.toolTip1.SetToolTip(this.label9, "Change the level size, expands\r\nfrom left to right and down\r\nto up.\r\n");
@@ -1646,7 +1787,7 @@
             0,
             0});
             this.sizeH.Name = "sizeH";
-            this.sizeH.Size = new System.Drawing.Size(104, 22);
+            this.sizeH.Size = new System.Drawing.Size(83, 22);
             this.sizeH.TabIndex = 1;
             this.toolTip1.SetToolTip(this.sizeH, "Change the level size, expands\r\nfrom left to right and down\r\nto up.");
             this.sizeH.Value = new decimal(new int[] {
@@ -1663,21 +1804,22 @@
             this.label2.Location = new System.Drawing.Point(20, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 17);
+            this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Height";
             this.toolTip1.SetToolTip(this.label2, "Change the level size, expands\r\nfrom left to right and down\r\nto up.\r\n");
             // 
             // halfTileLock
             // 
+            this.halfTileLock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.halfTileLock.AutoSize = true;
             this.halfTileLock.Checked = true;
             this.halfTileLock.CheckState = System.Windows.Forms.CheckState.Checked;
             this.halfTileLock.ForeColor = System.Drawing.SystemColors.Control;
-            this.halfTileLock.Location = new System.Drawing.Point(397, 625);
+            this.halfTileLock.Location = new System.Drawing.Point(500, 623);
             this.halfTileLock.Margin = new System.Windows.Forms.Padding(4);
             this.halfTileLock.Name = "halfTileLock";
-            this.halfTileLock.Size = new System.Drawing.Size(260, 21);
+            this.halfTileLock.Size = new System.Drawing.Size(243, 20);
             this.halfTileLock.TabIndex = 102;
             this.halfTileLock.Text = "Increment Offset Values in Half-Tiles";
             this.toolTip1.SetToolTip(this.halfTileLock, "Determine whether incrementing\r\nthe offset values will change by 1\r\nor 8 units. 8" +
@@ -1687,6 +1829,7 @@
             // 
             // viewType
             // 
+            this.viewType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.viewType.Enabled = false;
             this.viewType.FormattingEnabled = true;
             this.viewType.Items.AddRange(new object[] {
@@ -1694,7 +1837,7 @@
             "Decoration: BLand",
             "Decoration: MLand",
             "Decoration: FLand"});
-            this.viewType.Location = new System.Drawing.Point(862, 49);
+            this.viewType.Location = new System.Drawing.Point(899, 50);
             this.viewType.Name = "viewType";
             this.viewType.Size = new System.Drawing.Size(155, 24);
             this.viewType.TabIndex = 103;
@@ -1704,49 +1847,48 @@
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.Control;
-            this.label16.Location = new System.Drawing.Point(782, 52);
+            this.label16.Location = new System.Drawing.Point(821, 53);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(73, 17);
+            this.label16.Size = new System.Drawing.Size(71, 16);
             this.label16.TabIndex = 104;
             this.label16.Text = "View Type";
             this.toolTip1.SetToolTip(this.label16, "Change the view type between being\r\nable to view the level normally or\r\nbeing abl" +
         "e to view a single category\r\nof decoration data.");
             // 
-            // pick
+            // paletteList
             // 
-            this.pick.BackgroundImage = global::MagoCrate.Properties.Resources.pick;
-            this.pick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pick.Location = new System.Drawing.Point(446, 40);
-            this.pick.Margin = new System.Windows.Forms.Padding(4);
-            this.pick.Name = "pick";
-            this.pick.Size = new System.Drawing.Size(41, 41);
-            this.pick.TabIndex = 30;
-            this.toolTip1.SetToolTip(this.pick, "Click tiles to copy their data\r\ninto the right-hand \r\n\"Tile Data Editor\"\r\n");
-            this.pick.UseVisualStyleBackColor = true;
-            this.pick.Click += new System.EventHandler(this.pick_Click);
+            this.paletteList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.paletteList.FormattingEnabled = true;
+            this.paletteList.Location = new System.Drawing.Point(758, 563);
+            this.paletteList.Name = "paletteList";
+            this.paletteList.Size = new System.Drawing.Size(125, 24);
+            this.paletteList.TabIndex = 108;
+            this.toolTip1.SetToolTip(this.paletteList, "Select a tile palette, which\r\ngives you 24 tile data slots\r\nto quickly load and s" +
+        "ave\r\nfor faster tiling!");
+            this.paletteList.SelectedIndexChanged += new System.EventHandler(this.paletteList_SelectedIndexChanged);
             // 
-            // draw
+            // dropper
             // 
-            this.draw.BackgroundImage = global::MagoCrate.Properties.Resources.draw;
-            this.draw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.draw.Location = new System.Drawing.Point(397, 40);
-            this.draw.Margin = new System.Windows.Forms.Padding(4);
-            this.draw.Name = "draw";
-            this.draw.Size = new System.Drawing.Size(41, 41);
-            this.draw.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.draw, "Click tiles to overwrite their\r\ntile data with the data in the\r\nright-hand \"Tile " +
-        "Data Editor\"");
-            this.draw.UseVisualStyleBackColor = true;
-            this.draw.Click += new System.EventHandler(this.draw_Click);
+            this.dropper.BackgroundImage = global::MagoCrate.Properties.Resources.pick;
+            this.dropper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dropper.Location = new System.Drawing.Point(519, 42);
+            this.dropper.Margin = new System.Windows.Forms.Padding(4);
+            this.dropper.Name = "dropper";
+            this.dropper.Size = new System.Drawing.Size(41, 41);
+            this.dropper.TabIndex = 135;
+            this.toolTip1.SetToolTip(this.dropper, "Copy tile data by\r\nclicking on a tile.");
+            this.dropper.UseVisualStyleBackColor = true;
+            this.dropper.Click += new System.EventHandler(this.dropper_Click);
             // 
             // move
             // 
             this.move.BackgroundImage = global::MagoCrate.Properties.Resources.move;
             this.move.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.move.Location = new System.Drawing.Point(495, 40);
+            this.move.Location = new System.Drawing.Point(568, 42);
             this.move.Margin = new System.Windows.Forms.Padding(4);
             this.move.Name = "move";
             this.move.Size = new System.Drawing.Size(41, 41);
@@ -1756,18 +1898,398 @@
             this.move.UseVisualStyleBackColor = true;
             this.move.Click += new System.EventHandler(this.move_Click);
             // 
+            // draw
+            // 
+            this.draw.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.draw.BackgroundImage = global::MagoCrate.Properties.Resources.draw;
+            this.draw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.draw.Enabled = false;
+            this.draw.Location = new System.Drawing.Point(470, 42);
+            this.draw.Margin = new System.Windows.Forms.Padding(4);
+            this.draw.Name = "draw";
+            this.draw.Size = new System.Drawing.Size(41, 41);
+            this.draw.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.draw, "Click tiles to overwrite\r\ntheir tile data.");
+            this.draw.UseVisualStyleBackColor = false;
+            this.draw.Click += new System.EventHandler(this.draw_Click);
+            // 
+            // tileName
+            // 
+            this.tileName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tileName.BackColor = System.Drawing.Color.White;
+            this.tileName.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tileName.Location = new System.Drawing.Point(758, 592);
+            this.tileName.Margin = new System.Windows.Forms.Padding(4);
+            this.tileName.Name = "tileName";
+            this.tileName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tileName.Size = new System.Drawing.Size(125, 22);
+            this.tileName.TabIndex = 109;
+            this.tileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip1.SetToolTip(this.tileName, "Edit this textbox to save\r\na custom name for each\r\nof your 24 palette tiles.");
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.Control;
+            this.label10.Location = new System.Drawing.Point(807, 540);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(75, 16);
+            this.label10.TabIndex = 106;
+            this.label10.Text = "Tile Palette";
+            // 
+            // pTile22
+            // 
+            this.pTile22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile22.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile22.Location = new System.Drawing.Point(1065, 610);
+            this.pTile22.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile22.Name = "pTile22";
+            this.pTile22.Size = new System.Drawing.Size(35, 35);
+            this.pTile22.TabIndex = 134;
+            this.pTile22.UseVisualStyleBackColor = true;
+            this.pTile22.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile21
+            // 
+            this.pTile21.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile21.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile21.Location = new System.Drawing.Point(1030, 610);
+            this.pTile21.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile21.Name = "pTile21";
+            this.pTile21.Size = new System.Drawing.Size(35, 35);
+            this.pTile21.TabIndex = 133;
+            this.pTile21.UseVisualStyleBackColor = true;
+            this.pTile21.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile23
+            // 
+            this.pTile23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile23.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile23.Location = new System.Drawing.Point(1100, 610);
+            this.pTile23.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile23.Name = "pTile23";
+            this.pTile23.Size = new System.Drawing.Size(35, 35);
+            this.pTile23.TabIndex = 132;
+            this.pTile23.UseVisualStyleBackColor = true;
+            this.pTile23.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile20
+            // 
+            this.pTile20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile20.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile20.Location = new System.Drawing.Point(995, 610);
+            this.pTile20.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile20.Name = "pTile20";
+            this.pTile20.Size = new System.Drawing.Size(35, 35);
+            this.pTile20.TabIndex = 131;
+            this.pTile20.UseVisualStyleBackColor = true;
+            this.pTile20.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile15
+            // 
+            this.pTile15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile15.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile15.Location = new System.Drawing.Point(1100, 575);
+            this.pTile15.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile15.Name = "pTile15";
+            this.pTile15.Size = new System.Drawing.Size(35, 35);
+            this.pTile15.TabIndex = 130;
+            this.pTile15.UseVisualStyleBackColor = true;
+            this.pTile15.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile14
+            // 
+            this.pTile14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile14.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile14.Location = new System.Drawing.Point(1065, 575);
+            this.pTile14.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile14.Name = "pTile14";
+            this.pTile14.Size = new System.Drawing.Size(35, 35);
+            this.pTile14.TabIndex = 129;
+            this.pTile14.UseVisualStyleBackColor = true;
+            this.pTile14.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile13
+            // 
+            this.pTile13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile13.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile13.Location = new System.Drawing.Point(1030, 575);
+            this.pTile13.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile13.Name = "pTile13";
+            this.pTile13.Size = new System.Drawing.Size(35, 35);
+            this.pTile13.TabIndex = 128;
+            this.pTile13.UseVisualStyleBackColor = true;
+            this.pTile13.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile12
+            // 
+            this.pTile12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile12.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile12.Location = new System.Drawing.Point(995, 575);
+            this.pTile12.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile12.Name = "pTile12";
+            this.pTile12.Size = new System.Drawing.Size(35, 35);
+            this.pTile12.TabIndex = 127;
+            this.pTile12.UseVisualStyleBackColor = true;
+            this.pTile12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile19
+            // 
+            this.pTile19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile19.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile19.Location = new System.Drawing.Point(960, 610);
+            this.pTile19.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile19.Name = "pTile19";
+            this.pTile19.Size = new System.Drawing.Size(35, 35);
+            this.pTile19.TabIndex = 126;
+            this.pTile19.UseVisualStyleBackColor = true;
+            this.pTile19.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile11
+            // 
+            this.pTile11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile11.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile11.Location = new System.Drawing.Point(960, 575);
+            this.pTile11.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile11.Name = "pTile11";
+            this.pTile11.Size = new System.Drawing.Size(35, 35);
+            this.pTile11.TabIndex = 125;
+            this.pTile11.UseVisualStyleBackColor = true;
+            this.pTile11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile18
+            // 
+            this.pTile18.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile18.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile18.Location = new System.Drawing.Point(925, 610);
+            this.pTile18.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile18.Name = "pTile18";
+            this.pTile18.Size = new System.Drawing.Size(35, 35);
+            this.pTile18.TabIndex = 124;
+            this.pTile18.UseVisualStyleBackColor = true;
+            this.pTile18.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile10
+            // 
+            this.pTile10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile10.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile10.Location = new System.Drawing.Point(925, 575);
+            this.pTile10.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile10.Name = "pTile10";
+            this.pTile10.Size = new System.Drawing.Size(35, 35);
+            this.pTile10.TabIndex = 123;
+            this.pTile10.UseVisualStyleBackColor = true;
+            this.pTile10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile2
+            // 
+            this.pTile2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile2.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile2.Location = new System.Drawing.Point(925, 540);
+            this.pTile2.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile2.Name = "pTile2";
+            this.pTile2.Size = new System.Drawing.Size(35, 35);
+            this.pTile2.TabIndex = 122;
+            this.pTile2.UseVisualStyleBackColor = true;
+            this.pTile2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile6
+            // 
+            this.pTile6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile6.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile6.Location = new System.Drawing.Point(1065, 540);
+            this.pTile6.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile6.Name = "pTile6";
+            this.pTile6.Size = new System.Drawing.Size(35, 35);
+            this.pTile6.TabIndex = 121;
+            this.pTile6.UseVisualStyleBackColor = true;
+            this.pTile6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile8
+            // 
+            this.pTile8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile8.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile8.Location = new System.Drawing.Point(1135, 540);
+            this.pTile8.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile8.Name = "pTile8";
+            this.pTile8.Size = new System.Drawing.Size(35, 35);
+            this.pTile8.TabIndex = 120;
+            this.pTile8.UseVisualStyleBackColor = true;
+            this.pTile8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile7
+            // 
+            this.pTile7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile7.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile7.Location = new System.Drawing.Point(1100, 540);
+            this.pTile7.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile7.Name = "pTile7";
+            this.pTile7.Size = new System.Drawing.Size(35, 35);
+            this.pTile7.TabIndex = 119;
+            this.pTile7.UseVisualStyleBackColor = true;
+            this.pTile7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile5
+            // 
+            this.pTile5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile5.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile5.Location = new System.Drawing.Point(1030, 540);
+            this.pTile5.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile5.Name = "pTile5";
+            this.pTile5.Size = new System.Drawing.Size(35, 35);
+            this.pTile5.TabIndex = 118;
+            this.pTile5.UseVisualStyleBackColor = true;
+            this.pTile5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile4
+            // 
+            this.pTile4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile4.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile4.Location = new System.Drawing.Point(995, 540);
+            this.pTile4.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile4.Name = "pTile4";
+            this.pTile4.Size = new System.Drawing.Size(35, 35);
+            this.pTile4.TabIndex = 117;
+            this.pTile4.UseVisualStyleBackColor = true;
+            this.pTile4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile24
+            // 
+            this.pTile24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile24.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile24.Location = new System.Drawing.Point(1135, 610);
+            this.pTile24.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile24.Name = "pTile24";
+            this.pTile24.Size = new System.Drawing.Size(35, 35);
+            this.pTile24.TabIndex = 116;
+            this.pTile24.UseVisualStyleBackColor = true;
+            this.pTile24.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile16
+            // 
+            this.pTile16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile16.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile16.Location = new System.Drawing.Point(1135, 575);
+            this.pTile16.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile16.Name = "pTile16";
+            this.pTile16.Size = new System.Drawing.Size(35, 35);
+            this.pTile16.TabIndex = 115;
+            this.pTile16.UseVisualStyleBackColor = true;
+            this.pTile16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile3
+            // 
+            this.pTile3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile3.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile3.Location = new System.Drawing.Point(960, 540);
+            this.pTile3.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile3.Name = "pTile3";
+            this.pTile3.Size = new System.Drawing.Size(35, 35);
+            this.pTile3.TabIndex = 114;
+            this.pTile3.UseVisualStyleBackColor = true;
+            this.pTile3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile17
+            // 
+            this.pTile17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile17.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile17.Location = new System.Drawing.Point(890, 610);
+            this.pTile17.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile17.Name = "pTile17";
+            this.pTile17.Size = new System.Drawing.Size(35, 35);
+            this.pTile17.TabIndex = 113;
+            this.pTile17.UseVisualStyleBackColor = true;
+            this.pTile17.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile9
+            // 
+            this.pTile9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile9.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile9.Location = new System.Drawing.Point(890, 575);
+            this.pTile9.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile9.Name = "pTile9";
+            this.pTile9.Size = new System.Drawing.Size(35, 35);
+            this.pTile9.TabIndex = 112;
+            this.pTile9.UseVisualStyleBackColor = true;
+            this.pTile9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
+            // pTile1
+            // 
+            this.pTile1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTile1.BackgroundImage = global::MagoCrate.Properties.Resources._0;
+            this.pTile1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pTile1.Location = new System.Drawing.Point(890, 540);
+            this.pTile1.Margin = new System.Windows.Forms.Padding(4);
+            this.pTile1.Name = "pTile1";
+            this.pTile1.Size = new System.Drawing.Size(35, 35);
+            this.pTile1.TabIndex = 111;
+            this.pTile1.UseVisualStyleBackColor = true;
+            this.pTile1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.paletteButton_MouseDown);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1517, 658);
+            this.ClientSize = new System.Drawing.Size(1502, 653);
+            this.Controls.Add(this.dropper);
+            this.Controls.Add(this.pTile22);
+            this.Controls.Add(this.pTile21);
+            this.Controls.Add(this.pTile23);
+            this.Controls.Add(this.pTile20);
+            this.Controls.Add(this.pTile15);
+            this.Controls.Add(this.pTile14);
+            this.Controls.Add(this.pTile13);
+            this.Controls.Add(this.pTile12);
+            this.Controls.Add(this.pTile19);
+            this.Controls.Add(this.pTile11);
+            this.Controls.Add(this.pTile18);
+            this.Controls.Add(this.pTile10);
+            this.Controls.Add(this.pTile2);
+            this.Controls.Add(this.pTile6);
+            this.Controls.Add(this.pTile8);
+            this.Controls.Add(this.pTile7);
+            this.Controls.Add(this.pTile5);
+            this.Controls.Add(this.pTile4);
+            this.Controls.Add(this.pTile24);
+            this.Controls.Add(this.pTile16);
+            this.Controls.Add(this.pTile3);
+            this.Controls.Add(this.pTile17);
+            this.Controls.Add(this.pTile9);
+            this.Controls.Add(this.pTile1);
+            this.Controls.Add(this.tileName);
+            this.Controls.Add(this.paletteList);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.move);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.viewType);
             this.Controls.Add(this.halfTileLock);
             this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.pick);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.yOffset);
@@ -1782,10 +2304,10 @@
             this.Controls.Add(this.glControl);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MinimumSize = new System.Drawing.Size(1520, 700);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MagoCrate";
@@ -1802,6 +2324,7 @@
             this.itemTab.ResumeLayout(false);
             this.bossTab.ResumeLayout(false);
             this.enemyTab.ResumeLayout(false);
+            this.section4DList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xCoord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xOffset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.yOffset)).EndInit();
@@ -1865,7 +2388,6 @@
         private System.Windows.Forms.TabPage enemyTab;
         private System.Windows.Forms.ListBox enemyList;
         private OpenTK.GLControl glControl;
-        private System.Windows.Forms.ToolStripMenuItem stageSettingsToolStripMenuItem;
         private System.Windows.Forms.Button draw;
         private System.Windows.Forms.Button resetCamera;
         private System.Windows.Forms.Label label1;
@@ -1901,7 +2423,6 @@
         private System.Windows.Forms.CheckBox editBlock;
         private System.Windows.Forms.PictureBox colImg;
         private System.Windows.Forms.PictureBox blockImg;
-        private System.Windows.Forms.Button pick;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.NumericUpDown sizeW;
         private System.Windows.Forms.Label label9;
@@ -1942,14 +2463,50 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ToolStripMenuItem renderMaterialsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renderAutoMovementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.ComboBox blockList;
         private System.Windows.Forms.NumericUpDown vBlock;
         private System.Windows.Forms.NumericUpDown vShape;
         private System.Windows.Forms.ComboBox materialList;
-        private System.Windows.Forms.ToolStripMenuItem patchFDGToolStripMenuItem;
         private System.Windows.Forms.Button move;
+        private System.Windows.Forms.TabPage section4DList;
+        private System.Windows.Forms.ListBox sections4DList;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem patchFDGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stageSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveTilePaletteToolStripMenuItem;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox paletteList;
+        private System.Windows.Forms.TextBox tileName;
+        private System.Windows.Forms.Button pTile1;
+        private System.Windows.Forms.Button pTile9;
+        private System.Windows.Forms.Button pTile17;
+        private System.Windows.Forms.Button pTile3;
+        private System.Windows.Forms.Button pTile16;
+        private System.Windows.Forms.Button pTile24;
+        private System.Windows.Forms.Button pTile4;
+        private System.Windows.Forms.Button pTile5;
+        private System.Windows.Forms.Button pTile7;
+        private System.Windows.Forms.Button pTile8;
+        private System.Windows.Forms.Button pTile6;
+        private System.Windows.Forms.Button pTile2;
+        private System.Windows.Forms.Button pTile10;
+        private System.Windows.Forms.Button pTile18;
+        private System.Windows.Forms.Button pTile11;
+        private System.Windows.Forms.Button pTile19;
+        private System.Windows.Forms.Button pTile12;
+        private System.Windows.Forms.Button pTile13;
+        private System.Windows.Forms.Button pTile14;
+        private System.Windows.Forms.Button pTile15;
+        private System.Windows.Forms.Button pTile20;
+        private System.Windows.Forms.Button pTile23;
+        private System.Windows.Forms.Button pTile21;
+        private System.Windows.Forms.Button pTile22;
+        private System.Windows.Forms.ToolStripMenuItem renderEntityNamesToolStripMenuItem;
+        private System.Windows.Forms.Button dropper;
+        private System.Windows.Forms.ToolStripMenuItem spriteEditorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clearToolStripMenuItem;
     }
 }
 

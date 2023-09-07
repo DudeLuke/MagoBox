@@ -1,30 +1,61 @@
+
 MagoCrate reads this txt file until it reaches a line containing "/[Object Category] [Object Type]"
 
 Once there, it will print those notes into the window until it reaches
 the dedicated ending substring "/;"
 
-There's also a section that is always shown for that category: "/[Object Category] Default"
-Use it for notes relating to everything in that category such as enemy behaviors.
+There's also a section that is always shown for that category: "/[Object Category] [Default]"
+Use it for notes relating to everything in that category.
 
 Feel free to add to this file and share it with others!
 - Luke "DudeLuke" Nilsson
 
 These notes wouldn't nearly be as full without these extra sources of information, go check them out!
 w.atwiki.jp/kirby_return/ -- A LOT of object parameter information
+Fyik -- Some block IDs I missed
 Microtransagolor -- Various IDs, behaviors, best hacks, and GameBanana guides
 Allister_99 -- Camera Object findings
-Fyik -- Some block IDs I missed
+RangerTheWarrior -- Challenge Coin findings
 
-=-=-=-=-=-= Objects =-=-=-=-=-=
-/Object Default
+/Object [Default]
 The Object Editor has the unique feature of being able to view parameter values in decimal (default) or in hexadecimal. Strangely high values may be better understood when viewing the hex value equivalent. 4294967295 for instance, is equal to FFFFFFFF, or -1.
 
 A lot of objects with similar purposes share what each parameter does. For example, objects that take you to new rooms (doors, warpstars, fuse cannons, etc) all use Parameter 3 for how many rooms or "steps" you move forward.
 -- 0 loads the same step you're already in.
 -- FFFFFFFF takes you back one step, FFFFFFFE takes you back two steps, etc.
 
-Likewise, Parameter 5 often controls an object's "Event ID" which allows you to connect "input" objects to "output" objects. A Switch with Event ID 6 will open a shutter door of Event ID 6 and so-on.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Likewise, Parameter 5 often controls an object's "Event ID" which allows you to connect "input" objects to "output" objects. A Switch with Event ID 2 will open a shutter door of Event ID 2 and so-on.
+/;
+
+/Carriable [Default]
+Carriables, called "Special Items" in MagoBox, are the objects that you can pick up and hold over your head, preventing you from flying, but also usually allowing you to solve some sort of puzzle involving them.
+/;
+
+/Item [Default]
+Collectable items that you interact with by walking into them. For most items, barring Copy Essences and Energy Spheres, Behavior controls whether or not it's affected by gravity, 0 being false, while 1 is true.
+/;
+
+/Boss [Default]
+Subtype set to 0 can be either appear as the normal variant or EX variant, but with the value set to 1, it's always EX.
+/;
+
+/Enemy [Default]
+For enemies, behavior is the AI they use, while most behaviors can only be used by one enemy, some of the early, common ones without a specified name can be used by any enemy, no matter how wrong it may look!
+
+Level can be read in Mint or in the hardcoded ASM to change enemies, whether it be to make them move faster or alter some other part of an enemy.
+
+Direction Type usually changes the starting direction of the enemy, though it can have other purposes for certain behaviors.
+0: Attempts to face the closest player.
+1: Always faces Right.
+2: Always faces Left.
+
+The Size variables will resize enemies when their conditions are met. AD Size will resize enemies when the room has a Grayscale filter used for Another Dimension segments in stages. EX Size will resize enemies when in EX mode.
+0: 1x
+1: 1.5x
+2: 2.5x
+3: 0.8x
+4: 0.66x
+5: 1.25x
 /;
 
 /Object [0]
@@ -361,12 +392,6 @@ Parameter 8 - How far to the right it expands
 Parameter 9 - How far to the left it expands.
 /;
 
-=-=-=-=-=-= Carriables =-=-=-=-=-=
-/Carriable Default
-Carriables, called "Special Items" in Magobox, are the objects that you can pick up and hold over your head, preventing you from flying, but also usually allowing you to solve some sort of puzzle involving them.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/;
-
 /Carriable [0]
 Appear ID controls its given ability, it uses the same ID system as Copy Essences, abilities without a dedicated icon use Sword's icon instead.
 0: No Ability
@@ -410,12 +435,6 @@ Appear ID controls its given ability, it uses the same ID system as Copy Essence
 A Special Max Tomato Box that spawns only after repeated deaths, used in the rooms before boss areas.
 /;
 
-=-=-=-=-=-= Items =-=-=-=-=-=
-/Item Default
-Collectable items that you interact with by walking into them. For most items, barring Copy Essences and Energy Spheres, Subtype controls whether or not it's affected by gravity, 0 being false, while 1 is true.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/;
-
 /Item [3]
 Behavior controls which food is used:
 0: Cherry
@@ -456,13 +475,13 @@ Behavior controls which food is used:
 /;
 
 /Item [4]
-Energy Spheres collected within levels via puzzles or by beating Sphere Doomers. Setting the Subtype to 4 makes it compatible with Sphere Doomers in the step.
+Energy Spheres collected within stages via puzzles or by beating Sphere Doomers. Setting the Behavior to 4 makes it compatible with Sphere Doomers in the step.
 
-Behavior controls which ID the sphere has in the stage. For Sphere Doomers, you get the Energy Sphere with that ID along with the next one, i.e. setting it to "3", gives you the fourth and fifth sphere (since 0 is the ID of the first sphere).
+Level controls which ID the sphere has in the stage. For Sphere Doomers, you get the Energy Sphere with that ID along with the next one, i.e. setting it to "3", gives you the fourth and fifth sphere (since 0 is the ID of the first sphere).
 /;
 
 /Item [8]
-Abilities without a dedicated ability star default to using Sword's Icon. Behavior affects which ability is given.
+Abilities without a dedicated ability star default to using Sword's Icon. Level affects which ability is given.
 0: Reverts Kirby to Normal.
 1: Sword
 2: Cutter
@@ -501,7 +520,13 @@ Abilities without a dedicated ability star default to using Sword's Icon. Behavi
 /;
 
 /Item [9]
-Behavior affects the value of the coin. 0 is silver, 1 is gold.
+Level affects the value of the coin and when it appears
+0: Silver
+1: Gold
+2: Silver (EX Only)
+3: Gold (EX Only)
+4: Silver (Normal Only)
+5: Gold (Normal Only)
 
 Collecting in a normal stage will crash the game.
 /;
@@ -511,13 +536,13 @@ Only appears when you enter the room below max health, it's used for areas befor
 /;
 
 /Item [11]
-Ends the stage when collected. Behavior controls which Lor part is used, ranging from 0-4, ordered by the world they're normally collected in
+Ends the stage when collected. Level controls which Lor part is used, ranging from 0-4, ordered by the world they're normally collected in
 /;
 
 /Item [12]
 The stars spawned by killing enemies with a Super Ability, floats and diappears after a while.
 
-Like Copy Essences, behavior affects which ability is given and it uses the same ID system. Abilities without a dedicated Super Ability Star default to Ultra Sword's Icon.
+Like Copy Essences, Level affects which ability is given and it uses the same ID system. Abilities without a dedicated Super Ability Star default to Ultra Sword's Icon.
 0: Reverts Kirby to Normal.
 1: Sword
 2: Cutter
@@ -553,41 +578,6 @@ Like Copy Essences, behavior affects which ability is given and it uses the same
 32: Meta Knight (Very Broken)
 32: King Dedede (Very Broken)
 33: Bandana Dee (Very Broken)
-/;
-
-=-=-=-=-=-= Enemies =-=-=-=-=-=
-/Enemy Default
-Level can be read in Mint or in the hardcoded ASM to change enemies, whether it be to make them move faster or alter some other part of an enemy. 
-
-Direction Type usually changes the starting direction of the enemy, though it can have other purposes for certain behaviors.
-0: Attempts to face the closest player.
-1: Always faces Right.
-2: Always faces Left.
-
-The Size variables will resize enemies when their conditions are met. AD Size will resize enemies when the room has a Grayscale filter used for Another Dimension segments in stages. EX Size will resize enemies when in EX mode.
-0: 1x
-1: 1.5x
-2: 2.5x
-3: 0.8x
-4: 0.66x
-5: 1.25x
-
-Behavior affects an enemy's AI. Enemies usually require a specific behavior to work right (which for most usual enemies is automatically assigned here) but there are some universally compatible behaviors which are as follows:
-0: Does nothing.
-1: Walks forward, falls off edges.
-2: Walks forward, turns at edges.
-3: Walks and patrols within 5 tiles.
-4: Hovers in place.
-5: Hovers vertically within 5 tiles.
--- Always locked facing direction.
-6: Flies forward in a sin wave.
-7: Flies up before homing in on you.
-8: Does nothing.
--- Always locked facing direction.
-11: Hovers horizontally within 5 tiles.
-12: Flies forward, reverses when colliding with a wall or another enemy.
-13: Flies counterclockwise in a circle.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 /;
 
 /Enemy [0]
@@ -663,24 +653,10 @@ Very interesting enemy, differs from the normal Magolor object in the Lor Starcu
 Magolor Wii Best Hack
 /;
 
-=-=-=-=-=-= Bosses =-=-=-=-=-=
-/Boss Default
-Subtype set to 0 can be either appear as the normal variant or EX variant, but with the value set to 1, it's always EX.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/;
-
 /Boss [0]
 Level controls which element the sphere doomer is:
 0: Normal
 1: Fire
 2: Spark
 3: Ice
-/;
-
-/Boss [11]
-Used in The Arenas to make a Metal General fight without an HR-D3 fight in the same step.
-/;
-
-/Boss [19]
-Defaults to HR-D3, placing a Sphere Doomer with Subtype B in the room with it (Exactly 3 tiles above the top of the level, see 6-6-2 for reference.) will instead spawn a Metal General that uses HR-D3 as a second phase in Extra Mode when defeated.
 /;
