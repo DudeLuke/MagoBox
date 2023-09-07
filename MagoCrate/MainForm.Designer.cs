@@ -715,7 +715,7 @@
             this.label1.Location = new System.Drawing.Point(497, 541);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Coordinate";
             // 
@@ -727,7 +727,7 @@
             this.label3.Location = new System.Drawing.Point(476, 565);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 16);
+            this.label3.Size = new System.Drawing.Size(17, 17);
             this.label3.TabIndex = 15;
             this.label3.Text = "X";
             // 
@@ -739,7 +739,7 @@
             this.label4.Location = new System.Drawing.Point(476, 595);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(16, 16);
+            this.label4.Size = new System.Drawing.Size(17, 17);
             this.label4.TabIndex = 22;
             this.label4.Text = "Y";
             // 
@@ -867,7 +867,7 @@
             this.label15.Location = new System.Drawing.Point(14, 313);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 16);
+            this.label15.Size = new System.Drawing.Size(77, 17);
             this.label15.TabIndex = 104;
             this.label15.Text = "Decoration";
             // 
@@ -878,7 +878,7 @@
             this.label13.Location = new System.Drawing.Point(8, 400);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(45, 16);
+            this.label13.Size = new System.Drawing.Size(48, 17);
             this.label13.TabIndex = 72;
             this.label13.Text = "FLand";
             // 
@@ -1205,7 +1205,7 @@
             this.label11.Location = new System.Drawing.Point(8, 346);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(46, 16);
+            this.label11.Size = new System.Drawing.Size(49, 17);
             this.label11.TabIndex = 70;
             this.label11.Text = "BLand";
             // 
@@ -1218,7 +1218,7 @@
             this.editAutoMove.Location = new System.Drawing.Point(11, 513);
             this.editAutoMove.Margin = new System.Windows.Forms.Padding(4);
             this.editAutoMove.Name = "editAutoMove";
-            this.editAutoMove.Size = new System.Drawing.Size(163, 20);
+            this.editAutoMove.Size = new System.Drawing.Size(170, 21);
             this.editAutoMove.TabIndex = 101;
             this.editAutoMove.Text = "Edit Auto Move Speed";
             this.editAutoMove.UseVisualStyleBackColor = true;
@@ -1233,7 +1233,7 @@
             this.editMat.Location = new System.Drawing.Point(11, 488);
             this.editMat.Margin = new System.Windows.Forms.Padding(4);
             this.editMat.Name = "editMat";
-            this.editMat.Size = new System.Drawing.Size(110, 20);
+            this.editMat.Size = new System.Drawing.Size(115, 21);
             this.editMat.TabIndex = 100;
             this.editMat.Text = "Edit Materials";
             this.editMat.UseVisualStyleBackColor = true;
@@ -1246,7 +1246,7 @@
             this.label12.Location = new System.Drawing.Point(8, 373);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(48, 16);
+            this.label12.Size = new System.Drawing.Size(51, 17);
             this.label12.TabIndex = 71;
             this.label12.Text = "MLand";
             // 
@@ -1259,7 +1259,7 @@
             this.editModf.Location = new System.Drawing.Point(11, 463);
             this.editModf.Margin = new System.Windows.Forms.Padding(4);
             this.editModf.Name = "editModf";
-            this.editModf.Size = new System.Drawing.Size(110, 20);
+            this.editModf.Size = new System.Drawing.Size(115, 21);
             this.editModf.TabIndex = 99;
             this.editModf.Text = "Edit Modifiers";
             this.editModf.UseVisualStyleBackColor = true;
@@ -1273,7 +1273,7 @@
             this.editFLand.Location = new System.Drawing.Point(190, 513);
             this.editFLand.Margin = new System.Windows.Forms.Padding(4);
             this.editFLand.Name = "editFLand";
-            this.editFLand.Size = new System.Drawing.Size(93, 20);
+            this.editFLand.Size = new System.Drawing.Size(98, 21);
             this.editFLand.TabIndex = 98;
             this.editFLand.Text = "Edit FLand";
             this.editFLand.UseVisualStyleBackColor = true;
@@ -1288,7 +1288,7 @@
             this.editMLand.Location = new System.Drawing.Point(190, 488);
             this.editMLand.Margin = new System.Windows.Forms.Padding(4);
             this.editMLand.Name = "editMLand";
-            this.editMLand.Size = new System.Drawing.Size(96, 20);
+            this.editMLand.Size = new System.Drawing.Size(101, 21);
             this.editMLand.TabIndex = 97;
             this.editMLand.Text = "Edit MLand";
             this.editMLand.UseVisualStyleBackColor = true;
@@ -1303,7 +1303,7 @@
             this.editBLand.Location = new System.Drawing.Point(190, 463);
             this.editBLand.Margin = new System.Windows.Forms.Padding(4);
             this.editBLand.Name = "editBLand";
-            this.editBLand.Size = new System.Drawing.Size(94, 20);
+            this.editBLand.Size = new System.Drawing.Size(99, 21);
             this.editBLand.TabIndex = 96;
             this.editBLand.Text = "Edit BLand";
             this.editBLand.UseVisualStyleBackColor = true;
@@ -1318,7 +1318,7 @@
             this.editBlock.Location = new System.Drawing.Point(190, 438);
             this.editBlock.Margin = new System.Windows.Forms.Padding(4);
             this.editBlock.Name = "editBlock";
-            this.editBlock.Size = new System.Drawing.Size(96, 20);
+            this.editBlock.Size = new System.Drawing.Size(99, 21);
             this.editBlock.TabIndex = 95;
             this.editBlock.Text = "Edit Blocks";
             this.editBlock.UseVisualStyleBackColor = true;
@@ -1333,7 +1333,7 @@
             this.editCol.Location = new System.Drawing.Point(11, 438);
             this.editCol.Margin = new System.Windows.Forms.Padding(4);
             this.editCol.Name = "editCol";
-            this.editCol.Size = new System.Drawing.Size(149, 20);
+            this.editCol.Size = new System.Drawing.Size(155, 21);
             this.editCol.TabIndex = 94;
             this.editCol.Text = "Edit Collision Shape";
             this.editCol.UseVisualStyleBackColor = true;
@@ -1530,7 +1530,7 @@
             this.label14.Location = new System.Drawing.Point(8, 83);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(62, 16);
+            this.label14.Size = new System.Drawing.Size(65, 17);
             this.label14.TabIndex = 92;
             this.label14.Text = "Modifiers";
             // 
@@ -1554,7 +1554,7 @@
             this.ice.Location = new System.Drawing.Point(170, 110);
             this.ice.Margin = new System.Windows.Forms.Padding(4);
             this.ice.Name = "ice";
-            this.ice.Size = new System.Drawing.Size(47, 20);
+            this.ice.Size = new System.Drawing.Size(48, 21);
             this.ice.TabIndex = 90;
             this.ice.Text = "Ice";
             this.ice.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1568,7 +1568,7 @@
             this.label5.Location = new System.Drawing.Point(8, 25);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 16);
+            this.label5.Size = new System.Drawing.Size(105, 17);
             this.label5.TabIndex = 58;
             this.label5.Text = "Collision Shape\r\n";
             // 
@@ -1579,7 +1579,7 @@
             this.spike.Location = new System.Drawing.Point(170, 85);
             this.spike.Margin = new System.Windows.Forms.Padding(4);
             this.spike.Name = "spike";
-            this.spike.Size = new System.Drawing.Size(64, 20);
+            this.spike.Size = new System.Drawing.Size(65, 21);
             this.spike.TabIndex = 89;
             this.spike.Text = "Spike";
             this.spike.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1593,7 +1593,7 @@
             this.label7.Location = new System.Drawing.Point(8, 146);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(109, 16);
+            this.label7.Size = new System.Drawing.Size(114, 17);
             this.label7.TabIndex = 59;
             this.label7.Text = "Collision Material";
             this.toolTip1.SetToolTip(this.label7, "The \"Material\" of the collision\r\non that tile, used to create unique\r\nfootstep so" +
@@ -1606,7 +1606,7 @@
             this.boundary.Location = new System.Drawing.Point(170, 60);
             this.boundary.Margin = new System.Windows.Forms.Padding(4);
             this.boundary.Name = "boundary";
-            this.boundary.Size = new System.Drawing.Size(87, 20);
+            this.boundary.Size = new System.Drawing.Size(91, 21);
             this.boundary.TabIndex = 88;
             this.boundary.Text = "Boundary";
             this.boundary.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1621,7 +1621,7 @@
             this.label8.Location = new System.Drawing.Point(8, 176);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 16);
+            this.label8.Size = new System.Drawing.Size(120, 17);
             this.label8.TabIndex = 60;
             this.label8.Text = "Auto Move Speed";
             this.toolTip1.SetToolTip(this.label8, "Auto-movement for that tile. It\'s\r\nalmost exclusively used for the\r\nEgg Engines c" +
@@ -1651,7 +1651,7 @@
             this.ladder.Location = new System.Drawing.Point(85, 60);
             this.ladder.Margin = new System.Windows.Forms.Padding(4);
             this.ladder.Name = "ladder";
-            this.ladder.Size = new System.Drawing.Size(72, 20);
+            this.ladder.Size = new System.Drawing.Size(75, 21);
             this.ladder.TabIndex = 62;
             this.ladder.Text = "Ladder";
             this.ladder.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1684,7 +1684,7 @@
             this.water.Location = new System.Drawing.Point(85, 85);
             this.water.Margin = new System.Windows.Forms.Padding(4);
             this.water.Name = "water";
-            this.water.Size = new System.Drawing.Size(65, 20);
+            this.water.Size = new System.Drawing.Size(68, 21);
             this.water.TabIndex = 63;
             this.water.Text = "Water";
             this.water.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1699,7 +1699,7 @@
             this.lava.Location = new System.Drawing.Point(85, 110);
             this.lava.Margin = new System.Windows.Forms.Padding(4);
             this.lava.Name = "lava";
-            this.lava.Size = new System.Drawing.Size(59, 20);
+            this.lava.Size = new System.Drawing.Size(61, 21);
             this.lava.TabIndex = 64;
             this.lava.Text = "Lava";
             this.lava.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -1714,7 +1714,7 @@
             this.label6.Location = new System.Drawing.Point(665, 541);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 16);
+            this.label6.Size = new System.Drawing.Size(46, 17);
             this.label6.TabIndex = 29;
             this.label6.Text = "Offset";
             // 
@@ -1767,7 +1767,7 @@
             this.label9.Location = new System.Drawing.Point(168, 29);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 16);
+            this.label9.Size = new System.Drawing.Size(44, 17);
             this.label9.TabIndex = 2;
             this.label9.Text = "Width";
             this.toolTip1.SetToolTip(this.label9, "Change the level size, expands\r\nfrom left to right and down\r\nto up.\r\n");
@@ -1804,7 +1804,7 @@
             this.label2.Location = new System.Drawing.Point(20, 29);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.Size = new System.Drawing.Size(49, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Height";
             this.toolTip1.SetToolTip(this.label2, "Change the level size, expands\r\nfrom left to right and down\r\nto up.\r\n");
@@ -1816,10 +1816,10 @@
             this.halfTileLock.Checked = true;
             this.halfTileLock.CheckState = System.Windows.Forms.CheckState.Checked;
             this.halfTileLock.ForeColor = System.Drawing.SystemColors.Control;
-            this.halfTileLock.Location = new System.Drawing.Point(500, 623);
+            this.halfTileLock.Location = new System.Drawing.Point(500, 622);
             this.halfTileLock.Margin = new System.Windows.Forms.Padding(4);
             this.halfTileLock.Name = "halfTileLock";
-            this.halfTileLock.Size = new System.Drawing.Size(243, 20);
+            this.halfTileLock.Size = new System.Drawing.Size(260, 21);
             this.halfTileLock.TabIndex = 102;
             this.halfTileLock.Text = "Increment Offset Values in Half-Tiles";
             this.toolTip1.SetToolTip(this.halfTileLock, "Determine whether incrementing\r\nthe offset values will change by 1\r\nor 8 units. 8" +
@@ -1853,7 +1853,7 @@
             this.label16.Location = new System.Drawing.Point(821, 53);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 16);
+            this.label16.Size = new System.Drawing.Size(73, 17);
             this.label16.TabIndex = 104;
             this.label16.Text = "View Type";
             this.toolTip1.SetToolTip(this.label16, "Change the view type between being\r\nable to view the level normally or\r\nbeing abl" +
@@ -1873,6 +1873,7 @@
             // 
             // dropper
             // 
+            this.dropper.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dropper.BackgroundImage = global::MagoCrate.Properties.Resources.pick;
             this.dropper.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dropper.Location = new System.Drawing.Point(519, 42);
@@ -1881,11 +1882,12 @@
             this.dropper.Size = new System.Drawing.Size(41, 41);
             this.dropper.TabIndex = 135;
             this.toolTip1.SetToolTip(this.dropper, "Copy tile data by\r\nclicking on a tile.");
-            this.dropper.UseVisualStyleBackColor = true;
+            this.dropper.UseVisualStyleBackColor = false;
             this.dropper.Click += new System.EventHandler(this.dropper_Click);
             // 
             // move
             // 
+            this.move.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.move.BackgroundImage = global::MagoCrate.Properties.Resources.move;
             this.move.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.move.Location = new System.Drawing.Point(568, 42);
@@ -1895,15 +1897,14 @@
             this.move.TabIndex = 105;
             this.toolTip1.SetToolTip(this.move, "Select entities by clicking on \r\nthem, clicking or dragging to\r\nempty space will " +
         "move that\r\nentity there.");
-            this.move.UseVisualStyleBackColor = true;
+            this.move.UseVisualStyleBackColor = false;
             this.move.Click += new System.EventHandler(this.move_Click);
             // 
             // draw
             // 
-            this.draw.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.draw.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.draw.BackgroundImage = global::MagoCrate.Properties.Resources.draw;
             this.draw.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.draw.Enabled = false;
             this.draw.Location = new System.Drawing.Point(470, 42);
             this.draw.Margin = new System.Windows.Forms.Padding(4);
             this.draw.Name = "draw";
@@ -1935,7 +1936,7 @@
             this.label10.Location = new System.Drawing.Point(807, 540);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(75, 16);
+            this.label10.Size = new System.Drawing.Size(79, 17);
             this.label10.TabIndex = 106;
             this.label10.Text = "Tile Palette";
             // 

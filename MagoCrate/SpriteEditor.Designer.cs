@@ -109,7 +109,7 @@ namespace MagoCrate
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(486, 402);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 16);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Zoom";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,7 +168,7 @@ namespace MagoCrate
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
             this.label2.Location = new System.Drawing.Point(8, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 16);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 9;
             this.label2.Text = "Width";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,7 +204,7 @@ namespace MagoCrate
             this.label3.ForeColor = System.Drawing.SystemColors.Control;
             this.label3.Location = new System.Drawing.Point(8, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 16);
+            this.label3.Size = new System.Drawing.Size(59, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "X Offset";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -267,7 +267,7 @@ namespace MagoCrate
             this.checkBox1.ForeColor = System.Drawing.SystemColors.Control;
             this.checkBox1.Location = new System.Drawing.Point(7, 81);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(181, 20);
+            this.checkBox1.Size = new System.Drawing.Size(188, 21);
             this.checkBox1.TabIndex = 16;
             this.checkBox1.Text = "Make Parameter-Specific";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@ namespace MagoCrate
             this.prmLabel.ForeColor = System.Drawing.SystemColors.Control;
             this.prmLabel.Location = new System.Drawing.Point(111, 123);
             this.prmLabel.Name = "prmLabel";
-            this.prmLabel.Size = new System.Drawing.Size(80, 16);
+            this.prmLabel.Size = new System.Drawing.Size(86, 17);
             this.prmLabel.TabIndex = 18;
             this.prmLabel.Text = "Parameter 6";
             this.prmLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,7 +320,7 @@ namespace MagoCrate
             this.label7.ForeColor = System.Drawing.SystemColors.Control;
             this.label7.Location = new System.Drawing.Point(9, 123);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 16);
+            this.label7.Size = new System.Drawing.Size(40, 17);
             this.label7.TabIndex = 20;
             this.label7.Text = "Type";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,7 +374,7 @@ namespace MagoCrate
             this.label6.ForeColor = System.Drawing.SystemColors.Control;
             this.label6.Location = new System.Drawing.Point(7, 125);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 16);
+            this.label6.Size = new System.Drawing.Size(59, 17);
             this.label6.TabIndex = 14;
             this.label6.Text = "Y Offset";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -385,7 +385,7 @@ namespace MagoCrate
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
             this.label4.Location = new System.Drawing.Point(8, 58);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 16);
+            this.label4.Size = new System.Drawing.Size(49, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "Height";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -419,7 +419,7 @@ namespace MagoCrate
             this.Name = "SpriteEditor";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Options";
+            this.Text = "Sprite Importer";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SpriteEditor_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).EndInit();

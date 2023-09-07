@@ -73,12 +73,12 @@ namespace MagoCrate
             this.clearBox.ForeColor = System.Drawing.SystemColors.Control;
             this.clearBox.Location = new System.Drawing.Point(15, 64);
             this.clearBox.Name = "clearBox";
-            this.clearBox.Size = new System.Drawing.Size(306, 21);
+            this.clearBox.Size = new System.Drawing.Size(171, 21);
             this.clearBox.TabIndex = 3;
-            this.clearBox.Text = "Clear FDG Scene First (Not Recommended)";
+            this.clearBox.Text = "Clear FDG Scene First";
             this.toolTip1.SetToolTip(this.clearBox, "Enabling this will clear all assets from\r\nthe selected scene before adding in\r\nth" +
-        "e new ones.\r\nSince FDG Data is currently incomplete,\r\nthis may likely cause MORE" +
-        " lag spikes\r\nrather then lessen it.");
+        "e new ones.\r\nUse with caution, not all FDG data\r\nis documented, so this may rare" +
+        "ly\r\ncause additional lag spikes.");
             this.clearBox.UseVisualStyleBackColor = true;
             // 
             // FDGScene

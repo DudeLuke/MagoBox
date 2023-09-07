@@ -292,7 +292,7 @@ namespace MagoBox
             t.Start();
         }
 
-        public async void RefreshObjectLists()
+        public async void RefreshEntityLists()
         {
             if (level != null)
             {
@@ -440,7 +440,7 @@ namespace MagoBox
 
                 camera.pos = Vector2.Zero;
                 camera.zoom = 1.1;
-                RefreshObjectLists();
+                RefreshEntityLists();
 
                 sizeH.Value = level.Height;
                 sizeW.Value = level.Width;
@@ -483,6 +483,7 @@ namespace MagoBox
 
             Cursor = Cursors.Arrow;
             Enabled = true;
+            SwitchTool(0);
         }
         private void LoadLevel(string path)
         {
@@ -503,7 +504,7 @@ namespace MagoBox
 
             camera.pos = Vector2.Zero;
             camera.zoom = 1.1;
-            RefreshObjectLists();
+            RefreshEntityLists();
 
             sizeH.Value = level.Height;
             sizeW.Value = level.Width;
@@ -560,18 +561,22 @@ namespace MagoBox
         }
         private void UpdatePaletteTiles()
         {
-            plt = tilePalettes[paletteList.SelectedIndex];
-            for (int i = 1; i < 25; i++)
+            try
             {
-                string ID = i.ToString();
-                UpdatePaletteButton(PaletteTileButtonFromIndex(i),
-                    plt.Sections[ID]["BLand"],
-                    plt.Sections[ID]["MLand"],
-                    plt.Sections[ID]["FLand"],
-                    plt.Sections[ID]["Shape"],
-                    plt.Sections[ID]["Mod"],
-                    plt.Sections[ID]["Name"]);
-            }
+                if (paletteList.Items.Count == 0) return;
+                plt = tilePalettes[paletteList.SelectedIndex];
+                for (int i = 1; i < 25; i++)
+                {
+                    string ID = i.ToString();
+                    UpdatePaletteButton(PaletteTileButtonFromIndex(i),
+                        plt.Sections[ID]["BLand"],
+                        plt.Sections[ID]["MLand"],
+                        plt.Sections[ID]["FLand"],
+                        plt.Sections[ID]["Shape"],
+                        plt.Sections[ID]["Mod"],
+                        plt.Sections[ID]["Name"]);
+                }
+            } catch { }
         }
 
         private void UpdatePaletteButton(System.Windows.Forms.Button target, string bHex, string mHex, string fHex, string shape, string modifier, string name)
@@ -633,91 +638,93 @@ namespace MagoBox
         }
         private void paletteButton_MouseDown(object sender, MouseEventArgs e)
         {
-            plt = tilePalettes[paletteList.SelectedIndex];
-            selPaletteButton = (System.Windows.Forms.Button)sender;
-            string ID = (selPaletteButton).Name.Substring(5, (selPaletteButton).Name.Length - 5);
-
-
-            if (e.Button == MouseButtons.Right)
+            try
             {
-                // Save Current Tile Data over that palette
-
-                int mod = 0;
-                if (ladder.Checked) mod += 2;
-                if (boundary.Checked) mod += 4;
-                if (water.Checked) mod += 8;
-                if (spike.Checked) mod += 16;
-                if (ice.Checked) mod += 32;
-                if (lava.Checked) mod += 64;
-                plt.Sections[ID]["Mod"] = mod.ToString();
+                plt = tilePalettes[paletteList.SelectedIndex];
+                selPaletteButton = (System.Windows.Forms.Button)sender;
+                string ID = (selPaletteButton).Name.Substring(5, (selPaletteButton).Name.Length - 5);
 
 
-                plt.Sections[ID]["Shape"] = vShape.Value.ToString();
-                plt.Sections[ID]["Mat"] = vmat.Value.ToString();
-                plt.Sections[ID]["Auto"] = vautomove.Value.ToString();
-                plt.Sections[ID]["Block"] = vBlock.Value.ToString();
-                plt.Sections[ID]["Name"] = tileName.Text.ToString();
+                if (e.Button == MouseButtons.Right)
+                {
+                    // Save Current Tile Data over that palette
 
-                d1_hex.Text = ((byte)d1_1.Value).ToString("X2") + ((byte)d1_2.Value).ToString("X2") + ((byte)d1_3.Value).ToString("X2") + ((sbyte)d1_4.Value).ToString("X2");
-                d2_hex.Text = ((byte)d2_1.Value).ToString("X2") + ((byte)d2_2.Value).ToString("X2") + ((byte)d2_3.Value).ToString("X2") + ((sbyte)d2_4.Value).ToString("X2");
-                d3_hex.Text = ((byte)d3_1.Value).ToString("X2") + ((byte)d3_2.Value).ToString("X2") + ((byte)d3_3.Value).ToString("X2") + ((sbyte)d3_4.Value).ToString("X2");
+                    int mod = 0;
+                    if (ladder.Checked) mod += 2;
+                    if (boundary.Checked) mod += 4;
+                    if (water.Checked) mod += 8;
+                    if (spike.Checked) mod += 16;
+                    if (ice.Checked) mod += 32;
+                    if (lava.Checked) mod += 64;
+                    plt.Sections[ID]["Mod"] = mod.ToString();
 
-                plt.Sections[ID]["BLand"] = d1_hex.Text;
-                plt.Sections[ID]["MLand"] = d3_hex.Text;
-                plt.Sections[ID]["FLand"] = d2_hex.Text;
 
-                UpdatePaletteTiles();
-            }
-            else if (e.Button == MouseButtons.Left)
-            {
-                // Get That Tile's Data
+                    plt.Sections[ID]["Shape"] = vShape.Value.ToString();
+                    plt.Sections[ID]["Mat"] = vmat.Value.ToString();
+                    plt.Sections[ID]["Auto"] = vautomove.Value.ToString();
+                    plt.Sections[ID]["Block"] = vBlock.Value.ToString();
+                    plt.Sections[ID]["Name"] = tileName.Text.ToString();
 
-                ladder.Checked = false;
-                boundary.Checked = false;
-                water.Checked = false;
-                spike.Checked = false;
-                ice.Checked = false;
-                lava.Checked = false;
+                    d1_hex.Text = ((byte)d1_1.Value).ToString("X2") + ((byte)d1_2.Value).ToString("X2") + ((byte)d1_3.Value).ToString("X2") + ((sbyte)d1_4.Value).ToString("X2");
+                    d2_hex.Text = ((byte)d2_1.Value).ToString("X2") + ((byte)d2_2.Value).ToString("X2") + ((byte)d2_3.Value).ToString("X2") + ((sbyte)d2_4.Value).ToString("X2");
+                    d3_hex.Text = ((byte)d3_1.Value).ToString("X2") + ((byte)d3_2.Value).ToString("X2") + ((byte)d3_3.Value).ToString("X2") + ((sbyte)d3_4.Value).ToString("X2");
 
-                short mod = short.Parse(plt.Sections[ID]["Mod"]);
-                if ((mod & (1 << 1)) != 0) ladder.Checked = true;
-                if ((mod & (1 << 2)) != 0) boundary.Checked = true;
-                if ((mod & (1 << 3)) != 0) water.Checked = true;
-                if ((mod & (1 << 4)) != 0) spike.Checked = true;
-                if ((mod & (1 << 5)) != 0) ice.Checked = true;
-                if ((mod & (1 << 6)) != 0) lava.Checked = true;
+                    plt.Sections[ID]["BLand"] = d1_hex.Text;
+                    plt.Sections[ID]["MLand"] = d3_hex.Text;
+                    plt.Sections[ID]["FLand"] = d2_hex.Text;
 
-                vShape.Value = int.Parse(plt.Sections[ID]["Shape"]);
-                vmat.Value = decimal.Parse(plt.Sections[ID]["Mat"]);
-                vautomove.Value = decimal.Parse(plt.Sections[ID]["Auto"]);
-                vBlock.Value = decimal.Parse(plt.Sections[ID]["Block"]);
-                d1_hex.Text = plt.Sections[ID]["BLand"];
-                d3_hex.Text = plt.Sections[ID]["MLand"];
-                d2_hex.Text = plt.Sections[ID]["FLand"];
-                tileName.Text = plt.Sections[ID]["Name"];
+                    UpdatePaletteTiles();
+                }
+                else if (e.Button == MouseButtons.Left)
+                {
+                    // Get That Tile's Data
 
-                uint b = uint.Parse(d1_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                d1_1.Value = uint.Parse(d1_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                d1_2.Value = uint.Parse(d1_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                d1_3.Value = uint.Parse(d1_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (b < 16) d1_4.Value = b;
-                else d1_4.Value = -1;
+                    ladder.Checked = false;
+                    boundary.Checked = false;
+                    water.Checked = false;
+                    spike.Checked = false;
+                    ice.Checked = false;
+                    lava.Checked = false;
 
-                uint f = uint.Parse(d2_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                d2_1.Value = uint.Parse(d2_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                d2_2.Value = uint.Parse(d2_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                d2_3.Value = uint.Parse(d2_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (f < 16) d2_4.Value = f;
-                else d2_4.Value = -1;
+                    short mod = short.Parse(plt.Sections[ID]["Mod"]);
+                    if ((mod & (1 << 1)) != 0) ladder.Checked = true;
+                    if ((mod & (1 << 2)) != 0) boundary.Checked = true;
+                    if ((mod & (1 << 3)) != 0) water.Checked = true;
+                    if ((mod & (1 << 4)) != 0) spike.Checked = true;
+                    if ((mod & (1 << 5)) != 0) ice.Checked = true;
+                    if ((mod & (1 << 6)) != 0) lava.Checked = true;
 
-                uint m = uint.Parse(d3_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                d3_1.Value = uint.Parse(d3_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                d3_2.Value = uint.Parse(d3_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                d3_3.Value = uint.Parse(d3_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (m < 16) d3_4.Value = m;
-                else d3_4.Value = -1;
+                    vShape.Value = int.Parse(plt.Sections[ID]["Shape"]);
+                    vmat.Value = decimal.Parse(plt.Sections[ID]["Mat"]);
+                    vautomove.Value = decimal.Parse(plt.Sections[ID]["Auto"]);
+                    vBlock.Value = decimal.Parse(plt.Sections[ID]["Block"]);
+                    d1_hex.Text = plt.Sections[ID]["BLand"];
+                    d3_hex.Text = plt.Sections[ID]["MLand"];
+                    d2_hex.Text = plt.Sections[ID]["FLand"];
+                    tileName.Text = plt.Sections[ID]["Name"];
 
-            }
+                    uint b = uint.Parse(d1_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                    d1_1.Value = uint.Parse(d1_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    d1_2.Value = uint.Parse(d1_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    d1_3.Value = uint.Parse(d1_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (b < 16) d1_4.Value = b;
+                    else d1_4.Value = -1;
+
+                    uint f = uint.Parse(d2_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                    d2_1.Value = uint.Parse(d2_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    d2_2.Value = uint.Parse(d2_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    d2_3.Value = uint.Parse(d2_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (f < 16) d2_4.Value = f;
+                    else d2_4.Value = -1;
+
+                    uint m = uint.Parse(d3_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                    d3_1.Value = uint.Parse(d3_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    d3_2.Value = uint.Parse(d3_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    d3_3.Value = uint.Parse(d3_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (m < 16) d3_4.Value = m;
+                    else d3_4.Value = -1;
+                }
+            } catch { }
         }
         private System.Windows.Forms.Button PaletteTileButtonFromIndex(int index)
         {
@@ -2364,27 +2371,27 @@ namespace MagoBox
                     {
                         case 0:
                             level.Objects.Add(new RDLLVL.Object());
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 1:
                             level.Carriables.Add(new SpecialItem());
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 2:
                             level.Items.Add(new Item());
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 3:
                             level.Bosses.Add(new Boss());
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 4:
                             level.Enemies.Add(new Enemy());
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 5:
                             level.All4DSections.Add(new Section4D());
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                     }
                 } catch { }
@@ -2400,27 +2407,27 @@ namespace MagoBox
                     {
                         case 0:
                             level.Objects.RemoveAt(objList.SelectedIndex);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 1:
                             level.Carriables.RemoveAt(carriablesList.SelectedIndex);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 2:
                             level.Items.RemoveAt(itemList.SelectedIndex);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 3:
                             level.Bosses.RemoveAt(bossList.SelectedIndex);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 4:
                             level.Enemies.RemoveAt(enemyList.SelectedIndex);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 5:
                             level.All4DSections.RemoveAt(sections4DList.SelectedIndex);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
 
                     }
@@ -2441,7 +2448,7 @@ namespace MagoBox
                             if (editor0.ShowDialog() == DialogResult.OK)
                             {
                                 level.Objects[objList.SelectedIndex] = editor0.obj;
-                                RefreshObjectLists();
+                                RefreshEntityLists();
                             }
                             break;
                         case 1:
@@ -2450,7 +2457,7 @@ namespace MagoBox
                             if (editor1.ShowDialog() == DialogResult.OK)
                             {
                                 level.Carriables[carriablesList.SelectedIndex] = editor1.obj;
-                                RefreshObjectLists();
+                                RefreshEntityLists();
                             }
                             break;
                         case 2:
@@ -2459,7 +2466,7 @@ namespace MagoBox
                             if (editor2.ShowDialog() == DialogResult.OK)
                             {
                                 level.Items[itemList.SelectedIndex] = editor2.obj;
-                                RefreshObjectLists();
+                                RefreshEntityLists();
                             }
                             break;
                         case 3:
@@ -2468,7 +2475,7 @@ namespace MagoBox
                             if (editor3.ShowDialog() == DialogResult.OK)
                             {
                                 level.Bosses[bossList.SelectedIndex] = editor3.obj;
-                                RefreshObjectLists();
+                                RefreshEntityLists();
                             }
                             break;
                         case 4:
@@ -2477,7 +2484,7 @@ namespace MagoBox
                             if (editor4.ShowDialog() == DialogResult.OK)
                             {
                                 level.Enemies[enemyList.SelectedIndex] = editor4.obj;
-                                RefreshObjectLists();
+                                RefreshEntityLists();
                             }
                             break;
                         case 5:
@@ -2486,7 +2493,7 @@ namespace MagoBox
                             if (editor5.ShowDialog() == DialogResult.OK)
                             {
                                 level.All4DSections[sections4DList.SelectedIndex] = editor5.obj;
-                                RefreshObjectLists();
+                                RefreshEntityLists();
                             }
                             break;
                     }
@@ -2503,27 +2510,27 @@ namespace MagoBox
                     {
                         case 0:
                             level.Objects.Add(level.Objects[objList.SelectedIndex]);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 1:
                             level.Carriables.Add(level.Carriables[carriablesList.SelectedIndex]);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 2:
                             level.Items.Add(level.Items[itemList.SelectedIndex]);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 3:
                             level.Bosses.Add(level.Bosses[bossList.SelectedIndex]);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 4:
                             level.Enemies.Add(level.Enemies[enemyList.SelectedIndex]);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                         case 5:
                             level.All4DSections.Add(level.All4DSections[sections4DList.SelectedIndex]);
-                            RefreshObjectLists();
+                            RefreshEntityLists();
                             break;
                     }
                 } catch { }
@@ -2891,7 +2898,7 @@ namespace MagoBox
         private void viewType_SelectedIndexChanged(object sender, EventArgs e)
         {
             collViewType = viewType.SelectedIndex;
-            RefreshObjectLists();
+            RefreshEntityLists();
         }
         
         public void RefreshColors()
@@ -2914,7 +2921,7 @@ namespace MagoBox
         {
             Objects objs = new Objects();
             glControl.MakeCurrent();
-            RefreshObjectLists();
+            RefreshEntityLists();
             RefreshEntitySprites();
             RefreshColors();
             LoadPaletteList();
@@ -2944,7 +2951,7 @@ namespace MagoBox
             bossList.ClearSelected();
             enemyList.ClearSelected();
             sections4DList.ClearSelected();
-            RefreshObjectLists();
+            RefreshEntityLists();
         }
         private void patchFDGToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -3059,6 +3066,21 @@ namespace MagoBox
         private void clearToolStripMenuItem_Click(object sender, EventArgs e)
         {
             level = null;
+            objList.Items.Clear();
+            carriablesList.Items.Clear();
+            itemList.Items.Clear();
+            bossList.Items.Clear();
+            enemyList.Items.Clear();
+
+            saveToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = false;
+            viewType.SelectedIndex = 0;
+            viewType.Enabled = false;
+            resetCamera.Enabled = false;
+            vShape.Enabled = false;
+            vBlock.Enabled = false;
+            blockList.Enabled = false;
+            SwitchTool(-1);
         }
 
         void AddFDGData(string key, List<string> additions)
@@ -3263,14 +3285,6 @@ namespace MagoBox
                 return Color.FromArgb(255, t, p, v);
             else
                 return Color.FromArgb(255, v, p, q);
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (spriteTexIds.ContainsKey(tileName.Text))
-            {
-                MessageBox.Show("yeah");
-            } 
-            else MessageBox.Show(debugString);
         }
     }
 }
