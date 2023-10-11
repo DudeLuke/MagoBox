@@ -8,14 +8,11 @@ using OpenTK.Graphics.OpenGL;
 using RDLLVL;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
-using static OpenTK.Graphics.OpenGL.GL;
 
 namespace MagoBox
 {
@@ -30,10 +27,10 @@ namespace MagoBox
         BmFont font;
         Objects objs = new Objects();
 
-        public List<int> nodeTexIds = new List<int>();
+        public List<int> utilityTexIds = new List<int>();
         public List<int> shapeTexIds = new List<int>();
         List<int> modTexIds = new List<int>();
-        List<int> propertyTexIds = new List<int>();
+        public List<int> propertyTexIds = new List<int>();
         List<int> hexTexIds = new List<int>();
         List<int> zoneTexIds = new List<int>();
 
@@ -49,9 +46,7 @@ namespace MagoBox
         public int collViewType = 0;
         public int optionsPixelPerTile = 20;
         int moveObj;
-        int tool;
-        bool instantLoadAvailable = false;
-
+        int tool = -1;
         bool moveCam = false;
         bool clickedEntity = false;
         public bool refreshing = false;
@@ -77,15 +72,8 @@ namespace MagoBox
         public MainForm(string path)
         {
             InitializeComponent();
-
-            if (!string.IsNullOrEmpty(path))
-            {
-                filePath = path;
-                instantLoadAvailable = true;
-                string fullPath = System.Reflection.Assembly.GetEntryAssembly().Location;
-                string name = Path.GetFileName(fullPath);
-                Directory.SetCurrentDirectory(fullPath.Substring(0, (fullPath.Length - name.Length)));
-            }
+            filePath = path;
+            Directory.SetCurrentDirectory(System.AppDomain.CurrentDomain.BaseDirectory);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -99,64 +87,19 @@ namespace MagoBox
         {
             focused = false;
         }
-        private void MainForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
-            {
-                SwitchTool(0);
-            }
-            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
-            {
-                SwitchTool(1);
-            }
-            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
-            {
-                SwitchTool(2);
-            }
-            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
-            {
-                // Collision Preset
-                editCol.Checked = true;
-                editModf.Checked = true;
-                editMat.Checked = true;
-                editAutoMove.Checked = true;
-                editBlock.Checked = false;
-                editBLand.Checked = false;
-                editMLand.Checked = false;
-                editFLand.Checked = false;
-            }
-            else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
-            {
-                // Blocks Preset
-                editCol.Checked = false;
-                editModf.Checked = false;
-                editMat.Checked = false;
-                editAutoMove.Checked = false;
-                editBlock.Checked = true;
-                editBLand.Checked = false;
-                editMLand.Checked = false;
-                editFLand.Checked = false;
-            }
-            else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
-            {
-                // Decoration Preset
-                editCol.Checked = false;
-                editModf.Checked = false;
-                editMat.Checked = false;
-                editAutoMove.Checked = false;
-                editBlock.Checked = false;
-                editBLand.Checked = true;
-                editMLand.Checked = true;
-                editFLand.Checked = true;
-            }
-        }
         private void glControl_Load(object sender, EventArgs e)
         {
+            viewType.SelectedIndex = 0;
+            blockList.SelectedIndex = 0;
+            materialList.SelectedIndex = 0;
+
             glControl.MakeCurrent();
             GL.Enable(EnableCap.Texture2D);
             GL.Enable(EnableCap.Blend);
             GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
             GL.ClearColor(Color.FromArgb(200, 200, 200));
+
+            Console.WriteLine(Directory.GetCurrentDirectory());
 
             renderer = new Renderer();
             texturing = new Texturing();
@@ -168,6 +111,7 @@ namespace MagoBox
                 shapeTexIds.Add(texturing.LoadTexture(d + "/Resources/tiles/" + i + ".png"));
             }
             shapeTexIds.Add(texturing.LoadTexture(d + "/Resources/tiles/select.png"));
+            shapeTexIds.Add(texturing.LoadTexture(d + "/Resources/tiles/-1.png"));
 
 
             modTexIds.Add(texturing.LoadTexture(d + "/Resources/modifiers/ladder.png"));
@@ -191,14 +135,10 @@ namespace MagoBox
             propertyTexIds.Add(texturing.LoadTexture(d + "/Resources/properties/auto_-2.png"));
             propertyTexIds.Add(texturing.LoadTexture(d + "/Resources/properties/auto_-3.png"));
 
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/object.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/carriable.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/item.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/boss.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/enemy.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/select.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/selectFull.png"));
-            nodeTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/Super.png"));
+            utilityTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/object.png"));
+            utilityTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/select.png"));
+            utilityTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/selectFull.png"));
+            utilityTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/Super.png"));
 
             zoneTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/objects/hardcoded/wind_zone.png"));
             zoneTexIds.Add(texturing.LoadTexture(d + "/Resources/entities/objects/hardcoded/trigger_zone.png"));
@@ -277,19 +217,22 @@ namespace MagoBox
             blockTexIds.Add(57, texturing.LoadTexture(d + "/Resources/blocks/Super 4x4.png"));
             blockTexIds.Add(58, texturing.LoadTexture(d + "/Resources/blocks/Super 3x3.png"));
             blockTexIds.Add(59, texturing.LoadTexture(d + "/Resources/blocks/Fire 2x2 (Fragile).png"));
-
             try
             {
                 font = new BmFont(texturing, "a");
-            } catch { MessageBox.Show("Failed to load Font file"); }
+            } catch { MessageBox.Show("Failed to load Font files"); }
             notesFilepath = (d + "/CustomData/EntityNotes.txt");
 
             RefreshEntitySprites();
-            LoadPaletteList();
+            RefreshPaletteList();
 
             t = new System.Timers.Timer(1000.0 / 60.0);
             t.Elapsed += t_Elapsed;
             t.Start();
+            if (!string.IsNullOrEmpty(filePath)) 
+            {
+                LoadLevel(filePath);
+            }
         }
 
         public async void RefreshEntityLists()
@@ -390,22 +333,113 @@ namespace MagoBox
                 if (enemyList.Items.Count >= selIndex + 1) enemyList.SelectedIndex = selIndex;
                 enemyList.EndUpdate();
 
-                // 4D Sections
-                selIndex = sections4DList.SelectedIndex;
-                sections4DList.Items.Clear();
-                sections4DList.BeginUpdate();
-                for (int i = 0; i < level.All4DSections.Count; i++)
+                // Dynamic Sections
+                selIndex = dynamicList.SelectedIndex;
+                dynamicList.Items.Clear();
+                dynamicList.BeginUpdate();
+                for (int i = 0; i < level.DynamicTerrain.Count; i++)
                 {
-                    sections4DList.Items.Add($"Unknown ({level.All4DSections[i].Type})");
+                    if (level.DynamicTerrain[i] != null) dynamicList.Items.Add(i + $" - Section ({level.DynamicTerrain[i].X}, {level.DynamicTerrain[i].Y})");
+                    else dynamicList.Items.Add(i + $" - Empty");
                 }
-                if (sections4DList.Items.Count >= selIndex + 1) sections4DList.SelectedIndex = selIndex;
-                sections4DList.EndUpdate();
+                if (dynamicList.Items.Count >= selIndex + 1) dynamicList.SelectedIndex = selIndex;
+                dynamicList.EndUpdate();
 
                 await Task.Delay(20);
                 refreshing = false;
             }
         }
+        public void RefreshColors()
+        {
+            BackColor = MagoCrate.Properties.Settings.Default.MainColor;
+            enemyList.BackColor = MagoCrate.Properties.Settings.Default.EnemyColor;
+            bossList.BackColor = MagoCrate.Properties.Settings.Default.BossColor;
+            objList.BackColor = MagoCrate.Properties.Settings.Default.ObjColor;
+            itemList.BackColor = MagoCrate.Properties.Settings.Default.ItemColor;
+            carriablesList.BackColor = MagoCrate.Properties.Settings.Default.CarryColor;
+            dynamicList.BackColor = MagoCrate.Properties.Settings.Default.DynamicSectionColor;
+        }
+        private void RefreshTileDataEditorColors()
+        {
+            int v = viewType.SelectedIndex;
+            vShape.BackColor = Color.White;
+            vMat.BackColor = Color.White;
+            materialList.BackColor = Color.White;
+            vAutomove.BackColor = Color.White;
+            vBlock.BackColor = Color.White;
+            blockList.BackColor = Color.White;
+            dB_1.BackColor = Color.White;
+            dB_2.BackColor = Color.White;
+            dB_3.BackColor = Color.White;
+            dB_4.BackColor = Color.White;
+            dB_hex.BackColor = Color.White;
+            dM_1.BackColor = Color.White;
+            dM_2.BackColor = Color.White;
+            dM_3.BackColor = Color.White;
+            dM_4.BackColor = Color.White;
+            dM_hex.BackColor = Color.White;
+            dF_1.BackColor = Color.White;
+            dF_2.BackColor = Color.White;
+            dF_3.BackColor = Color.White;
+            dF_4.BackColor = Color.White;
+            dF_hex.BackColor = Color.White;
 
+            if ((v != 0 && v != 2) || !editCollisionShapeToolStripMenuItem.Checked) vShape.BackColor = Color.Silver;
+            if ((v != 0 && v != 2) || !editAutoMovementToolStripMenuItem.Checked) vAutomove.BackColor = Color.Silver;
+            if ((v != 0 && v != 2) || !editMaterialsToolStripMenuItem.Checked)
+            {
+                vMat.BackColor = Color.Silver;
+                materialList.BackColor = Color.Silver;
+            }
+            if ((v != 0 && v != 2) || !editBlocksToolStripMenuItem.Checked)
+            {
+                vBlock.BackColor = Color.Silver;
+                blockList.BackColor = Color.Silver;
+            }
+            if (v == 2 || v == 3 || v == 4 || !editBLandToolStripMenuItem.Checked)
+            {
+                dB_1.BackColor = Color.Silver;
+                dB_2.BackColor = Color.Silver;
+                dB_3.BackColor = Color.Silver;
+                dB_4.BackColor = Color.Silver;
+                dB_hex.BackColor = Color.Silver;
+            }
+            if (v == 1 || v == 3 || v == 4 || !editMLandToolStripMenuItem.Checked)
+            {
+                dM_1.BackColor = Color.Silver;
+                dM_2.BackColor = Color.Silver;
+                dM_3.BackColor = Color.Silver;
+                dM_4.BackColor = Color.Silver;
+                dM_hex.BackColor = Color.Silver;
+            }
+            if (v == 1 || v == 2 || v == 4 || !editFLandToolStripMenuItem.Checked)
+            {
+                dF_1.BackColor = Color.Silver;
+                dF_2.BackColor = Color.Silver;
+                dF_3.BackColor = Color.Silver;
+                dF_4.BackColor = Color.Silver;
+                dF_hex.BackColor = Color.Silver;
+            }
+
+            if (v == 4)
+            {
+                if (editBLandToolStripMenuItem.Checked)
+                {
+                    dB_4.BackColor = Color.White;
+                    dB_hex.BackColor = Color.White;
+                }
+                if (editMLandToolStripMenuItem.Checked)
+                {
+                    dM_4.BackColor = Color.White;
+                    dM_hex.BackColor = Color.White;
+                }
+                if (editFLandToolStripMenuItem.Checked)
+                {
+                    dF_4.BackColor = Color.White;
+                    dF_hex.BackColor = Color.White;
+                }
+            }
+        }
         public void Save()
         {
             Enabled = false;
@@ -449,12 +483,6 @@ namespace MagoBox
 
                 saveToolStripMenuItem.Enabled = true;
                 saveAsToolStripMenuItem.Enabled = true;
-                viewType.SelectedIndex = 0;
-                viewType.Enabled = true;
-                resetCamera.Enabled = true;
-                vShape.Enabled = true;
-                vBlock.Enabled = true;
-                blockList.Enabled = true;
 
                 a = false;
             }
@@ -462,28 +490,34 @@ namespace MagoBox
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog open = new OpenFileDialog();
-            open.Filter = "Kirby's Return to Dream Land Level Files|*.dat";
-            open.DefaultExt = ".dat";
-            open.CheckFileExists = true;
-            open.Title = "Open Level File";
-            if (open.ShowDialog() == DialogResult.OK)
+            try
             {
-                LoadLevel(open.FileName);
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Kirby's Return to Dream Land Level Files|*.dat";
+                open.DefaultExt = ".dat";
+                open.CheckFileExists = true;
+                open.Title = "Open Level File";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    LoadLevel(open.FileName);
+                }
+            } catch
+            {
+                MessageBox.Show("Failed To Open File");
+                Enabled = true;
             }
-
-            saveToolStripMenuItem.Enabled = true;
-            saveAsToolStripMenuItem.Enabled = true;
-            viewType.SelectedIndex = 0;
-            viewType.Enabled = true;
-            resetCamera.Enabled = true;
-            vShape.Enabled = true;
-            vBlock.Enabled = true;
-            blockList.Enabled = true;
-
-            Cursor = Cursors.Arrow;
-            Enabled = true;
-            SwitchTool(0);
+        }
+        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            level = null;
+            objList.Items.Clear();
+            carriablesList.Items.Clear();
+            itemList.Items.Clear();
+            bossList.Items.Clear();
+            enemyList.Items.Clear();
+            saveToolStripMenuItem.Enabled = false;
+            saveAsToolStripMenuItem.Enabled = false;
+            SwitchTool(-1);
         }
         private void LoadLevel(string path)
         {
@@ -511,6 +545,12 @@ namespace MagoBox
 
             Text = $"MagoCrate - {filePath}";
             a = false;
+
+            saveToolStripMenuItem.Enabled = true;
+            saveAsToolStripMenuItem.Enabled = true;
+
+            Cursor = Cursors.Arrow;
+            Enabled = true;
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -530,12 +570,38 @@ namespace MagoBox
                 Save();
             }
         }
-
-
-        private void LoadPaletteList()
+        private void viewType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshTileDataEditorColors();
+        }
+        private void exportPalette_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.InitialDirectory = Path.GetFullPath(Directory.GetCurrentDirectory() + "/CustomData/TilePalettes");
+            save.RestoreDirectory = true;
+            save.FileName = "New Palette";
+            save.AddExtension = true;
+            save.Filter = "Palette INI File|*.ini";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                new FileIniDataParser().WriteFile(save.FileName, plt);
+                RefreshPaletteList();
+                if (paletteList.Items.Count > 0) paletteList.SelectedIndex = paletteList.Items.Count - 1;
+            }
+        }
+        private void refreshPalette_Click(object sender, EventArgs e)
+        {
+            RefreshPaletteList();
+        }
+        private void RefreshPaletteList()
         {
             string path = Directory.GetCurrentDirectory() + "/CustomData/TilePalettes";
             string[] files = Directory.GetFiles(path);
+
+            int prevIndex = 0;
+            if (paletteList.Items.Count > 0 && paletteList.SelectedIndex != null) prevIndex = paletteList.SelectedIndex;
+            paletteList.Items.Clear();
+            tilePalettes.Clear();
 
             foreach (string file in files)
             {
@@ -552,8 +618,8 @@ namespace MagoBox
                 }
             }
 
-            if (string.IsNullOrEmpty(paletteList.Text)) paletteList.SelectedIndex = 0;
-            UpdatePaletteTiles();
+            if (paletteList.Items.Count > 0) paletteList.SelectedIndex = prevIndex;
+
         }
         private void paletteList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -565,7 +631,7 @@ namespace MagoBox
             {
                 if (paletteList.Items.Count == 0) return;
                 plt = tilePalettes[paletteList.SelectedIndex];
-                for (int i = 1; i < 25; i++)
+                for (int i = 1; i <= plt.Sections.Count; i++)
                 {
                     string ID = i.ToString();
                     UpdatePaletteButton(PaletteTileButtonFromIndex(i),
@@ -575,6 +641,24 @@ namespace MagoBox
                         plt.Sections[ID]["Shape"],
                         plt.Sections[ID]["Mod"],
                         plt.Sections[ID]["Name"]);
+                }
+                if (plt.Sections.Count < 32)
+                {
+                    for (int i = plt.Sections.Count + 1; i <= 32; i++)
+                    {
+                        string ID = i.ToString();
+                        plt.Sections.AddSection(ID);
+                        plt.Sections[ID].AddKey("Name", "Empty");
+                        plt.Sections[ID].AddKey("BLand", "FFFF00FF");
+                        plt.Sections[ID].AddKey("MLand", "FFFF00FF");
+                        plt.Sections[ID].AddKey("FLand", "FFFF00FF");
+                        plt.Sections[ID].AddKey("Shape", "0");
+                        plt.Sections[ID].AddKey("Mod", "0");
+                        plt.Sections[ID].AddKey("Mat", "0");
+                        plt.Sections[ID].AddKey("Auto", "0");
+                        plt.Sections[ID].AddKey("Block", "-1");
+                        UpdatePaletteButton(PaletteTileButtonFromIndex(i), "FFFF00FF", "FFFF00FF", "FFFF00FF", "0", "0", "Empty");
+                    }
                 }
             } catch { }
         }
@@ -644,7 +728,6 @@ namespace MagoBox
                 selPaletteButton = (System.Windows.Forms.Button)sender;
                 string ID = (selPaletteButton).Name.Substring(5, (selPaletteButton).Name.Length - 5);
 
-
                 if (e.Button == MouseButtons.Right)
                 {
                     // Save Current Tile Data over that palette
@@ -660,18 +743,18 @@ namespace MagoBox
 
 
                     plt.Sections[ID]["Shape"] = vShape.Value.ToString();
-                    plt.Sections[ID]["Mat"] = vmat.Value.ToString();
-                    plt.Sections[ID]["Auto"] = vautomove.Value.ToString();
+                    plt.Sections[ID]["Mat"] = vMat.Value.ToString();
+                    plt.Sections[ID]["Auto"] = vAutomove.Value.ToString();
                     plt.Sections[ID]["Block"] = vBlock.Value.ToString();
                     plt.Sections[ID]["Name"] = tileName.Text.ToString();
 
-                    d1_hex.Text = ((byte)d1_1.Value).ToString("X2") + ((byte)d1_2.Value).ToString("X2") + ((byte)d1_3.Value).ToString("X2") + ((sbyte)d1_4.Value).ToString("X2");
-                    d2_hex.Text = ((byte)d2_1.Value).ToString("X2") + ((byte)d2_2.Value).ToString("X2") + ((byte)d2_3.Value).ToString("X2") + ((sbyte)d2_4.Value).ToString("X2");
-                    d3_hex.Text = ((byte)d3_1.Value).ToString("X2") + ((byte)d3_2.Value).ToString("X2") + ((byte)d3_3.Value).ToString("X2") + ((sbyte)d3_4.Value).ToString("X2");
+                    dB_hex.Text = ((byte)dB_1.Value).ToString("X2") + ((byte)dB_2.Value).ToString("X2") + ((byte)dB_3.Value).ToString("X2") + ((sbyte)dB_4.Value).ToString("X2");
+                    dF_hex.Text = ((byte)dF_1.Value).ToString("X2") + ((byte)dF_2.Value).ToString("X2") + ((byte)dF_3.Value).ToString("X2") + ((sbyte)dF_4.Value).ToString("X2");
+                    dM_hex.Text = ((byte)dM_1.Value).ToString("X2") + ((byte)dM_2.Value).ToString("X2") + ((byte)dM_3.Value).ToString("X2") + ((sbyte)dM_4.Value).ToString("X2");
 
-                    plt.Sections[ID]["BLand"] = d1_hex.Text;
-                    plt.Sections[ID]["MLand"] = d3_hex.Text;
-                    plt.Sections[ID]["FLand"] = d2_hex.Text;
+                    plt.Sections[ID]["BLand"] = dB_hex.Text;
+                    plt.Sections[ID]["MLand"] = dM_hex.Text;
+                    plt.Sections[ID]["FLand"] = dF_hex.Text;
 
                     UpdatePaletteTiles();
                 }
@@ -695,34 +778,13 @@ namespace MagoBox
                     if ((mod & (1 << 6)) != 0) lava.Checked = true;
 
                     vShape.Value = int.Parse(plt.Sections[ID]["Shape"]);
-                    vmat.Value = decimal.Parse(plt.Sections[ID]["Mat"]);
-                    vautomove.Value = decimal.Parse(plt.Sections[ID]["Auto"]);
+                    vMat.Value = decimal.Parse(plt.Sections[ID]["Mat"]);
+                    vAutomove.Value = decimal.Parse(plt.Sections[ID]["Auto"]);
                     vBlock.Value = decimal.Parse(plt.Sections[ID]["Block"]);
-                    d1_hex.Text = plt.Sections[ID]["BLand"];
-                    d3_hex.Text = plt.Sections[ID]["MLand"];
-                    d2_hex.Text = plt.Sections[ID]["FLand"];
+                    if (plt.Sections[ID]["BLand"] != "FFFF00FF" || ModifierKeys != Keys.Shift) dB_hex.Text = plt.Sections[ID]["BLand"];
+                    if (plt.Sections[ID]["MLand"] != "FFFF00FF" || ModifierKeys != Keys.Shift) dM_hex.Text = plt.Sections[ID]["MLand"];
+                    if (plt.Sections[ID]["FLand"] != "FFFF00FF" || ModifierKeys != Keys.Shift) dF_hex.Text = plt.Sections[ID]["FLand"];
                     tileName.Text = plt.Sections[ID]["Name"];
-
-                    uint b = uint.Parse(d1_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    d1_1.Value = uint.Parse(d1_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    d1_2.Value = uint.Parse(d1_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    d1_3.Value = uint.Parse(d1_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (b < 16) d1_4.Value = b;
-                    else d1_4.Value = -1;
-
-                    uint f = uint.Parse(d2_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    d2_1.Value = uint.Parse(d2_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    d2_2.Value = uint.Parse(d2_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    d2_3.Value = uint.Parse(d2_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (f < 16) d2_4.Value = f;
-                    else d2_4.Value = -1;
-
-                    uint m = uint.Parse(d3_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    d3_1.Value = uint.Parse(d3_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    d3_2.Value = uint.Parse(d3_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    d3_3.Value = uint.Parse(d3_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (m < 16) d3_4.Value = m;
-                    else d3_4.Value = -1;
                 }
             } catch { }
         }
@@ -754,10 +816,17 @@ namespace MagoBox
                 case 22: return pTile22;
                 case 23: return pTile23;
                 case 24: return pTile24;
+                case 25: return pTile25;
+                case 26: return pTile26;
+                case 27: return pTile27;
+                case 28: return pTile28;
+                case 29: return pTile29;
+                case 30: return pTile30;
+                case 31: return pTile31;
+                case 32: return pTile32;
             }
             return pTile1;
         }
-
         private void RefreshEntitySprites()
         {
             Objects objs = new Objects();
@@ -890,56 +959,85 @@ namespace MagoBox
 
                 vec_scale = new Vector2(1.0f, 1.0f);
                 hexTextOffset = new Vector2(8, 8);
+                float range = MagoCrate.Properties.Settings.Default.entityCullRange;
+                bool colored = false;
+                if (viewType.SelectedIndex != 0 && viewType.SelectedIndex != 4 && MagoCrate.Properties.Settings.Default.decorSetting == 0) colored = true;
 
-                if (viewType.SelectedIndex == 0)
-                {
-                    RenderCollisions();
-                    if (renderTileModifiersToolStripMenuItem.Checked) RenderModifiers();
-                    if (renderMaterialsToolStripMenuItem.Checked) RenderMaterials();
-                    if (renderAutoMovementToolStripMenuItem.Checked) RenderAutoMovement();
-                    if (renderBlocksToolStripMenuItem.Checked) RenderBlocks();
+                RenderCollisions(colored);
+                if (renderTileModifiersToolStripMenuItem.Checked) RenderModifiers();
+                if (renderMaterialsToolStripMenuItem.Checked) RenderMaterials();
+                if (renderAutoMovementToolStripMenuItem.Checked) RenderAutoMovement();
+                if (renderDynamicTerrainToolStripMenuItem.Checked) RenderDynamicTerrain();
+                if (renderBlocksToolStripMenuItem.Checked) RenderBlocks();
 
-                    if (renderObjectPointsToolStripMenuItem.Checked)
-                    {
-                        RenderZones();
-                        float range = MagoCrate.Properties.Settings.Default.entityCullRange;
-                        RenderObjects(range);
-                        RenderCarriables(range);
-                        RenderItems(range);
-                        RenderBosses(range);
-                        RenderEnemies(range);
-                    }
-                }
-                else
+                if (renderObjectPointsToolStripMenuItem.Checked)
                 {
-                    RenderCollisions();
-                    if (renderTileModifiersToolStripMenuItem.Checked) RenderModifiers();
-                    RenderDecoView();
+                    RenderZones();
+                    RenderObjects(range);
+                    RenderCarriables(range);
+                    RenderItems(range);
+                    RenderBosses(range);
+                    RenderEnemies(range);
                 }
+
+                if ((viewType.SelectedIndex != 0 && MagoCrate.Properties.Settings.Default.decorSetting != 0) || viewType.SelectedIndex == 4) RenderDecoHex();
 
                 // Render Select Cursor
                 Vector2 v = new Vector2(tileX * 16f, -tileY * 16f);
                 renderer.Draw(shapeTexIds[52], v, vec_scale, 17, 17);
             }
             glControl.SwapBuffers();
-
-            if (instantLoadAvailable)
-            {
-                instantLoadAvailable = false;
-                LoadLevel(filePath);
-            }
         }
-        private void RenderCollisions()
+        private void RenderCollisions(bool colored)
         {
             //Collisions
             for (int ty = tileStartY; ty < tileEndY; ty++)
             {
                 for (int tx = tileStartX; tx < tileEndX; tx++)
                 {
+                    bool empty = true;
                     int ix = ty * (int)level.Width + tx;
-                    Collision c = level.TileCollision[ix];
                     Vector2 v = new Vector2(tx * 16f, -ty * 16f);
-                    renderer.Draw(shapeTexIds[c.Shape], v, vec_scale, 17, 17);
+                    if (renderCollisionToolStripMenuItem.Checked)
+                    {
+                        Collision c = level.TileCollision[ix];
+                        renderer.Draw(shapeTexIds[c.Shape], v, vec_scale, 17, 17);
+                    } else renderer.Draw(shapeTexIds[0], v, vec_scale, 17, 17);
+
+
+                    if (colored)
+                    {
+                        switch (viewType.SelectedIndex)
+                        {
+                            case 1:
+                                Decoration bDeco = level.BLandDecoration[ix];
+                                if (bDeco.Unk_2 != 255 || bDeco.Unk_1 != 255 || bDeco.Unk_3 != 0) empty = false;
+                                if (!empty)
+                                {
+                                    Color bCol = DecorColorFromBytes(bDeco.Unk_1, bDeco.Unk_2, bDeco.Unk_3);
+                                    renderer.DrawColor(bCol, hexTexIds[16], v, vec_scale, 17, 17);
+                                }
+                                break;
+                            case 2:
+                                Decoration fDeco = level.MLandDecoration[ix];
+                                if (fDeco.Unk_2 != 255 || fDeco.Unk_1 != 255 || fDeco.Unk_3 != 0) empty = false;
+                                if (!empty)
+                                {
+                                    Color fCol = DecorColorFromBytes(fDeco.Unk_1, fDeco.Unk_2, fDeco.Unk_3);
+                                    renderer.DrawColor(fCol, hexTexIds[16], v, vec_scale, 17, 17);
+                                }
+                                break;
+                            case 3:
+                                Decoration mDeco = level.FLandDecoration[ix];
+                                if (mDeco.Unk_2 != 255 || mDeco.Unk_1 != 255 || mDeco.Unk_3 != 0) empty = false;
+                                if (!empty)
+                                {
+                                    Color mCol = DecorColorFromBytes(mDeco.Unk_1, mDeco.Unk_2, mDeco.Unk_3);
+                                    renderer.DrawColor(mCol, hexTexIds[16], v, vec_scale, 17, 17);
+                                }
+                                break;
+                        }
+                    }
                 }
             }
         }
@@ -1037,34 +1135,13 @@ namespace MagoBox
 
                     if (t.Material > 7)
                     {
-                        if (t.Material < 16) //Grass
-                        {
-                            renderer.Draw(propertyTexIds[0], v, vec_scale, 17, 17);
-                        }
-                        else if (t.Material < 24) //Wood
-                        {
-                            renderer.Draw(propertyTexIds[1], v, vec_scale, 17, 17);
-                        }
-                        else if (t.Material < 32) //Stone
-                        {
-                            renderer.Draw(propertyTexIds[2], v, vec_scale, 17, 17);
-                        }
-                        else if (t.Material < 40) //Sand
-                        {
-                            renderer.Draw(propertyTexIds[3], v, vec_scale, 17, 17);
-                        }
-                        else if (t.Material < 48) //Snow
-                        {
-                            renderer.Draw(propertyTexIds[4], v, vec_scale, 17, 17);
-                        }
-                        else if (t.Material < 56) //Clouds
-                        {
-                            renderer.Draw(propertyTexIds[5], v, vec_scale, 17, 17);
-                        }
-                        else //Metal
-                        {
-                            renderer.Draw(propertyTexIds[6], v, vec_scale, 17, 17);
-                        }
+                        if (t.Material < 16) renderer.Draw(propertyTexIds[0], v, vec_scale, 17, 17);
+                        else if (t.Material < 24) renderer.Draw(propertyTexIds[1], v, vec_scale, 17, 17);
+                        else if (t.Material < 32) renderer.Draw(propertyTexIds[2], v, vec_scale, 17, 17);
+                        else if (t.Material < 40) renderer.Draw(propertyTexIds[3], v, vec_scale, 17, 17);
+                        else if (t.Material < 48) renderer.Draw(propertyTexIds[4], v, vec_scale, 17, 17);
+                        else if (t.Material < 56) renderer.Draw(propertyTexIds[5], v, vec_scale, 17, 17);
+                        else renderer.Draw(propertyTexIds[6], v, vec_scale, 17, 17);
                     }
                 }
             }
@@ -1103,136 +1180,142 @@ namespace MagoBox
                 }
             }
         }
-        private void RenderDecoView()
+        private void RenderDecoHex()
         {
             for (int ty = tileStartY; ty < tileEndY; ty++)
             {
                 for (int tx = tileStartX; tx < tileEndX; tx++)
                 {
-                    bool notEmpty = false;
                     int ix = ty * (int)level.Width + tx;
                     Vector2 v = new Vector2(tx * 16f, -ty * 16f);
                     string hex = "";
 
-                    switch (MagoCrate.Properties.Settings.Default.decorSetting)
+                    if (viewType.SelectedIndex == 4)
                     {
-                        case 0:
+                        // Render Dynamic Tile View and break early
+                        Vector4 col = new Vector4(0, 0, 0, 1);
+                        renderer.Draw(hexTexIds[16], v, vec_scale, 17, 17, col);
+                        Decoration bDeco = level.BLandDecoration[ix];
+                        Decoration mDeco = level.MLandDecoration[ix];
+                        Decoration fDeco = level.FLandDecoration[ix];
+                        if (mDeco.MovingTerrainID != -1)
+                        {
+                            hex = mDeco.MovingTerrainID.ToString("X2");
+                        } 
+                        else if (bDeco.MovingTerrainID != -1)
+                        {
+                            hex = bDeco.MovingTerrainID.ToString("X2");
+                        }
+                        else if (fDeco.MovingTerrainID != -1)
+                        {
+                            hex = fDeco.MovingTerrainID.ToString("X2");
+                        }
 
-                            // Color View
-                            switch (viewType.SelectedIndex)
-                            {
-                                case 1:
-                                    Decoration bDeco = level.BLandDecoration[ix];
-                                    if (bDeco.Unk_2 != 255 || bDeco.Unk_1 != 255 || bDeco.Unk_3 != 0) notEmpty = true;
+                        if (!string.IsNullOrEmpty(hex))
+                        {
+                            renderer.Draw(hexTexIds[int.Parse(hex.Substring(0, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-5f, -4.25f), vec_scale * 0.8f, 6, 12);
+                            renderer.Draw(hexTexIds[int.Parse(hex.Substring(1, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1f, -4.25f), vec_scale * 0.8f, 6, 12);
+                        }
+                        
+                    } else
+                    {
+                        switch (MagoCrate.Properties.Settings.Default.decorSetting)
+                        {
+                            case 1:
+                                // 8 Hex Number View
+                                Vector4 col = new Vector4(0, 0, 0, 1);
+                                renderer.Draw(hexTexIds[16], v, vec_scale, 17, 17, col);
+                                switch (viewType.SelectedIndex)
+                                {
+                                    case 1:
+                                        Decoration bDeco = level.BLandDecoration[ix];
+                                        hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                    case 2:
+                                        Decoration mDeco = level.MLandDecoration[ix];
+                                        hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                    case 3:
+                                        Decoration fDeco = level.FLandDecoration[ix];
+                                        hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                }
+                                if (hex != "FFFF00FF")
+                                {
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(0, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-6.75f, -5.25f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(1, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-3f, -5.25f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(2, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1.5f, -5.25f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(3, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(5.25f, -5.25f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(4, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-6.75f, 1.75f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(5, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-3f, 1.75f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(6, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1.5f, 1.75f), vec_scale * 0.8f, 3, 6);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(7, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(5.25f, 1.75f), vec_scale * 0.8f, 3, 6);
+                                }
+                                break;
 
-                                    Color bCol = DecorColorFromBytes(bDeco.Unk_1, bDeco.Unk_2, bDeco.Unk_3);
-                                    if (notEmpty) renderer.DrawColor(bCol, hexTexIds[16], v, vec_scale, 17, 17);
-                                    break;
-                                case 2:
-                                    Decoration fDeco = level.FLandDecoration[ix];
-                                    if (fDeco.Unk_2 != 255 || fDeco.Unk_1 != 255 || fDeco.Unk_3 != 0) notEmpty = true;
+                            case 2:
 
-                                    Color fCol = DecorColorFromBytes(fDeco.Unk_1, fDeco.Unk_2, fDeco.Unk_3);
-                                    if (notEmpty) renderer.DrawColor(fCol, hexTexIds[16], v, vec_scale, 17, 17);
-                                    break;
-                                case 3:
-                                    Decoration mDeco = level.MLandDecoration[ix];
-                                    if (mDeco.Unk_2 != 255 || mDeco.Unk_1 != 255 || mDeco.Unk_3 != 0) notEmpty = true;
+                                // 4 Hex Number View
+                                renderer.DrawColor(Color.Black, hexTexIds[16], v, vec_scale, 17, 17);
+                                switch (viewType.SelectedIndex)
+                                {
+                                    case 1:
+                                        Decoration bDeco = level.BLandDecoration[ix];
+                                        hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                    case 2:
+                                        Decoration fDeco = level.MLandDecoration[ix];
+                                        hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                    case 3:
+                                        Decoration mDeco = level.FLandDecoration[ix];
+                                        hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                }
+                                if (hex != "FFFF00FF")
+                                {
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(0, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-6.75f, -1.75f), vec_scale * 0.8f, 4, 8);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(1, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-3f, -1.75f), vec_scale * 0.8f, 4, 8);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(2, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1.5f, -1.75f), vec_scale * 0.8f, 4, 8);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(3, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(5.25f, -1.75f), vec_scale * 0.8f, 4, 8);
+                                }
+                                break;
 
-                                    Color mCol = DecorColorFromBytes(mDeco.Unk_1, mDeco.Unk_2, mDeco.Unk_3);
-                                    if (notEmpty) renderer.DrawColor(mCol, hexTexIds[16], v, vec_scale, 17, 17);
-                                    break;
-                            }
-                            break;
+                            case 3:
 
-                        case 1:
-
-                            // 8 Hex Number View
-                            renderer.DrawColor(Color.Black, hexTexIds[16], v, vec_scale, 17, 17);
-                            switch (viewType.SelectedIndex)
-                            {
-                                case 1:
-                                    Decoration bDeco = level.BLandDecoration[ix];
-                                    hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                                case 2:
-                                    Decoration fDeco = level.FLandDecoration[ix];
-                                    hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                                case 3:
-                                    Decoration mDeco = level.MLandDecoration[ix];
-                                    hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                            }
-                            if (hex != "FFFF00FF")
-                            {
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(0, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-6.75f, -5.25f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(1, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-3f, -5.25f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(2, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1.5f, -5.25f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(3, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(5.25f, -5.25f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(4, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-6.75f, 1.75f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(5, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-3f, 1.75f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(6, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1.5f, 1.75f), vec_scale * 0.8f, 3, 6);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(7, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(5.25f, 1.75f), vec_scale * 0.8f, 3, 6);
-                            }
-                            break;
-
-                        case 2:
-
-                            // 4 Hex Number View
-                            renderer.DrawColor(Color.Black, hexTexIds[16], v, vec_scale, 17, 17);
-                            switch (viewType.SelectedIndex)
-                            {
-                                case 1:
-                                    Decoration bDeco = level.BLandDecoration[ix];
-                                    hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                                case 2:
-                                    Decoration fDeco = level.FLandDecoration[ix];
-                                    hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                                case 3:
-                                    Decoration mDeco = level.MLandDecoration[ix];
-                                    hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                            }
-                            if (hex != "FFFF00FF")
-                            {
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(0, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-6.75f, -1.75f), vec_scale * 0.8f, 4, 8);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(1, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-3f, -1.75f), vec_scale * 0.8f, 4, 8);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(2, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1.5f, -1.75f), vec_scale * 0.8f, 4, 8);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(3, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(5.25f, -1.75f), vec_scale * 0.8f, 4, 8);
-                            }
-                            break;
-
-                        case 3:
-
-                            // 2 Hex Number View
-                            renderer.DrawColor(Color.Black, hexTexIds[16], v, vec_scale, 17, 17);
-                            switch (viewType.SelectedIndex)
-                            {
-                                case 1:
-                                    Decoration bDeco = level.BLandDecoration[ix];
-                                    hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                                case 2:
-                                    Decoration fDeco = level.FLandDecoration[ix];
-                                    hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                                case 3:
-                                    Decoration mDeco = level.MLandDecoration[ix];
-                                    hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
-                                    break;
-                            }
-                            if (hex != "FFFF00FF")
-                            {
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(2, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-5f, -4.25f), vec_scale * 0.8f, 6, 12);
-                                renderer.Draw(hexTexIds[int.Parse(hex.Substring(3, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1f, -4.25f), vec_scale * 0.8f, 6, 12);
-                            }
-                            break;
+                                // 2 Hex Number View
+                                renderer.DrawColor(Color.Black, hexTexIds[16], v, vec_scale, 17, 17);
+                                switch (viewType.SelectedIndex)
+                                {
+                                    case 1:
+                                        Decoration bDeco = level.BLandDecoration[ix];
+                                        hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                    case 2:
+                                        Decoration fDeco = level.MLandDecoration[ix];
+                                        hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                    case 3:
+                                        Decoration mDeco = level.FLandDecoration[ix];
+                                        hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
+                                        break;
+                                }
+                                if (hex != "FFFF00FF")
+                                {
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(2, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(-5f, -4.25f), vec_scale * 0.8f, 6, 12);
+                                    renderer.Draw(hexTexIds[int.Parse(hex.Substring(3, 1), System.Globalization.NumberStyles.HexNumber)], v + hexTextOffset + new Vector2(1f, -4.25f), vec_scale * 0.8f, 6, 12);
+                                }
+                                break;
+                        }
                     }
                 }
             }
+        }
+        private bool inRenderRange(float X, float Y, float range)
+        {
+            bool withinRange = false;
+            if (X > tileStartX - range && Y > tileStartY - range && X < tileEndX + range && Y < tileEndY + range) withinRange = true;
+            return withinRange;
         }
         private void RenderZones()
         {
@@ -1296,44 +1379,47 @@ namespace MagoBox
                     name = objs.ObjectList[objType];
                 }
 
-                if (useAvailableSpritesToolStripMenuItem.Checked && (level.Objects[i].X > tileStartX - entRange && level.Objects[i].Y > tileStartY - entRange && level.Objects[i].X < tileEndX + entRange && level.Objects[i].Y < tileEndY + entRange))
+                if (inRenderRange(level.Objects[i].X, level.Objects[i].Y, entRange))
                 {
-                    try
+                    if (useAvailableSpritesToolStripMenuItem.Checked)
                     {
-                        RenderExceptionObjects(objType, i, name, select, out exceptionTexUsed);
-
-                        if (!exceptionTexUsed)
+                        try
                         {
-                            Vector2 v = new Vector2((level.Objects[i].X * 16f) + (level.Objects[i].XOffset), (-level.Objects[i].Y * 16f) - (level.Objects[i].YOffset));
-                            Vector2 o = Vector2.Zero;
-                            int w = 0;
-                            int h = 0;
-                            string spritePath = "";
-                            if (spriteParameters.Sections.ContainsSection("O." + name + "." + level.Objects[i].Param6))
-                                spritePath = "O." + name + "." + level.Objects[i].Param6;
-                            if (spriteParameters.Sections.ContainsSection("O." + name))
+                            RenderExceptionObjects(objType, i, name, select, out exceptionTexUsed);
+
+                            if (!exceptionTexUsed)
                             {
-                                if (string.IsNullOrEmpty(spritePath)) spritePath = "O." + name;
-
-                                w = int.Parse(spriteParameters[spritePath]["W"]);
-                                h = int.Parse(spriteParameters[spritePath]["H"]);
-                                o = new Vector2(
-                                    (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
-                                    (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
-
-                                if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
-                                if (spriteTexIds.ContainsKey("O." + name + "." + level.Objects[i].Param6))
+                                Vector2 v = new Vector2((level.Objects[i].X * 16f) + (level.Objects[i].XOffset), (-level.Objects[i].Y * 16f) - (level.Objects[i].YOffset));
+                                Vector2 o = Vector2.Zero;
+                                int w = 0;
+                                int h = 0;
+                                string spritePath = "";
+                                if (spriteParameters.Sections.ContainsSection("O." + name + "." + level.Objects[i].Param6))
+                                    spritePath = "O." + name + "." + level.Objects[i].Param6;
+                                if (spriteParameters.Sections.ContainsSection("O." + name))
                                 {
-                                    renderer.Draw(spriteTexIds["O." + name + "." + level.Objects[i].Param6], v + o, vec_scale, w, h);
+                                    if (string.IsNullOrEmpty(spritePath)) spritePath = "O." + name;
+
+                                    w = int.Parse(spriteParameters[spritePath]["W"]);
+                                    h = int.Parse(spriteParameters[spritePath]["H"]);
+                                    o = new Vector2(
+                                        (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
+                                        (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
+
+                                    if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
+                                    if (spriteTexIds.ContainsKey("O." + name + "." + level.Objects[i].Param6))
+                                    {
+                                        renderer.Draw(spriteTexIds["O." + name + "." + level.Objects[i].Param6], v + o, vec_scale, w, h);
+                                    }
+                                    else renderer.Draw(spriteTexIds["O." + name], v + o, vec_scale, w, h);
                                 }
-                                else renderer.Draw(spriteTexIds["O." + name], v + o, vec_scale, w, h);
+                                else RenderEntityNode(0, nodePos, select, name);
                             }
-                            else RenderEntityNode(0, nodePos, select, name);
                         }
+                        catch { RenderEntityNode(0, nodePos, select, name); }
                     }
-                    catch { RenderEntityNode(0, nodePos, select, name); }
+                    else RenderEntityNode(0, nodePos, select, name);
                 }
-                else RenderEntityNode(0, nodePos, select, name);
             }
         }
         private void RenderCarriables(float entRange)
@@ -1352,39 +1438,42 @@ namespace MagoBox
                     name = objs.CarriablesList[carryType];
                 }
 
-                if (useAvailableSpritesToolStripMenuItem.Checked && (level.Carriables[i].X > tileStartX - entRange && level.Carriables[i].Y > tileStartY - entRange && level.Carriables[i].X < tileEndX + entRange && level.Carriables[i].Y < tileEndY + entRange))
+                if (inRenderRange(level.Carriables[i].X, level.Carriables[i].Y, entRange))
                 {
-                    try
+                    if (useAvailableSpritesToolStripMenuItem.Checked)
                     {
-                        Vector2 v = new Vector2((level.Carriables[i].X * 16f) + (level.Carriables[i].XOffset), (-level.Carriables[i].Y * 16f) - (level.Carriables[i].YOffset));
-                        Vector2 o = Vector2.Zero;
-                        int w = 0;
-                        int h = 0;
-                        string spritePath = "";
-                        if (spriteParameters.Sections.ContainsSection("C." + name + "." + level.Carriables[i].AppearID))
-                            spritePath = "C." + name + "." + level.Carriables[i].AppearID;
-                        if (spriteParameters.Sections.ContainsSection("C." + name))
+                        try
                         {
-                            if (string.IsNullOrEmpty(spritePath)) spritePath = "C." + name;
-
-                            w = int.Parse(spriteParameters[spritePath]["W"]);
-                            h = int.Parse(spriteParameters[spritePath]["H"]);
-                            o = new Vector2(
-                                (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
-                                (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
-
-                            if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
-                            if (spriteTexIds.ContainsKey("C." + name + "." + level.Carriables[i].AppearID))
+                            Vector2 v = new Vector2((level.Carriables[i].X * 16f) + (level.Carriables[i].XOffset), (-level.Carriables[i].Y * 16f) - (level.Carriables[i].YOffset));
+                            Vector2 o = Vector2.Zero;
+                            int w = 0;
+                            int h = 0;
+                            string spritePath = "";
+                            if (spriteParameters.Sections.ContainsSection("C." + name + "." + level.Carriables[i].AppearID))
+                                spritePath = "C." + name + "." + level.Carriables[i].AppearID;
+                            if (spriteParameters.Sections.ContainsSection("C." + name))
                             {
-                                renderer.Draw(spriteTexIds["C." + name + "." + level.Carriables[i].AppearID], v + o, vec_scale, w, h);
+                                if (string.IsNullOrEmpty(spritePath)) spritePath = "C." + name;
+
+                                w = int.Parse(spriteParameters[spritePath]["W"]);
+                                h = int.Parse(spriteParameters[spritePath]["H"]);
+                                o = new Vector2(
+                                    (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
+                                    (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
+
+                                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
+                                if (spriteTexIds.ContainsKey("C." + name + "." + level.Carriables[i].AppearID))
+                                {
+                                    renderer.Draw(spriteTexIds["C." + name + "." + level.Carriables[i].AppearID], v + o, vec_scale, w, h);
+                                }
+                                else renderer.Draw(spriteTexIds["C." + name], v + o, vec_scale, w, h);
                             }
-                            else renderer.Draw(spriteTexIds["C." + name], v + o, vec_scale, w, h);
+                            else RenderEntityNode(1, nodePos, select, name);
                         }
-                        else RenderEntityNode(1, nodePos, select, name);
+                        catch { RenderEntityNode(1, nodePos, select, name); }
                     }
-                    catch { RenderEntityNode(1, nodePos, select, name); }
+                    else RenderEntityNode(1, nodePos, select, name);
                 }
-                else RenderEntityNode(1, nodePos, select, name);
             }
         }
         private void RenderItems(float entRange)
@@ -1403,39 +1492,42 @@ namespace MagoBox
                     name = objs.ItemList[itemType];
                 }
 
-                if (useAvailableSpritesToolStripMenuItem.Checked && (level.Items[i].X > tileStartX - entRange && level.Items[i].Y > tileStartY - entRange && level.Items[i].X < tileEndX + entRange && level.Items[i].Y < tileEndY + entRange))
+                if (inRenderRange(level.Items[i].X, level.Items[i].Y, entRange))
                 {
-                    try
+                    if (useAvailableSpritesToolStripMenuItem.Checked)
                     {
-                        Vector2 v = new Vector2((level.Items[i].X * 16f) + (level.Items[i].XOffset), (-level.Items[i].Y * 16f) - (level.Items[i].YOffset));
-                        Vector2 o = Vector2.Zero;
-                        int w = 0;
-                        int h = 0;
-                        string spritePath = "";
-                        if (spriteParameters.Sections.ContainsSection("I." + name + "." + level.Items[i].Level))
-                            spritePath = "I." + name + "." + level.Items[i].Level;
-                        if (spriteParameters.Sections.ContainsSection("I." + name))
+                        try
                         {
-                            if (string.IsNullOrEmpty(spritePath)) spritePath = "I." + name;
-
-                            w = int.Parse(spriteParameters[spritePath]["W"]);
-                            h = int.Parse(spriteParameters[spritePath]["H"]);
-                            o = new Vector2(
-                                (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
-                                (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
-
-                            if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
-                            if (spriteTexIds.ContainsKey("I." + name + "." + level.Items[i].Level))
+                            Vector2 v = new Vector2((level.Items[i].X * 16f) + (level.Items[i].XOffset), (-level.Items[i].Y * 16f) - (level.Items[i].YOffset));
+                            Vector2 o = Vector2.Zero;
+                            int w = 0;
+                            int h = 0;
+                            string spritePath = "";
+                            if (spriteParameters.Sections.ContainsSection("I." + name + "." + level.Items[i].Level))
+                                spritePath = "I." + name + "." + level.Items[i].Level;
+                            if (spriteParameters.Sections.ContainsSection("I." + name))
                             {
-                                renderer.Draw(spriteTexIds["I." + name + "." + level.Items[i].Level], v + o, vec_scale, w, h);
+                                if (string.IsNullOrEmpty(spritePath)) spritePath = "I." + name;
+
+                                w = int.Parse(spriteParameters[spritePath]["W"]);
+                                h = int.Parse(spriteParameters[spritePath]["H"]);
+                                o = new Vector2(
+                                    (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
+                                    (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
+
+                                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
+                                if (spriteTexIds.ContainsKey("I." + name + "." + level.Items[i].Level))
+                                {
+                                    renderer.Draw(spriteTexIds["I." + name + "." + level.Items[i].Level], v + o, vec_scale, w, h);
+                                }
+                                else renderer.Draw(spriteTexIds["I." + name], v + o, vec_scale, w, h);
                             }
-                            else renderer.Draw(spriteTexIds["I." + name], v + o, vec_scale, w, h);
+                            else RenderEntityNode(2, nodePos, select, name);
                         }
-                        else RenderEntityNode(2, nodePos, select, name);
+                        catch { RenderEntityNode(2, nodePos, select, name); }
                     }
-                    catch { RenderEntityNode(2, nodePos, select, name); }
+                    else RenderEntityNode(2, nodePos, select, name);
                 }
-                else RenderEntityNode(2, nodePos, select, name);
             }
         }
         private void RenderBosses(float entRange)
@@ -1454,46 +1546,49 @@ namespace MagoBox
                     name = objs.BossList[bossType];
                 }
 
-                if (useAvailableSpritesToolStripMenuItem.Checked && (level.Bosses[i].X > tileStartX - entRange && level.Bosses[i].Y > tileStartY - entRange && level.Bosses[i].X < tileEndX + entRange && level.Bosses[i].Y < tileEndY + entRange))
+                if (inRenderRange(level.Bosses[i].X, level.Bosses[i].Y, entRange))
                 {
-                    try
+                    if (useAvailableSpritesToolStripMenuItem.Checked)
                     {
-                        Vector2 v = new Vector2((level.Bosses[i].X * 16f) + (level.Bosses[i].XOffset), (-level.Bosses[i].Y * 16f) - (level.Bosses[i].YOffset));
-                        Vector2 o = Vector2.Zero;
-                        int w = 0;
-                        int h = 0;
-                        string spritePath = "";
-                        if (spriteParameters.Sections.ContainsSection("B." + name + "." + level.Bosses[i].Level))
-                            spritePath = "B." + name + "." + level.Bosses[i].Level;
-                        if (spriteParameters.Sections.ContainsSection("B." + name))
+                        try
                         {
-                            if (string.IsNullOrEmpty(spritePath)) spritePath = "B." + name;
-
-                            w = int.Parse(spriteParameters[spritePath]["W"]);
-                            h = int.Parse(spriteParameters[spritePath]["H"]);
-                            o = new Vector2(
-                                (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
-                                (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
-
-                            if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
-                            if (level.Bosses[i].HasSuperAbility)
+                            Vector2 v = new Vector2((level.Bosses[i].X * 16f) + (level.Bosses[i].XOffset), (-level.Bosses[i].Y * 16f) - (level.Bosses[i].YOffset));
+                            Vector2 o = Vector2.Zero;
+                            int w = 0;
+                            int h = 0;
+                            string spritePath = "";
+                            if (spriteParameters.Sections.ContainsSection("B." + name + "." + level.Bosses[i].Level))
+                                spritePath = "B." + name + "." + level.Bosses[i].Level;
+                            if (spriteParameters.Sections.ContainsSection("B." + name))
                             {
-                                // Draw Super Effect with its own offset
-                                Vector2 s = new Vector2(-34.5f, -34);
-                                renderer.Draw(nodeTexIds[7], v + s, vec_scale, 68, 68);
-                            }
+                                if (string.IsNullOrEmpty(spritePath)) spritePath = "B." + name;
 
-                            if (spriteTexIds.ContainsKey("B." + name + "." + level.Bosses[i].Level))
-                            {
-                                renderer.Draw(spriteTexIds["B." + name + "." + level.Bosses[i].Level], v + o, vec_scale, w, h);
+                                w = int.Parse(spriteParameters[spritePath]["W"]);
+                                h = int.Parse(spriteParameters[spritePath]["H"]);
+                                o = new Vector2(
+                                    (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
+                                    (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
+
+                                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
+                                if (level.Bosses[i].HasSuperAbility)
+                                {
+                                    // Draw Super Effect with its own offset
+                                    Vector2 s = new Vector2(-34.5f, -34);
+                                    renderer.Draw(utilityTexIds[3], v + s, vec_scale, 68, 68);
+                                }
+
+                                if (spriteTexIds.ContainsKey("B." + name + "." + level.Bosses[i].Level))
+                                {
+                                    renderer.Draw(spriteTexIds["B." + name + "." + level.Bosses[i].Level], v + o, vec_scale, w, h);
+                                }
+                                else renderer.Draw(spriteTexIds["B." + name], v + o, vec_scale, w, h);
                             }
-                            else renderer.Draw(spriteTexIds["B." + name], v + o, vec_scale, w, h);
+                            else RenderEntityNode(3, nodePos, select, name);
                         }
-                        else RenderEntityNode(3, nodePos, select, name);
+                        catch { RenderEntityNode(3, nodePos, select, name); }
                     }
-                    catch { RenderEntityNode(3, nodePos, select, name); }
+                    else RenderEntityNode(3, nodePos, select, name);
                 }
-                else RenderEntityNode(3, nodePos, select, name);
             }
         }
         private void RenderEnemies(float entRange)
@@ -1512,84 +1607,122 @@ namespace MagoBox
                     name = objs.EnemyList[enemyType];
                 }
 
-                if (useAvailableSpritesToolStripMenuItem.Checked && (level.Enemies[i].X > tileStartX - entRange && level.Enemies[i].Y > tileStartY - entRange && level.Enemies[i].X < tileEndX + entRange && level.Enemies[i].Y < tileEndY + entRange))
+                if (inRenderRange(level.Enemies[i].X, level.Enemies[i].Y, entRange))
                 {
-                    try
+                    if (useAvailableSpritesToolStripMenuItem.Checked)
                     {
-                        Vector2 v = new Vector2((level.Enemies[i].X * 16f) + (level.Enemies[i].XOffset), (-level.Enemies[i].Y * 16f) - (level.Enemies[i].YOffset));
-                        Vector2 o = Vector2.Zero;
-                        int w = 0;
-                        int h = 0;
-                        string spritePath = "";
-                        if (spriteParameters.Sections.ContainsSection("E." + name + "." + level.Enemies[i].Behavior)) 
-                            spritePath = "E." + name + "." + level.Enemies[i].Behavior;
-                        if (spriteParameters.Sections.ContainsSection("E." + name))
+                        try
                         {
-                            if (string.IsNullOrEmpty(spritePath)) spritePath = "E." + name;
-
-                            w = int.Parse(spriteParameters[spritePath]["W"]);
-                            h = int.Parse(spriteParameters[spritePath]["H"]);
-                            o = new Vector2(
-                                (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
-                                (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
-
-
-                            if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
-                            if (level.Enemies[i].HasSuperAbility) 
+                            Vector2 v = new Vector2((level.Enemies[i].X * 16f) + (level.Enemies[i].XOffset), (-level.Enemies[i].Y * 16f) - (level.Enemies[i].YOffset));
+                            Vector2 o = Vector2.Zero;
+                            int w = 0;
+                            int h = 0;
+                            string spritePath = "";
+                            if (spriteParameters.Sections.ContainsSection("E." + name + "." + level.Enemies[i].Behavior))
+                                spritePath = "E." + name + "." + level.Enemies[i].Behavior;
+                            if (spriteParameters.Sections.ContainsSection("E." + name))
                             {
-                                // Draw Super Effect with its own offset
-                                Vector2 s = new Vector2(-17.5f, -8);
-                                renderer.Draw(nodeTexIds[7], v + s, vec_scale, 34, 34);
-                            }
+                                if (string.IsNullOrEmpty(spritePath)) spritePath = "E." + name;
 
-                            if (spriteTexIds.ContainsKey("E." + name + "." + level.Enemies[i].Behavior))
-                            {
-                                renderer.Draw(spriteTexIds["E." + name + "." + level.Enemies[i].Behavior], v + o, vec_scale, w, h);
+                                w = int.Parse(spriteParameters[spritePath]["W"]);
+                                h = int.Parse(spriteParameters[spritePath]["H"]);
+                                o = new Vector2(
+                                    (0.5f + (float)-w / 2) + (float.Parse(spriteParameters[spritePath]["X"]) * 16),
+                                    (17 + -h + -(float.Parse(spriteParameters[spritePath]["Y"]) * 16)));
+
+
+                                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
+                                if (level.Enemies[i].HasSuperAbility)
+                                {
+                                    // Draw Super Effect with its own offset
+                                    Vector2 s = new Vector2(-17.5f, -8);
+                                    renderer.Draw(utilityTexIds[3], v + s, vec_scale, 34, 34);
+                                }
+
+                                if (spriteTexIds.ContainsKey("E." + name + "." + level.Enemies[i].Behavior))
+                                {
+                                    renderer.Draw(spriteTexIds["E." + name + "." + level.Enemies[i].Behavior], v + o, vec_scale, w, h);
+                                }
+                                else renderer.Draw(spriteTexIds["E." + name], v + o, vec_scale, w, h);
                             }
-                            else renderer.Draw(spriteTexIds["E." + name], v + o, vec_scale, w, h);
+                            else RenderEntityNode(4, nodePos, select, name);
                         }
-                        else RenderEntityNode(4, nodePos, select, name);
+                        catch { RenderEntityNode(4, nodePos, select, name); }
                     }
-                    catch { RenderEntityNode(4, nodePos, select, name); }
+                    else RenderEntityNode(4, nodePos, select, name);
                 }
-                else RenderEntityNode(4, nodePos, select, name);
+            }
+        }
+        private void RenderDynamicTerrain()
+        {
+            Color col = MagoCrate.Properties.Settings.Default.DynamicSectionColor;
+            Vector3 col3 = new Vector3((float)(col.R) / 255, (float)(col.G) / 255, (float)(col.B) / 255);
+            Vector4 col4 = new Vector4(col3.X, col3.Y, col3.Z, 0.75f);
+            for (int i = 0; i < level.DynamicTerrain.Count; i++)
+            {
+                if (level.DynamicTerrain[i] != null)
+                {
+                    Vector2 nodePos = new Vector2((level.DynamicTerrain[i].X * 16f) - 3f, (-level.DynamicTerrain[i].Y * 16f) + 13f);
+                    bool select = false;
+                    if (i == dynamicList.SelectedIndex) select = true;
+
+                    for (int t = 0; t < level.DynamicTerrain[i].tiles.Count; t++)
+                    {
+                        MoveTile curTile = level.DynamicTerrain[i].tiles[t];
+                        Vector2 v = new Vector2((level.DynamicTerrain[i].X + (float)curTile.X) * 16f, -(level.DynamicTerrain[i].Y + (float)curTile.Y) * 16f);
+                        renderer.Draw(shapeTexIds[curTile.Shape], v, vec_scale, 17, 17, col4);
+
+                        if (curTile.Material > 7)
+                        {
+                            if (curTile.Material < 16) renderer.Draw(propertyTexIds[0], v, vec_scale, 17, 17);
+                            else if (curTile.Material < 24) renderer.Draw(propertyTexIds[1], v, vec_scale, 17, 17);
+                            else if (curTile.Material < 32) renderer.Draw(propertyTexIds[2], v, vec_scale, 17, 17);
+                            else if (curTile.Material < 40) renderer.Draw(propertyTexIds[3], v, vec_scale, 17, 17);
+                            else if (curTile.Material < 48) renderer.Draw(propertyTexIds[4], v, vec_scale, 17, 17);
+                            else if (curTile.Material < 56) renderer.Draw(propertyTexIds[5], v, vec_scale, 17, 17);
+                            else renderer.Draw(propertyTexIds[6], v, vec_scale, 17, 17);
+                        }
+                    }
+                    RenderEntityNode(5, nodePos, select, "");
+                }
             }
         }
         private void RenderEntityNode(int type, Vector2 position, bool selected, string name)
         {
-            renderer.Draw(nodeTexIds[type], position, vec_scale, 7, 7);
-            if (selected) renderer.Draw(nodeTexIds[5], position, vec_scale, 7, 7);
-
-            if (renderEntityNamesToolStripMenuItem.Checked)
+            Color col = Color.White;
+            switch (type)
             {
-                Color col = Color.White;
-                switch (type)
-                {
-                    case 0:
-                        col = MagoCrate.Properties.Settings.Default.ObjColor;
-                        break;
-                    case 1:
-                        col = MagoCrate.Properties.Settings.Default.CarryColor;
-                        break;
-                    case 2:
-                        col = MagoCrate.Properties.Settings.Default.ItemColor;
-                        break;
-                    case 3:
-                        col = MagoCrate.Properties.Settings.Default.BossColor;
-                        break;
-                    case 4:
-                        col = MagoCrate.Properties.Settings.Default.EnemyColor;
-                        break;
-                }
-                double h = col.GetHue();
-                col = ColorFromHSV(h, 1, 0.75);
-                Vector4 ajustCol = new Vector4((float)col.R / 255, (float)col.G / 255, (float)col.B / 255, 1);
-                RenderNames(name, position, ajustCol);
+                case 0:
+                    col = BrightColor(MagoCrate.Properties.Settings.Default.ObjColor);
+                    break;
+                case 1:
+                    col = BrightColor(MagoCrate.Properties.Settings.Default.CarryColor);
+                    break;
+                case 2:
+                    col = BrightColor(MagoCrate.Properties.Settings.Default.ItemColor);
+                    break;
+                case 3:
+                    col = BrightColor(MagoCrate.Properties.Settings.Default.BossColor);
+                    break;
+                case 4:
+                    col = BrightColor(MagoCrate.Properties.Settings.Default.EnemyColor);
+                    break;
+                case 5:
+                    col = BrightColor(MagoCrate.Properties.Settings.Default.DynamicSectionColor);
+                    break;
+            }
+            renderer.DrawColor(col, utilityTexIds[0], position, vec_scale, 7, 7);
+            if (selected) renderer.Draw(utilityTexIds[1], position, vec_scale, 7, 7);
+
+            if (renderEntityNamesToolStripMenuItem.Checked && !String.IsNullOrEmpty(name))
+            {
+                Vector4 adjustCol = new Vector4((float)col.R / 255, (float)col.G / 255, (float)col.B / 255, 1);
+                RenderNames(name, position + new Vector2(0, -2), adjustCol);
             }
         }
         private void RenderNames(string text, Vector2 position, Vector4 color)
         {
-            renderer.DrawString(text, font, position, new Vector2(1f / (float)camera.zoom, 1f / (float)camera.zoom), color);
+            renderer.DrawString(text, font, position, new Vector2(0.5f / (float)camera.zoom, 0.5f / (float)camera.zoom), color);
         }
         private void RenderExceptionObjects(uint type, int i, string name, bool select, out bool exception)
         {
@@ -1612,7 +1745,7 @@ namespace MagoBox
                     (0.5f + (float)-w / 2) + (float.Parse(spriteParameters["X." + name + solidType + lengthType]["X"]) * 16),
                     (17 + -h + -(float.Parse(spriteParameters["X." + name + solidType + lengthType]["Y"]) * 16)));
 
-                if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
+                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
                 renderer.Draw(spriteTexIds["X." + name + solidType + lengthType], v + o, vec_scale, w, h);
             }
             else if (type == 19)
@@ -1634,7 +1767,7 @@ namespace MagoBox
                     (0.5f + (float)-w / 2) + (float.Parse(spriteParameters["X." + name]["X"]) * 16),
                     (17 + -h + -(float.Parse(spriteParameters["X." + name]["Y"]) * 16)));
 
-                if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
+                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
                 renderer.Draw(spriteTexIds["X." + name + cannonType + rotType], v + o, vec_scale, w, h);
             }
             else if (type == 30)
@@ -1654,7 +1787,7 @@ namespace MagoBox
                     (0.5f + (float)-w / 2) + (float.Parse(spriteParameters["X." + name + sizeType + directionType]["X"]) * 16),
                     (17 + -h + -(float.Parse(spriteParameters["X." + name + sizeType + directionType]["Y"]) * 16)));
 
-                if (select) renderer.Draw(nodeTexIds[6], v + o, vec_scale, w, h);
+                if (select) renderer.Draw(utilityTexIds[2], v + o, vec_scale, w, h);
                 renderer.Draw(spriteTexIds["X." + name + sizeType + directionType], v + o, vec_scale, w, h);
             }
         }
@@ -1797,54 +1930,138 @@ namespace MagoBox
         private void Pencil(int ix)
         {
             // Draw
-            Collision c = level.TileCollision[ix];
-            if (editCol.Checked) c.Shape = (byte)vShape.Value;
-            if (editModf.Checked)
+            if (!a)
             {
-                c.Modifier = 0;
-                if (ladder.Checked) c.Modifier += 2;
-                if (boundary.Checked) c.Modifier += 4;
-                if (water.Checked) c.Modifier += 8;
-                if (spike.Checked) c.Modifier += 16;
-                if (ice.Checked) c.Modifier += 32;
-                if (lava.Checked) c.Modifier += 64;
-            }
-            if (editMat.Checked) c.Material = (byte)vmat.Value;
-            if (editAutoMove.Checked) c.AutoMoveSpeed = (sbyte)vautomove.Value;
-
-            level.TileCollision[ix] = c;
-            if (editBlock.Checked)
-            {
+                Collision c = level.TileCollision[ix];
                 Block b = level.TileBlock[ix];
-                b.ID = (short)vBlock.Value;
-                level.TileBlock[ix] = b;
-            }
-            if (editBLand.Checked)
-            {
                 Decoration bl = level.BLandDecoration[ix];
-                bl.Unk_1 = (byte)d1_1.Value;
-                bl.Unk_2 = (byte)d1_2.Value;
-                bl.Unk_3 = (byte)d1_3.Value;
-                bl.MovingTerrainID = (sbyte)d1_4.Value;
-                level.BLandDecoration[ix] = bl;
-            }
-            if (editFLand.Checked)
-            {
-                Decoration ml = level.MLandDecoration[ix];
-                ml.Unk_1 = (byte)d2_1.Value;
-                ml.Unk_2 = (byte)d2_2.Value;
-                ml.Unk_3 = (byte)d2_3.Value;
-                ml.MovingTerrainID = (sbyte)d2_4.Value;
-                level.MLandDecoration[ix] = ml;
-            }
-            if (editMLand.Checked)
-            {
                 Decoration fl = level.FLandDecoration[ix];
-                fl.Unk_1 = (byte)d3_1.Value;
-                fl.Unk_2 = (byte)d3_2.Value;
-                fl.Unk_3 = (byte)d3_3.Value;
-                fl.MovingTerrainID = (sbyte)d3_4.Value;
-                level.FLandDecoration[ix] = fl;
+                Decoration ml = level.MLandDecoration[ix];
+
+                switch (viewType.SelectedIndex)
+                {
+                    case 0:
+                        // Collision View
+
+                        if (editCollisionShapeToolStripMenuItem.Checked) c.Shape = (byte)vShape.Value;
+                        if (editModifiersToolStripMenuItem.Checked)
+                        {
+                            c.Modifier = 0;
+                            if (ladder.Checked) c.Modifier += 2;
+                            if (boundary.Checked) c.Modifier += 4;
+                            if (water.Checked) c.Modifier += 8;
+                            if (spike.Checked) c.Modifier += 16;
+                            if (ice.Checked) c.Modifier += 32;
+                            if (lava.Checked) c.Modifier += 64;
+                        }
+                        if (editMaterialsToolStripMenuItem.Checked) c.Material = (byte)vMat.Value;
+                        if (editAutoMovementToolStripMenuItem.Checked) c.AutoMoveSpeed = (sbyte)vAutomove.Value;
+                        level.TileCollision[ix] = c;
+                        if (editBlocksToolStripMenuItem.Checked)
+                        {
+                            b.ID = (short)vBlock.Value;
+                            level.TileBlock[ix] = b;
+                        }
+                        if (editBLandToolStripMenuItem.Checked)
+                        {
+                            bl.Unk_1 = (byte)dB_1.Value;
+                            bl.Unk_2 = (byte)dB_2.Value;
+                            bl.Unk_3 = (byte)dB_3.Value;
+                            bl.MovingTerrainID = (sbyte)dB_4.Value;
+                            level.BLandDecoration[ix] = bl;
+                        }
+                        if (editFLandToolStripMenuItem.Checked)
+                        {
+                            fl.Unk_1 = (byte)dF_1.Value;
+                            fl.Unk_2 = (byte)dF_2.Value;
+                            fl.Unk_3 = (byte)dF_3.Value;
+                            fl.MovingTerrainID = (sbyte)dF_4.Value;
+                            level.FLandDecoration[ix] = fl;
+                        }
+                        if (editMLandToolStripMenuItem.Checked)
+                        {
+                            ml.Unk_1 = (byte)dM_1.Value;
+                            ml.Unk_2 = (byte)dM_2.Value;
+                            ml.Unk_3 = (byte)dM_3.Value;
+                            ml.MovingTerrainID = (sbyte)dM_4.Value;
+                            level.MLandDecoration[ix] = ml;
+                        }
+                        return;
+                    case 1:
+                        // BLand View
+
+                        if (editBLandToolStripMenuItem.Checked)
+                        {
+                            bl.Unk_1 = (byte)dB_1.Value;
+                            bl.Unk_2 = (byte)dB_2.Value;
+                            bl.Unk_3 = (byte)dB_3.Value;
+                            bl.MovingTerrainID = (sbyte)dB_4.Value;
+                            level.BLandDecoration[ix] = bl;
+                        }
+                        return;
+                    case 2:
+                        // MLand View
+
+                        if (editCollisionShapeToolStripMenuItem.Checked) c.Shape = (byte)vShape.Value;
+                        if (editModifiersToolStripMenuItem.Checked)
+                        {
+                            c.Modifier = 0;
+                            if (ladder.Checked) c.Modifier += 2;
+                            if (boundary.Checked) c.Modifier += 4;
+                            if (water.Checked) c.Modifier += 8;
+                            if (spike.Checked) c.Modifier += 16;
+                            if (ice.Checked) c.Modifier += 32;
+                            if (lava.Checked) c.Modifier += 64;
+                        }
+                        if (editMaterialsToolStripMenuItem.Checked) c.Material = (byte)vMat.Value;
+                        if (editAutoMovementToolStripMenuItem.Checked) c.AutoMoveSpeed = (sbyte)vAutomove.Value;
+                        level.TileCollision[ix] = c;
+                        if (editBlocksToolStripMenuItem.Checked)
+                        {
+                            b.ID = (short)vBlock.Value;
+                            level.TileBlock[ix] = b;
+                        }
+                        if (editMLandToolStripMenuItem.Checked)
+                        {
+                            ml.Unk_1 = (byte)dM_1.Value;
+                            ml.Unk_2 = (byte)dM_2.Value;
+                            ml.Unk_3 = (byte)dM_3.Value;
+                            ml.MovingTerrainID = (sbyte)dM_4.Value;
+                            level.MLandDecoration[ix] = ml;
+                        }
+                        return;
+                    case 3:
+                        // FLand View
+
+                        if (editFLandToolStripMenuItem.Checked)
+                        {
+                            fl.Unk_1 = (byte)dF_1.Value;
+                            fl.Unk_2 = (byte)dF_2.Value;
+                            fl.Unk_3 = (byte)dF_3.Value;
+                            fl.MovingTerrainID = (sbyte)dF_4.Value;
+                            level.FLandDecoration[ix] = fl;
+                        }
+                        return;
+                    case 4:
+                        // Dynamic Tile ID View
+
+                        if (editBLandToolStripMenuItem.Checked)
+                        {
+                            bl.MovingTerrainID = (sbyte)dB_4.Value;
+                            level.BLandDecoration[ix] = bl;
+                        }
+                        if (editFLandToolStripMenuItem.Checked)
+                        {
+                            fl.MovingTerrainID = (sbyte)dF_4.Value;
+                            level.FLandDecoration[ix] = fl;
+                        }
+                        if (editMLandToolStripMenuItem.Checked)
+                        {
+                            ml.MovingTerrainID = (sbyte)dM_4.Value;
+                            level.MLandDecoration[ix] = ml;
+                        }
+                        return;
+                }
             }
         }
         private void Pick(int ix)
@@ -1852,9 +2069,9 @@ namespace MagoBox
             // Pick
             Collision c = level.TileCollision[ix];
             Block b = level.TileBlock[ix];
-            Decoration ml = level.MLandDecoration[ix];
-            Decoration bl = level.BLandDecoration[ix];
             Decoration fl = level.FLandDecoration[ix];
+            Decoration bl = level.BLandDecoration[ix];
+            Decoration ml = level.MLandDecoration[ix];
 
             ladder.Checked = false;
             boundary.Checked = false;
@@ -1871,92 +2088,122 @@ namespace MagoBox
             if ((c.Modifier & (1 << 5)) != 0) ice.Checked = true;
             if ((c.Modifier & (1 << 6)) != 0) lava.Checked = true;
 
-            vmat.Value = c.Material;
-            vautomove.Value = c.AutoMoveSpeed;
-
+            vMat.Value = c.Material;
+            vAutomove.Value = c.AutoMoveSpeed;
             vBlock.Value = b.ID;
 
-            d1_1.Value = bl.Unk_1;
-            d1_2.Value = bl.Unk_2;
-            d1_3.Value = bl.Unk_3;
-            d1_4.Value = bl.MovingTerrainID;
+            if (bl.Unk_1 != 255 || bl.Unk_2 != 255 || bl.Unk_3 != 0 || bl.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
+            {
+                dB_1.Value = bl.Unk_1;
+                dB_2.Value = bl.Unk_2;
+                dB_3.Value = bl.Unk_3;
+                dB_4.Value = bl.MovingTerrainID;
+                dB_hex.Text = ((byte)dB_1.Value).ToString("X2") + ((byte)dB_2.Value).ToString("X2") + ((byte)dB_3.Value).ToString("X2") + ((sbyte)dB_4.Value).ToString("X2");
+            }
+            
+            if (fl.Unk_1 != 255 || fl.Unk_2 != 255 || fl.Unk_3 != 0 || fl.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
+            {
+                dF_1.Value = fl.Unk_1;
+                dF_2.Value = fl.Unk_2;
+                dF_3.Value = fl.Unk_3;
+                dF_4.Value = fl.MovingTerrainID;
+                dF_hex.Text = ((byte)dF_1.Value).ToString("X2") + ((byte)dF_2.Value).ToString("X2") + ((byte)dF_3.Value).ToString("X2") + ((sbyte)dF_4.Value).ToString("X2");
+            }
 
-            d2_1.Value = ml.Unk_1;
-            d2_2.Value = ml.Unk_2;
-            d2_3.Value = ml.Unk_3;
-            d2_4.Value = ml.MovingTerrainID;
-
-            d3_1.Value = fl.Unk_1;
-            d3_2.Value = fl.Unk_2;
-            d3_3.Value = fl.Unk_3;
-            d3_4.Value = fl.MovingTerrainID;
-
-            d1_hex.Text = ((byte)d1_1.Value).ToString("X2") + ((byte)d1_2.Value).ToString("X2") + ((byte)d1_3.Value).ToString("X2") + ((sbyte)d1_4.Value).ToString("X2");
-            d2_hex.Text = ((byte)d2_1.Value).ToString("X2") + ((byte)d2_2.Value).ToString("X2") + ((byte)d2_3.Value).ToString("X2") + ((sbyte)d2_4.Value).ToString("X2");
-            d3_hex.Text = ((byte)d3_1.Value).ToString("X2") + ((byte)d3_2.Value).ToString("X2") + ((byte)d3_3.Value).ToString("X2") + ((sbyte)d3_4.Value).ToString("X2");
+            if (ml.Unk_1 != 255 || ml.Unk_2 != 255 || ml.Unk_3 != 0 || ml.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
+            {
+                dM_1.Value = ml.Unk_1;
+                dM_2.Value = ml.Unk_2;
+                dM_3.Value = ml.Unk_3;
+                dM_4.Value = ml.MovingTerrainID;
+                dM_hex.Text = ((byte)dM_1.Value).ToString("X2") + ((byte)dM_2.Value).ToString("X2") + ((byte)dM_3.Value).ToString("X2") + ((sbyte)dM_4.Value).ToString("X2");
+            }
         }
         private void Grab()
         {
             // Move
             clickedEntity = false;
-
-            if (!clickedEntity)
+            if (ModifierKeys != Keys.Shift)
             {
-                for (int i = 0; i < level.Objects.Count; i++)
+                if (!clickedEntity)
                 {
-                    if (level.Objects[i].X == tileX && level.Objects[i].Y == tileY && objList.SelectedIndex != i)
+                    for (int i = 0; i < level.Objects.Count; i++)
                     {
-                        clickedEntity = true;
-                        tabControl1.SelectedIndex = 0;
-                        objList.SelectedIndex = i;
+                        if (level.Objects[i].X == tileX && level.Objects[i].Y == tileY && objList.SelectedIndex != i)
+                        {
+                            clickedEntity = true;
+                            tabControl1.SelectedIndex = 0;
+                            objList.SelectedIndex = i;
+                            break;
+                        }
                     }
                 }
-            }
-            if (!clickedEntity)
-            {
-                for (int i = 0; i < level.Carriables.Count; i++)
+                if (!clickedEntity)
                 {
-                    if (level.Carriables[i].X == tileX && level.Carriables[i].Y == tileY && carriablesList.SelectedIndex != i)
+                    for (int i = 0; i < level.Carriables.Count; i++)
                     {
-                        clickedEntity = true;
-                        tabControl1.SelectedIndex = 1;
-                        carriablesList.SelectedIndex = i;
+                        if (level.Carriables[i].X == tileX && level.Carriables[i].Y == tileY && carriablesList.SelectedIndex != i)
+                        {
+                            clickedEntity = true;
+                            tabControl1.SelectedIndex = 1;
+                            carriablesList.SelectedIndex = i;
+                            break;
+                        }
                     }
                 }
-            }
-            if (!clickedEntity)
-            {
-                for (int i = 0; i < level.Items.Count; i++)
+                if (!clickedEntity)
                 {
-                    if (level.Items[i].X == tileX && level.Items[i].Y == tileY && itemList.SelectedIndex != i)
+                    for (int i = 0; i < level.Items.Count; i++)
                     {
-                        clickedEntity = true;
-                        tabControl1.SelectedIndex = 2;
-                        itemList.SelectedIndex = i;
+                        if (level.Items[i].X == tileX && level.Items[i].Y == tileY && itemList.SelectedIndex != i)
+                        {
+                            clickedEntity = true;
+                            tabControl1.SelectedIndex = 2;
+                            itemList.SelectedIndex = i;
+                            break;
+                        }
                     }
                 }
-            }
-            if (!clickedEntity)
-            {
-                for (int i = 0; i < level.Bosses.Count; i++)
+                if (!clickedEntity)
                 {
-                    if (level.Bosses[i].X == tileX && level.Bosses[i].Y == tileY && bossList.SelectedIndex != i)
+                    for (int i = 0; i < level.Bosses.Count; i++)
                     {
-                        clickedEntity = true;
-                        tabControl1.SelectedIndex = 3;
-                        bossList.SelectedIndex = i;
+                        if (level.Bosses[i].X == tileX && level.Bosses[i].Y == tileY && bossList.SelectedIndex != i)
+                        {
+                            clickedEntity = true;
+                            tabControl1.SelectedIndex = 3;
+                            bossList.SelectedIndex = i;
+                            break;
+                        }
                     }
                 }
-            }
-            if (!clickedEntity)
-            {
-                for (int i = 0; i < level.Enemies.Count; i++)
+                if (!clickedEntity)
                 {
-                    if (level.Enemies[i].X == tileX && level.Enemies[i].Y == tileY && enemyList.SelectedIndex != i)
+                    for (int i = 0; i < level.Enemies.Count; i++)
                     {
-                        clickedEntity = true;
-                        tabControl1.SelectedIndex = 4;
-                        enemyList.SelectedIndex = i;
+                        if (level.Enemies[i].X == tileX && level.Enemies[i].Y == tileY && enemyList.SelectedIndex != i)
+                        {
+                            clickedEntity = true;
+                            tabControl1.SelectedIndex = 4;
+                            enemyList.SelectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+                if (!clickedEntity)
+                {
+                    for (int i = 0; i < level.DynamicTerrain.Count; i++)
+                    {
+                        if (level.DynamicTerrain[i] != null)
+                        {
+                            if (level.DynamicTerrain[i].X == tileX && level.DynamicTerrain[i].Y == tileY && dynamicList.SelectedIndex != i)
+                            {
+                                clickedEntity = true;
+                                tabControl1.SelectedIndex = 5;
+                                dynamicList.SelectedIndex = i;
+                                break;
+                            }
+                        }
                     }
                 }
             }
@@ -2035,12 +2282,14 @@ namespace MagoBox
 
         private void resetCamera_Click(object sender, EventArgs e)
         {
-            camera.zoom = 1.1;
-            //Move Camera into Level Bounds
-            camera.pos.X = Math.Max(0, Math.Min(level.Width*15 , camera.pos.X));
-            camera.pos.Y = Math.Max(-level.Height*15, Math.Min(0, camera.pos.Y));
+            try
+            {
+                // Move Camera into Level Bounds
+                camera.zoom = 1.1;
+                camera.pos.X = Math.Max(0, Math.Min(level.Width * 15, camera.pos.X));
+                camera.pos.Y = Math.Max(-level.Height * 15, Math.Min(0, camera.pos.Y));
+            } catch { }
         }
-
         private void UpdateLevelSize(object sender, EventArgs e)
         {
             if (!a)
@@ -2054,50 +2303,65 @@ namespace MagoBox
                 d.Unk_3 = 0;
                 d.MovingTerrainID = -1;
 
-                if (sizeW.Value > level.Width)
+                int widthDifference = (int)sizeW.Value - (int)level.Width;
+                int heightDifference = (int)sizeH.Value - (int)level.Height;
+
+                if (widthDifference > 0)
                 {
-                    for (int h = 0; h < sizeH.Value; h++)
+                    for (int i = 0; i < widthDifference; i++)
                     {
-                        level.TileCollision.Insert(((h * (int)level.Width) + (int)level.Width) + h, c);
-                        level.TileBlock.Insert(((h * (int)level.Width) + (int)level.Width) + h, b);
-                        level.BLandDecoration.Insert(((h * (int)level.Width) + (int)level.Width) + h, d);
-                        level.MLandDecoration.Insert(((h * (int)level.Width) + (int)level.Width) + h, d);
-                        level.FLandDecoration.Insert(((h * (int)level.Width) + (int)level.Width) + h, d);
+                        for (int h = 0; h < sizeH.Value; h++)
+                        {
+                            level.TileCollision.Insert(((h * (int)level.Width) + (int)level.Width) + h, c);
+                            level.TileBlock.Insert(((h * (int)level.Width) + (int)level.Width) + h, b);
+                            level.BLandDecoration.Insert(((h * (int)level.Width) + (int)level.Width) + h, d);
+                            level.FLandDecoration.Insert(((h * (int)level.Width) + (int)level.Width) + h, d);
+                            level.MLandDecoration.Insert(((h * (int)level.Width) + (int)level.Width) + h, d);
+                        }
+                        level.Width++;
                     }
-                    level.Width = (uint)sizeW.Value;
                 }
-                else if (sizeW.Value < level.Width)
+                else if (widthDifference < 0)
                 {
-                    for (int h = 0; h < sizeH.Value - 1; h++)
+                    for (int i = 0; i < -widthDifference; i++)
                     {
-                        level.TileCollision.RemoveAt(((h * (int)level.Width) + (int)level.Width) - h);
-                        level.TileBlock.RemoveAt(((h * (int)level.Width) + (int)level.Width) - h);
-                        level.BLandDecoration.RemoveAt(((h * (int)level.Width) + (int)level.Width) - h);
-                        level.MLandDecoration.RemoveAt(((h * (int)level.Width) + (int)level.Width) - h);
-                        level.FLandDecoration.RemoveAt(((h * (int)level.Width) + (int)level.Width) - h);
+                        for (int h = 0; h < sizeH.Value; h++)
+                        {
+                            level.TileCollision.RemoveAt(((h * (int)level.Width) + (int)level.Width) - (h + 1));
+                            level.TileBlock.RemoveAt(((h * (int)level.Width) + (int)level.Width) - (h + 1));
+                            level.BLandDecoration.RemoveAt(((h * (int)level.Width) + (int)level.Width) - (h + 1));
+                            level.FLandDecoration.RemoveAt(((h * (int)level.Width) + (int)level.Width) - (h + 1));
+                            level.MLandDecoration.RemoveAt(((h * (int)level.Width) + (int)level.Width) - (h + 1));
+                        }
+                        level.Width--;
                     }
-                    level.Width = (uint)sizeW.Value;
                 }
-                else if (sizeH.Value > level.Height)
+                else if (heightDifference > 0)
                 {
-                    for (int w = 0; w < level.Width; w++)
+                    for (int i = 0; i < heightDifference; i++)
                     {
-                        level.TileCollision.Add(c);
-                        level.TileBlock.Add(b);
-                        level.BLandDecoration.Add(d);
-                        level.MLandDecoration.Add(d);
-                        level.FLandDecoration.Add(d);
+                        for (int w = 0; w < level.Width; w++)
+                        {
+                            level.TileCollision.Add(c);
+                            level.TileBlock.Add(b);
+                            level.BLandDecoration.Add(d);
+                            level.FLandDecoration.Add(d);
+                            level.MLandDecoration.Add(d);
+                        }
+                        level.Height++;
                     }
-                    level.Height = (uint)sizeH.Value;
                 }
-                else if (sizeH.Value < level.Height)
+                else if (heightDifference < 0)
                 {
-                    level.TileCollision.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
-                    level.TileBlock.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
-                    level.BLandDecoration.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
-                    level.MLandDecoration.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
-                    level.FLandDecoration.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
-                    level.Height = (uint)sizeH.Value;
+                    for (int i = 0; i < -heightDifference; i++)
+                    {
+                        level.TileCollision.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
+                        level.TileBlock.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
+                        level.BLandDecoration.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
+                        level.FLandDecoration.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
+                        level.MLandDecoration.RemoveRange((int)((level.Height - 1) * (int)level.Width), (int)level.Width);
+                        level.Height--;
+                    }
                 }
             }
         }
@@ -2134,6 +2398,7 @@ namespace MagoBox
                 itemList.ClearSelected();
                 bossList.ClearSelected();
                 enemyList.ClearSelected();
+                dynamicList.ClearSelected();
                 a = false;
             }
         }
@@ -2161,6 +2426,7 @@ namespace MagoBox
                 itemList.ClearSelected();
                 bossList.ClearSelected();
                 enemyList.ClearSelected();
+                dynamicList.ClearSelected();
                 a = false;
             }
         }
@@ -2188,6 +2454,7 @@ namespace MagoBox
                 carriablesList.ClearSelected();
                 bossList.ClearSelected();
                 enemyList.ClearSelected();
+                dynamicList.ClearSelected();
                 a = false;
             }
         }
@@ -2215,6 +2482,7 @@ namespace MagoBox
                 carriablesList.ClearSelected();
                 itemList.ClearSelected();
                 enemyList.ClearSelected();
+                dynamicList.ClearSelected();
                 a = false;
             }
         }
@@ -2242,7 +2510,37 @@ namespace MagoBox
                 carriablesList.ClearSelected();
                 itemList.ClearSelected();
                 bossList.ClearSelected();
+                dynamicList.ClearSelected();
                 a = false;
+            }
+        }
+        private void dynamicList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!a)
+            {
+                if (level.DynamicTerrain[dynamicList.SelectedIndex] != null)
+                {
+                    a = true;
+                    try
+                    {
+                        moveObj = 5;
+                        xCoord.Value = level.DynamicTerrain[dynamicList.SelectedIndex].X;
+                        yCoord.Value = level.DynamicTerrain[dynamicList.SelectedIndex].Y;
+
+                        if (!clickedEntity)
+                        {
+                            Vector2 newCamPos = new Vector2((16 * (float)xCoord.Value) + (float)xOffset.Value, (16 * -(float)yCoord.Value) - (float)yOffset.Value);
+                            camera.pos = newCamPos;
+                        }
+                    }
+                    catch { }
+                    objList.ClearSelected();
+                    carriablesList.ClearSelected();
+                    itemList.ClearSelected();
+                    bossList.ClearSelected();
+                    enemyList.ClearSelected();
+                    a = false;
+                }
             }
         }
 
@@ -2264,7 +2562,7 @@ namespace MagoBox
                         }
                     case 1:
                         {
-                            RDLLVL.SpecialItem obj = level.Carriables[carriablesList.SelectedIndex];
+                            SpecialItem obj = level.Carriables[carriablesList.SelectedIndex];
                             obj.X = (uint)xCoord.Value;
                             obj.XOffset = (uint)xOffset.Value;
                             obj.Y = (uint)yCoord.Value;
@@ -2274,7 +2572,7 @@ namespace MagoBox
                         }
                     case 2:
                         {
-                            RDLLVL.Item obj = level.Items[itemList.SelectedIndex];
+                            Item obj = level.Items[itemList.SelectedIndex];
                             obj.X = (uint)xCoord.Value;
                             obj.XOffset = (uint)xOffset.Value;
                             obj.Y = (uint)yCoord.Value;
@@ -2284,7 +2582,7 @@ namespace MagoBox
                         }
                     case 3:
                         {
-                            RDLLVL.Boss obj = level.Bosses[bossList.SelectedIndex];
+                            Boss obj = level.Bosses[bossList.SelectedIndex];
                             obj.X = (uint)xCoord.Value;
                             obj.XOffset = (uint)xOffset.Value;
                             obj.Y = (uint)yCoord.Value;
@@ -2294,12 +2592,23 @@ namespace MagoBox
                         }
                     case 4:
                         {
-                            RDLLVL.Enemy obj = level.Enemies[enemyList.SelectedIndex];
+                            Enemy obj = level.Enemies[enemyList.SelectedIndex];
                             obj.X = (uint)xCoord.Value;
                             obj.XOffset = (uint)xOffset.Value;
                             obj.Y = (uint)yCoord.Value;
                             obj.YOffset = (uint)yOffset.Value;
                             level.Enemies[enemyList.SelectedIndex] = obj;
+                            break;
+                        }
+                    case 5:
+                        {
+                            a = true;
+                            DynamicTerrain obj = level.DynamicTerrain[dynamicList.SelectedIndex];
+                            obj.X = (short)xCoord.Value;
+                            obj.Y = (short)yCoord.Value;
+                            level.DynamicTerrain[dynamicList.SelectedIndex] = obj;
+                            RefreshEntityLists();
+                            a = false;
                             break;
                         }
                 }
@@ -2390,8 +2699,27 @@ namespace MagoBox
                             RefreshEntityLists();
                             break;
                         case 5:
-                            level.All4DSections.Add(new Section4D());
-                            RefreshEntityLists();
+                            bool newDynamicAdded = false;
+                            for (int i = 0; i < 16; i++)
+                            {
+                                if (level.DynamicTerrain[i] == null)
+                                {
+                                    newDynamicAdded = true;
+
+                                    DynamicTerrain newSlice = new DynamicTerrain();
+                                    newSlice.Width = 1;
+                                    newSlice.Height = 1;
+                                    newSlice.tiles = new List<MoveTile>();
+                                    MoveTile newTile = new MoveTile();
+                                    newSlice.tiles.Add(newTile);
+                                    level.DynamicTerrain[i] = newSlice;
+                                    RefreshEntityLists();
+                                    break;
+                                }
+                            }
+                            if (!newDynamicAdded) MessageBox.Show("Stages are limited to only 16 Dynamic Tile Sections");
+
+                            
                             break;
                     }
                 } catch { }
@@ -2426,10 +2754,10 @@ namespace MagoBox
                             RefreshEntityLists();
                             break;
                         case 5:
-                            level.All4DSections.RemoveAt(sections4DList.SelectedIndex);
+                            level.DynamicTerrain[dynamicList.SelectedIndex] = null;
+                            level.ActionTable[dynamicList.SelectedIndex] = new DynamicAction();
                             RefreshEntityLists();
                             break;
-
                     }
                 } catch { }
             }
@@ -2488,17 +2816,34 @@ namespace MagoBox
                             }
                             break;
                         case 5:
-                            Section4DEditor editor5 = new Section4DEditor(this);
-                            editor5.obj = level.All4DSections[sections4DList.SelectedIndex];
-                            if (editor5.ShowDialog() == DialogResult.OK)
+                            if (level.DynamicTerrain[dynamicList.SelectedIndex] == null)
                             {
-                                level.All4DSections[sections4DList.SelectedIndex] = editor5.obj;
+                                DynamicTerrain newSlice = new DynamicTerrain();
+                                newSlice.Width = 1;
+                                newSlice.Height = 1;
+                                newSlice.tiles = new List<MoveTile>();
+                                MoveTile newTile = new MoveTile();
+                                newSlice.tiles.Add(newTile);
+                                level.DynamicTerrain[dynamicList.SelectedIndex] = newSlice;
+                            }
+                            DynamicTerrainEditor editor5 = new DynamicTerrainEditor(this);
+                            editor5.baseObj = level.DynamicTerrain[dynamicList.SelectedIndex];
+                            editor5.baseAction = level.ActionTable[dynamicList.SelectedIndex];
+                            if (editor5.ShowDialog() == DialogResult.Yes)
+                            {
+                                level.DynamicTerrain[dynamicList.SelectedIndex] = editor5.obj;
+                                level.ActionTable[dynamicList.SelectedIndex] = editor5.action;
                                 RefreshEntityLists();
                             }
+
                             break;
                     }
                 } catch { }
             }
+        }
+        private void entityLists_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (level != null) editObj_Click(this, new EventArgs());
         }
         private void cloneObj_Click(object sender, EventArgs e)
         {
@@ -2529,48 +2874,60 @@ namespace MagoBox
                             RefreshEntityLists();
                             break;
                         case 5:
-                            level.All4DSections.Add(level.All4DSections[sections4DList.SelectedIndex]);
-                            RefreshEntityLists();
+                            bool newDynamicAdded = false;
+                            for (int i = 0; i < 16; i++)
+                            {
+                                if (level.DynamicTerrain[i] == null)
+                                {
+                                    newDynamicAdded = true;
+                                    DynamicTerrain newTerrain = new DynamicTerrain();
+                                    newTerrain.X = level.DynamicTerrain[dynamicList.SelectedIndex].X;
+                                    newTerrain.Y = level.DynamicTerrain[dynamicList.SelectedIndex].Y;
+                                    newTerrain.Width = level.DynamicTerrain[dynamicList.SelectedIndex].Width;
+                                    newTerrain.Height = level.DynamicTerrain[dynamicList.SelectedIndex].Height;
+                                    newTerrain.tiles = level.DynamicTerrain[dynamicList.SelectedIndex].tiles;
+
+                                    DynamicAction newAction = new DynamicAction();
+                                    newAction.EventID = level.ActionTable[dynamicList.SelectedIndex].EventID;
+                                    newAction.Parameter1 = level.ActionTable[dynamicList.SelectedIndex].Parameter1;
+                                    newAction.Parameter2 = level.ActionTable[dynamicList.SelectedIndex].Parameter2;
+                                    newAction.autoStart = level.ActionTable[dynamicList.SelectedIndex].autoStart;
+                                    newAction.phases = new List<ActionPhase>();
+                                    for (int p = 0; p < level.ActionTable[dynamicList.SelectedIndex].phases.Count; p++)
+                                    {
+                                        newAction.phases.Add(level.ActionTable[dynamicList.SelectedIndex].phases[p]);
+                                    }
+
+                                    level.DynamicTerrain[i] = newTerrain;
+                                    level.ActionTable[i] = newAction;
+                                    RefreshEntityLists();
+                                    break;
+                                }
+                            }
+                            if (!newDynamicAdded) MessageBox.Show("Stages are limited to only 16 Dynamic Tile Sections");
                             break;
                     }
                 } catch { }
             }
         }
 
-        private void objList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (level != null) if (objList.SelectedItem != null) editObj_Click(this, new EventArgs());
-        }
-        private void specItemList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (level != null) if (carriablesList.SelectedItem != null) editObj_Click(this, new EventArgs());
-        }
-        private void itemList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (level != null) if (itemList.SelectedItem != null) editObj_Click(this, new EventArgs());
-        }
-        private void bossList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (level != null) if (bossList.SelectedItem != null) editObj_Click(this, new EventArgs());
-        }
-        private void enemyList_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (level != null) if (enemyList.SelectedItem != null) editObj_Click(this, new EventArgs());
-        }
-
         private void stageSettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (level != null)
             {
-                StageSettings settings = new StageSettings();
+                StageSettings settings = new StageSettings(this);
                 settings.data = level.StageData;
                 settings.background = level.Background;
                 settings.tileset = level.Tileset;
+                settings.temp4DSections = level.All4DSections;
+                settings.tempEvents = level.ActionTable;
                 if (settings.ShowDialog() == DialogResult.OK)
                 {
                     level.StageData = settings.data;
                     level.Background = settings.background;
                     level.Tileset = settings.tileset;
+                    level.All4DSections = settings.temp4DSections;
+                    level.ActionTable = settings.tempEvents;
                 }
             }
         }
@@ -2579,58 +2936,58 @@ namespace MagoBox
             switch (materialList.SelectedIndex)
             {
                 case 0:
-                    vmat.Value = 0;
+                    vMat.Value = 0;
                     break;
                 case 1:
-                    vmat.Value = 8;
+                    vMat.Value = 8;
                     break;
                 case 2:
-                    vmat.Value = 16;
+                    vMat.Value = 16;
                     break;
                 case 3:
-                    vmat.Value = 24;
+                    vMat.Value = 24;
                     break;
                 case 4:
-                    vmat.Value = 32;
+                    vMat.Value = 32;
                     break;
                 case 5:
-                    vmat.Value = 40;
+                    vMat.Value = 40;
                     break;
                 case 6:
-                    vmat.Value = 48;
+                    vMat.Value = 48;
                     break;
                 case 7:
-                    vmat.Value = 56;
+                    vMat.Value = 56;
                     break;
             }
         }
         private void vmat_ValueChanged(object sender, EventArgs e)
         {
-            if (vmat.Value < 8)
+            if (vMat.Value < 8)
             {
                 materialList.SelectedIndex = 0;
             }
-            else if (vmat.Value < 16)
+            else if (vMat.Value < 16)
             {
                 materialList.SelectedIndex = 1;
             }
-            else if (vmat.Value < 24)
+            else if (vMat.Value < 24)
             {
                 materialList.SelectedIndex = 2;
             }
-            else if (vmat.Value < 32)
+            else if (vMat.Value < 32)
             {
                 materialList.SelectedIndex = 3;
             }
-            else if (vmat.Value < 40)
+            else if (vMat.Value < 40)
             {
                 materialList.SelectedIndex = 4;
             }
-            else if (vmat.Value < 48)
+            else if (vMat.Value < 48)
             {
                 materialList.SelectedIndex = 5;
             }
-            else if (vmat.Value < 56)
+            else if (vMat.Value < 56)
             {
                 materialList.SelectedIndex = 6;
             }
@@ -2642,23 +2999,20 @@ namespace MagoBox
         private void vBlock_ValueChanged_1(object sender, EventArgs e)
         {
             Objects objs = new Objects();
-            if (level != null)
+            if (objs.blockIDs.ContainsKey(vBlock.Value))
             {
-                if (objs.blockIDs.ContainsKey(vBlock.Value))
-                {
-                    blockImg.Image = new Bitmap("Resources/blocks/" + objs.blockIDs[vBlock.Value] + ".png");
-                    blockList.Text = objs.blockIDs[vBlock.Value];
-                }
-                else if (vBlock.Value == -1)
-                {
-                    blockImg.Image = new Bitmap("Resources/tiles/0.png");
-                    blockList.Text = "No Block";
-                }
-                else
-                {
-                    blockImg.Image = new Bitmap("Resources/blocks/Unknown.png");
-                    blockList.Text = "Unknown (" + vBlock.Value + ")";
-                }
+                blockImg.Image = new Bitmap("Resources/blocks/" + objs.blockIDs[vBlock.Value] + ".png");
+                blockList.Text = objs.blockIDs[vBlock.Value];
+            }
+            else if (vBlock.Value == -1)
+            {
+                blockImg.Image = new Bitmap("Resources/tiles/0.png");
+                blockList.Text = "No Block";
+            }
+            else
+            {
+                blockImg.Image = new Bitmap("Resources/blocks/Unknown.png");
+                blockList.Text = "Unknown (" + vBlock.Value + ")";
             }
         }
         private void blockList_SelectedIndexChanged(object sender, EventArgs e)
@@ -2674,17 +3028,14 @@ namespace MagoBox
         }
         private void vShape_ValueChanged_1(object sender, EventArgs e)
         {
-            if (level != null)
+            Image previewImage = new Bitmap("Resources/tiles/" + vShape.Value + ".png");
+            if (previewImage != null)
             {
-                Image previewImage = new Bitmap("Resources/tiles/" + vShape.Value + ".png");
-                if (previewImage != null)
-                {
-                    colImg.Image = previewImage;
-                }
-                else
-                {
-                    colImg.Image = new Bitmap("Resources/blocks/unknown.png");
-                }
+                colImg.Image = previewImage;
+            }
+            else
+            {
+                colImg.Image = new Bitmap("Resources/blocks/unknown.png");
             }
         }
         private void halfTileLock_CheckedChanged(object sender, EventArgs e)
@@ -2698,6 +3049,111 @@ namespace MagoBox
                 xOffset.Increment = 1;
                 yOffset.Increment = 1;
             }
+        }
+        private void editCol_Click(object sender, EventArgs e)
+        {
+            editCollisionShapeToolStripMenuItem.Checked = !editCollisionShapeToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editCollisionShapeToolStripMenuItem.Checked)
+            {
+                editCol.BackColor = Color.LightSteelBlue;
+            } else editCol.BackColor = Color.White;
+        }
+        private void editMod_Click(object sender, EventArgs e)
+        {
+            editModifiersToolStripMenuItem.Checked = !editModifiersToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editModifiersToolStripMenuItem.Checked)
+            {
+                editMod.BackColor = Color.LightSteelBlue;
+            }
+            else editMod.BackColor = Color.White;
+        }
+        private void editMat_Click(object sender, EventArgs e)
+        {
+            editMaterialsToolStripMenuItem.Checked = !editMaterialsToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editMaterialsToolStripMenuItem.Checked)
+            {
+                editMat.BackColor = Color.LightSteelBlue;
+            }
+            else editMat.BackColor = Color.White;
+        }
+        private void editAuto_Click(object sender, EventArgs e)
+        {
+            editAutoMovementToolStripMenuItem.Checked = !editAutoMovementToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editAutoMovementToolStripMenuItem.Checked)
+            {
+                editAuto.BackColor = Color.LightSteelBlue;
+            }
+            else editAuto.BackColor = Color.White;
+        }
+        private void editBlock_Click(object sender, EventArgs e)
+        {
+            editBlocksToolStripMenuItem.Checked = !editBlocksToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editBlocksToolStripMenuItem.Checked)
+            {
+                editBlock.BackColor = Color.LightSteelBlue;
+            }
+            else editBlock.BackColor = Color.White;
+        }
+        private void editDecoB_Click(object sender, EventArgs e)
+        {
+            editBLandToolStripMenuItem.Checked = !editBLandToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editBLandToolStripMenuItem.Checked)
+            {
+                editDecoB.BackColor = Color.LightSteelBlue;
+            }
+            else editDecoB.BackColor = Color.White;
+        }
+        private void editDecoM_Click(object sender, EventArgs e)
+        {
+            editMLandToolStripMenuItem.Checked = !editMLandToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editMLandToolStripMenuItem.Checked)
+            {
+                editDecoM.BackColor = Color.LightSteelBlue;
+            }
+            else editDecoM.BackColor = Color.White;
+        }
+        private void editDecoF_Click(object sender, EventArgs e)
+        {
+            editFLandToolStripMenuItem.Checked = !editFLandToolStripMenuItem.Checked;
+            RefreshTileDataEditorColors();
+            if (editFLandToolStripMenuItem.Checked)
+            {
+                editDecoF.BackColor = Color.LightSteelBlue;
+            }
+            else editDecoF.BackColor = Color.White;
+        }
+        private void unlockAll_Click(object sender, EventArgs e)
+        {
+            bool allOn = true;
+            if (editCollisionShapeToolStripMenuItem.Checked && editModifiersToolStripMenuItem.Checked &&
+                editMaterialsToolStripMenuItem.Checked && editAutoMovementToolStripMenuItem.Checked &&
+                editBlocksToolStripMenuItem.Checked && editBLandToolStripMenuItem.Checked &&
+                editMLandToolStripMenuItem.Checked && editFLandToolStripMenuItem.Checked) allOn = false;
+
+            editCollisionShapeToolStripMenuItem.Checked = !allOn;
+            editModifiersToolStripMenuItem.Checked = !allOn;
+            editMaterialsToolStripMenuItem.Checked = !allOn;
+            editAutoMovementToolStripMenuItem.Checked = !allOn;
+            editBlocksToolStripMenuItem.Checked = !allOn;
+            editBLandToolStripMenuItem.Checked = !allOn;
+            editMLandToolStripMenuItem.Checked = !allOn;
+            editFLandToolStripMenuItem.Checked = !allOn;
+
+            editCol_Click(this, new EventArgs());
+            editMod_Click(this, new EventArgs());
+            editMat_Click(this, new EventArgs());
+            editAuto_Click(this, new EventArgs());
+            editBlock_Click(this, new EventArgs());
+            editDecoB_Click(this, new EventArgs());
+            editDecoM_Click(this, new EventArgs());
+            editDecoF_Click(this, new EventArgs());
         }
         public string ReadNotes(string category, string key)
         {
@@ -2779,7 +3235,6 @@ namespace MagoBox
                             noteInitWriter.Dispose();
                             return;
                         }
-
                     }
                     // Save all previous text to "PreNotes"
                     line = noteStream.ReadLine();
@@ -2824,38 +3279,93 @@ namespace MagoBox
             spr.Refresh();
             spr.ShowDialog();
         }
+        private void cleanMaterialsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < level.TileCollision.Count; i++)
+            {
+                Collision newCol = level.TileCollision[i];
+                if (((newCol.Modifier & (1 << 2)) != 0) || newCol.Shape == 0) newCol.Material = 0;
+                level.TileCollision[i] = newCol;
+            }
+        }
+        private Vector2 coordFromIX(int ix)
+        {
+            int curX = 0;
+            int curY = 0;
+            for (int i = 0; i < ix; i++)
+            {
+                curX++;
+                if (curX == level.Width)
+                {
+                    curY++;
+                    curX = 0;
+                }
+            }
+            return new Vector2(curX, curY);
+        }
+        private void clearBoundariesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < level.TileCollision.Count; i++)
+            {
+                Collision newCol = level.TileCollision[i];
+                if ((newCol.Modifier & (1 << 2)) != 0)
+                {
+                    newCol.Modifier -= 4;
+                    if (newCol.Shape == 1) newCol.Shape = 0;
+                    level.TileCollision[i] = newCol;
+                }
+            }
+        }
+        private void generateBoundariesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < level.TileCollision.Count; i++)
+            {
+                Collision newCol = level.TileCollision[i];
+                int boundCount = 2;
+                if (newCol.Shape != 1)
+                {
+                    Vector2 v = coordFromIX(i);
+                    if (v.X < boundCount || v.X >= (level.Width - boundCount) || v.Y >= (level.Height - boundCount))
+                    {
+                        newCol.Shape = 1;
+                        newCol.Modifier = 4;
+                        level.TileCollision[i] = newCol;
+                    }
+                }
+            }
+        }
         private void tabControl2_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 if (tabControl2.SelectedIndex == 1)
                 {
-                    d1_hex.Text = ((byte)d1_1.Value).ToString("X2") + ((byte)d1_2.Value).ToString("X2") + ((byte)d1_3.Value).ToString("X2") + ((sbyte)d1_4.Value).ToString("X2");
-                    d2_hex.Text = ((byte)d2_1.Value).ToString("X2") + ((byte)d2_2.Value).ToString("X2") + ((byte)d2_3.Value).ToString("X2") + ((sbyte)d2_4.Value).ToString("X2");
-                    d3_hex.Text = ((byte)d3_1.Value).ToString("X2") + ((byte)d3_2.Value).ToString("X2") + ((byte)d3_3.Value).ToString("X2") + ((sbyte)d3_4.Value).ToString("X2");
+                    dB_hex.Text = ((byte)dB_1.Value).ToString("X2") + ((byte)dB_2.Value).ToString("X2") + ((byte)dB_3.Value).ToString("X2") + ((sbyte)dB_4.Value).ToString("X2");
+                    dF_hex.Text = ((byte)dF_1.Value).ToString("X2") + ((byte)dF_2.Value).ToString("X2") + ((byte)dF_3.Value).ToString("X2") + ((sbyte)dF_4.Value).ToString("X2");
+                    dM_hex.Text = ((byte)dM_1.Value).ToString("X2") + ((byte)dM_2.Value).ToString("X2") + ((byte)dM_3.Value).ToString("X2") + ((sbyte)dM_4.Value).ToString("X2");
                 }
                 else
                 {
-                    uint b = uint.Parse(d1_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    d1_1.Value = uint.Parse(d1_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    d1_2.Value = uint.Parse(d1_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    d1_3.Value = uint.Parse(d1_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (b < 16) d1_4.Value = b;
-                    else d1_4.Value = -1;
+                    uint b = uint.Parse(dB_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                    dB_1.Value = uint.Parse(dB_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    dB_2.Value = uint.Parse(dB_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    dB_3.Value = uint.Parse(dB_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (b < 16) dB_4.Value = b;
+                    else dB_4.Value = -1;
 
-                    uint f = uint.Parse(d2_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    d2_1.Value = uint.Parse(d2_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    d2_2.Value = uint.Parse(d2_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    d2_3.Value = uint.Parse(d2_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (f < 16) d2_4.Value = f;
-                    else d2_4.Value = -1;
+                    uint f = uint.Parse(dF_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                    dF_1.Value = uint.Parse(dF_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    dF_2.Value = uint.Parse(dF_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    dF_3.Value = uint.Parse(dF_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (f < 16) dF_4.Value = f;
+                    else dF_4.Value = -1;
 
-                    uint m = uint.Parse(d3_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    d3_1.Value = uint.Parse(d3_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    d3_2.Value = uint.Parse(d3_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    d3_3.Value = uint.Parse(d3_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (m < 16) d3_4.Value = m;
-                    else d3_4.Value = -1;
+                    uint m = uint.Parse(dM_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                    dM_1.Value = uint.Parse(dM_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                    dM_2.Value = uint.Parse(dM_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                    dM_3.Value = uint.Parse(dM_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (m < 16) dM_4.Value = m;
+                    else dM_4.Value = -1;
                 }
             } catch { }
         }
@@ -2863,53 +3373,37 @@ namespace MagoBox
         {
             try
             {
-                uint b = uint.Parse(d1_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                d1_1.Value = uint.Parse(d1_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                d1_2.Value = uint.Parse(d1_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                d1_3.Value = uint.Parse(d1_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (b < 16) d1_4.Value = b;
-                else d1_4.Value = -1;
+                uint b = uint.Parse(dB_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                dB_1.Value = uint.Parse(dB_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                dB_2.Value = uint.Parse(dB_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                dB_3.Value = uint.Parse(dB_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (b < 16) dB_4.Value = b;
+                else dB_4.Value = -1;
             } catch { }
         }
         private void d2_hex_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                uint f = uint.Parse(d2_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                d2_1.Value = uint.Parse(d2_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                d2_2.Value = uint.Parse(d2_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                d2_3.Value = uint.Parse(d2_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (f < 16) d2_4.Value = f;
-                else d2_4.Value = -1;
+                uint f = uint.Parse(dF_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                dF_1.Value = uint.Parse(dF_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                dF_2.Value = uint.Parse(dF_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                dF_3.Value = uint.Parse(dF_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (f < 16) dF_4.Value = f;
+                else dF_4.Value = -1;
             } catch { }
         }
         private void d3_hex_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                uint m = uint.Parse(d3_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                d3_1.Value = uint.Parse(d3_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                d3_2.Value = uint.Parse(d3_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                d3_3.Value = uint.Parse(d3_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (m < 16) d3_4.Value = m;
-                else d3_4.Value = -1;
+                uint m = uint.Parse(dM_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+                dM_1.Value = uint.Parse(dM_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+                dM_2.Value = uint.Parse(dM_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+                dM_3.Value = uint.Parse(dM_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (m < 16) dM_4.Value = m;
+                else dM_4.Value = -1;
             } catch { }
-        }
-        private void viewType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            collViewType = viewType.SelectedIndex;
-            RefreshEntityLists();
-        }
-        
-        public void RefreshColors()
-        {
-            BackColor = MagoCrate.Properties.Settings.Default.MainColor;
-            enemyList.BackColor = MagoCrate.Properties.Settings.Default.EnemyColor;
-            bossList.BackColor = MagoCrate.Properties.Settings.Default.BossColor;
-            objList.BackColor = MagoCrate.Properties.Settings.Default.ObjColor;
-            itemList.BackColor = MagoCrate.Properties.Settings.Default.ItemColor;
-            carriablesList.BackColor = MagoCrate.Properties.Settings.Default.CarryColor;
-            sections4DList.BackColor = MagoCrate.Properties.Settings.Default.Section4DColor;
         }
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
@@ -2924,9 +3418,7 @@ namespace MagoBox
             RefreshEntityLists();
             RefreshEntitySprites();
             RefreshColors();
-            LoadPaletteList();
             refreshing = true;
-
             await Task.Delay(1);
             refreshing = false;
         }
@@ -2944,14 +3436,16 @@ namespace MagoBox
         }
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            a = true;
             TabPage current = (sender as TabControl).SelectedTab;
             objList.ClearSelected();
             carriablesList.ClearSelected();
             itemList.ClearSelected();
             bossList.ClearSelected();
             enemyList.ClearSelected();
-            sections4DList.ClearSelected();
+            dynamicList.ClearSelected();
             RefreshEntityLists();
+            a = false;
         }
         private void patchFDGToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -2972,6 +3466,7 @@ namespace MagoBox
                 open.Filter = "FDGH Data Files|*.dat";
                 open.CheckFileExists = true;
                 open.Multiselect = false;
+                open.RestoreDirectory = true;
                 open.Title = "Select an FDGH Data File";
                 if (open.ShowDialog() == DialogResult.OK)
                 {
@@ -2979,19 +3474,6 @@ namespace MagoBox
                 }
             }
         }
-
-        private void saveTilePaletteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog save = new SaveFileDialog();
-            save.FileName = "New Palette";
-            save.AddExtension = true;
-            save.Filter = "Palette INI File|*.ini";
-            if (save.ShowDialog() == DialogResult.OK)
-            {
-                new FileIniDataParser().WriteFile(save.FileName, plt);
-            }
-        }
-
         void EditFDGArchive(string path)
         {
             fdgFilePath = path;
@@ -3009,19 +3491,22 @@ namespace MagoBox
             {
                 Enabled = false;
                 fdgScn = fdg.selectedScene;
-                if (fdg.clearing)
-                {
-                    fdgArchive.SceneList[fdgSceneList[fdgScn]].Dependencies.Clear();
-                    fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Clear();
-                }
+                Cursor = Cursors.WaitCursor;
 
-                String fdgFilepath = Directory.GetCurrentDirectory() + "\\CustomData\\FDGPatching.txt";
-                if (File.Exists(fdgFilepath) && fdgArchive != null && level != null)
+                try
                 {
-                    try
+                    if (fdg.clearing)
+                    {
+                        fdgArchive.SceneList[fdgSceneList[fdgScn]].Dependencies.Clear();
+                        fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Clear();
+                    }
+
+                    String fdgFilepath = Directory.GetCurrentDirectory() + "\\CustomData\\FDGPatching.txt";
+                    if (File.Exists(fdgFilepath) && fdgArchive != null && level != null)
                     {
                         StreamReader fdgStream = new StreamReader(fdgFilepath);
                         String line = fdgStream.ReadLine();
+
 
                         while (line != null)
                         {
@@ -3045,48 +3530,30 @@ namespace MagoBox
                         }
                         fdgStream.Close();
                         fdgStream.Dispose();
+
+
                     }
-                    catch { }
-                }
-                Objects objs = new Objects();
-                if (!fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Contains(objs.levelFDGs[fdgScn]) && fdg.clearing)
-                {
-                    fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Add(objs.levelFDGs[fdgScn]);
-                }
-                fdgArchive.Write(fdgFilePath);
+                    Objects objs = new Objects();
+                    if (!fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Contains(objs.levelFDGs[fdgScn]) && fdg.clearing)
+                    {
+                        fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Add(objs.levelFDGs[fdgScn]);
+                    }
+                    fdgArchive.Write(fdgFilePath);
 
-                // Open and re-save the archive with 1.0 FDGH.
-                fdgArchive2 = new KirbyFDGH.FDGH2(fdgFilePath);
-                fdgArchive2.Write(fdgFilePath);
-
+                    // Open and re-save the archive with 1.0 FDGH.
+                    fdgArchive2 = new KirbyFDGH.FDGH2(fdgFilePath);
+                    fdgArchive2.Write(fdgFilePath);
+                }
+                catch { MessageBox.Show("Failed To Write FDG Data"); }
                 Enabled = true;
+                Cursor = Cursors.Arrow;
             }
         }
-
-        private void clearToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            level = null;
-            objList.Items.Clear();
-            carriablesList.Items.Clear();
-            itemList.Items.Clear();
-            bossList.Items.Clear();
-            enemyList.Items.Clear();
-
-            saveToolStripMenuItem.Enabled = false;
-            saveAsToolStripMenuItem.Enabled = false;
-            viewType.SelectedIndex = 0;
-            viewType.Enabled = false;
-            resetCamera.Enabled = false;
-            vShape.Enabled = false;
-            vBlock.Enabled = false;
-            blockList.Enabled = false;
-            SwitchTool(-1);
-        }
-
         void AddFDGData(string key, List<string> additions)
         {
             Objects objs = new Objects();
             bool succeeded = false;
+            Console.WriteLine("Checking Key: " + key);
 
             // Every Specific Key Combination
             if (checkedThings.Contains(key))
@@ -3240,13 +3707,16 @@ namespace MagoBox
                     if (additions[i].EndsWith("dn") && !fdgArchive.SceneList[fdgSceneList[fdgScn]].Dependencies.Contains(additions[i]))
                     {
                         fdgArchive.SceneList[fdgSceneList[fdgScn]].Dependencies.Add(additions[i]);
+                        Console.WriteLine("Adding Dependency " + additions[i]);
                     }
                     else if (!fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Contains(additions[i]))
                     {
                         fdgArchive.SceneList[fdgSceneList[fdgScn]].AssetList.Add(additions[i]);
+                        Console.WriteLine("Adding Asset " + additions[i]);
                     }
                 }
             }
+            else Console.WriteLine("Key not found in present level");
         }
         public static Color DecorColorFromBytes(byte unk_1, byte unk_2, byte unk_3)
         {
@@ -3285,6 +3755,13 @@ namespace MagoBox
                 return Color.FromArgb(255, t, p, v);
             else
                 return Color.FromArgb(255, v, p, q);
+        }
+        public static Color BrightColor(Color baseCol)
+        {
+            double h = baseCol.GetHue();
+            double s = baseCol.GetSaturation();
+            //if (s != 0) s = 1;
+            return ColorFromHSV(h, s, 1);
         }
     }
 }

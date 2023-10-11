@@ -123,7 +123,6 @@ namespace RDLLVL
         public uint Param15;
         public uint Param16;
     }
-
     public struct Stage
     {
         public string BGM;
@@ -145,5 +144,58 @@ namespace RDLLVL
         public uint DeathStepFlag;
         public int DeathStepChange;
         public uint DeathStartID;
+    }
+    public struct MoveTile
+    {
+        public byte X;
+        public byte Y;
+        public byte Shape;
+        public byte Material;
+    }
+    public struct SimpleMoveTile
+    {
+        public byte Shape;
+        public byte Material;
+        public bool NullTile;
+    }
+    public struct ActionPhase
+    {
+        public byte Direction;
+        public byte Distance;
+        public short Delay;
+        public short Unknown1;
+        public short Duration;
+        public bool EndPhase;
+        public byte Unknown2;
+        public byte[] Addendum;
+        public byte AccelType;
+        public byte AccelTime;
+        public short Unknown3;
+    }
+    public class DynamicTerrain
+    {
+        public short X;
+        public short Y;
+        public short Width;
+        public short Height;
+        public List<MoveTile> tiles;
+
+        public DynamicTerrain()
+        {
+            tiles = new List<MoveTile>();
+        }
+    }
+    public class DynamicAction
+    {
+        public int EventID = -1;
+        public byte Parameter1 = 0;
+        public byte Parameter2 = 0;
+        public bool autoStart = true;
+        public List<ActionPhase> phases;
+
+        public DynamicAction()
+        {
+            phases = new List<ActionPhase>();
+        }
     }
 }

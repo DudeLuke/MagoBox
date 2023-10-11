@@ -51,7 +51,7 @@ namespace MagoCrate
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.DecorType = new System.Windows.Forms.ComboBox();
-            this.Section4DColorButton = new System.Windows.Forms.Button();
+            this.DynamicColorButton = new System.Windows.Forms.Button();
             this.EnemyColorButton = new System.Windows.Forms.Button();
             this.BossColorButton = new System.Windows.Forms.Button();
             this.CarryColorButton = new System.Windows.Forms.Button();
@@ -75,7 +75,7 @@ namespace MagoCrate
             this.rtmLabels.ForeColor = System.Drawing.SystemColors.Control;
             this.rtmLabels.Location = new System.Drawing.Point(19, 88);
             this.rtmLabels.Name = "rtmLabels";
-            this.rtmLabels.Size = new System.Drawing.Size(225, 20);
+            this.rtmLabels.Size = new System.Drawing.Size(235, 21);
             this.rtmLabels.TabIndex = 1;
             this.rtmLabels.Text = "ReturnToMap Parameter Names";
             this.toolTip1.SetToolTip(this.rtmLabels, "Return To Map, another level\r\neditor for KRtDL, uses different\r\nparameter names f" +
@@ -99,7 +99,7 @@ namespace MagoCrate
             this.label1.ForeColor = System.Drawing.Color.Yellow;
             this.label1.Location = new System.Drawing.Point(16, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 16);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "MagoBox";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -111,7 +111,7 @@ namespace MagoCrate
             this.label2.ForeColor = System.Drawing.Color.Yellow;
             this.label2.Location = new System.Drawing.Point(88, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "GameBanana";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -123,7 +123,7 @@ namespace MagoCrate
             this.label3.ForeColor = System.Drawing.Color.Yellow;
             this.label3.Location = new System.Drawing.Point(189, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 16);
+            this.label3.Size = new System.Drawing.Size(102, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Discord Server";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -135,7 +135,7 @@ namespace MagoCrate
             this.label4.ForeColor = System.Drawing.Color.Yellow;
             this.label4.Location = new System.Drawing.Point(297, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.Size = new System.Drawing.Size(66, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "YouTube";
             this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -162,12 +162,12 @@ namespace MagoCrate
             this.label9.AllowDrop = true;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label9.Location = new System.Drawing.Point(545, 74);
+            this.label9.Location = new System.Drawing.Point(689, 74);
             this.label9.MaximumSize = new System.Drawing.Size(650, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(210, 20);
+            this.label9.Size = new System.Drawing.Size(96, 20);
             this.label9.TabIndex = 10;
-            this.label9.Text = "- Luke \"DudeLuke\" Nilsson\r\n";
+            this.label9.Text = "- DudeLuke";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label8
@@ -205,7 +205,7 @@ namespace MagoCrate
             this.quickPickBox.ForeColor = System.Drawing.SystemColors.Control;
             this.quickPickBox.Location = new System.Drawing.Point(6, 47);
             this.quickPickBox.Name = "quickPickBox";
-            this.quickPickBox.Size = new System.Drawing.Size(135, 20);
+            this.quickPickBox.Size = new System.Drawing.Size(140, 21);
             this.quickPickBox.TabIndex = 14;
             this.quickPickBox.Text = "Enable QuickPick";
             this.quickPickBox.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -221,7 +221,7 @@ namespace MagoCrate
             this.behaviorBox.ForeColor = System.Drawing.SystemColors.Control;
             this.behaviorBox.Location = new System.Drawing.Point(6, 21);
             this.behaviorBox.Name = "behaviorBox";
-            this.behaviorBox.Size = new System.Drawing.Size(160, 20);
+            this.behaviorBox.Size = new System.Drawing.Size(168, 21);
             this.behaviorBox.TabIndex = 12;
             this.behaviorBox.Text = "Enable Auto-Behavior";
             this.toolTip1.SetToolTip(this.behaviorBox, "When editing an enemy\'s type,\r\nit will automatically give it a\r\nbehavior that mak" +
@@ -264,7 +264,7 @@ namespace MagoCrate
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 104);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 16);
+            this.label5.Size = new System.Drawing.Size(157, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "FDG Automatic Filepath";
             this.toolTip1.SetToolTip(this.label5, "When patching an FDG archive, if will use\r\nthis filepath if it isn\'t empty. Good " +
@@ -276,7 +276,7 @@ namespace MagoCrate
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(16, 58);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 16);
+            this.label6.Size = new System.Drawing.Size(91, 17);
             this.label6.TabIndex = 2;
             this.label6.Text = "Sprite Range";
             this.toolTip1.SetToolTip(this.label6, "How far out of the camera an entity\r\nhas to be to stop calling for a sprite.\r\n");
@@ -306,7 +306,7 @@ namespace MagoCrate
             // 
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.DecorType);
-            this.groupBox3.Controls.Add(this.Section4DColorButton);
+            this.groupBox3.Controls.Add(this.DynamicColorButton);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.spriteRangeValue);
             this.groupBox3.Controls.Add(this.EnemyColorButton);
@@ -351,18 +351,18 @@ namespace MagoCrate
             this.DecorType.TabIndex = 13;
             this.DecorType.SelectedIndexChanged += new System.EventHandler(this.DecorType_SelectedIndexChanged);
             // 
-            // Section4DColorButton
+            // DynamicColorButton
             // 
-            this.Section4DColorButton.BackColor = System.Drawing.Color.White;
-            this.Section4DColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F);
-            this.Section4DColorButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Section4DColorButton.Location = new System.Drawing.Point(423, 146);
-            this.Section4DColorButton.Name = "Section4DColorButton";
-            this.Section4DColorButton.Size = new System.Drawing.Size(30, 30);
-            this.Section4DColorButton.TabIndex = 12;
-            this.toolTip1.SetToolTip(this.Section4DColorButton, "Section 4D\r\n");
-            this.Section4DColorButton.UseVisualStyleBackColor = false;
-            this.Section4DColorButton.Click += new System.EventHandler(this.section4DColorButton_Click);
+            this.DynamicColorButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(220)))), ((int)(((byte)(170)))));
+            this.DynamicColorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.8F);
+            this.DynamicColorButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DynamicColorButton.Location = new System.Drawing.Point(423, 146);
+            this.DynamicColorButton.Name = "DynamicColorButton";
+            this.DynamicColorButton.Size = new System.Drawing.Size(30, 30);
+            this.DynamicColorButton.TabIndex = 12;
+            this.toolTip1.SetToolTip(this.DynamicColorButton, "Dynamic Terrain\r\n");
+            this.DynamicColorButton.UseVisualStyleBackColor = false;
+            this.DynamicColorButton.Click += new System.EventHandler(this.section4DColorButton_Click);
             // 
             // EnemyColorButton
             // 
@@ -422,7 +422,7 @@ namespace MagoCrate
             this.colorLabel.ForeColor = System.Drawing.Color.White;
             this.colorLabel.Location = new System.Drawing.Point(369, 55);
             this.colorLabel.Name = "colorLabel";
-            this.colorLabel.Size = new System.Drawing.Size(72, 16);
+            this.colorLabel.Size = new System.Drawing.Size(76, 17);
             this.colorLabel.TabIndex = 3;
             this.colorLabel.Text = "Edit Colors\r\n";
             this.toolTip1.SetToolTip(this.colorLabel, "How far out of view from the camera it takes for\r\nan entity to use a custom textu" +
@@ -529,7 +529,7 @@ namespace MagoCrate
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox behaviorBox;
-        private System.Windows.Forms.Button Section4DColorButton;
+        private System.Windows.Forms.Button DynamicColorButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox DecorType;
         private System.Windows.Forms.CheckBox quickPickBox;

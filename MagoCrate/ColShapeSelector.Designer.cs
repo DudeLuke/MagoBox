@@ -870,6 +870,7 @@ namespace MagoCrate
             this.Controls.Add(this.col0);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ColShapeSelector";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Collision Shape Selector";
             ((System.ComponentModel.ISupportInitialize)(this.col0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.col9)).EndInit();

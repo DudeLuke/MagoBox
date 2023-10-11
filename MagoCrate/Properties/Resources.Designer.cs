@@ -103,6 +103,16 @@ namespace MagoCrate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _110 {
+            get {
+                object obj = ResourceManager.GetObject("_110", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _12 {
             get {
                 object obj = ResourceManager.GetObject("_12", resourceCulture);
@@ -753,16 +763,6 @@ namespace MagoCrate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap boss {
-            get {
-                object obj = ResourceManager.GetObject("boss", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Bouncing_Ability_Star {
             get {
                 object obj = ResourceManager.GetObject("Bouncing_Ability_Star", resourceCulture);
@@ -1053,16 +1053,6 @@ namespace MagoCrate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carriable {
-            get {
-                object obj = ResourceManager.GetObject("carriable", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Chilly {
             get {
                 object obj = ResourceManager.GetObject("Chilly", resourceCulture);
@@ -1196,16 +1186,6 @@ namespace MagoCrate.Properties {
         internal static System.Drawing.Bitmap Elec {
             get {
                 object obj = ResourceManager.GetObject("Elec", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap enemy {
-            get {
-                object obj = ResourceManager.GetObject("enemy", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1733,16 +1713,6 @@ namespace MagoCrate.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap item {
-            get {
-                object obj = ResourceManager.GetObject("item", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Juckle {
             get {
                 object obj = ResourceManager.GetObject("Juckle", resourceCulture);
@@ -2076,6 +2046,16 @@ namespace MagoCrate.Properties {
         internal static System.Drawing.Bitmap select2 {
             get {
                 object obj = ResourceManager.GetObject("select2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap select3 {
+            get {
+                object obj = ResourceManager.GetObject("select3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

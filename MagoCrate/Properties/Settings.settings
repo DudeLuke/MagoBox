@@ -12,19 +12,19 @@
       <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="ObjColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">219, 255, 215</Value>
+      <Value Profile="(Default)">210, 255, 210</Value>
     </Setting>
     <Setting Name="ItemColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">255, 248, 208</Value>
+      <Value Profile="(Default)">255, 255, 210</Value>
     </Setting>
     <Setting Name="CarryColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">210, 214, 255</Value>
+      <Value Profile="(Default)">210, 210, 255</Value>
     </Setting>
     <Setting Name="EnemyColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">255, 210, 210</Value>
     </Setting>
     <Setting Name="BossColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">250, 208, 255</Value>
+      <Value Profile="(Default)">255, 210, 255</Value>
     </Setting>
     <Setting Name="MainColor" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">64, 64, 64</Value>
@@ -35,8 +35,8 @@
     <Setting Name="autoBehavior" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Section4DColor" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">White</Value>
+    <Setting Name="DynamicSectionColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">255, 220, 170</Value>
     </Setting>
     <Setting Name="decorSetting" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>

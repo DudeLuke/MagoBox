@@ -61,7 +61,7 @@ namespace MagoCrate.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("219, 255, 215")]
+        [global::System.Configuration.DefaultSettingValueAttribute("210, 255, 210")]
         public global::System.Drawing.Color ObjColor {
             get {
                 return ((global::System.Drawing.Color)(this["ObjColor"]));
@@ -73,7 +73,7 @@ namespace MagoCrate.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("255, 248, 208")]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 255, 210")]
         public global::System.Drawing.Color ItemColor {
             get {
                 return ((global::System.Drawing.Color)(this["ItemColor"]));
@@ -85,7 +85,7 @@ namespace MagoCrate.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("210, 214, 255")]
+        [global::System.Configuration.DefaultSettingValueAttribute("210, 210, 255")]
         public global::System.Drawing.Color CarryColor {
             get {
                 return ((global::System.Drawing.Color)(this["CarryColor"]));
@@ -109,7 +109,7 @@ namespace MagoCrate.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("250, 208, 255")]
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 210, 255")]
         public global::System.Drawing.Color BossColor {
             get {
                 return ((global::System.Drawing.Color)(this["BossColor"]));
@@ -157,13 +157,13 @@ namespace MagoCrate.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
-        public global::System.Drawing.Color Section4DColor {
+        [global::System.Configuration.DefaultSettingValueAttribute("255, 220, 170")]
+        public global::System.Drawing.Color DynamicSectionColor {
             get {
-                return ((global::System.Drawing.Color)(this["Section4DColor"]));
+                return ((global::System.Drawing.Color)(this["DynamicSectionColor"]));
             }
             set {
-                this["Section4DColor"] = value;
+                this["DynamicSectionColor"] = value;
             }
         }
         

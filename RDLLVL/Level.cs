@@ -17,20 +17,25 @@ namespace RDLLVL
         public uint Background;
         public uint Tileset;
         public Stage StageData;
+        public byte[] header;
         public List<Block> TileBlock = new List<Block>();
         public List<Collision> TileCollision = new List<Collision>();
         public List<Decoration> BLandDecoration = new List<Decoration>();
-        public List<Decoration> MLandDecoration = new List<Decoration>();
         public List<Decoration> FLandDecoration = new List<Decoration>();
+        public List<Decoration> MLandDecoration = new List<Decoration>();
+        public List<DynamicTerrain> DynamicTerrain = new List<DynamicTerrain>();
+        public List<DynamicAction> ActionTable = new List<DynamicAction>();
         public List<Section4D> All4DSections = new List<Section4D>();
         public List<Object> Objects = new List<Object>();
         public List<SpecialItem> Carriables = new List<SpecialItem>();
         public List<Item> Items = new List<Item>();
         public List<Boss> Bosses = new List<Boss>();
         public List<Enemy> Enemies = new List<Enemy>();
+        public DynamicAction defaultDAction = new DynamicAction();
 
         public Level()
         {
+            header = new byte[] { 0x00, 0x00, 0x00, 0x00 };
             Height = 1;
             Width = 1;
             Background = 1;
@@ -39,9 +44,11 @@ namespace RDLLVL
             TileBlock = new List<Block>();
             TileCollision = new List<Collision>();
             BLandDecoration = new List<Decoration>();
-            MLandDecoration = new List<Decoration>();
             FLandDecoration = new List<Decoration>();
+            MLandDecoration = new List<Decoration>();
             All4DSections = new List<Section4D>();
+            DynamicTerrain = new List<DynamicTerrain>();
+            ActionTable = new List<DynamicAction>();
             Objects = new List<Object>();
             Carriables = new List<SpecialItem>();
             Items = new List<Item>();
@@ -58,7 +65,23 @@ namespace RDLLVL
 
         public void Read(BigEndianBinaryReader reader)
         {
+            // Default Dynamic Terrain & Actions
+            defaultDAction = new DynamicAction();
+            defaultDAction.EventID = -1;
+            defaultDAction.Parameter1 = 0;
+            defaultDAction.Parameter2 = 0;
+            defaultDAction.autoStart = true;
+            for (int i = 0; i < 16; i++)
+            {
+                ActionTable.Add(defaultDAction);
+                DynamicTerrain.Add(null);
+            }
+
+            // Record Header
+            header = reader.ReadBytes(60);
             reader.BaseStream.Seek(0x14, SeekOrigin.Begin);
+
+            // Bosses
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             uint count = reader.ReadUInt32();
             for (int i = 0; i < count; i++)
@@ -79,6 +102,7 @@ namespace RDLLVL
                 Bosses.Add(boss);
             }
 
+            // Carriables
             reader.BaseStream.Seek(0x18, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             count = reader.ReadUInt32();
@@ -98,6 +122,7 @@ namespace RDLLVL
                 Carriables.Add(specItem);
             }
 
+            // Collision
             reader.BaseStream.Seek(0x1C, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32() + 0x4, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
@@ -113,24 +138,89 @@ namespace RDLLVL
                 TileCollision.Add(coll);
             }
 
+            // Dynamic Terrain
+            reader.BaseStream.Seek(0x20, SeekOrigin.Begin);
+            reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
+            long pos = reader.BaseStream.Position;
+            uint dynamicCount = reader.ReadUInt32();
+            string binary = Convert.ToString(dynamicCount, 2);
+            for (int b = binary.Length; b < 16; b++)
+            {
+                // Add zeroes to start of string until it's 16 characters long
+                binary = "0" + binary;
+            }
+
+            // Define whether each Dynamic Terrain slot is empty or occupied
+            Dictionary<int, bool> isNullTerrain = new Dictionary<int, bool>();
+            for (int i = 0; i < 16; i++)
+            {
+                byte nullByte = byte.Parse(binary.Substring((binary.Length - 1) - i, 1));
+                if (nullByte == 0) isNullTerrain.Add(i, true);
+                else isNullTerrain.Add(i, false);
+            }
+
+            // Dynamic Terrain Collision
+            if (dynamicCount > 0)
+            {
+                Console.WriteLine("Read Binary: " + binary + ", raw count was " + dynamicCount.ToString("X8"));
+
+                Dictionary<int, uint> moveTileSectionPositions = new Dictionary<int, uint>();
+                for (int i = 0; i < 16; i++)
+                {
+                    if (!isNullTerrain[i] && i < dynamicCount) moveTileSectionPositions.Add(i, reader.ReadUInt32());
+                    else reader.ReadUInt32();
+                }
+
+                for (int i = 0; i < 16; i++)
+                {
+                    if (!isNullTerrain[i])
+                    {
+                        reader.BaseStream.Seek(moveTileSectionPositions[i], SeekOrigin.Begin);
+                        DynamicTerrain slice = new DynamicTerrain();
+                        slice.X = reader.ReadInt16();
+                        Console.WriteLine("Tile " + i + " X: " + slice.X);
+                        slice.Y = reader.ReadInt16();
+                        Console.WriteLine("Tile " + i + " Y: " + slice.Y);
+                        slice.Width = reader.ReadInt16();
+                        Console.WriteLine("Tile " + i + " W: " + slice.Width);
+                        slice.Height = reader.ReadInt16();
+                        Console.WriteLine("Tile " + i + " H: " + slice.Height);
+                        uint tileCount = reader.ReadUInt32();
+                        Console.WriteLine("Tile " + i + " Count: " + tileCount);
+
+                        // Skip past Duplicate(?) X and Y Position Data
+                        reader.ReadUInt32();
+                        reader.ReadUInt32();
+
+                        // Get Start of Tiling Section
+                        reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
+                        for (int m = 0; m < tileCount; m++)
+                        {
+                            MoveTile tile = new MoveTile();
+                            tile.X = reader.ReadByte();
+                            tile.Y = reader.ReadByte();
+                            tile.Shape = reader.ReadByte();
+                            tile.Material = reader.ReadByte();
+                            slice.tiles.Add(tile);
+                            Console.WriteLine("Added Tile: " + tile.X + ", " + tile.Y + ", " + tile.Shape + ", " + tile.Material);
+                        }
+                        DynamicTerrain[i] = slice;
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Dynamic Terrain Found");
+            }
+
+            // Background And Tileset
             reader.BaseStream.Seek(0x24, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             Background = reader.ReadUInt32();
             Tileset = reader.ReadUInt32();
-            long pos = reader.BaseStream.Position;
+            pos = reader.BaseStream.Position;
 
-            reader.BaseStream.Seek(reader.ReadUInt32() + 0x8, SeekOrigin.Begin);
-            for (int i = 0; i < Width * Height; i++)
-            {
-                Decoration deco = new Decoration();
-                deco.Unk_1 = reader.ReadByte();
-                deco.Unk_2 = reader.ReadByte();
-                deco.Unk_3 = reader.ReadByte();
-                deco.MovingTerrainID = reader.ReadSByte();
-                MLandDecoration.Add(deco);
-            }
-
-            reader.BaseStream.Seek(pos + 0x4, SeekOrigin.Begin);
+            // FLand
             reader.BaseStream.Seek(reader.ReadUInt32() + 0x8, SeekOrigin.Begin);
             for (int i = 0; i < Width * Height; i++)
             {
@@ -142,6 +232,20 @@ namespace RDLLVL
                 FLandDecoration.Add(deco);
             }
 
+            // MLand
+            reader.BaseStream.Seek(pos + 0x4, SeekOrigin.Begin);
+            reader.BaseStream.Seek(reader.ReadUInt32() + 0x8, SeekOrigin.Begin);
+            for (int i = 0; i < Width * Height; i++)
+            {
+                Decoration deco = new Decoration();
+                deco.Unk_1 = reader.ReadByte();
+                deco.Unk_2 = reader.ReadByte();
+                deco.Unk_3 = reader.ReadByte();
+                deco.MovingTerrainID = reader.ReadSByte();
+                MLandDecoration.Add(deco);
+            }
+
+            // BLand
             reader.BaseStream.Seek(pos + 0x8, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32() + 0x8, SeekOrigin.Begin);
             for (int i = 0; i < Width * Height; i++)
@@ -154,9 +258,9 @@ namespace RDLLVL
                 BLandDecoration.Add(deco);
             }
 
-            reader.BaseStream.Seek(pos + 0xC, SeekOrigin.Begin);
-            reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
+            // Section 4D
             count = reader.ReadUInt32();
+            Console.WriteLine("Section 4D Count: " + count + ", Position: " + reader.BaseStream.Position.ToString("X8"));
             for (int i = 0; i < count; i++)
             {
                 Section4D section4D = new Section4D();
@@ -179,9 +283,8 @@ namespace RDLLVL
                 section4D.Param16 = reader.ReadUInt32();
                 All4DSections.Add(section4D);
             }
-            //reader.BaseStream.Seek(-4, SeekOrigin.Current);
-            //DecorationChunk4 = reader.ReadBytes((int)(0x40 * count) + 0xC);
 
+            // Enemies
             reader.BaseStream.Seek(0x28, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             count = reader.ReadUInt32();
@@ -205,6 +308,7 @@ namespace RDLLVL
                 Enemies.Add(enemy);
             }
 
+            // Stage Data
             reader.BaseStream.Seek(0x2C, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             pos = reader.BaseStream.Position;
@@ -231,6 +335,7 @@ namespace RDLLVL
             StageData.DeathStepChange = reader.ReadInt32();
             StageData.DeathStartID = reader.ReadUInt32();
 
+            // Blocks
             reader.BaseStream.Seek(0x30, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             pos = reader.BaseStream.Position;
@@ -242,6 +347,7 @@ namespace RDLLVL
                 TileBlock.Add(block);
             }
 
+            // Objects
             reader.BaseStream.Seek(pos + 0x4, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             count = reader.ReadUInt32();
@@ -271,6 +377,78 @@ namespace RDLLVL
                 Objects.Add(obj);
             }
 
+            // New List For Dynamic Action Start Positions
+            List<uint> actionPositions = new List<uint>();
+
+            // Skip past count reading, it uses the same value as the Dynamic Terrain
+            reader.ReadUInt32();
+            for (int i = 0; i < 16; i++)
+            {
+                actionPositions.Add(reader.ReadUInt32());
+                Console.WriteLine("Wrote New Dynamic Action Start Position: " + actionPositions[actionPositions.Count - 1].ToString("X"));
+            }
+
+            // Dynamic Actions
+            for (int i = 0; i < 16; i++)
+            {
+                reader.BaseStream.Seek(actionPositions[i], SeekOrigin.Begin);
+                Console.WriteLine("Arrived At: " + reader.BaseStream.Position.ToString("X"));
+                DynamicAction actionEvent = new DynamicAction();
+                int eventID = reader.ReadByte();
+                if (eventID == 0xFF) actionEvent.EventID = -1;
+                actionEvent.EventID = eventID;
+                Console.WriteLine("Event ID: " + eventID);
+                actionEvent.Parameter1 = reader.ReadByte();
+                Console.WriteLine("Unk1: " + actionEvent.Parameter1);
+                actionEvent.Parameter2 = reader.ReadByte();
+                Console.WriteLine("Unk2: " + actionEvent.Parameter2);
+                uint phaseCount = reader.ReadByte();
+                Console.WriteLine("Phase Count: " + phaseCount.ToString("X"));
+                int autoStartInt = reader.ReadInt32();
+                Console.WriteLine("Parameter 2: " + autoStartInt.ToString("X8"));
+                actionEvent.autoStart = false;
+                if (autoStartInt != 0) actionEvent.autoStart = true;
+
+                reader.BaseStream.Seek((uint)reader.ReadInt32(), SeekOrigin.Begin);
+                Console.WriteLine("Relocated to: " + ((uint)reader.BaseStream.Position).ToString("X"));
+
+                for (int p = 0; p < phaseCount; p++)
+                {
+                    ActionPhase phase = new ActionPhase();
+                    Console.WriteLine("New Phase: " + p);
+
+                    phase.Direction = reader.ReadByte();
+                    Console.WriteLine("Direction: " + phase.Direction);
+                    phase.Distance = reader.ReadByte();
+                    Console.WriteLine("Distance: " + phase.Distance);
+
+                    phase.Delay = reader.ReadInt16();
+                    Console.WriteLine("Delay: " + phase.Delay);
+                    phase.Unknown1 = reader.ReadInt16();
+                    Console.WriteLine("Unk1: " + phase.Unknown1);
+                    phase.Duration = reader.ReadInt16();
+                    Console.WriteLine("Duration: " + phase.Duration);
+
+                    int endInt = reader.ReadByte();
+                    phase.EndPhase = false;
+                    if (endInt == 0) phase.EndPhase = true;
+                    Console.WriteLine("Ends: " + phase.EndPhase);
+
+                    phase.Unknown2 = reader.ReadByte();
+                    Console.WriteLine("Unk2: " + phase.Unknown2);
+                    phase.Addendum = reader.ReadBytes(10);
+                    phase.AccelType = reader.ReadByte();
+                    Console.WriteLine("AccelType: " + phase.AccelType);
+                    phase.AccelTime = reader.ReadByte();
+                    Console.WriteLine("AccelTime: " + phase.AccelTime);
+                    phase.Unknown3 = reader.ReadInt16();
+                    Console.WriteLine("Unk3: " + phase.Unknown3);
+                    actionEvent.phases.Add(phase);
+                }
+                ActionTable[i] = actionEvent;
+            }
+
+            // Items
             reader.BaseStream.Seek(0x34, SeekOrigin.Begin);
             reader.BaseStream.Seek(reader.ReadUInt32(), SeekOrigin.Begin);
             count = reader.ReadUInt32();
@@ -296,11 +474,10 @@ namespace RDLLVL
 
         public void Write(BigEndianBinaryWriter writer)
         {
-            writer.Write(new byte[] {
-                0x58, 0x42, 0x49, 0x4E, 0x12, 0x34, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xFD, 0xE9,
-                0x00, 0x00, 0x00, 0x22, 0x00, 0x00, 0x00, 0x3C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x30, 0x68, 0x00, 0x00, 0xC0, 0x94, 0x00, 0x00, 0x00, 0x00,
-                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x12, 0x34, 0x56, 0x78 });
+            // Write Temporary Header
+            writer.Write(header);
+
+            // Bosses
             writer.Write(Bosses.Count);
             for (int i = 0; i < Bosses.Count; i++)
             {
@@ -313,11 +490,12 @@ namespace RDLLVL
                 writer.Write(ConvertCoords(new uint[] { Bosses[i].Y, Bosses[i].YOffset }));
                 writer.Write(Bosses[i].Unknown);
             }
+
+            // Carriables
             uint pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x18, SeekOrigin.Begin);
             writer.Write(pos);
             writer.BaseStream.Seek(0, SeekOrigin.End);
-
             writer.Write(Carriables.Count);
             for (int i = 0; i < Carriables.Count; i++)
             {
@@ -328,11 +506,12 @@ namespace RDLLVL
                 writer.Write(ConvertCoords(new uint[] { Carriables[i].X, Carriables[i].XOffset }));
                 writer.Write(ConvertCoords(new uint[] { Carriables[i].Y, Carriables[i].YOffset }));
             }
+
+            // Collision
             pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x1C, SeekOrigin.Begin);
             writer.Write(pos);
             writer.BaseStream.Seek(0, SeekOrigin.End);
-
             writer.Write(1);
             writer.Write((uint)writer.BaseStream.Position + 0x4);
             writer.Write(Width);
@@ -344,17 +523,60 @@ namespace RDLLVL
                 writer.Write(TileCollision[i].Material);
                 writer.Write(TileCollision[i].AutoMoveSpeed);
             }
+
+            // Dynamic Terrain
             pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x20, SeekOrigin.Begin);
             writer.Write(pos);
-            writer.BaseStream.Seek(0, SeekOrigin.End);
-
-            writer.Write(0);
-            pos = (uint)writer.BaseStream.Position + (4 * 16);
+            writer.BaseStream.Seek(pos, SeekOrigin.Begin);
+            string dynamicBinary = "";
             for (int i = 0; i < 16; i++)
             {
-                writer.Write(pos);
+                string addition = "0";
+                if (DynamicTerrain[i] != null) addition = "1";
+                dynamicBinary = addition + dynamicBinary;
             }
+            int dynamicCount = Convert.ToInt32(dynamicBinary, 2);
+            Console.WriteLine(dynamicBinary + ", " + dynamicCount);
+            writer.Write(dynamicCount);
+            uint terrainNexus = (uint)writer.BaseStream.Position;
+            for (int i = 0; i < 16; i++)
+            {
+                writer.Write(0);
+            }
+            pos = (uint)writer.BaseStream.Position;
+            for (int i = 0; i < 16; i++)
+            {
+                if (DynamicTerrain[i] != null)
+                {
+                    pos = (uint)writer.BaseStream.Position;
+                    writer.BaseStream.Seek(terrainNexus + (i * 0x4), SeekOrigin.Begin);
+                    writer.Write(pos);
+                    writer.BaseStream.Seek(pos, SeekOrigin.Begin);
+                    writer.Write(DynamicTerrain[i].X);
+                    writer.Write(DynamicTerrain[i].Y);
+                    writer.Write(DynamicTerrain[i].Width);
+                    writer.Write(DynamicTerrain[i].Height);
+                    writer.Write(DynamicTerrain[i].tiles.Count);
+                    writer.Write((uint)DynamicTerrain[i].X);
+                    writer.Write((uint)DynamicTerrain[i].Y);
+                    writer.Write((uint)writer.BaseStream.Position + 0x4);
+                    for (int t = 0; t < DynamicTerrain[i].tiles.Count; t++)
+                    {
+                        writer.Write(DynamicTerrain[i].tiles[t].X);
+                        writer.Write(DynamicTerrain[i].tiles[t].Y);
+                        writer.Write(DynamicTerrain[i].tiles[t].Shape);
+                        writer.Write(DynamicTerrain[i].tiles[t].Material);
+                    }
+                } else
+                {
+                    uint skipPos = (uint)writer.BaseStream.Position;
+                    writer.BaseStream.Seek(terrainNexus + (i * 0x4), SeekOrigin.Begin);
+                    writer.Write(pos);
+                    writer.BaseStream.Seek(skipPos, SeekOrigin.Begin);
+                }
+            }
+
             pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x24, SeekOrigin.Begin);
             writer.Write(pos);
@@ -363,23 +585,10 @@ namespace RDLLVL
             writer.Write(Background);
             writer.Write(Tileset);
             pos = (uint)writer.BaseStream.Position;
-            writer.Write(pos + (4 * 4));
+            writer.Write((uint)(pos + (4 * 4)));
             writer.Write(0);
             writer.Write(0);
             writer.Write(0);
-
-            writer.Write(Width);
-            writer.Write(Height);
-            for (int i = 0; i < MLandDecoration.Count; i++)
-            {
-                writer.Write(MLandDecoration[i].Unk_1);
-                writer.Write(MLandDecoration[i].Unk_2);
-                writer.Write(MLandDecoration[i].Unk_3);
-                writer.Write(MLandDecoration[i].MovingTerrainID);
-            }
-            writer.BaseStream.Seek(pos + 0x4, SeekOrigin.Begin);
-            writer.Write((uint)writer.BaseStream.Length);
-            writer.BaseStream.Seek(0, SeekOrigin.End);
 
             writer.Write(Width);
             writer.Write(Height);
@@ -389,6 +598,19 @@ namespace RDLLVL
                 writer.Write(FLandDecoration[i].Unk_2);
                 writer.Write(FLandDecoration[i].Unk_3);
                 writer.Write(FLandDecoration[i].MovingTerrainID);
+            }
+            writer.BaseStream.Seek(pos + 0x4, SeekOrigin.Begin);
+            writer.Write((uint)writer.BaseStream.Length);
+            writer.BaseStream.Seek(0, SeekOrigin.End);
+
+            writer.Write(Width);
+            writer.Write(Height);
+            for (int i = 0; i < MLandDecoration.Count; i++)
+            {
+                writer.Write(MLandDecoration[i].Unk_1);
+                writer.Write(MLandDecoration[i].Unk_2);
+                writer.Write(MLandDecoration[i].Unk_3);
+                writer.Write(MLandDecoration[i].MovingTerrainID);
             }
             writer.BaseStream.Seek(pos + 0x8, SeekOrigin.Begin);
             writer.Write((uint)writer.BaseStream.Length);
@@ -516,21 +738,52 @@ namespace RDLLVL
             writer.BaseStream.Seek(pos + 0x8, SeekOrigin.Begin);
             writer.Write((uint)writer.BaseStream.Length);
             writer.BaseStream.Seek(0, SeekOrigin.End);
+            writer.Write(dynamicCount);
 
-            uint offset = 0x0;
-            List<uint> actionTableOffsets = new List<uint>();
-            writer.Write(0);
+            uint actionNexus = (uint)writer.BaseStream.Position;
             for (int i = 0; i < 16; i++)
             {
-                writer.Write((uint)writer.BaseStream.Length + 0x40 + offset);
-                offset += 0xC;
-                actionTableOffsets.Add((uint)writer.BaseStream.Length + 0x40 + offset);
+                writer.Write(0);
             }
             for (int i = 0; i < 16; i++)
             {
-                writer.Write(new byte[] { 0xFF, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00 });
-                writer.Write(actionTableOffsets[i]);
+                pos = (uint)writer.BaseStream.Position;
+                writer.BaseStream.Seek(actionNexus + (i * 0x4), SeekOrigin.Begin);
+                writer.Write(pos);
+                writer.BaseStream.Seek(pos, SeekOrigin.Begin);
+                writer.Write((byte)ActionTable[i].EventID);
+                writer.Write(ActionTable[i].Parameter1);
+                writer.Write(ActionTable[i].Parameter2);
+                writer.Write((byte)ActionTable[i].phases.Count);
+                uint prm2 = 0x0;
+                if (ActionTable[i].autoStart) prm2 = 0x1;
+                writer.Write(prm2);
+                writer.Write((uint)(writer.BaseStream.Position + 0x4));
+
+                for (int p = 0; p < ActionTable[i].phases.Count; p++)
+                {
+                    writer.Write(ActionTable[i].phases[p].Direction);
+                    writer.Write(ActionTable[i].phases[p].Distance);
+                    writer.Write(ActionTable[i].phases[p].Delay);
+                    writer.Write(ActionTable[i].phases[p].Unknown1);
+                    writer.Write(ActionTable[i].phases[p].Duration);
+
+                    byte endByte = 0x0;
+                    if (!ActionTable[i].phases[p].EndPhase) endByte = 0x1;
+                    writer.Write(endByte);
+                    writer.Write(ActionTable[i].phases[p].Unknown2);
+
+                    for (int a = 0; a < ActionTable[i].phases[p].Addendum.Length; a++)
+                    {
+                        writer.Write(ActionTable[i].phases[p].Addendum[a]);
+                    }
+
+                    writer.Write(ActionTable[i].phases[p].AccelType);
+                    writer.Write(ActionTable[i].phases[p].AccelTime);
+                    writer.Write(ActionTable[i].phases[p].Unknown3);
+                }
             }
+
             pos = (uint)writer.BaseStream.Position;
             writer.BaseStream.Seek(0x34, SeekOrigin.Begin);
             writer.Write(pos);
@@ -556,6 +809,8 @@ namespace RDLLVL
 
             writer.BaseStream.Seek(0x8, SeekOrigin.Begin);
             writer.Write((uint)writer.BaseStream.Length);
+            writer.BaseStream.Seek(0x8, SeekOrigin.Begin);
+
 
             writer.Flush();
             writer.Dispose();

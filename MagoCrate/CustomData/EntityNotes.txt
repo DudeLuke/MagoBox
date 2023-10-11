@@ -32,7 +32,19 @@ Carriables, called "Special Items" in MagoBox, are the objects that you can pick
 /;
 
 /Item [Default]
-Collectable items that you interact with by walking into them. For most items, barring Copy Essences and Energy Spheres, Behavior controls whether or not it's affected by gravity, 0 being false, while 1 is true.
+Collectable items that you interact with by walking into them. For most items, barring Copy Essences and Energy Spheres, Behavior changes how the item moves:
+0: Floats in place, the default.
+1: Affected by gravity.
+2: Affected by gravity and launched upward with a random horizontal speed. It's used when killing a Midboss with a Super Ability.
+3: Duplicate of 2?
+4: Linked to a Sphere Doomer boss, only properly works with Energy Spheres and their Red Star equivalent.
+5: Duplicate of 4?
+6: Item is affected by gravity, but less so.
+7: Only works properly with Energy Sphere variants and lor parts, it's used for placing an item after a boss is defeated and can clear the greyscale effect in a level.
+8: Homes in on the main player
+9: Affected by gravity, but it doesn't cast a shadow nor rotate.
+10: shifts vertically before accelerating left, used in the Lor fight for food between phases.
+11+: Duplicate of 0
 /;
 
 /Boss [Default]
@@ -291,27 +303,6 @@ Why HAL didn't just add a third skin for Lor Starcutter doors still baffles me.
 
 /Object [35]
 These blocks connect to other Flare Beam Switches with a matching event ID, when they're all lit by Flare Beam, they emit sparkle effects which travels toward the closest Shutter Door with that same event ID. They seemingly can only power shutter doors.
-
-/Object [42]
-Wind is one of three "zone" objects. These kinds of objects create an affected area in the room based on their Parameter 6 and Parameter 7 values (Both of these values are best viewed in hex). While the level designers tend to place the objects at the top-left corner of where they affect, the position and range of the zone relies solely on these parameters. Distances are measured in "units" or 1/16th of a tile, so 10 (hexadecimal equivalent to 16) is the distance of a single tile.
-
-Pushing Wind pushes you along, either to speed up a section or make areas traversable in only one direction
-
-Parameter 6 is the coordinates of the upper-left corner
--- XXXXYYYY
----- X: how many units right of (0,0).
----- Y: how many units above (0,0).
-
-Parameter 7 is other wind settings
--- XXXYYYZW
----- X: Size in X direction to the right in units.
----- Y: Size in Y direction downward in units.
----- Z: Wind direction.
-0: Up
-2: Right
-4: Down
-6: Left
----- W: Wind strength.
 /;
 
 /Object [44]
@@ -659,4 +650,12 @@ Level controls which element the sphere doomer is:
 1: Fire
 2: Spark
 3: Ice
+/;
+
+/Item [0]
+
+/;
+
+/Item [6]
+
 /;

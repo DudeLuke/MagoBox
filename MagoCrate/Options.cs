@@ -36,7 +36,7 @@ namespace MagoCrate
                 itemColorButton.BackColor = Properties.Settings.Default.ItemColor;
                 BossColorButton.BackColor = Properties.Settings.Default.BossColor;
                 EnemyColorButton.BackColor = Properties.Settings.Default.EnemyColor;
-                Section4DColorButton.BackColor = Properties.Settings.Default.Section4DColor;
+                DynamicColorButton.BackColor = Properties.Settings.Default.DynamicSectionColor;
                 behaviorBox.Checked = Properties.Settings.Default.autoBehavior;
             }
             catch 
@@ -105,12 +105,12 @@ namespace MagoCrate
             Properties.Settings.Default.decorSetting = 0;
             Properties.Settings.Default.entityCullRange = 5;
             Properties.Settings.Default.MainColor = Color.FromArgb(64, 64, 64);
-            Properties.Settings.Default.ObjColor = Color.FromArgb(219, 255, 215);
-            Properties.Settings.Default.CarryColor = Color.FromArgb(210, 214, 255);
-            Properties.Settings.Default.ItemColor = Color.FromArgb(255, 248, 208);
-            Properties.Settings.Default.BossColor = Color.FromArgb(250, 208, 255);
+            Properties.Settings.Default.ObjColor = Color.FromArgb(210, 255, 210);
+            Properties.Settings.Default.CarryColor = Color.FromArgb(210, 210, 255);
+            Properties.Settings.Default.ItemColor = Color.FromArgb(255, 255, 210);
+            Properties.Settings.Default.BossColor = Color.FromArgb(250, 210, 255);
             Properties.Settings.Default.EnemyColor = Color.FromArgb(255, 210, 210);
-            Properties.Settings.Default.Section4DColor = Color.FromArgb(255, 255, 255);
+            Properties.Settings.Default.DynamicSectionColor = Color.FromArgb(255, 220, 170);
             Properties.Settings.Default.FDGAutoFilePath = "";
             Properties.Settings.Default.autoBehavior = true;
             Properties.Settings.Default.Save();
@@ -190,12 +190,12 @@ namespace MagoCrate
         }
         private void section4DColorButton_Click(object sender, EventArgs e)
         {
-            mainColorDLG.Color = Properties.Settings.Default.Section4DColor;
+            mainColorDLG.Color = Properties.Settings.Default.DynamicSectionColor;
             if (mainColorDLG.ShowDialog() == DialogResult.OK)
             {
-                Properties.Settings.Default.Section4DColor = mainColorDLG.Color;
+                Properties.Settings.Default.DynamicSectionColor = mainColorDLG.Color;
                 Properties.Settings.Default.Save();
-                Section4DColorButton.BackColor = mainColorDLG.Color;
+                DynamicColorButton.BackColor = mainColorDLG.Color;
                 main.RefreshColors();
             }
         }

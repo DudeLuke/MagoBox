@@ -199,8 +199,30 @@ namespace MagoCrate
             }
 
             // Render origin Point
+            Color col = Color.White;
+            switch (categDrop.SelectedIndex)
+            {
+                case 0:
+                    col = MainForm.BrightColor(MagoCrate.Properties.Settings.Default.ObjColor);
+                    break;
+                case 1:
+                    col = MainForm.BrightColor(MagoCrate.Properties.Settings.Default.CarryColor);
+                    break;
+                case 2:
+                    col = MainForm.BrightColor(MagoCrate.Properties.Settings.Default.ItemColor);
+                    break;
+                case 3:
+                    col = MainForm.BrightColor(MagoCrate.Properties.Settings.Default.BossColor);
+                    break;
+                case 4:
+                    col = MainForm.BrightColor(MagoCrate.Properties.Settings.Default.EnemyColor);
+                    break;
+                case 5:
+                    col = MainForm.BrightColor(MagoCrate.Properties.Settings.Default.DynamicSectionColor);
+                    break;
+            }
             Vector2 nodePos = new Vector2(v.X - 3f, v.Y + 13f);
-            renderer.Draw(main.nodeTexIds[categDrop.SelectedIndex], nodePos, vec_scale, 7, 7);
+            renderer.DrawColor(col, main.utilityTexIds[0], nodePos, vec_scale, 7, 7);
 
             int w = (int)width.Value;
             int h = (int)height.Value;

@@ -104,12 +104,6 @@
     <Compile Include="Editors\ObjectEditor.Designer.cs">
       <DependentUpon>ObjectEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Editors\Section4DEditor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Editors\Section4DEditor.Designer.cs">
-      <DependentUpon>Section4DEditor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Editors\SpecialItemEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +156,12 @@
     <Compile Include="Rendering\Camera.cs" />
     <Compile Include="Rendering\Renderer.cs" />
     <Compile Include="Rendering\Texturing.cs" />
+    <Compile Include="Editors\DynamicTerrainEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\DynamicTerrainEditor.Designer.cs">
+      <DependentUpon>DynamicTerrainEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpriteEditor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,9 +182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Editors\ObjectEditor.resx">
       <DependentUpon>ObjectEditor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Editors\Section4DEditor.resx">
-      <DependentUpon>Section4DEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editors\SpecialItemEditor.resx">
       <DependentUpon>SpecialItemEditor.cs</DependentUpon>
@@ -208,6 +205,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\DynamicTerrainEditor.resx">
+      <DependentUpon>DynamicTerrainEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SpriteEditor.resx">
       <DependentUpon>SpriteEditor.cs</DependentUpon>
@@ -491,9 +491,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <EmbeddedResource Include="Resources\move.png" />
-    <None Include="Resources\entities\boss.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\bmfonts\a.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -510,9 +507,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\entities\bosses\Sphere Doomer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\entities\carriable.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\entities\carriables\Bouncing Ability Star.1.png">
@@ -663,12 +657,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\entities\enemies\Whispy Apple.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\entities\enemy.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\entities\item.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\entities\items\Extra Life.png">
@@ -1258,6 +1246,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tiles\-1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
