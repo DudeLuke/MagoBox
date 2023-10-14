@@ -55,6 +55,7 @@ namespace MagoCrate
             vShape.BackColor = col;
             vmat.BackColor = col;
             materialList.BackColor = col;
+            modifierList.BackColor = col;
             width.BackColor = col;
             height.BackColor = col;
             prm1.BackColor = col;
