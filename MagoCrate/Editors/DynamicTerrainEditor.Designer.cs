@@ -44,46 +44,47 @@ namespace MagoCrate
             this.resetCamera = new System.Windows.Forms.Button();
             this.direction = new System.Windows.Forms.ComboBox();
             this.distance = new System.Windows.Forms.NumericUpDown();
-            this.mainColorDLG = new System.Windows.Forms.ColorDialog();
-            this.glControl = new OpenTK.GLControl();
             this.width = new System.Windows.Forms.NumericUpDown();
             this.height = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nullTile = new System.Windows.Forms.CheckBox();
             this.vShape = new System.Windows.Forms.NumericUpDown();
             this.colImg = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.save = new System.Windows.Forms.Button();
             this.autoStart = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.eventID = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.pick = new System.Windows.Forms.Button();
             this.draw = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.clonePhase = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.unk2 = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.isEnd = new System.Windows.Forms.CheckBox();
             this.delPhase = new System.Windows.Forms.Button();
             this.addPhase = new System.Windows.Forms.Button();
             this.duration = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.unk1 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.delay = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.mainColorDLG = new System.Windows.Forms.ColorDialog();
+            this.glControl = new OpenTK.GLControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.save = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.unk2 = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.unk1 = new System.Windows.Forms.NumericUpDown();
             this.phaseList = new System.Windows.Forms.ListBox();
+            this.modifierList = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.vmat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prm1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prm2)).BeginInit();
@@ -92,16 +93,16 @@ namespace MagoCrate
             ((System.ComponentModel.ISupportInitialize)(this.distance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).BeginInit();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vShape)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colImg)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delay)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unk2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.duration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unk1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delay)).BeginInit();
             this.SuspendLayout();
             // 
             // materialList
@@ -299,26 +300,6 @@ namespace MagoCrate
             this.toolTip1.SetToolTip(this.distance, "Change the distance (In tiles) that\r\nthat this movement phase will travel.\r\n");
             this.distance.ValueChanged += new System.EventHandler(this.UpdatePhaseData);
             // 
-            // mainColorDLG
-            // 
-            this.mainColorDLG.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            // 
-            // glControl
-            // 
-            this.glControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.glControl.BackColor = System.Drawing.Color.Black;
-            this.glControl.Location = new System.Drawing.Point(14, 14);
-            this.glControl.Margin = new System.Windows.Forms.Padding(5);
-            this.glControl.Name = "glControl";
-            this.glControl.Size = new System.Drawing.Size(500, 500);
-            this.glControl.TabIndex = 3;
-            this.glControl.VSync = false;
-            this.glControl.Load += new System.EventHandler(this.glControl_Load);
-            this.glControl.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_Paint);
-            this.glControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseDown);
-            this.glControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseMove);
-            this.glControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseUp);
-            // 
             // width
             // 
             this.width.Location = new System.Drawing.Point(139, 25);
@@ -379,36 +360,6 @@ namespace MagoCrate
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.label2, "Width of this\r\nDynamic Terrain");
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.nullTile);
-            this.groupBox1.Controls.Add(this.materialList);
-            this.groupBox1.Controls.Add(this.vShape);
-            this.groupBox1.Controls.Add(this.colImg);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.vmat);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Location = new System.Drawing.Point(522, 90);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(217, 136);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Collision";
-            // 
-            // nullTile
-            // 
-            this.nullTile.AutoSize = true;
-            this.nullTile.Location = new System.Drawing.Point(129, 105);
-            this.nullTile.Name = "nullTile";
-            this.nullTile.Size = new System.Drawing.Size(81, 21);
-            this.nullTile.TabIndex = 115;
-            this.nullTile.Text = "Null Tile";
-            this.toolTip1.SetToolTip(this.nullTile, "Null tiles get skipped over\r\nover when saved, taking up \r\nless space in the level" +
-        " file.");
-            this.nullTile.UseVisualStyleBackColor = true;
-            this.nullTile.CheckedChanged += new System.EventHandler(this.nullTile_CheckedChanged);
-            // 
             // vShape
             // 
             this.vShape.Location = new System.Drawing.Point(156, 28);
@@ -451,41 +402,6 @@ namespace MagoCrate
             this.label7.Text = "Shape\r\n";
             this.toolTip1.SetToolTip(this.label7, "The shape\r\nof the tile.");
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.prm2);
-            this.groupBox2.Controls.Add(this.save);
-            this.groupBox2.Controls.Add(this.prm1);
-            this.groupBox2.Controls.Add(this.autoStart);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.eventID);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.width);
-            this.groupBox2.Controls.Add(this.height);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(522, 232);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(217, 289);
-            this.groupBox2.TabIndex = 20;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Set Values";
-            // 
-            // save
-            // 
-            this.save.BackColor = System.Drawing.Color.White;
-            this.save.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.save.Location = new System.Drawing.Point(7, 254);
-            this.save.Margin = new System.Windows.Forms.Padding(4);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(204, 28);
-            this.save.TabIndex = 139;
-            this.save.Text = "Save";
-            this.save.UseVisualStyleBackColor = false;
-            this.save.Click += new System.EventHandler(this.save_Click);
-            // 
             // autoStart
             // 
             this.autoStart.AutoSize = true;
@@ -500,17 +416,6 @@ namespace MagoCrate
         " ID, i.e. a switch, \r\nis activated.");
             this.autoStart.UseVisualStyleBackColor = true;
             this.autoStart.CheckedChanged += new System.EventHandler(this.autoStart_CheckedChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(13, 117);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 17);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Parameter 2";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // eventID
             // 
@@ -549,17 +454,6 @@ namespace MagoCrate
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.label4, "Height of this\r\nDynamic Terrain\r\n");
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(13, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 17);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Parameter 1";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pick
             // 
             this.pick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -588,52 +482,6 @@ namespace MagoCrate
             this.draw.UseVisualStyleBackColor = false;
             this.draw.Click += new System.EventHandler(this.draw_Click);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.SystemColors.Control;
-            this.label11.Location = new System.Drawing.Point(548, 21);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 17);
-            this.label11.TabIndex = 138;
-            this.label11.Text = "Tools";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.clonePhase);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.addendum);
-            this.groupBox3.Controls.Add(this.unk3);
-            this.groupBox3.Controls.Add(this.label18);
-            this.groupBox3.Controls.Add(this.unk2);
-            this.groupBox3.Controls.Add(this.label17);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.accelTime);
-            this.groupBox3.Controls.Add(this.isEnd);
-            this.groupBox3.Controls.Add(this.delPhase);
-            this.groupBox3.Controls.Add(this.addPhase);
-            this.groupBox3.Controls.Add(this.duration);
-            this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.unk1);
-            this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.delay);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.acceleration);
-            this.groupBox3.Controls.Add(this.distance);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.direction);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.phaseList);
-            this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox3.Location = new System.Drawing.Point(747, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(263, 507);
-            this.groupBox3.TabIndex = 140;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Movement";
-            // 
             // clonePhase
             // 
             this.clonePhase.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
@@ -646,53 +494,6 @@ namespace MagoCrate
             this.toolTip1.SetToolTip(this.clonePhase, "Create a copy of the\r\nselected movement\r\nphase for this section.");
             this.clonePhase.UseVisualStyleBackColor = true;
             this.clonePhase.Click += new System.EventHandler(this.clonePhase_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.SystemColors.Control;
-            this.label19.Location = new System.Drawing.Point(10, 367);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(76, 17);
-            this.label19.TabIndex = 150;
-            this.label19.Text = "Addendum";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.SystemColors.Control;
-            this.label18.Location = new System.Drawing.Point(12, 478);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(78, 17);
-            this.label18.TabIndex = 147;
-            this.label18.Text = "Unknown 3";
-            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // unk2
-            // 
-            this.unk2.Location = new System.Drawing.Point(191, 309);
-            this.unk2.Margin = new System.Windows.Forms.Padding(4);
-            this.unk2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.unk2.Name = "unk2";
-            this.unk2.Size = new System.Drawing.Size(66, 22);
-            this.unk2.TabIndex = 146;
-            this.unk2.ValueChanged += new System.EventHandler(this.UpdatePhaseData);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.ForeColor = System.Drawing.SystemColors.Control;
-            this.label17.Location = new System.Drawing.Point(10, 311);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(78, 17);
-            this.label17.TabIndex = 145;
-            this.label17.Text = "Unknown 2";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label16
             // 
@@ -762,31 +563,6 @@ namespace MagoCrate
             this.toolTip1.SetToolTip(this.duration, "Change how many frames it\'ll\r\ntake this movement phase to\r\nreach its destination." +
         "");
             this.duration.ValueChanged += new System.EventHandler(this.UpdatePhaseData);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.ForeColor = System.Drawing.SystemColors.Control;
-            this.label15.Location = new System.Drawing.Point(10, 281);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(78, 17);
-            this.label15.TabIndex = 125;
-            this.label15.Text = "Unknown 1";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // unk1
-            // 
-            this.unk1.Location = new System.Drawing.Point(155, 279);
-            this.unk1.Margin = new System.Windows.Forms.Padding(4);
-            this.unk1.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.unk1.Name = "unk1";
-            this.unk1.Size = new System.Drawing.Size(102, 22);
-            this.unk1.TabIndex = 124;
-            this.unk1.ValueChanged += new System.EventHandler(this.UpdatePhaseData);
             // 
             // label14
             // 
@@ -865,6 +641,219 @@ namespace MagoCrate
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.toolTip1.SetToolTip(this.label5, "Change which direction\r\nthis movement phase\r\nwill travel.");
             // 
+            // mainColorDLG
+            // 
+            this.mainColorDLG.Color = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            // 
+            // glControl
+            // 
+            this.glControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.glControl.BackColor = System.Drawing.Color.Black;
+            this.glControl.Location = new System.Drawing.Point(14, 14);
+            this.glControl.Margin = new System.Windows.Forms.Padding(5);
+            this.glControl.Name = "glControl";
+            this.glControl.Size = new System.Drawing.Size(500, 500);
+            this.glControl.TabIndex = 3;
+            this.glControl.VSync = false;
+            this.glControl.Load += new System.EventHandler(this.glControl_Load);
+            this.glControl.Paint += new System.Windows.Forms.PaintEventHandler(this.glControl_Paint);
+            this.glControl.MouseDown += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseDown);
+            this.glControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseMove);
+            this.glControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.glControl_MouseUp);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.modifierList);
+            this.groupBox1.Controls.Add(this.materialList);
+            this.groupBox1.Controls.Add(this.vShape);
+            this.groupBox1.Controls.Add(this.colImg);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.vmat);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Location = new System.Drawing.Point(522, 90);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(217, 136);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Collision";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.prm2);
+            this.groupBox2.Controls.Add(this.save);
+            this.groupBox2.Controls.Add(this.prm1);
+            this.groupBox2.Controls.Add(this.autoStart);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.eventID);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.width);
+            this.groupBox2.Controls.Add(this.height);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Location = new System.Drawing.Point(522, 232);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(217, 289);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Set Values";
+            // 
+            // save
+            // 
+            this.save.BackColor = System.Drawing.Color.White;
+            this.save.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.save.Location = new System.Drawing.Point(7, 254);
+            this.save.Margin = new System.Windows.Forms.Padding(4);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(204, 28);
+            this.save.TabIndex = 139;
+            this.save.Text = "Save";
+            this.save.UseVisualStyleBackColor = false;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(13, 117);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 17);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Parameter 2";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(13, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 17);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Parameter 1";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.SystemColors.Control;
+            this.label11.Location = new System.Drawing.Point(548, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 17);
+            this.label11.TabIndex = 138;
+            this.label11.Text = "Tools";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.clonePhase);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.addendum);
+            this.groupBox3.Controls.Add(this.unk3);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.unk2);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.accelTime);
+            this.groupBox3.Controls.Add(this.isEnd);
+            this.groupBox3.Controls.Add(this.delPhase);
+            this.groupBox3.Controls.Add(this.addPhase);
+            this.groupBox3.Controls.Add(this.duration);
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.unk1);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.delay);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.acceleration);
+            this.groupBox3.Controls.Add(this.distance);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.direction);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.phaseList);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.Location = new System.Drawing.Point(747, 14);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(263, 507);
+            this.groupBox3.TabIndex = 140;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Movement";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.SystemColors.Control;
+            this.label19.Location = new System.Drawing.Point(10, 367);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(76, 17);
+            this.label19.TabIndex = 150;
+            this.label19.Text = "Addendum";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.SystemColors.Control;
+            this.label18.Location = new System.Drawing.Point(12, 478);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(78, 17);
+            this.label18.TabIndex = 147;
+            this.label18.Text = "Unknown 3";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // unk2
+            // 
+            this.unk2.Location = new System.Drawing.Point(191, 309);
+            this.unk2.Margin = new System.Windows.Forms.Padding(4);
+            this.unk2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.unk2.Name = "unk2";
+            this.unk2.Size = new System.Drawing.Size(66, 22);
+            this.unk2.TabIndex = 146;
+            this.unk2.ValueChanged += new System.EventHandler(this.UpdatePhaseData);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.SystemColors.Control;
+            this.label17.Location = new System.Drawing.Point(10, 311);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(78, 17);
+            this.label17.TabIndex = 145;
+            this.label17.Text = "Unknown 2";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.ForeColor = System.Drawing.SystemColors.Control;
+            this.label15.Location = new System.Drawing.Point(10, 281);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(78, 17);
+            this.label15.TabIndex = 125;
+            this.label15.Text = "Unknown 1";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // unk1
+            // 
+            this.unk1.Location = new System.Drawing.Point(155, 279);
+            this.unk1.Margin = new System.Windows.Forms.Padding(4);
+            this.unk1.Maximum = new decimal(new int[] {
+            65535,
+            0,
+            0,
+            0});
+            this.unk1.Name = "unk1";
+            this.unk1.Size = new System.Drawing.Size(102, 22);
+            this.unk1.TabIndex = 124;
+            this.unk1.ValueChanged += new System.EventHandler(this.UpdatePhaseData);
+            // 
             // phaseList
             // 
             this.phaseList.FormattingEnabled = true;
@@ -875,6 +864,35 @@ namespace MagoCrate
             this.phaseList.Size = new System.Drawing.Size(251, 100);
             this.phaseList.TabIndex = 0;
             this.phaseList.SelectedIndexChanged += new System.EventHandler(this.phaseList_SelectedIndexChanged);
+            // 
+            // modifierList
+            // 
+            this.modifierList.FormattingEnabled = true;
+            this.modifierList.Items.AddRange(new object[] {
+            "None",
+            "Null Tile",
+            "Spikes",
+            "Ice",
+            "Lava"});
+            this.modifierList.Location = new System.Drawing.Point(68, 101);
+            this.modifierList.Name = "modifierList";
+            this.modifierList.Size = new System.Drawing.Size(143, 24);
+            this.modifierList.TabIndex = 115;
+            this.toolTip1.SetToolTip(this.modifierList, "The \"Material\" of the collision\r\non that tile, used to create unique\r\nfootstep so" +
+        "unds and effects.");
+            this.modifierList.SelectedIndexChanged += new System.EventHandler(this.ModifierChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(7, 104);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 17);
+            this.label10.TabIndex = 116;
+            this.label10.Text = "Modifier";
+            this.toolTip1.SetToolTip(this.label10, "The \"Material\" of the collision\r\non that tile, used to create unique\r\nfootstep so" +
+        "unds and effects.");
             // 
             // DynamicTerrainEditor
             // 
@@ -904,19 +922,19 @@ namespace MagoCrate
             ((System.ComponentModel.ISupportInitialize)(this.distance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.height)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vShape)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eventID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.duration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.delay)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.eventID)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.unk2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.duration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unk1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.delay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -944,7 +962,6 @@ namespace MagoCrate
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox nullTile;
         private System.Windows.Forms.NumericUpDown eventID;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown distance;
@@ -977,5 +994,7 @@ namespace MagoCrate
         private System.Windows.Forms.TextBox addendum;
         private System.Windows.Forms.Button resetCamera;
         private System.Windows.Forms.Button clonePhase;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox modifierList;
     }
 }

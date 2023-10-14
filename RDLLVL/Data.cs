@@ -97,8 +97,7 @@ namespace RDLLVL
 
     public struct Decoration
     {
-        public byte Unk_1;
-        public byte Unk_2;
+        public short DecoID;
         public byte Unk_3;
         public sbyte MovingTerrainID;
     }

@@ -43,8 +43,7 @@ namespace MagoBox
             Block b = new Block();
             Decoration d = new Decoration();
             b.ID = -1;
-            d.Unk_1 = 255;
-            d.Unk_2 = 255;
+            d.DecoID = -1;
             d.Unk_3 = 0;
             d.MovingTerrainID = -1;
 

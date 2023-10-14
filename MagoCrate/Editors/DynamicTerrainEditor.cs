@@ -35,7 +35,7 @@ namespace MagoCrate
         int mouseY = 0;
         private uint tileX, tileY;
         private int tileStartX, tileStartY, tileEndX, tileEndY;
-        bool loaded = false;
+        bool updateAvailable = false;
         private List<SimpleMoveTile> simpleTiles = new List<SimpleMoveTile>();
 
         public DynamicTerrainEditor(MainForm parent)
@@ -83,6 +83,9 @@ namespace MagoCrate
             GL.BlendFunc(BlendingFactorSrc.SrcAlpha, BlendingFactorDest.OneMinusSrcAlpha);
             GL.ClearColor(Color.FromArgb(200, 200, 200));
 
+            materialList.SelectedIndex = 0;
+            modifierList.SelectedIndex = 0;
+
             obj.X = baseObj.X;
             obj.Y = baseObj.Y;
             obj.Width = baseObj.Width;
@@ -111,10 +114,10 @@ namespace MagoCrate
             height.Value = obj.Height;
 
             renderer = new Renderer();
-            camera = new Camera(new Vector2(16 * ((float)height.Value / 2), -16 * ((float)width.Value / 2)), 1.8);
+            camera = new Camera(new Vector2(16 * ((float)width.Value / 2), -16 * ((float)height.Value / 2)), 1.8);
 
             SwitchTool(0);
-            loaded = true;
+            updateAvailable = true;
             UpdatePhaseList(-1);
             if (phaseList.Items.Count > 0) phaseList.SelectedIndex = 0;
 
@@ -135,9 +138,9 @@ namespace MagoCrate
         }
         private void glControl_Paint(object sender, PaintEventArgs e)
         {
-            if (loaded)
+            if (updateAvailable)
             {
-                loaded = false;
+                updateAvailable = false;
                 GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
                 GL.ClearColor(Color.FromArgb(200, 200, 200));
 
@@ -185,6 +188,11 @@ namespace MagoCrate
                                 else if (m < 56) renderer.Draw(main.propertyTexIds[5], tPos, vec_scale, 17, 17);
                                 else renderer.Draw(main.propertyTexIds[6], tPos, vec_scale, 17, 17);
                             }
+
+                            // Render Modifiers
+                            if ((m % 8) == 4) renderer.Draw(main.modTexIds[3], tPos, vec_scale, 17, 17);
+                            else if ((m % 8) == 5) renderer.Draw(main.modTexIds[4], tPos, vec_scale, 17, 17);
+                            else if ((m % 8) == 6) renderer.Draw(main.modTexIds[5], tPos, vec_scale, 17, 17);
                         }
                         else renderer.Draw(main.shapeTexIds[53], tPos, vec_scale, 17, 17);
                     }
@@ -193,7 +201,7 @@ namespace MagoCrate
                 Vector2 v = new Vector2(tileX * 16f, -tileY * 16f);
                 renderer.Draw(main.shapeTexIds[52], v, vec_scale, 17, 17);
                 glControl.SwapBuffers();
-                loaded = true;
+                updateAvailable = true;
             }
         }
         private void save_Click(object sender, EventArgs e)
@@ -334,7 +342,7 @@ namespace MagoCrate
                 Console.WriteLine("Count is: " + simpleTiles.Count + ", ix: " + ix.ToString("X"));
                 SimpleMoveTile newTile = new SimpleMoveTile();
                 newTile.NullTile = true;
-                if (!nullTile.Checked)
+                if (modifierList.SelectedIndex != 1)
                 {
                     newTile.NullTile = false;
                     newTile.Shape = (byte)vShape.Value;
@@ -347,12 +355,20 @@ namespace MagoCrate
         {
             if (ix < simpleTiles.Count)
             {
-                nullTile.Checked = simpleTiles[ix].NullTile;
-                if (!nullTile.Checked)
+                bool nullTile = simpleTiles[ix].NullTile;
+                if (!nullTile)
                 {
                     vShape.Value = simpleTiles[ix].Shape;
                     vmat.Value = simpleTiles[ix].Material;
+
+                    updateAvailable = false;
+                    if ((vmat.Value % 8) == 4) modifierList.SelectedIndex = 2;
+                    else if ((vmat.Value % 8) == 5) modifierList.SelectedIndex = 3;
+                    else if ((vmat.Value % 8) == 6) modifierList.SelectedIndex = 4;
+                    else modifierList.SelectedIndex = 0;
+                    updateAvailable = true;
                 }
+                else modifierList.SelectedIndex = 1;
             }
         }
         private void glControl_MouseWheel(object sender, MouseEventArgs e)
@@ -431,11 +447,11 @@ namespace MagoCrate
         }
         private void phaseList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (phaseList.SelectedIndex >= 0 && phaseList.SelectedIndex < phaseList.Items.Count && loaded)
+            if (phaseList.SelectedIndex >= 0 && phaseList.SelectedIndex < phaseList.Items.Count && updateAvailable)
             {
                 try
                 {
-                    loaded = false;
+                    updateAvailable = false;
                     direction.SelectedIndex = action.phases[phaseList.SelectedIndex].Direction;
                     distance.Value = action.phases[phaseList.SelectedIndex].Distance;
                     delay.Value = action.phases[phaseList.SelectedIndex].Delay;
@@ -456,7 +472,7 @@ namespace MagoCrate
                     }
                     addendum.Text = additions.Trim();
 
-                    loaded = true;
+                    updateAvailable = true;
                 }
                 catch
                 {
@@ -490,11 +506,11 @@ namespace MagoCrate
         }
         private void UpdatePhaseData(object sender, EventArgs e)
         {
-            if (loaded)
+            if (updateAvailable)
             {
                 try
                 {
-                    loaded = false;
+                    updateAvailable = false;
                     ActionPhase newPhase = new ActionPhase();
                     newPhase.Direction = (byte)direction.SelectedIndex;
                     newPhase.Distance = (byte)distance.Value;
@@ -515,7 +531,7 @@ namespace MagoCrate
 
                     action.phases[phaseList.SelectedIndex] = newPhase;
                     UpdatePhaseList(phaseList.SelectedIndex);
-                    loaded = true;
+                    updateAvailable = true;
                 }
                 catch { }
             }
@@ -572,24 +588,41 @@ namespace MagoCrate
             }
             return cleanList;
         }
-        private void nullTile_CheckedChanged(object sender, EventArgs e)
+        private void ModifierChanged(object sender, EventArgs e)
         {
-            if (nullTile.Checked)
+            bool nullTile = false;
+            if (modifierList.SelectedIndex == 1) nullTile = true;
+
+            if (nullTile)
             {
                 vShape.Minimum = -1;
                 vShape.Value = -1;
+                updateAvailable = false;
+                vmat.Value = 0;
+                materialList.SelectedIndex = 0;
+                updateAvailable = true;
             }
             else
             {
-                vShape.Value = 0;
+                if (vShape.Value < 0) vShape.Value = 0;
                 vShape.Minimum = 0;
             }
 
-            colImg.Enabled = !nullTile.Checked;
-            vShape.Enabled = !nullTile.Checked;
-            vmat.Enabled = !nullTile.Checked;
-            materialList.Enabled = !nullTile.Checked;
-            vmat.Value = 0;
+            colImg.Enabled = !nullTile;
+            vShape.Enabled = !nullTile;
+            vmat.Enabled = !nullTile;
+            materialList.Enabled = !nullTile;
+
+            if (updateAvailable)
+            {
+                updateAvailable = false;
+                if (modifierList.SelectedIndex > 1)
+                {
+                    vmat.Value = (materialList.SelectedIndex * 8) + modifierList.SelectedIndex + 2;
+                }
+                else if (modifierList.SelectedIndex == 0) vmat.Value = (materialList.SelectedIndex * 8);
+                updateAvailable = true;
+            }
         }
         private void vShape_ValueChanged(object sender, EventArgs e)
         {
@@ -614,74 +647,34 @@ namespace MagoCrate
 
         private void materialList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (materialList.SelectedIndex)
+            if (updateAvailable)
             {
-                case 0:
-                    vmat.Value = 0;
-                    break;
-                case 1:
-                    vmat.Value = 8;
-                    break;
-                case 2:
-                    vmat.Value = 16;
-                    break;
-                case 3:
-                    vmat.Value = 24;
-                    break;
-                case 4:
-                    vmat.Value = 32;
-                    break;
-                case 5:
-                    vmat.Value = 40;
-                    break;
-                case 6:
-                    vmat.Value = 48;
-                    break;
-                case 7:
-                    vmat.Value = 56;
-                    break;
+                updateAvailable = false;
+                vmat.Value = materialList.SelectedIndex * 8;
+                if (modifierList.SelectedIndex == 2) vmat.Value += 4;
+                else if (modifierList.SelectedIndex == 3) vmat.Value += 5;
+                else if (modifierList.SelectedIndex == 4) vmat.Value += 6;
+                updateAvailable = true;
             }
         }
         private void vmat_ValueChanged(object sender, EventArgs e)
         {
-            if (vmat.Value < 8)
+            if (updateAvailable)
             {
-                materialList.SelectedIndex = 0;
-            }
-            else if (vmat.Value < 16)
-            {
-                materialList.SelectedIndex = 1;
-            }
-            else if (vmat.Value < 24)
-            {
-                materialList.SelectedIndex = 2;
-            }
-            else if (vmat.Value < 32)
-            {
-                materialList.SelectedIndex = 3;
-            }
-            else if (vmat.Value < 40)
-            {
-                materialList.SelectedIndex = 4;
-            }
-            else if (vmat.Value < 48)
-            {
-                materialList.SelectedIndex = 5;
-            }
-            else if (vmat.Value < 56)
-            {
-                materialList.SelectedIndex = 6;
-            }
-            else
-            {
-                materialList.SelectedIndex = 7;
+                updateAvailable = false;
+                materialList.SelectedIndex = (int)vmat.Value / 8;
+                if ((vmat.Value % 8) == 4) modifierList.SelectedIndex = 2;
+                else if ((vmat.Value % 8) == 5) modifierList.SelectedIndex = 3;
+                else if ((vmat.Value % 8) == 6) modifierList.SelectedIndex = 4;
+                else modifierList.SelectedIndex = 0;
+                updateAvailable = true;
             }
         }
         private void UpdateLevelSize(object sender, EventArgs e)
         {
-            if (loaded)
+            if (updateAvailable)
             {
-                loaded = false;
+                updateAvailable = false;
                 try
                 {
                     int widthDifference = (int)width.Value - (int)obj.Width;
@@ -739,13 +732,13 @@ namespace MagoCrate
                 int glW = glControl.Width;
                 int glH = glControl.Height;
                 GL.Viewport(0, 0, (int)glW, (int)glH);
-                loaded = true;
+                updateAvailable = true;
             }
         }
 
         private void autoStart_CheckedChanged(object sender, EventArgs e)
         {
-            if (loaded)
+            if (updateAvailable)
             {
                 eventID.Minimum = -1;
                 if (autoStart.Checked) eventID.Value = -1;

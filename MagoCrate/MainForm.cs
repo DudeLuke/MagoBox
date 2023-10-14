@@ -29,7 +29,7 @@ namespace MagoBox
 
         public List<int> utilityTexIds = new List<int>();
         public List<int> shapeTexIds = new List<int>();
-        List<int> modTexIds = new List<int>();
+        public List<int> modTexIds = new List<int>();
         public List<int> propertyTexIds = new List<int>();
         List<int> hexTexIds = new List<int>();
         List<int> zoneTexIds = new List<int>();
@@ -368,20 +368,17 @@ namespace MagoBox
             vAutomove.BackColor = Color.White;
             vBlock.BackColor = Color.White;
             blockList.BackColor = Color.White;
-            dB_1.BackColor = Color.White;
-            dB_2.BackColor = Color.White;
-            dB_3.BackColor = Color.White;
-            dB_4.BackColor = Color.White;
+            dB_ID.BackColor = Color.White;
+            dB_Unk.BackColor = Color.White;
+            dB_Dynamic.BackColor = Color.White;
             dB_hex.BackColor = Color.White;
-            dM_1.BackColor = Color.White;
-            dM_2.BackColor = Color.White;
-            dM_3.BackColor = Color.White;
-            dM_4.BackColor = Color.White;
+            dM_ID.BackColor = Color.White;
+            dM_Unk.BackColor = Color.White;
+            dM_Dynamic.BackColor = Color.White;
             dM_hex.BackColor = Color.White;
-            dF_1.BackColor = Color.White;
-            dF_2.BackColor = Color.White;
-            dF_3.BackColor = Color.White;
-            dF_4.BackColor = Color.White;
+            dF_ID.BackColor = Color.White;
+            dF_Unk.BackColor = Color.White;
+            dF_Dynamic.BackColor = Color.White;
             dF_hex.BackColor = Color.White;
 
             if ((v != 0 && v != 2) || !editCollisionShapeToolStripMenuItem.Checked) vShape.BackColor = Color.Silver;
@@ -398,26 +395,23 @@ namespace MagoBox
             }
             if (v == 2 || v == 3 || v == 4 || !editBLandToolStripMenuItem.Checked)
             {
-                dB_1.BackColor = Color.Silver;
-                dB_2.BackColor = Color.Silver;
-                dB_3.BackColor = Color.Silver;
-                dB_4.BackColor = Color.Silver;
+                dB_ID.BackColor = Color.Silver;
+                dB_Unk.BackColor = Color.Silver;
+                dB_Dynamic.BackColor = Color.Silver;
                 dB_hex.BackColor = Color.Silver;
             }
             if (v == 1 || v == 3 || v == 4 || !editMLandToolStripMenuItem.Checked)
             {
-                dM_1.BackColor = Color.Silver;
-                dM_2.BackColor = Color.Silver;
-                dM_3.BackColor = Color.Silver;
-                dM_4.BackColor = Color.Silver;
+                dM_ID.BackColor = Color.Silver;
+                dM_Unk.BackColor = Color.Silver;
+                dM_Dynamic.BackColor = Color.Silver;
                 dM_hex.BackColor = Color.Silver;
             }
             if (v == 1 || v == 2 || v == 4 || !editFLandToolStripMenuItem.Checked)
             {
-                dF_1.BackColor = Color.Silver;
-                dF_2.BackColor = Color.Silver;
-                dF_3.BackColor = Color.Silver;
-                dF_4.BackColor = Color.Silver;
+                dF_ID.BackColor = Color.Silver;
+                dF_Unk.BackColor = Color.Silver;
+                dF_Dynamic.BackColor = Color.Silver;
                 dF_hex.BackColor = Color.Silver;
             }
 
@@ -425,17 +419,17 @@ namespace MagoBox
             {
                 if (editBLandToolStripMenuItem.Checked)
                 {
-                    dB_4.BackColor = Color.White;
+                    dB_Dynamic.BackColor = Color.White;
                     dB_hex.BackColor = Color.White;
                 }
                 if (editMLandToolStripMenuItem.Checked)
                 {
-                    dM_4.BackColor = Color.White;
+                    dM_Dynamic.BackColor = Color.White;
                     dM_hex.BackColor = Color.White;
                 }
                 if (editFLandToolStripMenuItem.Checked)
                 {
-                    dF_4.BackColor = Color.White;
+                    dF_Dynamic.BackColor = Color.White;
                     dF_hex.BackColor = Color.White;
                 }
             }
@@ -748,9 +742,9 @@ namespace MagoBox
                     plt.Sections[ID]["Block"] = vBlock.Value.ToString();
                     plt.Sections[ID]["Name"] = tileName.Text.ToString();
 
-                    dB_hex.Text = ((byte)dB_1.Value).ToString("X2") + ((byte)dB_2.Value).ToString("X2") + ((byte)dB_3.Value).ToString("X2") + ((sbyte)dB_4.Value).ToString("X2");
-                    dF_hex.Text = ((byte)dF_1.Value).ToString("X2") + ((byte)dF_2.Value).ToString("X2") + ((byte)dF_3.Value).ToString("X2") + ((sbyte)dF_4.Value).ToString("X2");
-                    dM_hex.Text = ((byte)dM_1.Value).ToString("X2") + ((byte)dM_2.Value).ToString("X2") + ((byte)dM_3.Value).ToString("X2") + ((sbyte)dM_4.Value).ToString("X2");
+                    dB_hex.Text = ((short)dB_ID.Value).ToString("X4") + ((byte)dB_Unk.Value).ToString("X2") + ((sbyte)dB_Dynamic.Value).ToString("X2");
+                    dF_hex.Text = ((short)dF_ID.Value).ToString("X4") + ((byte)dF_Unk.Value).ToString("X2") + ((sbyte)dF_Dynamic.Value).ToString("X2");
+                    dM_hex.Text = ((short)dM_ID.Value).ToString("X4") + ((byte)dM_Unk.Value).ToString("X2") + ((sbyte)dM_Dynamic.Value).ToString("X2");
 
                     plt.Sections[ID]["BLand"] = dB_hex.Text;
                     plt.Sections[ID]["MLand"] = dM_hex.Text;
@@ -1011,28 +1005,32 @@ namespace MagoBox
                         {
                             case 1:
                                 Decoration bDeco = level.BLandDecoration[ix];
-                                if (bDeco.Unk_2 != 255 || bDeco.Unk_1 != 255 || bDeco.Unk_3 != 0) empty = false;
+                                if (bDeco.DecoID != -1 || bDeco.Unk_3 != 0) empty = false;
                                 if (!empty)
                                 {
-                                    Color bCol = DecorColorFromBytes(bDeco.Unk_1, bDeco.Unk_2, bDeco.Unk_3);
+                                    byte[] halfs = BitConverter.GetBytes(bDeco.DecoID);
+                                    Color bCol = DecorColorFromBytes(halfs[1], halfs[0], bDeco.Unk_3);
                                     renderer.DrawColor(bCol, hexTexIds[16], v, vec_scale, 17, 17);
                                 }
                                 break;
                             case 2:
                                 Decoration fDeco = level.MLandDecoration[ix];
-                                if (fDeco.Unk_2 != 255 || fDeco.Unk_1 != 255 || fDeco.Unk_3 != 0) empty = false;
+                                if (fDeco.DecoID != -1 || fDeco.Unk_3 != 0) empty = false;
                                 if (!empty)
                                 {
-                                    Color fCol = DecorColorFromBytes(fDeco.Unk_1, fDeco.Unk_2, fDeco.Unk_3);
+                                    byte[] halfs = BitConverter.GetBytes(fDeco.DecoID);
+                                    Color fCol = DecorColorFromBytes(halfs[1], halfs[0], fDeco.Unk_3);
                                     renderer.DrawColor(fCol, hexTexIds[16], v, vec_scale, 17, 17);
                                 }
                                 break;
                             case 3:
                                 Decoration mDeco = level.FLandDecoration[ix];
-                                if (mDeco.Unk_2 != 255 || mDeco.Unk_1 != 255 || mDeco.Unk_3 != 0) empty = false;
+                                if (mDeco.DecoID != -1 || mDeco.Unk_3 != 0) empty = false;
                                 if (!empty)
                                 {
-                                    Color mCol = DecorColorFromBytes(mDeco.Unk_1, mDeco.Unk_2, mDeco.Unk_3);
+                                    byte[] halfs = BitConverter.GetBytes(mDeco.DecoID);
+                                    Console.Write($"Rendered {tx} using bytes: {halfs[0]}, {halfs[1]}");
+                                    Color mCol = DecorColorFromBytes(halfs[1], halfs[0], mDeco.Unk_3);
                                     renderer.DrawColor(mCol, hexTexIds[16], v, vec_scale, 17, 17);
                                 }
                                 break;
@@ -1229,15 +1227,15 @@ namespace MagoBox
                                 {
                                     case 1:
                                         Decoration bDeco = level.BLandDecoration[ix];
-                                        hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
+                                        hex = bDeco.DecoID.ToString("X4") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
                                         break;
                                     case 2:
                                         Decoration mDeco = level.MLandDecoration[ix];
-                                        hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
+                                        hex = mDeco.DecoID.ToString("X4") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
                                         break;
                                     case 3:
                                         Decoration fDeco = level.FLandDecoration[ix];
-                                        hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
+                                        hex = fDeco.DecoID.ToString("X4") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
                                         break;
                                 }
                                 if (hex != "FFFF00FF")
@@ -1261,15 +1259,15 @@ namespace MagoBox
                                 {
                                     case 1:
                                         Decoration bDeco = level.BLandDecoration[ix];
-                                        hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
+                                        hex = bDeco.DecoID.ToString("X4") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
                                         break;
                                     case 2:
                                         Decoration fDeco = level.MLandDecoration[ix];
-                                        hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
+                                        hex = fDeco.DecoID.ToString("X4") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
                                         break;
                                     case 3:
                                         Decoration mDeco = level.FLandDecoration[ix];
-                                        hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
+                                        hex = mDeco.DecoID.ToString("X4") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
                                         break;
                                 }
                                 if (hex != "FFFF00FF")
@@ -1289,15 +1287,15 @@ namespace MagoBox
                                 {
                                     case 1:
                                         Decoration bDeco = level.BLandDecoration[ix];
-                                        hex = bDeco.Unk_1.ToString("X2") + bDeco.Unk_2.ToString("X2") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
+                                        hex = bDeco.DecoID.ToString("X4") + bDeco.Unk_3.ToString("X2") + bDeco.MovingTerrainID.ToString("X2");
                                         break;
                                     case 2:
                                         Decoration fDeco = level.MLandDecoration[ix];
-                                        hex = fDeco.Unk_1.ToString("X2") + fDeco.Unk_2.ToString("X2") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
+                                        hex = fDeco.DecoID.ToString("X4") + fDeco.Unk_3.ToString("X2") + fDeco.MovingTerrainID.ToString("X2");
                                         break;
                                     case 3:
                                         Decoration mDeco = level.FLandDecoration[ix];
-                                        hex = mDeco.Unk_1.ToString("X2") + mDeco.Unk_2.ToString("X2") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
+                                        hex = mDeco.DecoID.ToString("X4") + mDeco.Unk_3.ToString("X2") + mDeco.MovingTerrainID.ToString("X2");
                                         break;
                                 }
                                 if (hex != "FFFF00FF")
@@ -1682,6 +1680,10 @@ namespace MagoBox
                             else if (curTile.Material < 56) renderer.Draw(propertyTexIds[5], v, vec_scale, 17, 17);
                             else renderer.Draw(propertyTexIds[6], v, vec_scale, 17, 17);
                         }
+
+                        if ((curTile.Material % 8) == 4) renderer.Draw(modTexIds[3], v, vec_scale, 17, 17);
+                        else if ((curTile.Material % 8) == 5) renderer.Draw(modTexIds[4], v, vec_scale, 17, 17);
+                        else if ((curTile.Material % 8) == 6) renderer.Draw(modTexIds[5], v, vec_scale, 17, 17);
                     }
                     RenderEntityNode(5, nodePos, select, "");
                 }
@@ -1964,26 +1966,23 @@ namespace MagoBox
                         }
                         if (editBLandToolStripMenuItem.Checked)
                         {
-                            bl.Unk_1 = (byte)dB_1.Value;
-                            bl.Unk_2 = (byte)dB_2.Value;
-                            bl.Unk_3 = (byte)dB_3.Value;
-                            bl.MovingTerrainID = (sbyte)dB_4.Value;
+                            bl.DecoID = (short)dB_ID.Value;
+                            bl.Unk_3 = (byte)dB_Unk.Value;
+                            bl.MovingTerrainID = (sbyte)dB_Dynamic.Value;
                             level.BLandDecoration[ix] = bl;
                         }
                         if (editFLandToolStripMenuItem.Checked)
                         {
-                            fl.Unk_1 = (byte)dF_1.Value;
-                            fl.Unk_2 = (byte)dF_2.Value;
-                            fl.Unk_3 = (byte)dF_3.Value;
-                            fl.MovingTerrainID = (sbyte)dF_4.Value;
+                            fl.DecoID = (short)dF_ID.Value;
+                            fl.Unk_3 = (byte)dF_Unk.Value;
+                            fl.MovingTerrainID = (sbyte)dF_Dynamic.Value;
                             level.FLandDecoration[ix] = fl;
                         }
                         if (editMLandToolStripMenuItem.Checked)
                         {
-                            ml.Unk_1 = (byte)dM_1.Value;
-                            ml.Unk_2 = (byte)dM_2.Value;
-                            ml.Unk_3 = (byte)dM_3.Value;
-                            ml.MovingTerrainID = (sbyte)dM_4.Value;
+                            ml.DecoID = (short)dM_ID.Value;
+                            ml.Unk_3 = (byte)dM_Unk.Value;
+                            ml.MovingTerrainID = (sbyte)dM_Dynamic.Value;
                             level.MLandDecoration[ix] = ml;
                         }
                         return;
@@ -1992,10 +1991,9 @@ namespace MagoBox
 
                         if (editBLandToolStripMenuItem.Checked)
                         {
-                            bl.Unk_1 = (byte)dB_1.Value;
-                            bl.Unk_2 = (byte)dB_2.Value;
-                            bl.Unk_3 = (byte)dB_3.Value;
-                            bl.MovingTerrainID = (sbyte)dB_4.Value;
+                            bl.DecoID = (short)dB_ID.Value;
+                            bl.Unk_3 = (byte)dB_Unk.Value;
+                            bl.MovingTerrainID = (sbyte)dB_Dynamic.Value;
                             level.BLandDecoration[ix] = bl;
                         }
                         return;
@@ -2023,10 +2021,9 @@ namespace MagoBox
                         }
                         if (editMLandToolStripMenuItem.Checked)
                         {
-                            ml.Unk_1 = (byte)dM_1.Value;
-                            ml.Unk_2 = (byte)dM_2.Value;
-                            ml.Unk_3 = (byte)dM_3.Value;
-                            ml.MovingTerrainID = (sbyte)dM_4.Value;
+                            ml.DecoID = (short)dM_ID.Value;
+                            ml.Unk_3 = (byte)dM_Unk.Value;
+                            ml.MovingTerrainID = (sbyte)dM_Dynamic.Value;
                             level.MLandDecoration[ix] = ml;
                         }
                         return;
@@ -2035,10 +2032,9 @@ namespace MagoBox
 
                         if (editFLandToolStripMenuItem.Checked)
                         {
-                            fl.Unk_1 = (byte)dF_1.Value;
-                            fl.Unk_2 = (byte)dF_2.Value;
-                            fl.Unk_3 = (byte)dF_3.Value;
-                            fl.MovingTerrainID = (sbyte)dF_4.Value;
+                            fl.DecoID = (short)dF_ID.Value;
+                            fl.Unk_3 = (byte)dF_Unk.Value;
+                            fl.MovingTerrainID = (sbyte)dF_Dynamic.Value;
                             level.FLandDecoration[ix] = fl;
                         }
                         return;
@@ -2047,17 +2043,17 @@ namespace MagoBox
 
                         if (editBLandToolStripMenuItem.Checked)
                         {
-                            bl.MovingTerrainID = (sbyte)dB_4.Value;
+                            bl.MovingTerrainID = (sbyte)dB_Dynamic.Value;
                             level.BLandDecoration[ix] = bl;
                         }
                         if (editFLandToolStripMenuItem.Checked)
                         {
-                            fl.MovingTerrainID = (sbyte)dF_4.Value;
+                            fl.MovingTerrainID = (sbyte)dF_Dynamic.Value;
                             level.FLandDecoration[ix] = fl;
                         }
                         if (editMLandToolStripMenuItem.Checked)
                         {
-                            ml.MovingTerrainID = (sbyte)dM_4.Value;
+                            ml.MovingTerrainID = (sbyte)dM_Dynamic.Value;
                             level.MLandDecoration[ix] = ml;
                         }
                         return;
@@ -2092,31 +2088,28 @@ namespace MagoBox
             vAutomove.Value = c.AutoMoveSpeed;
             vBlock.Value = b.ID;
 
-            if (bl.Unk_1 != 255 || bl.Unk_2 != 255 || bl.Unk_3 != 0 || bl.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
+            if (bl.DecoID != -1 || bl.Unk_3 != 0 || bl.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
             {
-                dB_1.Value = bl.Unk_1;
-                dB_2.Value = bl.Unk_2;
-                dB_3.Value = bl.Unk_3;
-                dB_4.Value = bl.MovingTerrainID;
-                dB_hex.Text = ((byte)dB_1.Value).ToString("X2") + ((byte)dB_2.Value).ToString("X2") + ((byte)dB_3.Value).ToString("X2") + ((sbyte)dB_4.Value).ToString("X2");
+                dB_ID.Value = bl.DecoID;
+                dB_Unk.Value = bl.Unk_3;
+                dB_Dynamic.Value = bl.MovingTerrainID;
+                dB_hex.Text = ((short)dB_ID.Value).ToString("X4") + ((byte)dB_Unk.Value).ToString("X2") + ((sbyte)dB_Dynamic.Value).ToString("X2");
             }
             
-            if (fl.Unk_1 != 255 || fl.Unk_2 != 255 || fl.Unk_3 != 0 || fl.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
+            if (fl.DecoID != -1 || fl.Unk_3 != 0 || fl.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
             {
-                dF_1.Value = fl.Unk_1;
-                dF_2.Value = fl.Unk_2;
-                dF_3.Value = fl.Unk_3;
-                dF_4.Value = fl.MovingTerrainID;
-                dF_hex.Text = ((byte)dF_1.Value).ToString("X2") + ((byte)dF_2.Value).ToString("X2") + ((byte)dF_3.Value).ToString("X2") + ((sbyte)dF_4.Value).ToString("X2");
+                dF_ID.Value = fl.DecoID;
+                dF_Unk.Value = fl.Unk_3;
+                dF_Dynamic.Value = fl.MovingTerrainID;
+                dF_hex.Text = ((short)dF_ID.Value).ToString("X4") + ((byte)dF_Unk.Value).ToString("X2") + ((sbyte)dF_Dynamic.Value).ToString("X2");
             }
 
-            if (ml.Unk_1 != 255 || ml.Unk_2 != 255 || ml.Unk_3 != 0 || ml.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
+            if (ml.DecoID != -1 || ml.Unk_3 != 0 || ml.MovingTerrainID != -1 || ModifierKeys != Keys.Shift)
             {
-                dM_1.Value = ml.Unk_1;
-                dM_2.Value = ml.Unk_2;
-                dM_3.Value = ml.Unk_3;
-                dM_4.Value = ml.MovingTerrainID;
-                dM_hex.Text = ((byte)dM_1.Value).ToString("X2") + ((byte)dM_2.Value).ToString("X2") + ((byte)dM_3.Value).ToString("X2") + ((sbyte)dM_4.Value).ToString("X2");
+                dM_ID.Value = ml.DecoID;
+                dM_Unk.Value = ml.Unk_3;
+                dM_Dynamic.Value = ml.MovingTerrainID;
+                dM_hex.Text = ((short)dM_ID.Value).ToString("X4") + ((byte)dM_Unk.Value).ToString("X2") + ((sbyte)dM_Dynamic.Value).ToString("X2");
             }
         }
         private void Grab()
@@ -2298,8 +2291,7 @@ namespace MagoBox
                 Block b = new Block();
                 Decoration d = new Decoration();
                 b.ID = -1;
-                d.Unk_1 = 255;
-                d.Unk_2 = 255;
+                d.DecoID = -1;
                 d.Unk_3 = 0;
                 d.MovingTerrainID = -1;
 
@@ -3340,32 +3332,29 @@ namespace MagoBox
             {
                 if (tabControl2.SelectedIndex == 1)
                 {
-                    dB_hex.Text = ((byte)dB_1.Value).ToString("X2") + ((byte)dB_2.Value).ToString("X2") + ((byte)dB_3.Value).ToString("X2") + ((sbyte)dB_4.Value).ToString("X2");
-                    dF_hex.Text = ((byte)dF_1.Value).ToString("X2") + ((byte)dF_2.Value).ToString("X2") + ((byte)dF_3.Value).ToString("X2") + ((sbyte)dF_4.Value).ToString("X2");
-                    dM_hex.Text = ((byte)dM_1.Value).ToString("X2") + ((byte)dM_2.Value).ToString("X2") + ((byte)dM_3.Value).ToString("X2") + ((sbyte)dM_4.Value).ToString("X2");
+                    dB_hex.Text = ((short)dB_ID.Value).ToString("X4") + ((byte)dB_Unk.Value).ToString("X2") + ((sbyte)dB_Dynamic.Value).ToString("X2");
+                    dF_hex.Text = ((short)dF_ID.Value).ToString("X4") + ((byte)dF_Unk.Value).ToString("X2") + ((sbyte)dF_Dynamic.Value).ToString("X2");
+                    dM_hex.Text = ((short)dM_ID.Value).ToString("X4") + ((byte)dM_Unk.Value).ToString("X2") + ((sbyte)dM_Dynamic.Value).ToString("X2");
                 }
                 else
                 {
                     uint b = uint.Parse(dB_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    dB_1.Value = uint.Parse(dB_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    dB_2.Value = uint.Parse(dB_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    dB_3.Value = uint.Parse(dB_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (b < 16) dB_4.Value = b;
-                    else dB_4.Value = -1;
+                    dB_ID.Value = short.Parse(dB_hex.Text.Substring(0, 4), System.Globalization.NumberStyles.HexNumber);
+                    dB_Unk.Value = uint.Parse(dB_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (b < 16) dB_Dynamic.Value = b;
+                    else dB_Dynamic.Value = -1;
 
                     uint f = uint.Parse(dF_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    dF_1.Value = uint.Parse(dF_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    dF_2.Value = uint.Parse(dF_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    dF_3.Value = uint.Parse(dF_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (f < 16) dF_4.Value = f;
-                    else dF_4.Value = -1;
+                    dF_ID.Value = short.Parse(dF_hex.Text.Substring(0, 4), System.Globalization.NumberStyles.HexNumber);
+                    dF_Unk.Value = uint.Parse(dF_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (f < 16) dF_Dynamic.Value = f;
+                    else dF_Dynamic.Value = -1;
 
                     uint m = uint.Parse(dM_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                    dM_1.Value = uint.Parse(dM_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                    dM_2.Value = uint.Parse(dM_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                    dM_3.Value = uint.Parse(dM_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                    if (m < 16) dM_4.Value = m;
-                    else dM_4.Value = -1;
+                    dM_ID.Value = short.Parse(dM_hex.Text.Substring(0, 4), System.Globalization.NumberStyles.HexNumber);
+                    dM_Unk.Value = uint.Parse(dM_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                    if (m < 16) dM_Dynamic.Value = m;
+                    else dM_Dynamic.Value = -1;
                 }
             } catch { }
         }
@@ -3374,11 +3363,10 @@ namespace MagoBox
             try
             {
                 uint b = uint.Parse(dB_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                dB_1.Value = uint.Parse(dB_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                dB_2.Value = uint.Parse(dB_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                dB_3.Value = uint.Parse(dB_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (b < 16) dB_4.Value = b;
-                else dB_4.Value = -1;
+                dB_ID.Value = short.Parse(dB_hex.Text.Substring(0, 4), System.Globalization.NumberStyles.HexNumber);
+                dB_Unk.Value = uint.Parse(dB_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (b < 16) dB_Dynamic.Value = b;
+                else dB_Dynamic.Value = -1;
             } catch { }
         }
         private void d2_hex_TextChanged(object sender, EventArgs e)
@@ -3386,11 +3374,10 @@ namespace MagoBox
             try
             {
                 uint f = uint.Parse(dF_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                dF_1.Value = uint.Parse(dF_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                dF_2.Value = uint.Parse(dF_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                dF_3.Value = uint.Parse(dF_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (f < 16) dF_4.Value = f;
-                else dF_4.Value = -1;
+                dF_ID.Value = short.Parse(dF_hex.Text.Substring(0, 4), System.Globalization.NumberStyles.HexNumber);
+                dF_Unk.Value = uint.Parse(dF_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (f < 16) dF_Dynamic.Value = f;
+                else dF_Dynamic.Value = -1;
             } catch { }
         }
         private void d3_hex_TextChanged(object sender, EventArgs e)
@@ -3398,11 +3385,10 @@ namespace MagoBox
             try
             {
                 uint m = uint.Parse(dM_hex.Text.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
-                dM_1.Value = uint.Parse(dM_hex.Text.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
-                dM_2.Value = uint.Parse(dM_hex.Text.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
-                dM_3.Value = uint.Parse(dM_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
-                if (m < 16) dM_4.Value = m;
-                else dM_4.Value = -1;
+                dM_ID.Value = short.Parse(dM_hex.Text.Substring(0, 4), System.Globalization.NumberStyles.HexNumber);
+                dM_Unk.Value = uint.Parse(dM_hex.Text.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+                if (m < 16) dM_Dynamic.Value = m;
+                else dM_Dynamic.Value = -1;
             } catch { }
         }
 

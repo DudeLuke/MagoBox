@@ -225,8 +225,7 @@ namespace RDLLVL
             for (int i = 0; i < Width * Height; i++)
             {
                 Decoration deco = new Decoration();
-                deco.Unk_1 = reader.ReadByte();
-                deco.Unk_2 = reader.ReadByte();
+                deco.DecoID = reader.ReadInt16();
                 deco.Unk_3 = reader.ReadByte();
                 deco.MovingTerrainID = reader.ReadSByte();
                 FLandDecoration.Add(deco);
@@ -238,8 +237,7 @@ namespace RDLLVL
             for (int i = 0; i < Width * Height; i++)
             {
                 Decoration deco = new Decoration();
-                deco.Unk_1 = reader.ReadByte();
-                deco.Unk_2 = reader.ReadByte();
+                deco.DecoID = reader.ReadInt16();
                 deco.Unk_3 = reader.ReadByte();
                 deco.MovingTerrainID = reader.ReadSByte();
                 MLandDecoration.Add(deco);
@@ -251,8 +249,7 @@ namespace RDLLVL
             for (int i = 0; i < Width * Height; i++)
             {
                 Decoration deco = new Decoration();
-                deco.Unk_1 = reader.ReadByte();
-                deco.Unk_2 = reader.ReadByte();
+                deco.DecoID = reader.ReadInt16();
                 deco.Unk_3 = reader.ReadByte();
                 deco.MovingTerrainID = reader.ReadSByte();
                 BLandDecoration.Add(deco);
@@ -594,8 +591,7 @@ namespace RDLLVL
             writer.Write(Height);
             for (int i = 0; i < FLandDecoration.Count; i++)
             {
-                writer.Write(FLandDecoration[i].Unk_1);
-                writer.Write(FLandDecoration[i].Unk_2);
+                writer.Write(FLandDecoration[i].DecoID);
                 writer.Write(FLandDecoration[i].Unk_3);
                 writer.Write(FLandDecoration[i].MovingTerrainID);
             }
@@ -607,8 +603,7 @@ namespace RDLLVL
             writer.Write(Height);
             for (int i = 0; i < MLandDecoration.Count; i++)
             {
-                writer.Write(MLandDecoration[i].Unk_1);
-                writer.Write(MLandDecoration[i].Unk_2);
+                writer.Write(MLandDecoration[i].DecoID);
                 writer.Write(MLandDecoration[i].Unk_3);
                 writer.Write(MLandDecoration[i].MovingTerrainID);
             }
@@ -620,8 +615,7 @@ namespace RDLLVL
             writer.Write(Height);
             for (int i = 0; i < BLandDecoration.Count; i++)
             {
-                writer.Write(BLandDecoration[i].Unk_1);
-                writer.Write(BLandDecoration[i].Unk_2);
+                writer.Write(BLandDecoration[i].DecoID);
                 writer.Write(BLandDecoration[i].Unk_3);
                 writer.Write(BLandDecoration[i].MovingTerrainID);
             }

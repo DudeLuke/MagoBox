@@ -108,18 +108,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dB_1 = new System.Windows.Forms.NumericUpDown();
-            this.dB_2 = new System.Windows.Forms.NumericUpDown();
-            this.dB_3 = new System.Windows.Forms.NumericUpDown();
-            this.dF_4 = new System.Windows.Forms.NumericUpDown();
-            this.dM_4 = new System.Windows.Forms.NumericUpDown();
-            this.dF_3 = new System.Windows.Forms.NumericUpDown();
-            this.dB_4 = new System.Windows.Forms.NumericUpDown();
-            this.dF_2 = new System.Windows.Forms.NumericUpDown();
-            this.dM_3 = new System.Windows.Forms.NumericUpDown();
-            this.dM_1 = new System.Windows.Forms.NumericUpDown();
-            this.dM_2 = new System.Windows.Forms.NumericUpDown();
-            this.dF_1 = new System.Windows.Forms.NumericUpDown();
+            this.dB_ID = new System.Windows.Forms.NumericUpDown();
+            this.dB_Unk = new System.Windows.Forms.NumericUpDown();
+            this.dF_Dynamic = new System.Windows.Forms.NumericUpDown();
+            this.dM_Dynamic = new System.Windows.Forms.NumericUpDown();
+            this.dF_Unk = new System.Windows.Forms.NumericUpDown();
+            this.dB_Dynamic = new System.Windows.Forms.NumericUpDown();
+            this.dM_Unk = new System.Windows.Forms.NumericUpDown();
+            this.dM_ID = new System.Windows.Forms.NumericUpDown();
+            this.dF_ID = new System.Windows.Forms.NumericUpDown();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dF_hex = new System.Windows.Forms.TextBox();
             this.dM_hex = new System.Windows.Forms.TextBox();
@@ -214,18 +211,15 @@
             this.groupBox2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_Unk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dF_Dynamic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dM_Dynamic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dF_Unk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_Dynamic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dM_Unk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dM_ID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dF_ID)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vBlock)).BeginInit();
@@ -1221,18 +1215,15 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dB_1);
-            this.tabPage1.Controls.Add(this.dB_2);
-            this.tabPage1.Controls.Add(this.dB_3);
-            this.tabPage1.Controls.Add(this.dF_4);
-            this.tabPage1.Controls.Add(this.dM_4);
-            this.tabPage1.Controls.Add(this.dF_3);
-            this.tabPage1.Controls.Add(this.dB_4);
-            this.tabPage1.Controls.Add(this.dF_2);
-            this.tabPage1.Controls.Add(this.dM_3);
-            this.tabPage1.Controls.Add(this.dM_1);
-            this.tabPage1.Controls.Add(this.dM_2);
-            this.tabPage1.Controls.Add(this.dF_1);
+            this.tabPage1.Controls.Add(this.dB_ID);
+            this.tabPage1.Controls.Add(this.dB_Unk);
+            this.tabPage1.Controls.Add(this.dF_Dynamic);
+            this.tabPage1.Controls.Add(this.dM_Dynamic);
+            this.tabPage1.Controls.Add(this.dF_Unk);
+            this.tabPage1.Controls.Add(this.dB_Dynamic);
+            this.tabPage1.Controls.Add(this.dM_Unk);
+            this.tabPage1.Controls.Add(this.dM_ID);
+            this.tabPage1.Controls.Add(this.dF_ID);
             this.tabPage1.ForeColor = System.Drawing.SystemColors.Control;
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -1243,233 +1234,203 @@
             this.tabPage1.Text = "Byte Values";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dB_1
+            // dB_ID
             // 
-            this.dB_1.Location = new System.Drawing.Point(7, 9);
-            this.dB_1.Margin = new System.Windows.Forms.Padding(4);
-            this.dB_1.Maximum = new decimal(new int[] {
+            this.dB_ID.Location = new System.Drawing.Point(7, 9);
+            this.dB_ID.Margin = new System.Windows.Forms.Padding(4);
+            this.dB_ID.Maximum = new decimal(new int[] {
+            65534,
+            0,
+            0,
+            0});
+            this.dB_ID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.dB_ID.Name = "dB_ID";
+            this.dB_ID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dB_ID.Size = new System.Drawing.Size(112, 22);
+            this.dB_ID.TabIndex = 73;
+            this.toolTip1.SetToolTip(this.dB_ID, "Background Decoration ID\r\n-1 means no decoration.");
+            this.dB_ID.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            // 
+            // dB_Unk
+            // 
+            this.dB_Unk.Location = new System.Drawing.Point(123, 9);
+            this.dB_Unk.Margin = new System.Windows.Forms.Padding(4);
+            this.dB_Unk.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.dB_1.Name = "dB_1";
-            this.dB_1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dB_1.Size = new System.Drawing.Size(52, 22);
-            this.dB_1.TabIndex = 73;
-            this.dB_1.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
+            this.dB_Unk.Name = "dB_Unk";
+            this.dB_Unk.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dB_Unk.Size = new System.Drawing.Size(52, 22);
+            this.dB_Unk.TabIndex = 75;
+            this.toolTip1.SetToolTip(this.dB_Unk, "Background unknown value.\r\nIt\'s usually set to 0 or 17\r\n");
             // 
-            // dB_2
+            // dF_Dynamic
             // 
-            this.dB_2.Location = new System.Drawing.Point(65, 9);
-            this.dB_2.Margin = new System.Windows.Forms.Padding(4);
-            this.dB_2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.dB_2.Name = "dB_2";
-            this.dB_2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dB_2.Size = new System.Drawing.Size(52, 22);
-            this.dB_2.TabIndex = 74;
-            this.dB_2.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            // 
-            // dB_3
-            // 
-            this.dB_3.Location = new System.Drawing.Point(123, 9);
-            this.dB_3.Margin = new System.Windows.Forms.Padding(4);
-            this.dB_3.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.dB_3.Name = "dB_3";
-            this.dB_3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dB_3.Size = new System.Drawing.Size(52, 22);
-            this.dB_3.TabIndex = 75;
-            // 
-            // dF_4
-            // 
-            this.dF_4.Location = new System.Drawing.Point(179, 62);
-            this.dF_4.Margin = new System.Windows.Forms.Padding(4);
-            this.dF_4.Maximum = new decimal(new int[] {
+            this.dF_Dynamic.Location = new System.Drawing.Point(179, 62);
+            this.dF_Dynamic.Margin = new System.Windows.Forms.Padding(4);
+            this.dF_Dynamic.Maximum = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.dF_4.Minimum = new decimal(new int[] {
+            this.dF_Dynamic.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.dF_4.Name = "dF_4";
-            this.dF_4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dF_4.Size = new System.Drawing.Size(51, 22);
-            this.dF_4.TabIndex = 80;
-            this.dF_4.Value = new decimal(new int[] {
+            this.dF_Dynamic.Name = "dF_Dynamic";
+            this.dF_Dynamic.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dF_Dynamic.Size = new System.Drawing.Size(51, 22);
+            this.dF_Dynamic.TabIndex = 80;
+            this.toolTip1.SetToolTip(this.dF_Dynamic, "Foreground Dynamic ID. Follows the same\r\nindex Dynamic Terrain when it moves.\r\nTi" +
+        "les with Dynamic Terrain ID 0 will follow\r\nDynamic Terrain 0 for example.");
+            this.dF_Dynamic.Value = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
             // 
-            // dM_4
+            // dM_Dynamic
             // 
-            this.dM_4.Location = new System.Drawing.Point(179, 36);
-            this.dM_4.Margin = new System.Windows.Forms.Padding(4);
-            this.dM_4.Maximum = new decimal(new int[] {
+            this.dM_Dynamic.Location = new System.Drawing.Point(179, 36);
+            this.dM_Dynamic.Margin = new System.Windows.Forms.Padding(4);
+            this.dM_Dynamic.Maximum = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.dM_4.Minimum = new decimal(new int[] {
+            this.dM_Dynamic.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.dM_4.Name = "dM_4";
-            this.dM_4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dM_4.Size = new System.Drawing.Size(51, 22);
-            this.dM_4.TabIndex = 84;
-            this.dM_4.Value = new decimal(new int[] {
+            this.dM_Dynamic.Name = "dM_Dynamic";
+            this.dM_Dynamic.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dM_Dynamic.Size = new System.Drawing.Size(51, 22);
+            this.dM_Dynamic.TabIndex = 84;
+            this.toolTip1.SetToolTip(this.dM_Dynamic, "Middleground Dynamic ID. Follows the same\r\nindex Dynamic Terrain when it moves.\r\n" +
+        "Tiles with Dynamic Terrain ID 0 will follow\r\nDynamic Terrain 0 for example.");
+            this.dM_Dynamic.Value = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
             // 
-            // dF_3
+            // dF_Unk
             // 
-            this.dF_3.Location = new System.Drawing.Point(123, 62);
-            this.dF_3.Margin = new System.Windows.Forms.Padding(4);
-            this.dF_3.Maximum = new decimal(new int[] {
+            this.dF_Unk.Location = new System.Drawing.Point(123, 62);
+            this.dF_Unk.Margin = new System.Windows.Forms.Padding(4);
+            this.dF_Unk.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.dF_3.Name = "dF_3";
-            this.dF_3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dF_3.Size = new System.Drawing.Size(52, 22);
-            this.dF_3.TabIndex = 79;
+            this.dF_Unk.Name = "dF_Unk";
+            this.dF_Unk.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dF_Unk.Size = new System.Drawing.Size(52, 22);
+            this.dF_Unk.TabIndex = 79;
+            this.toolTip1.SetToolTip(this.dF_Unk, "Foreground unknown value.\r\nIt\'s usually set to 0 or 17");
             // 
-            // dB_4
+            // dB_Dynamic
             // 
-            this.dB_4.Location = new System.Drawing.Point(179, 9);
-            this.dB_4.Margin = new System.Windows.Forms.Padding(4);
-            this.dB_4.Maximum = new decimal(new int[] {
+            this.dB_Dynamic.Location = new System.Drawing.Point(179, 9);
+            this.dB_Dynamic.Margin = new System.Windows.Forms.Padding(4);
+            this.dB_Dynamic.Maximum = new decimal(new int[] {
             15,
             0,
             0,
             0});
-            this.dB_4.Minimum = new decimal(new int[] {
+            this.dB_Dynamic.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
-            this.dB_4.Name = "dB_4";
-            this.dB_4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dB_4.Size = new System.Drawing.Size(51, 22);
-            this.dB_4.TabIndex = 76;
-            this.dB_4.Value = new decimal(new int[] {
+            this.dB_Dynamic.Name = "dB_Dynamic";
+            this.dB_Dynamic.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dB_Dynamic.Size = new System.Drawing.Size(51, 22);
+            this.dB_Dynamic.TabIndex = 76;
+            this.toolTip1.SetToolTip(this.dB_Dynamic, "Background Dynamic ID. Follows the same\r\nindex Dynamic Terrain when it moves.\r\nTi" +
+        "les with Dynamic Terrain ID 0 will follow\r\nDynamic Terrain 0 for example.");
+            this.dB_Dynamic.Value = new decimal(new int[] {
             1,
             0,
             0,
             -2147483648});
             // 
-            // dF_2
+            // dM_Unk
             // 
-            this.dF_2.Location = new System.Drawing.Point(65, 63);
-            this.dF_2.Margin = new System.Windows.Forms.Padding(4);
-            this.dF_2.Maximum = new decimal(new int[] {
+            this.dM_Unk.Location = new System.Drawing.Point(123, 36);
+            this.dM_Unk.Margin = new System.Windows.Forms.Padding(4);
+            this.dM_Unk.Maximum = new decimal(new int[] {
             255,
             0,
             0,
             0});
-            this.dF_2.Name = "dF_2";
-            this.dF_2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dF_2.Size = new System.Drawing.Size(52, 22);
-            this.dF_2.TabIndex = 78;
-            this.dF_2.Value = new decimal(new int[] {
-            255,
+            this.dM_Unk.Name = "dM_Unk";
+            this.dM_Unk.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dM_Unk.Size = new System.Drawing.Size(52, 22);
+            this.dM_Unk.TabIndex = 83;
+            this.toolTip1.SetToolTip(this.dM_Unk, "Middleground unknown value.\r\nIt\'s usually set to 0 or 17\r\n");
+            // 
+            // dM_ID
+            // 
+            this.dM_ID.Location = new System.Drawing.Point(7, 36);
+            this.dM_ID.Margin = new System.Windows.Forms.Padding(4);
+            this.dM_ID.Maximum = new decimal(new int[] {
+            65534,
             0,
             0,
             0});
+            this.dM_ID.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.dM_ID.Name = "dM_ID";
+            this.dM_ID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dM_ID.Size = new System.Drawing.Size(112, 22);
+            this.dM_ID.TabIndex = 81;
+            this.toolTip1.SetToolTip(this.dM_ID, "Middle (Stood on) Decoration ID\r\n-1 means no decoration.\r\n");
+            this.dM_ID.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             // 
-            // dM_3
+            // dF_ID
             // 
-            this.dM_3.Location = new System.Drawing.Point(123, 36);
-            this.dM_3.Margin = new System.Windows.Forms.Padding(4);
-            this.dM_3.Maximum = new decimal(new int[] {
-            255,
+            this.dF_ID.Location = new System.Drawing.Point(7, 62);
+            this.dF_ID.Margin = new System.Windows.Forms.Padding(4);
+            this.dF_ID.Maximum = new decimal(new int[] {
+            65534,
             0,
             0,
             0});
-            this.dM_3.Name = "dM_3";
-            this.dM_3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dM_3.Size = new System.Drawing.Size(52, 22);
-            this.dM_3.TabIndex = 83;
-            // 
-            // dM_1
-            // 
-            this.dM_1.Location = new System.Drawing.Point(7, 36);
-            this.dM_1.Margin = new System.Windows.Forms.Padding(4);
-            this.dM_1.Maximum = new decimal(new int[] {
-            255,
+            this.dF_ID.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
-            0});
-            this.dM_1.Name = "dM_1";
-            this.dM_1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dM_1.Size = new System.Drawing.Size(52, 22);
-            this.dM_1.TabIndex = 81;
-            this.dM_1.Value = new decimal(new int[] {
-            255,
+            -2147483648});
+            this.dF_ID.Name = "dF_ID";
+            this.dF_ID.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dF_ID.Size = new System.Drawing.Size(112, 22);
+            this.dF_ID.TabIndex = 77;
+            this.toolTip1.SetToolTip(this.dF_ID, "Foreground Decoration ID\r\n-1 means no decoration.");
+            this.dF_ID.Value = new decimal(new int[] {
+            1,
             0,
             0,
-            0});
-            // 
-            // dM_2
-            // 
-            this.dM_2.Location = new System.Drawing.Point(65, 36);
-            this.dM_2.Margin = new System.Windows.Forms.Padding(4);
-            this.dM_2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.dM_2.Name = "dM_2";
-            this.dM_2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dM_2.Size = new System.Drawing.Size(52, 22);
-            this.dM_2.TabIndex = 82;
-            this.dM_2.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            // 
-            // dF_1
-            // 
-            this.dF_1.Location = new System.Drawing.Point(7, 63);
-            this.dF_1.Margin = new System.Windows.Forms.Padding(4);
-            this.dF_1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.dF_1.Name = "dF_1";
-            this.dF_1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dF_1.Size = new System.Drawing.Size(52, 22);
-            this.dF_1.TabIndex = 77;
-            this.dF_1.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
+            -2147483648});
             // 
             // tabPage2
             // 
@@ -2660,10 +2621,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1519, 698);
+            this.MinimumSize = new System.Drawing.Size(1522, 756);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MagoCrate";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Enter += new System.EventHandler(this.MainForm_Enter);
             this.Leave += new System.EventHandler(this.MainForm_Leave);
             this.menuStrip1.ResumeLayout(false);
@@ -2684,18 +2646,15 @@
             this.groupBox2.PerformLayout();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dB_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dB_4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dM_2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dF_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_Unk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dF_Dynamic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dM_Dynamic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dF_Unk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dB_Dynamic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dM_Unk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dM_ID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dF_ID)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -2764,7 +2723,7 @@
         private System.Windows.Forms.CheckBox boundary;
         private System.Windows.Forms.NumericUpDown vMat;
         private System.Windows.Forms.NumericUpDown vAutomove;
-        private System.Windows.Forms.NumericUpDown dB_1;
+        private System.Windows.Forms.NumericUpDown dB_ID;
         private System.Windows.Forms.CheckBox lava;
         private System.Windows.Forms.CheckBox water;
         private System.Windows.Forms.CheckBox ladder;
@@ -2788,17 +2747,14 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.NumericUpDown dB_2;
-        private System.Windows.Forms.NumericUpDown dB_3;
-        private System.Windows.Forms.NumericUpDown dF_4;
-        private System.Windows.Forms.NumericUpDown dM_4;
-        private System.Windows.Forms.NumericUpDown dF_3;
-        private System.Windows.Forms.NumericUpDown dB_4;
-        private System.Windows.Forms.NumericUpDown dF_2;
-        private System.Windows.Forms.NumericUpDown dM_3;
-        private System.Windows.Forms.NumericUpDown dM_1;
-        private System.Windows.Forms.NumericUpDown dM_2;
-        private System.Windows.Forms.NumericUpDown dF_1;
+        private System.Windows.Forms.NumericUpDown dB_Unk;
+        private System.Windows.Forms.NumericUpDown dF_Dynamic;
+        private System.Windows.Forms.NumericUpDown dM_Dynamic;
+        private System.Windows.Forms.NumericUpDown dF_Unk;
+        private System.Windows.Forms.NumericUpDown dB_Dynamic;
+        private System.Windows.Forms.NumericUpDown dM_Unk;
+        private System.Windows.Forms.NumericUpDown dM_ID;
+        private System.Windows.Forms.NumericUpDown dF_ID;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TextBox dF_hex;
         private System.Windows.Forms.TextBox dM_hex;
