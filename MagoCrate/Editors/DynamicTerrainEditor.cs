@@ -50,6 +50,7 @@ namespace MagoCrate
         public void RefreshColors()
         {
             Color col = MagoCrate.Properties.Settings.Default.DynamicSectionColor;
+            BackColor = MagoCrate.Properties.Settings.Default.MainColor;
             resetCamera.BackColor = col;
             vShape.BackColor = col;
             vmat.BackColor = col;
